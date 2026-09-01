@@ -24,7 +24,7 @@
     </image>
     <item>
       <title>M1 Podcast - Günlük Teknoloji &amp; Yapay Zeka Bülteni (01.09.2026)</title>
-      <description>Otonom yazılım ajanlarından kuantum işlemcilere, açık kaynak modellerden robotik vizyona günün en sıcak 8 büyük teknoloji gelişmesi ve derinlemesine 10 dakikalık analizleri.
+      <description>Otonom yazılım ajanlarından kuantum işlemcilere, açık kaynak modellerden robotik vizyona günün en sıcak teknoloji gelişmeleri ve derinlemesine analizleri.
 ⚡ GÜNÜN ÇARPICI HABERLERİ:
 1. Otonom Yazılım Ajanları: Kod Yazımından Canlıya Alma Sürecine Tam Otomasyon
 Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor.
@@ -50,13 +50,13 @@ Uzay teknolojisi girişimleri, yörüngede doğrudan güneş ışığından gü�
 8. Yapay Zeka Destekli Biyoteknoloji: Protein Tasarımı ve Hızlı İlaç Keşfi
 Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti.
 Önemli Noktalar: Aylar süren moleküler simülasyonlar saatler seviyesine indirildi • Hedefe yönelik kişiselleştirilmiş tedavi yöntemlerinde klinik aşamaya geçildi</description>
-      <itunes:summary>Otonom yazılım ajanlarından kuantum işlemcilere, açık kaynak modellerden robotik vizyona günün en sıcak 8 büyük teknoloji gelişmesi ve derinlemesine 10 dakikalık analizleri.</itunes:summary>
-      <pubDate>Tue, 01 Sep 2026 15:59:21 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260901_m1_bc85b0</guid>
+      <itunes:summary>Otonom yazılım ajanlarından kuantum işlemcilere, açık kaynak modellerden robotik vizyona günün en sıcak teknoloji gelişmeleri ve derinlemesine analizleri.</itunes:summary>
+      <pubDate>Tue, 01 Sep 2026 16:04:50 GMT</pubDate>
+      <guid isPermaLink="false">ep_20260901_m1_8f91f9</guid>
       <itunes:author>M1</itunes:author>
-      <itunes:duration>00:03:14</itunes:duration>
+      <itunes:duration>00:02:00</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_m1_bc85b0.mp3" length="3113112" type="audio/mpeg"/>
+      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_m1_8f91f9.mp3" length="1924164" type="audio/mpeg"/>
     </item>
   </channel>
 </rss>
