@@ -55,17 +55,13 @@ class Publisher:
             "title": episode_meta["title"],
             "summary": episode_meta["summary"],
             "todays_topics": episode_meta.get("todays_topics", episode_meta["summary"]),
+            "news_items": episode_meta.get("news_items", []),
             "script": episode_meta["script"],
             "pub_date": episode_meta["pub_date"],
             "audio_url": public_audio_url,
             "file_size": episode_meta["file_size"],
             "duration_formatted": episode_meta["duration_formatted"],
-            "duration_seconds": episode_meta.get("duration_seconds", 0),
-            "bulletin_summary": episode_meta.get("bulletin_summary", episode_meta["summary"]),
-            "news_items": episode_meta.get("news_items", []),
-            "chapters": episode_meta.get("chapters", []),
-            "vocabulary": episode_meta.get("vocabulary", []),
-            "sentences": episode_meta.get("sentences", [])
+            "duration_seconds": episode_meta.get("duration_seconds", 0)
         }
 
         # Deduplicate: Remove existing entry with same guid if re-run
@@ -101,4 +97,3 @@ class Publisher:
                         print(f"🧹 Cleaned up orphan audio file: {file_path}")
                     except Exception as e:
                         print(f"⚠️ Warning: Failed to remove orphan audio file {file_path}: {e}")
-

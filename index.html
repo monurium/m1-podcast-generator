@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fluent AI Daily - Podcast Player</title>
-  <meta name="description" content="Master English with daily AI news! Daily conversational podcast covering AI breakthroughs, tech startups, and software engineering in clear, articulate English." />
+  <title>M1 Podcast - Günlük Yapay Zeka & Teknoloji Bülteni</title>
+  <meta name="description" content="Günün en sıcak yapay zeka ve teknoloji gelişmelerini, çarpıcı haber özetleri ve derinlemesine analizlerle sunan günlük Türkçe podcast." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg-dark: #07090e;
-      --bg-card: rgba(15, 20, 32, 0.82);
-      --bg-card-hover: rgba(25, 33, 50, 0.92);
-      --border-glow: rgba(112, 0, 255, 0.28);
+      --bg-card: rgba(15, 20, 32, 0.85);
+      --bg-card-hover: rgba(25, 33, 50, 0.95);
+      --border-glow: rgba(0, 242, 254, 0.25);
       --border-subtle: rgba(255, 255, 255, 0.08);
       --accent-cyan: #00f2fe;
       --accent-violet: #7928ca;
@@ -79,7 +79,7 @@
 
     /* Navbar */
     header {
-      padding: 28px 0;
+      padding: 24px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -92,11 +92,6 @@
       gap: 12px;
       text-decoration: none;
       color: #fff;
-      transition: transform 0.2s ease;
-    }
-
-    .brand-logo:hover {
-      transform: scale(1.02);
     }
 
     .brand-icon {
@@ -123,14 +118,14 @@
 
     /* Main Content Area */
     main {
-      padding: 36px 0 60px;
+      padding: 32px 0 60px;
     }
 
     /* Hero Section */
     .hero-player-grid {
       display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 36px;
+      grid-template-columns: 220px 1fr;
+      gap: 32px;
       align-items: center;
       margin-bottom: 28px;
     }
@@ -141,25 +136,19 @@
 
     .cover-img {
       width: 100%;
-      border-radius: 22px;
+      border-radius: 20px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(121, 40, 202, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.15);
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .cover-wrapper:hover .cover-img {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 45px rgba(0, 242, 254, 0.4);
     }
 
     .hero-details h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 34px;
+      font-size: 32px;
       font-weight: 800;
       line-height: 1.2;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       letter-spacing: -0.5px;
       background: linear-gradient(135deg, #ffffff 40%, var(--accent-cyan) 100%);
       -webkit-background-clip: text;
@@ -169,7 +158,7 @@
     .hero-details p {
       font-size: 15px;
       color: var(--text-muted);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       line-height: 1.5;
     }
 
@@ -194,38 +183,25 @@
       border: 1px solid transparent;
     }
 
-    .btn-spotify {
-      background: #1db954;
-      color: #000;
-      box-shadow: 0 4px 15px rgba(29, 185, 84, 0.3);
-    }
-    .btn-spotify:hover {
-      background: #1ed760;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(29, 185, 84, 0.45);
-    }
-
-    .btn-apple {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
-      color: #fff;
-      border-color: rgba(255, 255, 255, 0.15);
-    }
-    .btn-apple:hover {
-      background: rgba(255, 255, 255, 0.16);
-      transform: translateY(-2px);
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-
     .btn-rss {
-      background: rgba(121, 40, 202, 0.2);
+      background: rgba(121, 40, 202, 0.25);
       color: #d8b4fe;
-      border-color: rgba(121, 40, 202, 0.4);
+      border-color: rgba(121, 40, 202, 0.5);
     }
     .btn-rss:hover {
-      background: rgba(121, 40, 202, 0.35);
+      background: rgba(121, 40, 202, 0.45);
       transform: translateY(-2px);
       border-color: var(--accent-cyan);
+    }
+
+    .btn-direct-rss {
+      background: rgba(0, 242, 254, 0.15);
+      color: var(--accent-cyan);
+      border-color: rgba(0, 242, 254, 0.35);
+    }
+    .btn-direct-rss:hover {
+      background: rgba(0, 242, 254, 0.28);
+      transform: translateY(-2px);
     }
 
     /* Modern Episode Dropdown Menu */
@@ -241,7 +217,6 @@
       font-size: 14px;
       font-weight: 600;
       color: var(--text-muted);
-      letter-spacing: 0.2px;
     }
 
     .custom-select-container {
@@ -252,189 +227,124 @@
 
     .modern-episode-select {
       width: 100%;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background: rgba(18, 24, 38, 0.9);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(15, 20, 32, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
       color: var(--text-main);
-      padding: 10px 42px 10px 16px;
+      padding: 10px 36px 10px 14px;
       border-radius: 12px;
-      font-size: 14px;
-      font-weight: 600;
-      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      appearance: none;
       cursor: pointer;
       outline: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .modern-episode-select:hover {
-      background: rgba(28, 36, 56, 0.98);
-      border-color: var(--accent-cyan);
-      box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
-    }
-
-    .modern-episode-select:focus {
-      border-color: var(--accent-cyan);
-      box-shadow: 0 0 20px rgba(0, 242, 254, 0.35);
-    }
-
-    .modern-episode-select option {
-      background: #0d121f;
-      color: #fff;
-      padding: 10px;
     }
 
     .select-arrow {
       position: absolute;
-      right: 16px;
+      right: 14px;
       top: 50%;
       transform: translateY(-50%);
       pointer-events: none;
       color: var(--accent-cyan);
-      font-size: 14px;
     }
 
-    /* Audio Player Card */
+    /* Player Card */
     .player-card {
       background: var(--bg-card);
-      backdrop-filter: blur(24px);
-      border: 1px solid var(--border-glow);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
       border-radius: 24px;
-      padding: 32px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-      transition: border-color 0.3s ease;
-    }
-
-    .player-card:hover {
-      border-color: rgba(0, 242, 254, 0.35);
-    }
-
-    .player-header {
-      margin-bottom: 22px;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      margin-bottom: 32px;
     }
 
     .episode-meta-tag {
+      font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
       color: var(--accent-cyan);
+      letter-spacing: 0.5px;
       margin-bottom: 6px;
     }
 
     .episode-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 700;
-      color: #fff;
-      line-height: 1.3;
+      margin-bottom: 8px;
     }
 
     .episode-topics-summary {
       font-size: 14px;
       color: var(--text-muted);
-      line-height: 1.55;
-      margin-top: 8px;
-      max-width: 720px;
+      margin-bottom: 20px;
     }
 
-    /* Animated Soundwave Equalizer */
+    /* Soundwave Visualizer */
     .soundwave-bar-row {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 5px;
-      height: 48px;
-      margin: 22px 0 26px;
-      padding: 0 10px;
+      gap: 4px;
+      height: 36px;
+      margin: 16px 0 24px;
     }
 
     .wave-bar {
-      flex: 1;
-      max-width: 8px;
-      height: 6px;
+      width: 4px;
+      height: 8px;
       background: rgba(255, 255, 255, 0.2);
-      border-radius: 4px;
+      border-radius: 3px;
       transition: height 0.2s ease, background 0.2s ease;
     }
 
     .soundwave-bar-row.playing .wave-bar {
-      background: linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent-violet) 100%);
-      animation: waveDance 1.2s ease-in-out infinite alternate;
-      box-shadow: 0 0 10px rgba(0, 242, 254, 0.35);
+      background: linear-gradient(to top, var(--accent-cyan), var(--accent-violet));
+      animation: soundwave 1.2s ease-in-out infinite alternate;
     }
 
-    @keyframes waveDance {
+    @keyframes soundwave {
       0% { height: 6px; }
-      50% { height: 42px; }
-      100% { height: 12px; }
+      50% { height: 32px; }
+      100% { height: 10px; }
     }
 
-    /* Progress Scrubber */
+    /* Progress Bar */
     .progress-container {
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .progress-bar-wrapper {
-      position: relative;
+      width: 100%;
       height: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
       cursor: pointer;
-      overflow: visible;
-      transition: height 0.15s ease;
-    }
-
-    .progress-bar-wrapper:hover {
-      height: 10px;
+      position: relative;
     }
 
     .progress-fill {
-      position: absolute;
-      top: 0;
-      left: 0;
       height: 100%;
       width: 0%;
       background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
-      border-radius: 10px;
-      box-shadow: 0 0 14px rgba(0, 242, 254, 0.5);
-    }
-
-    .progress-handle {
-      position: absolute;
-      right: -6px;
-      top: 50%;
-      transform: translateY(-50%) scale(0);
-      width: 14px;
-      height: 14px;
-      background: #fff;
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--accent-cyan);
-      transition: transform 0.15s ease;
-    }
-
-    .progress-bar-wrapper:hover .progress-handle {
-      transform: translateY(-50%) scale(1);
+      border-radius: 6px;
+      position: relative;
     }
 
     .time-indicators {
       display: flex;
       justify-content: space-between;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 13px;
-      color: var(--text-dim);
       margin-top: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--text-dim);
     }
 
-    /* Controls Row */
+    /* Controls */
     .controls-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
     }
 
     .main-controls {
@@ -444,8 +354,8 @@
     }
 
     .play-btn {
-      width: 58px;
-      height: 58px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
       border: none;
@@ -456,16 +366,11 @@
       justify-content: center;
       cursor: pointer;
       box-shadow: 0 4px 25px rgba(0, 242, 254, 0.45);
-      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.2s ease;
     }
 
     .play-btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 6px 30px rgba(0, 242, 254, 0.65);
-    }
-
-    .play-btn:active {
-      transform: scale(0.96);
+      transform: scale(1.06);
     }
 
     .ctrl-btn {
@@ -473,22 +378,14 @@
       border: 1px solid var(--border-subtle);
       color: var(--text-main);
       padding: 10px 16px;
-      border-radius: 14px;
+      border-radius: 12px;
       font-size: 13px;
       font-weight: 600;
-      font-family: 'Outfit', sans-serif;
       cursor: pointer;
-      transition: all 0.2s ease;
     }
 
     .ctrl-btn:hover {
       background: rgba(255, 255, 255, 0.16);
-      border-color: rgba(255, 255, 255, 0.25);
-      transform: translateY(-1px);
-    }
-
-    .ctrl-btn:active {
-      transform: scale(0.96);
     }
 
     .secondary-controls {
@@ -509,16 +406,11 @@
       color: var(--text-muted);
       font-size: 18px;
       cursor: pointer;
-      transition: color 0.2s;
-    }
-
-    .volume-btn:hover {
-      color: #fff;
     }
 
     .volume-slider {
       -webkit-appearance: none;
-      width: 90px;
+      width: 80px;
       height: 5px;
       border-radius: 5px;
       background: rgba(255, 255, 255, 0.15);
@@ -528,12 +420,11 @@
 
     .volume-slider::-webkit-slider-thumb {
       -webkit-appearance: none;
-      width: 13px;
-      height: 13px;
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       background: var(--accent-cyan);
       cursor: pointer;
-      box-shadow: 0 0 8px var(--accent-cyan);
     }
 
     .speed-btn {
@@ -546,13 +437,100 @@
       padding: 8px 14px;
       border-radius: 12px;
       cursor: pointer;
+    }
+
+    /* News Highlights Section */
+    .news-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 28px;
+      margin-top: 24px;
+    }
+
+    .news-section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+    }
+
+    .news-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .news-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 18px;
       transition: all 0.2s ease;
     }
 
-    .speed-btn:hover {
-      background: rgba(0, 242, 254, 0.15);
-      border-color: var(--accent-cyan);
-      transform: translateY(-1px);
+    .news-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--border-glow);
+      transform: translateY(-2px);
+    }
+
+    .news-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .news-badge {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+      color: #000;
+      font-weight: 800;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .news-headline {
+      font-weight: 700;
+      font-size: 16px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .news-summary {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .news-points {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .news-points li {
+      font-size: 13px;
+      color: #cbd5e1;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .news-points li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent-cyan);
+      font-weight: bold;
     }
 
     /* Footer */
@@ -565,13 +543,11 @@
       margin-top: auto;
     }
 
-    /* Toast Notification */
     .toast {
       position: fixed;
       bottom: 24px;
       right: 24px;
       background: rgba(15, 20, 32, 0.95);
-      backdrop-filter: blur(16px);
       border: 1px solid var(--accent-cyan);
       color: #fff;
       padding: 12px 20px;
@@ -581,7 +557,7 @@
       box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3);
       transform: translateY(100px);
       opacity: 0;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s ease;
       z-index: 100;
     }
 
@@ -590,15 +566,14 @@
       opacity: 1;
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       .hero-player-grid {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 24px;
+        gap: 20px;
       }
       .cover-wrapper {
-        max-width: 200px;
+        max-width: 180px;
         margin: 0 auto;
       }
       .button-group {
@@ -607,14 +582,6 @@
       .controls-row {
         flex-direction: column;
         gap: 18px;
-      }
-      .main-controls {
-        width: 100%;
-        justify-content: center;
-      }
-      .secondary-controls {
-        width: 100%;
-        justify-content: center;
       }
     }
   </style>
@@ -627,7 +594,7 @@
     <header>
       <a href="#" class="brand-logo">
         <div class="brand-icon">🎙️</div>
-        <span class="brand-title">Fluent AI Daily</span>
+        <span class="brand-title">M1 Podcast</span>
       </a>
     </header>
 
@@ -635,33 +602,28 @@
       <!-- Hero Details & Artwork -->
       <section class="hero-player-grid">
         <div class="cover-wrapper">
-          <img src="cover.jpg" alt="Fluent AI Daily Podcast Artwork" class="cover-img" id="podcastCover" />
+          <img src="cover.jpg" alt="M1 Podcast Kapak Görseli" class="cover-img" id="podcastCover" />
         </div>
         <div class="hero-details">
-          <h1>Fluent AI Daily</h1>
-          <p>Master English with daily AI news! Daily conversational podcast covering breakthrough AI research, startups, and software engineering in clear, articulate English.</p>
+          <h1>M1 Podcast</h1>
+          <p>Günün en sıcak yapay zeka ve teknoloji gelişmelerini, çarpıcı haber özetleri ve derinlemesine 10 dakikalık analizlerle sunan günlük Türkçe podcast.</p>
           <div class="button-group">
-            <a href="https://open.spotify.com/" target="_blank" class="btn btn-spotify">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.498 17.306c-.215.352-.676.463-1.028.248-2.817-1.721-6.364-2.111-10.542-1.157-.402.092-.801-.16-.893-.562-.092-.403.16-.802.562-.894 4.571-1.044 8.492-.599 11.653 1.337.352.215.464.676.248 1.028zm1.468-3.262c-.27.441-.847.58-1.288.31-3.225-1.982-8.142-2.556-11.956-1.398-.497.151-1.024-.134-1.175-.631-.151-.498.134-1.024.631-1.176 4.364-1.325 9.787-.687 13.478 1.583.441.27.58.847.31 1.312zm.126-3.41c-3.867-2.296-10.248-2.508-13.941-1.387-.593.18-1.22-.162-1.4-.755-.18-.593.162-1.22.755-1.4 4.246-1.289 11.294-1.042 15.753 1.605.533.316.707 1.011.391 1.544-.316.533-1.011.707-1.558.393z"/></svg>
-              Listen on Spotify
-            </a>
-            <a href="https://podcasts.apple.com/" target="_blank" class="btn btn-apple">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.93-2.85-.9.04-2 .6-2.65 1.35-.58.66-1.08 1.73-.95 2.76 1.01.08 2.05-.51 2.67-1.26z"/></svg>
-              Apple Podcasts
-            </a>
             <button class="btn btn-rss" id="copyRssBtn">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
-              Copy RSS Feed
+              RSS Bağlantısını Kopyala
             </button>
+            <a href="podcast.xml" target="_blank" class="btn btn-direct-rss">
+              📡 podcast.xml Görüntüle
+            </a>
           </div>
         </div>
       </section>
 
       <!-- Modern Episode Dropdown Menu -->
       <div class="episode-dropdown-wrapper">
-        <label for="episodeSelect" class="dropdown-label">📅 Select Episode:</label>
+        <label for="episodeSelect" class="dropdown-label">📅 Bölüm Seçiniz:</label>
         <div class="custom-select-container">
-          <select id="episodeSelect" class="modern-episode-select" title="Choose a podcast episode">
+          <select id="episodeSelect" class="modern-episode-select" title="Bölüm seçin">
             <!-- Dynamically populated options -->
           </select>
           <span class="select-arrow">▾</span>
@@ -672,9 +634,9 @@
       <section class="player-card">
         <div class="player-header">
           <div>
-            <div class="episode-meta-tag" id="epDate">LATEST EPISODE</div>
-            <h2 class="episode-title" id="epTitle">Fluent AI Daily</h2>
-            <p class="episode-topics-summary" id="epTopics"><strong style="color: var(--accent-cyan);">Today's Topics:</strong> Loading episode summary...</p>
+            <div class="episode-meta-tag" id="epDate">SON BÖLÜM</div>
+            <h2 class="episode-title" id="epTitle">M1 Podcast</h2>
+            <p class="episode-topics-summary" id="epTopics">Bölüm bilgileri yükleniyor...</p>
           </div>
         </div>
 
@@ -687,9 +649,7 @@
 
         <div class="progress-container">
           <div class="progress-bar-wrapper" id="progressBar">
-            <div class="progress-fill" id="progressFill">
-              <div class="progress-handle"></div>
-            </div>
+            <div class="progress-fill" id="progressFill"></div>
           </div>
           <div class="time-indicators">
             <span id="currentTime">00:00</span>
@@ -699,28 +659,38 @@
 
         <div class="controls-row">
           <div class="main-controls">
-            <button class="ctrl-btn" id="rewindBtn" title="Rewind 10s (Left Arrow)">↺ 10s</button>
-            <button class="play-btn" id="playBtn" title="Play / Pause (Spacebar)">▶</button>
-            <button class="ctrl-btn" id="forwardBtn" title="Forward 10s (Right Arrow)">10s ↻</button>
+            <button class="ctrl-btn" id="rewindBtn" title="10s Geri">↺ 10s</button>
+            <button class="play-btn" id="playBtn" title="Oynat / Durdur">▶</button>
+            <button class="ctrl-btn" id="forwardBtn" title="10s İleri">10s ↻</button>
           </div>
 
           <div class="secondary-controls">
             <div class="volume-container">
-              <button class="volume-btn" id="muteBtn" title="Mute / Unmute (M)">🔊</button>
-              <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="1" title="Volume slider" />
+              <button class="volume-btn" id="muteBtn" title="Sesi Kapat">🔊</button>
+              <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="1" title="Ses seviyesi" />
             </div>
-            <button class="speed-btn" id="speedBtn" title="Change Playback Speed">1.0x</button>
+            <button class="speed-btn" id="speedBtn" title="Hız Değiştir">1.0x</button>
           </div>
+        </div>
+      </section>
+
+      <!-- News Highlights Section -->
+      <section class="news-section" id="newsSection">
+        <div class="news-section-title">
+          <span>⚡</span> Günün Çarpıcı Haber Başlıkları ve Özetleri
+        </div>
+        <div class="news-grid" id="newsGrid">
+          <!-- Dynamically populated news cards -->
         </div>
       </section>
     </main>
 
     <footer>
-      <p>AI Pulse Daily • Automated with Google Gemini & Edge-TTS • Hosted on GitHub Pages</p>
+      <p>M1 Podcast • Microsoft Edge-TTS Türkçe Neural Sesler ile Güçlendirilmiştir • GitHub Pages</p>
     </footer>
   </div>
 
-  <div class="toast" id="toast">📋 RSS Feed URL copied to clipboard!</div>
+  <div class="toast" id="toast">📋 RSS Besleme URL'si panoya kopyalandı!</div>
 
   <script>
     // Generate 36 visualizer bars
@@ -746,6 +716,7 @@
     const copyRssBtn = document.getElementById('copyRssBtn');
     const toast = document.getElementById('toast');
     const episodeSelect = document.getElementById('episodeSelect');
+    const newsGrid = document.getElementById('newsGrid');
 
     let allEpisodes = [];
     let currentEpisode = null;
@@ -778,8 +749,8 @@
       episodes.forEach((ep, idx) => {
         const opt = document.createElement('option');
         opt.value = idx;
-        const dateStr = ep.pub_date ? ep.pub_date.split(' ').slice(1, 4).join(' ') : `Episode ${idx + 1}`;
-        opt.textContent = idx === 0 ? `📅 ${dateStr} (Latest Episode)` : `📅 ${dateStr}`;
+        const dateStr = ep.pub_date ? ep.pub_date.split(' ').slice(1, 4).join(' ') : `Bölüm ${idx + 1}`;
+        opt.textContent = idx === 0 ? `📅 ${dateStr} (Son Bölüm)` : `📅 ${dateStr}`;
         episodeSelect.appendChild(opt);
       });
 
@@ -791,6 +762,42 @@
       };
     }
 
+    function renderNewsHighlights(newsItems) {
+      if (!newsGrid) return;
+      newsGrid.innerHTML = '';
+      if (!newsItems || newsItems.length === 0) {
+        newsGrid.innerHTML = '<p style="color: var(--text-muted);">Bu bölüm için detaylı haber listesi bulunamadı.</p>';
+        return;
+      }
+
+      newsItems.forEach((item, idx) => {
+        const card = document.createElement('div');
+        card.className = 'news-card';
+
+        const headline = item.headline || item.title || `Haber ${idx + 1}`;
+        const summary = item.summary || '';
+        const keyPoints = item.key_points || [];
+
+        let pointsHtml = '';
+        if (keyPoints && keyPoints.length > 0) {
+          pointsHtml = '<ul class="news-points">' + 
+            keyPoints.map(pt => `<li>${pt}</li>`).join('') + 
+            '</ul>';
+        }
+
+        card.innerHTML = `
+          <div class="news-card-header">
+            <span class="news-badge">#${idx + 1}</span>
+            <div class="news-headline">${headline}</div>
+          </div>
+          <div class="news-summary">${summary}</div>
+          ${pointsHtml}
+        `;
+
+        newsGrid.appendChild(card);
+      });
+    }
+
     function setupPlayer(ep) {
       if (!ep) return;
       currentEpisode = ep;
@@ -800,18 +807,14 @@
         episodeSelect.value = currentIdx;
       }
       
-      document.getElementById('epTitle').textContent = ep.title || 'Fluent AI Daily';
-      document.getElementById('epDate').textContent = ep.pub_date ? ep.pub_date.split(' ').slice(0, 4).join(' ') : 'LATEST EPISODE';
+      document.getElementById('epTitle').textContent = ep.title || 'M1 Podcast';
+      document.getElementById('epDate').textContent = ep.pub_date ? ep.pub_date.split(' ').slice(0, 4).join(' ') : 'SON BÖLÜM';
       
       const topicsText = ep.todays_topics || ep.summary || '';
-      const cleanTopics = topicsText.replace(/^Today's Topics:\s*/i, '');
-      const epTopicsEl = document.getElementById('epTopics');
-      if (epTopicsEl) {
-        epTopicsEl.innerHTML = `<strong style="color: var(--accent-cyan);">Today's Topics:</strong> ${cleanTopics}`;
-      }
+      document.getElementById('epTopics').textContent = topicsText;
       
       playBtn.textContent = '▶';
-      totalTimeEl.textContent = ep.duration_formatted || '08:00';
+      totalTimeEl.textContent = ep.duration_formatted || '10:00';
       progressFill.style.width = '0%';
       currentTimeEl.textContent = '00:00';
       
@@ -825,6 +828,8 @@
           audio.load();
         }
       };
+
+      renderNewsHighlights(ep.news_items);
     }
 
     // Playback Controls
@@ -881,7 +886,7 @@
       audio.currentTime = Math.min(audio.duration, audio.currentTime + 10); 
     });
 
-    // Volume & Mute
+    // Volume
     volumeSlider.addEventListener('input', (e) => {
       audio.volume = parseFloat(e.target.value);
       muteBtn.textContent = audio.volume === 0 ? '🔇' : (audio.volume > 0.5 ? '🔊' : '🔉');
@@ -908,17 +913,17 @@
       const speed = speeds[speedIdx];
       audio.playbackRate = speed;
       speedBtn.textContent = `${speed.toFixed(speed === 1 || speed === 2 ? 1 : 2)}x`;
-      showToast(`⚡ Speed: ${speedBtn.textContent}`);
+      showToast(`⚡ Oynatma Hızı: ${speedBtn.textContent}`);
     });
 
     copyRssBtn.addEventListener('click', () => {
       const rssUrl = window.location.origin + window.location.pathname.replace(/\/index\.html$/, '') + '/podcast.xml';
       navigator.clipboard.writeText(rssUrl).then(() => {
-        showToast('📋 RSS Feed URL copied to clipboard!');
+        showToast('📋 RSS Bağlantısı panoya kopyalandı!');
       });
     });
 
-    // Keyboard Shortcuts (Space: Play/Pause, Arrows: Seek 10s, M: Mute)
+    // Keyboard Shortcuts
     window.addEventListener('keydown', (e) => {
       if (['INPUT', 'SELECT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
       if (e.code === 'Space') {

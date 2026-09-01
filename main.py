@@ -12,7 +12,6 @@ from src.content_generator import ContentGenerator
 from src.audio_generator import AudioGenerator
 from src.rss_builder import RSSBuilder
 from src.publisher import Publisher
-from src.slack_notifier import SlackNotifier
 
 if hasattr(sys.stdout, "reconfigure"):
     try:
@@ -41,13 +40,11 @@ def run_daily_podcast_pipeline(test_mode: bool = False):
     # 2. Extract Recent Topics from Manifest for Duplicate Prevention
     recent_manifest_path = "episodes_manifest.json"
     recent_topics = []
-    last_episode_script = ""
     if os.path.exists(recent_manifest_path):
         try:
             with open(recent_manifest_path, "r", encoding="utf-8") as f:
                 past_episodes = json.load(f)
                 if past_episodes:
-                    last_episode_script = past_episodes[0].get("script", "")
                     for ep in past_episodes[:5]:
                         t_summary = ep.get("todays_topics", "") or ep.get("summary", "")
                         if t_summary:
@@ -174,15 +171,6 @@ def run_daily_podcast_pipeline(test_mode: bool = False):
         shutil.copy2("index.html", os.path.join(output_dir, "index.html"))
     if os.path.exists("cover.jpg"):
         shutil.copy2("cover.jpg", os.path.join(output_dir, "cover.jpg"))
-
-    # Optional: Slack Notification if configured
-    if os.getenv("SLACK_WEBHOOK_URL") or (os.getenv("SLACK_BOT_TOKEN") and os.getenv("SLACK_CHANNEL_ID")):
-        try:
-            slack = SlackNotifier()
-            latest_ep = all_episodes[0] if all_episodes else episode_dict
-            slack.send_notification(latest_ep, base_url=base_url)
-        except Exception as slack_err:
-            print(f"ℹ️ Slack bildirimi atlandı: {slack_err}")
 
     print("\n" + "=" * 65)
     print("🎉 BAŞARILI: M1 Günlük Podcast üretildi ve RSS beslemesi güncellendi!")

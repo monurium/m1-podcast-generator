@@ -2,7 +2,6 @@ import os
 import sys
 import re
 import asyncio
-import time
 import tempfile
 from typing import Dict, Any, List, Tuple
 
@@ -11,15 +10,8 @@ if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     except Exception:
         pass
-if hasattr(sys.stderr, "reconfigure"):
-    try:
-        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
-    except Exception:
-        pass
 
 DEFAULT_EDGE_VOICE = "tr-TR-AhmetNeural"
-GEMINI_TTS_MODELS = ("gemini-2.5-flash-preview-tts", "gemini-2.5-flash-native-audio-latest", "gemini-2.5-flash")
-GEMINI_VOICE_MAP = {"Ahmet": "Puck", "Emel": "Aoede", "Alex": "Puck", "Sarah": "Aoede"}
 EDGE_VOICE_MAP = {
     "Ahmet": "tr-TR-AhmetNeural",
     "Emel": "tr-TR-EmelNeural",
@@ -27,35 +19,18 @@ EDGE_VOICE_MAP = {
     "Sarah": "tr-TR-EmelNeural",
     "Sunucu": "tr-TR-AhmetNeural"
 }
-PACING_SECONDS_PER_REQUEST = 6.5
-
-def raw_pcm_to_mp3_bytes(pcm_bytes: bytes, sample_rate: int = 24000, num_channels: int = 1, bitrate: int = 128) -> bytes:
-    """Encodes raw 24kHz 16-bit PCM audio bytes from Google AI Studio into standard compressed MP3 format using lameenc."""
-    import lameenc
-    encoder = lameenc.Encoder()
-    encoder.set_bit_rate(bitrate)
-    encoder.set_in_sample_rate(sample_rate)
-    encoder.set_channels(num_channels)
-    encoder.set_quality(2)
-    return encoder.encode(pcm_bytes) + encoder.flush()
-
-def generate_silent_pcm_bytes(duration_ms: int = 400, sample_rate: int = 24000) -> bytes:
-    """Generates standard 16-bit mono zero-PCM silence buffer."""
-    num_bytes = int(sample_rate * 2 * (duration_ms / 1000.0))
-    return b'\x00' * num_bytes
 
 def generate_silent_mp3_bytes(duration_ms: int = 500) -> bytes:
-    """Generates standard silent MP3 frame buffer for Edge-TTS fallback."""
+    """Generates standard silent MP3 frame buffer for turn pacing."""
     num_frames = max(1, int(duration_ms / 100))
     silent_frame = b'\xff\xfb\x90\xc4' + b'\x00' * 413
     return silent_frame * num_frames
 
 class AudioGenerator:
-    """Dual-Engine Audio Generator with full Turkish neural voice support (Ahmet: Male, Emel: Female)."""
+    """High-performance Turkish Neural TTS Audio Generator using Microsoft Edge-TTS."""
 
-    def __init__(self, edge_voice: str = DEFAULT_EDGE_VOICE):
-        self.edge_voice = edge_voice
-        self.gemini_api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GEMINI_TTS_API_KEY") or os.getenv("GOOGLE_API_KEY")
+    def __init__(self, default_voice: str = DEFAULT_EDGE_VOICE):
+        self.default_voice = default_voice
 
     def _build_audio_metadata(self, output_path: str, duration_seconds: int) -> Dict[str, Any]:
         """Constructs standardized audio metadata response dictionary."""
@@ -80,13 +55,10 @@ class AudioGenerator:
             match = speaker_regex.match(line_str)
             if match:
                 speaker_raw = match.group(1).title()
-                # Normalize speaker names
-                if speaker_raw in ["Sunucu 1", "Alex"]:
+                if speaker_raw in ["Sunucu 1", "Alex", "Sunucu"]:
                     speaker = "Ahmet"
                 elif speaker_raw in ["Sunucu 2", "Sarah"]:
                     speaker = "Emel"
-                elif speaker_raw == "Sunucu":
-                    speaker = "Ahmet"
                 else:
                     speaker = speaker_raw
 
@@ -100,83 +72,9 @@ class AudioGenerator:
                     turns.append(("Ahmet", line_str))
         return turns
 
-    def _generate_gemini_audio(self, script_text: str, output_path: str) -> Tuple[bool, int]:
-        """Synthesizes single-narrator audio using Google AI Studio with Turkish-tuned prompt."""
-        if not self.gemini_api_key:
-            return False, 0
-
-        print("✨ Synthesizing Turkish audio via Google AI Studio...")
-        try:
-            from google import genai
-            from google.genai import types
-
-            client = genai.Client(api_key=self.gemini_api_key)
-            prompt = (
-                "You are an enthusiastic, clear, lively, and articulate Turkish daily news podcast host. "
-                "Narrate the following Turkish news script with clear vocal dynamics, natural pauses, "
-                "and a warm, energetic presentation style:\n\n"
-                f"{script_text}"
-            )
-            config = types.GenerateContentConfig(
-                response_modalities=["AUDIO"],
-                speech_config=types.SpeechConfig(
-                    voice_config=types.VoiceConfig(
-                        prebuilt_voice_config=types.PrebuiltVoiceConfig(voice_name="Aoede")
-                    )
-                )
-            )
-
-            for model_name in GEMINI_TTS_MODELS:
-                try:
-                    response = client.models.generate_content(
-                        model=model_name,
-                        contents=prompt,
-                        config=config
-                    )
-                    if response.candidates and response.candidates[0].content.parts:
-                        for part in response.candidates[0].content.parts:
-                            if hasattr(part, "inline_data") and part.inline_data:
-                                pcm_data = part.inline_data.data
-                                audio_bytes = raw_pcm_to_mp3_bytes(pcm_data)
-                                os.makedirs(os.path.dirname(output_path) if os.path.dirname(output_path) else ".", exist_ok=True)
-                                with open(output_path, "wb") as f:
-                                    f.write(audio_bytes)
-                                
-                                file_size_mb = os.path.getsize(output_path) / (1024 * 1024)
-                                duration_sec = max(30, int(len(pcm_data) / 48000))
-                                print(f"🎉 Google AI Studio audio generated via '{model_name}': {output_path} ({file_size_mb:.2f} MB, {duration_sec // 60}m {duration_sec % 60}s)")
-                                return True, duration_sec
-                except Exception as model_err:
-                    print(f"⚠️ Model '{model_name}' attempt failed: {model_err}")
-
-            return False, 0
-        except Exception as e:
-            print(f"⚠️ Google AI Studio error ({e}).")
-            return False, 0
-
-    def _clean_speaker_turns(self, turns: List[Tuple[str, str]]) -> List[Tuple[str, str]]:
-        """Merges consecutive lines by the SAME speaker and strips markdown."""
-        if not turns:
-            return []
-        
-        merged: List[Tuple[str, str]] = []
-        for speaker, text in turns:
-            clean = re.sub(r'\[.*?\]|\(.*?\)', '', text).strip()
-            if not clean:
-                continue
-            if merged and merged[-1][0] == speaker:
-                prev_spk, prev_txt = merged[-1]
-                merged[-1] = (prev_spk, f"{prev_txt} {clean}")
-            else:
-                merged.append((speaker, clean))
-
-        return merged
-
     async def build_audio_monologue_edge(self, script_text: str, output_mp3: str) -> str:
         """Turkish Edge-TTS audio generator with natural sentence pacing."""
         import edge_tts
-        print(f"🎙️ Using Turkish Edge-TTS engine with voice '{self.edge_voice}'...")
-        
         paragraphs = [p.strip() for p in script_text.strip().split("\n\n") if p.strip()]
         base_dir = os.path.dirname(output_mp3) if os.path.dirname(output_mp3) else "."
         os.makedirs(base_dir, exist_ok=True)
@@ -197,7 +95,7 @@ class AudioGenerator:
                         
                         async def _synth_sentence(t=sentence, p=t_path):
                             try:
-                                comm = edge_tts.Communicate(t, self.edge_voice, rate="+0%", pitch="+0Hz")
+                                comm = edge_tts.Communicate(t, self.default_voice, rate="+0%", pitch="+0Hz")
                                 await comm.save(p)
                                 return p
                             except Exception as ex:
@@ -222,13 +120,12 @@ class AudioGenerator:
                         is_para_end = sentence_map[idx][1] if idx < len(sentence_map) else False
                         outfile.write(long_pause if is_para_end else short_pause)
 
-        print(f"🎉 Turkish Edge-TTS monologue audio generated successfully: {output_mp3}")
         return output_mp3
 
     async def build_audio_dialogue_edge(self, dialogue_script: str, output_mp3: str) -> str:
-        """Turkish Edge-TTS audio generator for 2-host dialogue (Ahmet: tr-TR-AhmetNeural, Emel: tr-TR-EmelNeural)."""
+        """Turkish Edge-TTS audio generator for 2-host dialogue (Ahmet & Emel)."""
         import edge_tts
-        print("🎙️ Synthesizing 2-Host Turkish Dialogue via Edge-TTS (Ahmet: tr-TR-AhmetNeural & Emel: tr-TR-EmelNeural)...")
+        print("🎙️ Türkçe 2-Sunuculu Diyalog Sentezleniyor (Ahmet & Emel)...")
         turns = self._parse_dialogue_turns(dialogue_script)
         base_dir = os.path.dirname(output_mp3) if os.path.dirname(output_mp3) else "."
         os.makedirs(base_dir, exist_ok=True)
@@ -263,25 +160,27 @@ class AudioGenerator:
                             outfile.write(infile.read())
                         outfile.write(pause_bytes)
 
-        print(f"🎉 2-Host Turkish Podcast MP3 generated: {output_mp3}")
         return output_mp3
 
-    def _attach_intro_outro(self, output_path: str) -> int:
-        """Calculates accurate duration for the podcast MP3."""
+    def _calculate_duration(self, output_path: str) -> int:
+        """Calculates accurate duration for the podcast MP3 based on 128kbps standard bitrate."""
         if not os.path.exists(output_path):
             return 0
         file_size_bytes = os.path.getsize(output_path)
+        # 128kbps = 16,000 bytes/sec
         exact_duration_sec = max(30, int(file_size_bytes / 16000))
         return exact_duration_sec
 
     def dialogue_to_audio(self, dialogue_script: str, output_path: str) -> Dict[str, Any]:
         """Synthesizes 2-host Turkish podcast conversation."""
         asyncio.run(self.build_audio_dialogue_edge(dialogue_script, output_path))
-        duration_seconds = self._attach_intro_outro(output_path)
+        duration_seconds = self._calculate_duration(output_path)
+        print(f"🎉 Türkçe Podcast MP3 oluşturuldu: {output_path} ({duration_seconds // 60}m {duration_seconds % 60}s)")
         return self._build_audio_metadata(output_path, duration_seconds)
 
     def text_to_audio(self, script_text: str, output_path: str) -> Dict[str, Any]:
         """Synthesizes Turkish monologue podcast to MP3."""
         asyncio.run(self.build_audio_monologue_edge(script_text, output_path))
-        duration_seconds = self._attach_intro_outro(output_path)
+        duration_seconds = self._calculate_duration(output_path)
+        print(f"🎉 Türkçe Monolog MP3 oluşturuldu: {output_path} ({duration_seconds // 60}m {duration_seconds % 60}s)")
         return self._build_audio_metadata(output_path, duration_seconds)
