@@ -4,14 +4,15 @@ import json
 import uuid
 import datetime
 import re
+import argparse
+import sys
 from dotenv import load_dotenv
 
 from src.content_generator import ContentGenerator
 from src.audio_generator import AudioGenerator
 from src.rss_builder import RSSBuilder
 from src.publisher import Publisher
-import argparse
-import sys
+from src.slack_notifier import SlackNotifier
 
 if hasattr(sys.stdout, "reconfigure"):
     try:
@@ -21,20 +22,20 @@ if hasattr(sys.stdout, "reconfigure"):
 
 load_dotenv()
 
-def run_daily_podcast_pipeline(test_mode: bool = False):
-    print("=" * 60)
+def run_daily_podcast_pipeline(test_mode: bool = False, slack_test: bool = False):
+    print("=" * 65)
     if test_mode:
-        print("🧪 RUNNING IN TEST / DRY-RUN MODE (Spotify & RSS will NOT be updated)")
+        print("🧪 TEST / DRY-RUN MODU: Yerel test dosyaları üretiliyor (Prod RSS etkilenmez)")
     else:
-        print("🎙️ Starting AI Pulse Daily Podcast Generation & Publishing Pipeline")
-    print("=" * 60)
+        print("🎙️ M1 GÜNLÜK TÜRKÇE PODCAST & SLACK YAYINLAMA BORU HATTI")
+    print("=" * 65)
 
     # 1. Load Configurations
     config_path = os.path.join("config", "podcast_config.json")
     with open(config_path, "r", encoding="utf-8") as f:
         config = json.load(f)
 
-    base_url = os.getenv("PODCAST_BASE_URL", config.get("link", "https://monurium.github.io/daily-podcast-generator"))
+    base_url = os.getenv("PODCAST_BASE_URL", config.get("link", "https://monurium.github.io/m1-podcast-generator"))
     output_dir = config.get("output_dir", "dist")
 
     # 2. Extract Recent Topics from Manifest for Duplicate Prevention
@@ -52,73 +53,57 @@ def run_daily_podcast_pipeline(test_mode: bool = False):
                         if t_summary:
                             recent_topics.append(t_summary)
         except Exception as e:
-            print(f"⚠️ Could not load recent topics from manifest: {e}")
+            print(f"⚠️ Geçmiş bülten kayıtları yüklenirken not: {e}")
 
-    # 3. Fetch Fresh News & Generate Script with Duplicate Guard
-    print("\n[Step 1/3] Fetching latest AI & Tech news from multiple RSS feeds...")
+    # 3. Fetch Fresh Turkish & Global News
+    print("\n[Adım 1/4] Güncel Teknoloji & Yapay Zeka RSS kaynakları taranıyor...")
     content_gen = ContentGenerator()
     
-    # Extract keywords from recent topics to explicitly filter out from RSS
     exclude_keywords = []
     for topic in recent_topics:
-        exclude_keywords.extend(re.findall(r'\b[A-Z][a-z]{3,}\b', topic))
+        exclude_keywords.extend(re.findall(r'\b[A-ZÇĞİÖŞÜa-zçğıöşü]{4,}\b', topic))
 
     raw_news = content_gen.fetch_fresh_news(hours_limit=24, exclude_keywords=list(set(exclude_keywords)))
     if not raw_news:
-        print("⚠️ No fresh news found with strict filter. Using broader feeds.")
+        print("⚠️ 24 saatlik filtrede yeterli haber bulunamadı, 48 saatlik aralık taranıyor...")
         raw_news = content_gen.fetch_fresh_news(hours_limit=48)
 
+    # Generate dialogue and monologue scripts
     dialogue_script_data = content_gen.generate_dialogue_script(raw_news, recent_topics=recent_topics)
     script_data = content_gen.generate_script(raw_news)
 
-    # 4. Duplicate Similarity Check (BEFORE Audio Synthesis)
-    if last_episode_script:
-        words_new = set(re.findall(r'\b[a-zA-Z]{4,}\b', dialogue_script_data["script"].lower()))
-        words_old = set(re.findall(r'\b[a-zA-Z]{4,}\b', last_episode_script.lower()))
-        if words_new and words_old:
-            similarity = len(words_new.intersection(words_old)) / len(words_new.union(words_old))
-            print(f"🔍 Script novelty check vs yesterday: {((1.0 - similarity) * 100):.1f}% unique (Overlap: {similarity:.2%})")
-            if similarity > 0.45:
-                print("⚠️ High similarity with previous episode detected (>45%). Re-generating with fresh topics...")
-                alt_news = content_gen.fetch_fresh_news(hours_limit=72, exclude_keywords=list(words_old))
-                dialogue_script_data = content_gen.generate_dialogue_script(alt_news, recent_topics=recent_topics)
-
     # Save script texts locally
     os.makedirs("output", exist_ok=True)
-    script_file_path = os.path.join("output", "monologue_script.txt")
     dialogue_file_path = os.path.join("output", "dialogue_script.txt")
-    
-    with open(script_file_path, "w", encoding="utf-8") as f:
-        f.write(script_data["script"])
     with open(dialogue_file_path, "w", encoding="utf-8") as f:
         f.write(dialogue_script_data["script"])
         
-    print(f"📄 Monologue Script saved to: {script_file_path}")
-    print(f"📄 Dialogue Script saved to: {dialogue_file_path}")
-    print(f"💡 Dynamic Episode Hook & Summary:\n   {dialogue_script_data['summary']}")
+    print(f"📄 Türkçe Podcast Metni Kaydedildi: {dialogue_file_path}")
+    print(f"💡 Bölüm Başlığı: {dialogue_script_data['title']}")
+    print(f"⚡ Çarpıcı Haber Sayısı: {len(dialogue_script_data.get('news_items', []))}")
 
-    # 3. Audio Synthesis (Alex: Male & Sarah: Female)
+    # 4. Audio Synthesis (Ahmet: Male, Emel: Female)
     audio_gen = AudioGenerator()
     today_str = datetime.date.today().strftime('%Y%m%d')
     pub_date = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
 
     if test_mode:
-        print("\n[Step 2/3] 🧪 Synthesizing 2-Host Test Episode (Alex: Male & Sarah: Female)...")
+        print("\n[Adım 2/4] 🧪 Türkçe 2-Sunuculu (Ahmet & Emel) Test Sesi Sentezleniyor...")
         test_audio_path = os.path.join("output", "test_dialogue_podcast.mp3")
         dialogue_audio_meta = audio_gen.dialogue_to_audio(dialogue_script_data["script"], test_audio_path)
 
-        print("\n[Step 3/3] 🧪 Building Isolated Test RSS Feed & Manifest in ./output/...")
+        print("\n[Adım 3/4] 🧪 Test RSS Beslemesi ve Manifest ./output/ içinde oluşturuluyor...")
         test_publisher = Publisher(output_dir="output")
         test_episode_meta = {
-            "id": "ep_test_dialogue",
+            "id": "ep_test_m1_podcast",
             "title": "[TEST] " + dialogue_script_data["title"],
             "summary": dialogue_script_data["summary"],
+            "todays_topics": dialogue_script_data.get("todays_topics", ""),
+            "news_items": dialogue_script_data.get("news_items", []),
             "script": dialogue_script_data["script"],
             "pub_date": pub_date,
             "file_size": dialogue_audio_meta["file_size"],
-            "duration_formatted": dialogue_audio_meta["duration_formatted"],
-            "chapters": dialogue_script_data.get("chapters", []),
-            "vocabulary": dialogue_script_data.get("vocabulary", [])
+            "duration_formatted": dialogue_audio_meta["duration_formatted"]
         }
         test_episodes = test_publisher.add_episode(test_episode_meta, test_audio_path, base_url)
 
@@ -126,62 +111,61 @@ def run_daily_podcast_pipeline(test_mode: bool = False):
         test_xml_path = os.path.join("output", "test_podcast.xml")
         test_rss_builder.build_feed(test_episodes, test_xml_path)
 
-        print("\n" + "=" * 60)
-        print("🎉 ISOLATED TEST COMPLETED SUCCESSFULLY!")
-        print(f"📄 Test Script: {dialogue_file_path}")
-        print(f"🎧 Test Audio MP3: {test_audio_path}")
-        print(f"📡 Test RSS Feed XML: {test_xml_path}")
-        print("🛡️ Production podcast.xml, dist/ and episodes/ were NOT modified.")
-        print("=" * 60)
+        print("\n[Adım 4/4] 🧪 Slack Bildirimi Test Ediliyor...")
+        slack = SlackNotifier()
+        slack.send_notification(test_episode_meta, base_url=base_url)
+
+        print("\n" + "=" * 65)
+        print("🎉 TEST BAŞARIYLA TAMAMLANDI!")
+        print(f"📄 Metin Dosyası: {dialogue_file_path}")
+        print(f"🎧 Ses Dosyası: {test_audio_path}")
+        print(f"📡 Test RSS XML: {test_xml_path}")
+        print("=" * 65)
         return
 
     # --- Production Publishing Mode ---
     publisher = Publisher(output_dir=output_dir)
 
-    # 3. Synthesize Primary 2-Host Dialogue Podcast Episode
-    dialogue_episode_id = f"ep_{today_str}_podcast_{uuid.uuid4().hex[:6]}"
+    dialogue_episode_id = f"ep_{today_str}_m1_{uuid.uuid4().hex[:6]}"
     temp_dialogue_path = os.path.join("output", "temp", f"{dialogue_episode_id}.mp3")
-    print("\n[Step 2/3] Synthesizing Primary 2-Host (Alex: Male & Sarah: Female) MP3 podcast...")
+    print("\n[Adım 2/4] Türkçe 2-Sunuculu (Ahmet & Emel) MP3 Podcast Sentezleniyor...")
 
     try:
         dialogue_audio_meta = audio_gen.dialogue_to_audio(dialogue_script_data["script"], temp_dialogue_path)
-        all_episodes = publisher.add_episode({
+        episode_dict = {
             "id": dialogue_episode_id,
             "title": dialogue_script_data["title"],
             "summary": dialogue_script_data["summary"],
             "todays_topics": dialogue_script_data.get("todays_topics", dialogue_script_data["summary"]),
+            "news_items": dialogue_script_data.get("news_items", []),
             "script": dialogue_script_data["script"],
-            "bulletin_summary": dialogue_script_data.get("bulletin_summary", dialogue_script_data["summary"]),
             "pub_date": pub_date,
             "file_size": dialogue_audio_meta["file_size"],
             "duration_formatted": dialogue_audio_meta["duration_formatted"],
-            "duration_seconds": dialogue_audio_meta.get("duration_seconds", 0),
-            "chapters": dialogue_script_data.get("chapters", []),
-            "vocabulary": dialogue_script_data.get("vocabulary", []),
-            "sentences": dialogue_script_data.get("sentences", [])
-        }, temp_dialogue_path, base_url)
+            "duration_seconds": dialogue_audio_meta.get("duration_seconds", 0)
+        }
+        all_episodes = publisher.add_episode(episode_dict, temp_dialogue_path, base_url)
     except Exception as dialogue_err:
-        print(f"⚠️ Primary Dialogue Podcast synthesis failed ({dialogue_err}). Falling back to Monologue Backup...")
+        print(f"⚠️ Diyalog podcast sentezleme hatası ({dialogue_err}). Monolog yedeğe geçiliyor...")
         mono_episode_id = f"ep_{today_str}_mono_{uuid.uuid4().hex[:6]}"
         temp_mono_path = os.path.join("output", "temp", f"{mono_episode_id}.mp3")
         mono_audio_meta = audio_gen.text_to_audio(script_data["script"], temp_mono_path)
-        all_episodes = publisher.add_episode({
+        episode_dict = {
             "id": mono_episode_id,
             "title": script_data["title"],
             "summary": script_data["summary"],
+            "todays_topics": script_data.get("todays_topics", script_data["summary"]),
+            "news_items": script_data.get("news_items", []),
             "script": script_data["script"],
-            "bulletin_summary": script_data.get("bulletin_summary", script_data["summary"]),
             "pub_date": pub_date,
             "file_size": mono_audio_meta["file_size"],
             "duration_formatted": mono_audio_meta["duration_formatted"],
-            "chapters": script_data.get("chapters", []),
-            "vocabulary": script_data.get("vocabulary", []),
-            "sentences": script_data.get("sentences", [])
-        }, temp_mono_path, base_url)
+            "duration_seconds": mono_audio_meta.get("duration_seconds", 0)
+        }
+        all_episodes = publisher.add_episode(episode_dict, temp_mono_path, base_url)
 
-
-    # 4. RSS XML Feed Generation for Spotify & Apple Podcasts
-    print("\n[Step 3/3] Updating Spotify & Apple Podcasts RSS feeds & Web Landing Page...")
+    # 5. RSS XML Feed Generation
+    print("\n[Adım 3/4] RSS XML Beslemesi ve Web Dosyaları Güncelleniyor...")
     rss_builder = RSSBuilder(config=config)
     rss_dist_path = os.path.join(output_dir, config.get("feed_filename", "podcast.xml"))
     rss_root_path = config.get("feed_filename", "podcast.xml")
@@ -195,16 +179,23 @@ def run_daily_podcast_pipeline(test_mode: bool = False):
     if os.path.exists("cover.jpg"):
         shutil.copy2("cover.jpg", os.path.join(output_dir, "cover.jpg"))
 
-    print("\n" + "=" * 60)
-    print("🎉 SUCCESS: Podcast episode generated and RSS feeds updated for Spotify!")
-    print(f"Feed path: {rss_root_path}")
-    print(f"Feed URL: {base_url.rstrip('/')}/{config.get('feed_filename', 'podcast.xml')}")
-    print(f"Web Player URL: {base_url.rstrip('/')}/")
-    print("=" * 60)
+    # 6. Slack Notification & Highlights Publishing
+    print("\n[Adım 4/4] Günlük Podcast & Çarpıcı Haber Özetleri Slack Kanalına Gönderiliyor...")
+    slack = SlackNotifier()
+    # Retrieve final episode audio URL from all_episodes
+    latest_ep = all_episodes[0] if all_episodes else episode_dict
+    slack.send_notification(latest_ep, base_url=base_url)
+
+    print("\n" + "=" * 65)
+    print("🎉 BAŞARILI: M1 Günlük Podcast üretildi, RSS güncellendi ve Slack'e aktarıldı!")
+    print(f"📡 RSS Beslemesi: {base_url.rstrip('/')}/{config.get('feed_filename', 'podcast.xml')}")
+    print(f"🎧 Web Oynatıcı: {base_url.rstrip('/')}/")
+    print("=" * 65)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="AI Pulse Daily Podcast Pipeline")
-    parser.add_argument("--test", "--dry-run", action="store_true", help="Run in local test mode without updating Spotify/RSS feeds")
+    parser = argparse.ArgumentParser(description="M1 Günlük Türkçe Podcast ve Slack Entegrasyonu")
+    parser.add_argument("--test", "--dry-run", action="store_true", help="Prod RSS/dist değiştirmeden yerel test modunda çalıştır")
+    parser.add_argument("--slack-test", action="store_true", help="Slack bildirim formatını test et")
     args = parser.parse_args()
 
-    run_daily_podcast_pipeline(test_mode=args.test)
+    run_daily_podcast_pipeline(test_mode=args.test, slack_test=args.slack_test)

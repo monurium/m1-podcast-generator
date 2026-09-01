@@ -1,14 +1,14 @@
 {
-  "title": "Fluent AI Daily",
-  "description": "Master English with daily AI news! Engaging conversational podcast covering the latest artificial intelligence breakthroughs, tech startups, and software engineering in clear, articulate English.",
-  "author": "Monurium",
+  "title": "M1 Podcast - Günlük Yapay Zeka & Teknoloji Bülteni",
+  "description": "Günün en sıcak yapay zeka ve teknoloji gelişmelerini, çarpıcı haber özetleri ve derinlemesine analizlerle sunan günlük Türkçe podcast.",
+  "author": "M1",
   "email": "mehmetonurberber@gmail.com",
-  "language": "en-us",
+  "language": "tr-TR",
   "category": "Technology",
   "subcategory": "Tech News",
   "explicit": false,
-  "cover_image_url": "https://monurium.github.io/daily-podcast-generator/cover.jpg",
-  "link": "https://monurium.github.io/daily-podcast-generator",
+  "cover_image_url": "https://monurium.github.io/m1-podcast-generator/cover.jpg",
+  "link": "https://monurium.github.io/m1-podcast-generator",
   "feed_filename": "podcast.xml",
   "output_dir": "dist"
 }

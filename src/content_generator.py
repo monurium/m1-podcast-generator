@@ -1,44 +1,51 @@
 import os
+import json
+import re
 import feedparser
 import datetime
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from openai import OpenAI
 
 class ContentGenerator:
-    """Fetches latest RSS tech & global news and generates B2 English educational podcast scripts via DeepSeek."""
+    """Fetches latest Turkish & Global tech news and generates Turkish podcast scripts with striking headlines and summaries."""
 
     def __init__(self, api_key: str = None):
-        self.api_key = api_key or os.getenv("DEEPSEEK_API_KEY")
-        if self.api_key and self.api_key != "your_deepseek_api_key_here":
+        self.api_key = api_key or os.getenv("DEEPSEEK_API_KEY") or os.getenv("OPENAI_API_KEY")
+        if self.api_key and not self.api_key.startswith("your_"):
+            base_url = "https://api.deepseek.com" if os.getenv("DEEPSEEK_API_KEY") else None
             self.client = OpenAI(
                 api_key=self.api_key,
-                base_url="https://api.deepseek.com"
+                base_url=base_url
             )
         else:
             self.client = None
         
         self.rss_feeds = [
+            # Turkish Tech Feeds
+            "https://webrazzi.com/feed/",
+            "https://shiftdelete.net/feed",
+            "https://www.chip.com.tr/rss/",
+            "https://www.donanimhaber.com/rss/tum/",
+            "https://evrimagaci.org/rss.xml",
+            # Global Top AI & Tech Feeds
             "https://techcrunch.com/category/artificial-intelligence/feed/",
-            "https://techcrunch.com/feed/",
-            "https://www.wired.com/feed/category/business/latest/rss",
+            "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
             "https://arstechnica.com/feed/",
             "https://venturebeat.com/category/ai/feed/",
-            "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
-            "https://www.techmeme.com/feed.xml",
-            "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
-            "https://feeds.bbci.co.uk/news/technology/rss.xml"
+            "https://www.wired.com/feed/category/business/latest/rss"
         ]
 
     def fetch_fresh_news(self, hours_limit: int = 24, exclude_keywords: List[str] = None) -> str:
-        """Collects fresh AI & Tech news entries, filtering duplicates and applying strict safety filters."""
+        """Collects fresh Turkish & Global AI & Tech news entries, applying safety and novelty filters."""
         fresh_articles: List[str] = []
         exclude_keywords = exclude_keywords or []
-        print(f"📡 Scanning {len(self.rss_feeds)} AI & Tech RSS feeds for fresh articles...")
+        print(f"📡 Toplam {len(self.rss_feeds)} teknoloji ve yapay zeka RSS kaynağından son haberler taranıyor...")
 
         forbidden_keywords = [
             "war", "kill", "murder", "suicide", "shooting", "attack", "terror", 
             "sexual", "porn", "gore", "deadly", "explosion", "military", "crime", 
-            "death", "assault", "violence", "conflict", "bomb", "hostage"
+            "death", "assault", "violence", "conflict", "bomb", "savaş", "cinayet",
+            "ölüm", "saldırı", "terör", "şiddet", "patlama"
         ]
 
         seen_titles = set()
@@ -47,7 +54,9 @@ class ContentGenerator:
                 parsed = feedparser.parse(feed_url)
                 for entry in parsed.entries[:8]:
                     title = entry.get("title", "").strip()
-                    summary = entry.get("summary", "").strip()
+                    summary = entry.get("summary", "") or entry.get("description", "")
+                    # Clean HTML tags
+                    summary = re.sub(r'<[^>]+>', '', summary).strip()
                     combined_text = f"{title} {summary}".lower()
                     
                     if any(bad_word in combined_text for bad_word in forbidden_keywords):
@@ -58,311 +67,138 @@ class ContentGenerator:
 
                     if title and title.lower() not in seen_titles:
                         seen_titles.add(title.lower())
-                        clean_item = f"• Title: {title}\n  Summary: {summary[:250]}"
+                        clean_item = f"• Başlık: {title}\n  Özet: {summary[:300]}"
                         fresh_articles.append(clean_item)
             except Exception as e:
-                print(f"⚠️ Warning: Failed to parse feed {feed_url}: {e}")
+                print(f"⚠️ RSS ayrıştırma uyarısı ({feed_url}): {e}")
 
         if not fresh_articles:
             return ""
 
-        return "\n\n".join(fresh_articles[:20])
+        return "\n\n".join(fresh_articles[:15])
 
-    def generate_script(self, raw_news_context: str) -> Dict[str, Any]:
-        """Generates a lively B2 English educational news script targeting 1400-1500 words for an exact 7.5-8 min audio duration."""
-        print("🤖 Prompting DeepSeek-V3 for a 1400-1500 word AI & Tech B2 English monologue script...")
+    def generate_dialogue_script(self, raw_news_context: str, recent_topics: List[str] = None) -> Dict[str, Any]:
+        """Generates engaging Turkish podcast dialogue (Ahmet & Emel) with striking headlines & summaries for Slack and RSS."""
+        print("🤖 Türkçe 2-Sunuculu (Ahmet & Emel) podcast metni ve çarpıcı haber özetleri üretiliyor...")
+        today_date_str = datetime.date.today().strftime('%d.%m.%Y')
 
         system_prompt = (
-            "You are a top-tier English language educator and daily technology podcast host. "
-            "Your task is to write an engaging, lively, and articulate daily AI and technology news monologue script for intermediate (B2) learners.\n\n"
-            "CRITICAL MANDATES:\n"
-            "1. TOPIC FOCUS: Focus EXCLUSIVELY on Artificial Intelligence (AI), Machine Learning, Software Innovations, Robotics, and Future Tech.\n"
-            "2. SPOTIFY SAFETY MANDATE: Strictly produce 100% Spotify-compliant, family-friendly (PG) content. NEVER include news, references, or vocabulary about war, military conflict, suicide, murder, crime, violence, or adult/sexual themes.\n"
-            "3. TARGET LENGTH: STRICTLY WRITE BETWEEN 1400 AND 1500 WORDS TOTAL. Spoken audio reaches 7.5 to 8.0 minutes.\n"
-            "4. GREETING & INTRO: Start immediately with a friendly greeting and date. NO formal course or lesson intros.\n"
-            "5. NO B2 LEVEL MENTIONS: Never say 'B2 level' or 'for B2 learners' in the script.\n"
-            "6. STRUCTURE: Select 6-8 intriguing AI and technology news stories. Explain full context, tech significance, and vocabulary.\n"
-            "7. NO SPECIAL CHARACTERS: Write plain, clear English sentences without asterisks, brackets, or markdown formatting.\n"
-            "8. VOCABULARY HIGHLIGHTS: In each story, naturally introduce and explain 1-2 advanced terms (e.g., 'pivotal', 'unprecedented', 'resilience') in plain words.\n"
-            "9. SUMMARY BLOCK: At the very end of your response, output a structured bulleted summary of all news items and a Key Vocabulary list."
+            "Sen profesyonel, samimi, dinamik ve bilgili bir teknoloji podcast yapımcısısın.\n"
+            "Görevin: Günün en önemli yapay zeka ve teknoloji haberlerini analiz ederek hem dinleyicileri ekrana/kulaklığa bağlayan "
+            "doğal bir Türkçe podcast diyalog metni (Sunucular: Ahmet ve Emel) hazırlamak hem de her haber için Slack ve bültende "
+            "paylaşılacak çarpıcı başlıklar, can alıcı noktalar ve özetler oluşturmaktır.\n\n"
+            "KURALLAR:\n"
+            "1. DİL: %100 akıcı, doğal, samimi Türkçe. Dinleyiciyi sıkan robotik ifadelerden kaçın.\n"
+            "2. SUNUCULAR:\n"
+            "   - 'Ahmet:' (Analitik, vizyoner, teknolojinin perde arkasını aktaran erkek sunucu)\n"
+            "   - 'Emel:' (Meraklı, dinamik, sorular soran ve pratik etkileri sorgulayan kadın sunucu)\n"
+            "3. İÇERİK ODAĞI: Yapay zeka modelleri, yazılım dünyası, çip teknolojileri, robotik ve geleceğin teknolojileri.\n"
+            "4. ÇARPICI BAŞLIKLAR: Her haber için merak uyandıran, vurucu ve net bir başlık (`headline`) ve en can alıcı 2-3 madde (`key_points`) belirle.\n"
+            "5. SÜRE / UZUNLUK: Konuşma metni yaklaşık 900-1100 kelime olmalıdır (yaklaşık 6-7 dakika akıcı konuşma).\n"
+            "6. ÇIKTI FORMATI: Yanıtını SADECE geçerli bir JSON nesnesi olarak ver. Başka hiçbir markdown veya açıklama ekleme.\n"
+            "JSON Şeması:\n"
+            "{\n"
+            '  "title": "Bölümün dikkat çekici ana başlığı",\n'
+            '  "summary": "Bölümün 1-2 cümlelik genel kanca özeti",\n'
+            '  "news_items": [\n'
+            "    {\n"
+            '      "headline": "Çarpıcı ve Vurucu Haber Başlığı",\n'
+            '      "key_points": ["Can alıcı nokta 1", "Can alıcı nokta 2"],\n'
+            '      "summary": "Haberin 2-3 cümlelik net özeti."\n'
+            "    }\n"
+            "  ],\n"
+            '  "todays_topics": "Haber başlıklarının virgülle ayrılmış kısa listesi",\n'
+            '  "script": "Ahmet: Merhaba teknoloji meraklıları! Bugün...\\n\\nEmel: Evet Ahmet, inanılmaz gelişmeler var..."\n'
+            "}"
         )
 
         user_prompt = (
-            f"Here is today's raw AI & Tech news context:\n\n{raw_news_context}\n\n"
-            "Generate a 1400-1500 word lively AI & Technology news monologue script covering the top stories in full detail."
+            f"Tarih: {today_date_str}\n\n"
+            f"Günün Ham Teknoloji & Yapay Zeka Haberleri:\n\n{raw_news_context or 'Günün öne çıkan yapay zeka modelleri, otonom yazılım ajanları ve açık kaynak gelişmeler.'}\n\n"
+            "Lütfen yukarıdaki şemaya tam uyumlu JSON çıktısını üret."
         )
 
         if not self.client:
-            print("⚠️ DeepSeek API key is missing or invalid. Using sample fallback script.")
-            return self._get_fallback_script("monologue")
+            print("ℹ️ LLM API anahtarı bulunamadı, zengin Türkçe örnek podcast şablonu kullanılıyor.")
+            return self._get_fallback_turkish_script()
 
         try:
             response = self.client.chat.completions.create(
-                model="deepseek-chat",
+                model="deepseek-chat" if "deepseek" in str(self.client.base_url) else "gpt-4o-mini",
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}
                 ],
-                temperature=0.6,
-                max_tokens=4096
+                temperature=0.7,
+                response_format={"type": "json_object"}
             )
-            full_content = response.choices[0].message.content.strip()
+            raw_content = response.choices[0].message.content.strip()
+            data = json.loads(raw_content)
+
+            # Ensure required keys
+            if "script" not in data or "news_items" not in data:
+                raise ValueError("JSON output missing required fields")
+
+            return data
         except Exception as e:
-            print(f"⚠️ DeepSeek API call failed ({e}). Using sample fallback script.")
-            return self._get_fallback_script("monologue")
+            print(f"⚠️ LLM üretim hatası ({e}). Fallback şablonuna geçiliyor...")
+            return self._get_fallback_turkish_script()
 
-        lines = full_content.split("\n")
-        title = f"Daily Tech & AI Digest - {datetime.date.today().strftime('%B %d, %Y')}"
+    def generate_script(self, raw_news_context: str) -> Dict[str, Any]:
+        """Generates monologue Turkish podcast script with news highlights."""
+        dialogue_data = self.generate_dialogue_script(raw_news_context)
+        # Convert dialogue to monologue format if needed
+        script_text = dialogue_data.get("script", "")
+        mono_lines = []
+        for line in script_text.splitlines():
+            clean = re.sub(r'^(Ahmet|Emel|Alex|Sarah|Sunucu):\s*', '', line).strip()
+            if clean:
+                mono_lines.append(clean)
         
-        for line in lines[:5]:
-            if line.lower().startswith("title:") or line.lower().startswith("# title:"):
-                title = line.split(":", 1)[1].strip().replace("#", "").strip()
-                break
+        dialogue_data["script"] = "\n\n".join(mono_lines)
+        return dialogue_data
 
-        summary_bulletin = self._format_bulletin_summary(full_content)
-
+    def _get_fallback_turkish_script(self) -> Dict[str, Any]:
+        """Provides a comprehensive, realistic Turkish podcast episode with striking news headlines and summaries."""
+        today_date_str = datetime.date.today().strftime('%d.%m.%Y')
         return {
-            "title": title,
-            "script": full_content,
-            "summary": "Daily Artificial Intelligence and technology news monologue for B2 English learners.",
-            "bulletin_summary": summary_bulletin
-        }
-
-    def generate_dialogue_script(self, raw_news_context: str, recent_topics: List[str] = None) -> Dict[str, Any]:
-        """Generates a dynamic 2-host podcast conversation script (Alex & Sarah) targeting 1200-1400 words."""
-        print("🤖 Prompting DeepSeek-V3 for a 2-host AI & Tech conversational podcast script...")
-
-        recent_topics_str = ""
-        if recent_topics:
-            recent_topics_str = "STRICT AVOIDANCE MANDATE: DO NOT repeat or re-cover these recent topics:\n" + "\n".join([f"- {t}" for t in recent_topics[:10]]) + "\n\n"
-
-        system_prompt = (
-            "You are a top-tier podcast producer and English language educator creating 'Fluent AI Daily'. "
-            "Your task is to write a dynamic, engaging 2-host daily Artificial Intelligence and Technology news podcast conversation script that immerses English learners in natural, fluent, high-level English.\n\n"
-            "CRITICAL MANDATES:\n"
-            "1. TOPIC FOCUS: Focus EXCLUSIVELY on Artificial Intelligence (AI), Machine Learning, Tech Startups, Software Innovations, Robotics, and Future Tech.\n"
-            f"{recent_topics_str}"
-            "2. SPOTIFY SAFETY MANDATE: Strictly produce 100% Spotify-compliant, family-friendly (PG) content. NEVER include news, references, or vocabulary about war, military conflict, suicide, murder, crime, violence, or adult/sexual themes.\n"
-            "3. HOST ROLES & DYNAMICS: The co-hosts are Alex (Host A - energetic, curious interviewer) and Sarah (Host B - knowledgeable, articulate tech insider).\n"
-            "4. FORMAT & TURN STRUCTURE: Format strictly line-by-line using speaker labels: 'Alex: ...' and 'Sarah: ...'. Structure the episode into 22 to 26 dynamic, engaging alternating conversational turns (approx. 45-65 words per turn) with lively reactions, natural questions, and engaging back-and-forth banter.\n"
-            "5. TARGET LENGTH: WRITE BETWEEN 1200 AND 1400 WORDS TOTAL for an optimal 8 to 10 minute spoken audio duration.\n"
-            "6. NATURAL VOCABULARY CLARIFICATIONS: Whenever advanced tech concepts or rich vocabulary terms (e.g., 'pivotal', 'latency', 'paradigm shift', 'consolidation', 'autonomous') are introduced, the other co-host naturally reinforces or rephrases the meaning with a smooth synonym without breaking conversational flow (e.g., 'Right, a crucial turning point for developers...').\n"
-            "7. PHRASAL VERBS & IDIOMS: Naturally weave 4-5 high-value conversational tech/business phrasal verbs and idioms throughout the dialogue (e.g., 'roll out', 'double down on', 'iron out', 'scale up', 'bridge the gap').\n"
-            "8. 'PHRASE OF THE DAY' CLOSING SEGMENT: In the final 30-40 seconds of the episode before signing off, Alex asks: 'Before we sign off today, Sarah, what's your top phrase of the day from our discussion?' Sarah highlights 1 memorable idiom/phrase with a quick 1-sentence real-world takeaway, followed by an upbeat friendly sign-off.\n"
-            "9. NO LEVEL LABELS: Never say 'B2 level' or 'for English learners' in the script—keep the immersion 100% authentic and conversational.\n"
-            "10. NO SPECIAL CHARACTERS: Write clean, plain English sentences without markdown formatting like asterisks or brackets."
-        )
-
-        user_prompt = (
-            f"Here is today's raw AI & Tech news context:\n\n{raw_news_context}\n\n"
-            "CRITICAL LENGTH MANDATE: Write a full, in-depth 1300 to 1450 words conversational dialogue podcast script (Alex & Sarah). "
-            "Cover 5-6 major stories in rich, engaging detail with thorough analysis and explanations so the audio duration reaches exactly 8 to 10 minutes."
-        )
-
-        full_content = ""
-        if self.client:
-            try:
-                response = self.client.chat.completions.create(
-                    model="deepseek-chat",
-                    messages=[
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": user_prompt}
+            "title": f"M1 Podcast - Yapay Zeka Çağında Yeni Dönem ({today_date_str})",
+            "summary": "Yeni nesil yapay zeka ajanları kod yazma süreçlerini dönüştürürken, açık kaynak modeller ve kuantum hesaplamada çığır açan yenilikler gündemde.",
+            "todays_topics": "Otonom Yazılım Ajanları, Açık Kaynak LLM Devrimi, Yeni Nesil Çip Mimarileri",
+            "news_items": [
+                {
+                    "headline": "Otonom AI Mühendisleri: Yazılım Geliştirme Süreçleri Baştan Yazılıyor",
+                    "key_points": [
+                        "Yapay zeka modelleri artık hata ayıklamadan deploy aşamasına kadar tüm döngüyü yönetiyor",
+                        "Geliştirici ekiplerinin verimliliğinde %40'a varan artış ölçüldü"
                     ],
-                    temperature=0.7,
-                    max_tokens=4096
-                )
-                full_content = response.choices[0].message.content.strip()
-            except Exception as e:
-                print(f"⚠️ DeepSeek API call failed ({e}). Attempting Google Gemini live fallback...")
-
-        # Live Google Gemini Fallback if DeepSeek is unavailable
-        if not full_content:
-            full_content = self._generate_gemini_live_script(system_prompt, user_prompt)
-
-        # Fallback to local script if all LLMs fail
-        if not full_content:
-            return self._get_fallback_script("dialogue")
-
-        title = f"Fluent AI Daily - {datetime.date.today().strftime('%B %d, %Y')}"
-        ch_data = self.generate_dynamic_description(full_content)
-        summary_bulletin = self._format_bulletin_summary(full_content)
-
-        return {
-            "title": title,
-            "script": full_content,
-            "summary": ch_data["summary"],
-            "todays_topics": ch_data["todays_topics"],
-            "bulletin_summary": summary_bulletin
+                    "summary": "Son yayınlanan kıyaslama testlerine göre yeni nesil yapay zeka kodlama ajanları, karmaşık yazılım mimarilerini analiz edip bağımsız olarak test yazabiliyor ve güvenlik açıklarını yamayabiliyor."
+                },
+                {
+                    "headline": "Açık Kaynak Modellerde Performans Patlaması: Kapalı Sistemlere Büyük Meydan Okuma",
+                    "key_points": [
+                        "Cihaz üzerinde (on-device) çalışan optimize modeller standart dizüstü bilgisayarlarda çalışıyor",
+                        "Gizlilik odaklı yerel çözümlere talep katlanarak artıyor"
+                    ],
+                    "summary": "Açık ağırlıklı yeni modeller, kaynak tüketimini yarı yarıya düşürürken mantık yürütme ve problem çözme testlerinde tescilli büyük modellere yaklaştı."
+                },
+                {
+                    "headline": "Yeni Nesil Nöromorfik Çipler: Enerji Tüketiminde 10 Kat Verimlilik",
+                    "key_points": [
+                        "İnsan beyninin sinaps yapısını taklit eden yeni donanımlar tanıtıldı",
+                        "Veri merkezlerinin yüksek elektrik tüketimine sürdürülebilir alternatif"
+                    ],
+                    "summary": "Donanım üreticileri, yapay zeka modellerini mikrosaniye seviyesinde gecikmeyle ve geleneksel GPU'lara kıyasla onda bir enerjiyle çalıştıran yeni mimarilerini duyurdu."
+                }
+            ],
+            "script": (
+                "Ahmet: Merhaba değerli teknoloji meraklıları! M1 Podcast'e hepiniz hoş geldiniz. Bugün teknoloji ve yapay zeka dünyasında gerçekten baş döndürücü gelişmeler var.\n\n"
+                "Emel: Kesinlikle Ahmet! Özellikle yazılım mühendisliğini kökten değiştiren otonom yapay zeka ajanları ve açık kaynak dünyasındaki son hamleler bugün gündemimizin ilk sırasında.\n\n"
+                "Ahmet: İlk çarpıcı haberimizle başlayalım. Artık sadece kod tamamlayan asistanlar değil; projenin tamamını kavrayan, hataları bulan, testleri yazıp sistemi yayına alan tam teşekküllü otonom yazılım ajanları devri başladı. Yapılan son bağımsız ölçümlerde bu sistemlerin geliştirici ekiplerin hızını neredeyse ikiye katladığı görüldü.\n\n"
+                "Emel: Bu durum yazılımcıların rolünü bir kod yazıcısından bir sistem mimarı ve denetleyicisine dönüştürüyor aslında. Diğer yandan açık kaynak dünyasında da inanılmaz bir hareketlilik var. Artık kendi bilgisayarınızda, hiçbir veriyi buluta göndermeden çalıştırabileceğiniz kompakt ve güçlü modeller kapalı dev modellere kafa tutuyor.\n\n"
+                "Ahmet: Gizlilik ve veri egemenliği açısından bu devrim niteliğinde bir adım Emel. Şirketler artık hassas verilerini dışarıya çıkarmadan kurum içi yapay zeka çözümlerini güvenle kurabiliyor.\n\n"
+                "Emel: Donanım tarafında ise yeni nesil nöromorfik çipler sahneye çıktı. İnsan beyninin çalışma prensibini taklit eden bu yeni mimariler, devasa veri merkezlerinin enerji krizine çare olmayı hedefliyor.\n\n"
+                "Ahmet: Teknoloji dünyasının nabzını tutmaya devam edeceğiz. Günün tüm detayları ve özetleri bültenimizde yer alıyor. Yarın yeni gelişmelerle tekrar görüşmek üzere, hoşça kalın!\n\n"
+                "Emel: Kendinize çok iyi bakın, teknolojiyle kalın!"
+            )
         }
-
-    def _generate_gemini_live_script(self, system_prompt: str, user_prompt: str) -> str:
-        """Live fallback script generation via Google Gemini API."""
-        gemini_api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GEMINI_TTS_API_KEY") or os.getenv("GOOGLE_API_KEY")
-        if not gemini_api_key:
-            return ""
-        try:
-            from google import genai
-            client = genai.Client(api_key=gemini_api_key)
-            combined_prompt = f"{system_prompt}\n\n---\n\n{user_prompt}"
-            for model_name in ["gemini-3.6-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"]:
-                try:
-                    response = client.models.generate_content(
-                        model=model_name,
-                        contents=combined_prompt
-                    )
-                    if response and response.text:
-                        print(f"✨ Successfully generated 1300+ word live script via Google Gemini ('{model_name}')!")
-                        return response.text.strip()
-                except Exception as m_err:
-                    continue
-        except Exception as gemini_err:
-            print(f"⚠️ Gemini live script fallback error: {gemini_err}")
-        return ""
-
-    def generate_dynamic_description(self, script_text: str) -> Dict[str, str]:
-        """Generates a captivating 1-sentence hook followed by a dynamic, distinct summary of today's topics."""
-        # Extract main topics discussed in script
-        import re
-        lines = [l.strip() for l in script_text.splitlines() if l.strip()]
-        opening_context = " ".join(lines[:12])
-
-        # Prompt DeepSeek or Gemini for a punchy 1-sentence hook + 2-sentence summary
-        meta_prompt = (
-            "Based on this podcast script, write an engaging podcast episode description in exactly 2-3 sentences.\n"
-            "1. Sentence 1 MUST be a captivating, intriguing question or punchy hook (e.g. 'Can AI coding tools truly replace developer intuition, or are tech giants racing towards a new frontier?').\n"
-            "2. Sentence 2-3 MUST concisely summarize the actual distinct stories discussed in today's show.\n"
-            "Keep it under 60 words total. Plain text only, no asterisks.\n\n"
-            f"Script sample:\n{opening_context}"
-        )
-
-        try:
-            if self.client:
-                res = self.client.chat.completions.create(
-                    model="deepseek-chat",
-                    messages=[{"role": "user", "content": meta_prompt}],
-                    temperature=0.6,
-                    max_tokens=200
-                )
-                desc = res.choices[0].message.content.strip()
-                if desc and len(desc) > 30:
-                    return {"summary": desc, "todays_topics": desc}
-        except Exception:
-            pass
-
-        # Try Gemini fallback for description
-        gemini_api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GEMINI_TTS_API_KEY") or os.getenv("GOOGLE_API_KEY")
-        if gemini_api_key:
-            try:
-                from google import genai
-                client = genai.Client(api_key=gemini_api_key)
-                g_res = client.models.generate_content(model="gemini-3.6-flash", contents=meta_prompt)
-                if g_res and g_res.text and len(g_res.text.strip()) > 30:
-                    clean_desc = g_res.text.strip()
-                    return {"summary": clean_desc, "todays_topics": clean_desc}
-            except Exception:
-                pass
-
-        # Smart rule-based extraction fallback
-        return {
-            "summary": "Can AI innovations reshape the future faster than we can adapt? In today's episode, Alex and Sarah explore the latest artificial intelligence breakthroughs, tech startup acquisitions, and pivotal software engineering trends in clear, natural English.",
-            "todays_topics": "In today's episode, Alex and Sarah explore the latest artificial intelligence breakthroughs, tech startup acquisitions, and pivotal software engineering trends in clear, natural English."
-        }
-
-    def extract_timed_sentences(self, script_text: str, total_duration_seconds: float = 505.0, intro_offset: float = 5.3) -> List[Dict[str, Any]]:
-        """Extracts turn-aware, character-weighted sentence timestamps calibrated after intro music."""
-        import re
-        raw_blocks = [b.strip() for b in script_text.split('\n\n') if b.strip()]
-        turns_data = []
-        total_raw_weight = 0.0
-
-        for b in raw_blocks:
-            speaker = 'Alex' if b.startswith('Alex:') else ('Sarah' if b.startswith('Sarah:') else 'Alex')
-            clean_turn_text = re.sub(r'^(Alex|Sarah):\s*', '', b).strip()
-            s_list = [s.strip() for s in re.split(r'(?<=[.!?])\s+', clean_turn_text) if len(s.strip()) > 1]
-            if not s_list and clean_turn_text:
-                s_list = [clean_turn_text]
-
-            turn_sentences = []
-            turn_weight = 0.0
-            for s in s_list:
-                char_count = len(s)
-                weight = (char_count / 15.0) + 0.35
-                turn_sentences.append({'speaker': speaker, 'text': s, 'weight': weight})
-                turn_weight += weight
-
-            turn_weight += 0.5
-            turns_data.append({'speaker': speaker, 'sentences': turn_sentences, 'turn_weight': turn_weight})
-            total_raw_weight += turn_weight
-
-        # Speech duration between intro (5.3s) and outro (6.3s)
-        total_speech_sec = max(30.0, total_duration_seconds - intro_offset - 6.3) if total_duration_seconds > (intro_offset + 10) else total_duration_seconds
-        scale_factor = total_speech_sec / total_raw_weight if total_raw_weight > 0 else 1.0
-        cum_time = intro_offset
-        timed_sentences = []
-
-        for t in turns_data:
-            for s in t['sentences']:
-                dur = s['weight'] * scale_factor
-                st = cum_time
-                en = cum_time + dur
-                m = int(st // 60)
-                sec = int(st % 60)
-                timed_sentences.append({
-                    'speaker': s['speaker'],
-                    'text': s['text'],
-                    'start_sec': round(st, 1),
-                    'end_sec': round(en, 1),
-                    'duration': round(dur, 1),
-                    'time_formatted': f'{m:02d}:{sec:02d}'
-                })
-                cum_time += dur
-            cum_time += 0.5 * scale_factor
-
-        return timed_sentences
-
-    def _get_fallback_script(self, script_type: str) -> Dict[str, Any]:
-        today_formatted = datetime.date.today().strftime('%B %d, %Y')
-        if script_type == "dialogue":
-            sample_file = os.path.join("output", "sample_dialogue_script.txt")
-            if os.path.exists(sample_file):
-                with open(sample_file, "r", encoding="utf-8") as f:
-                    content = f.read()
-            else:
-                content = (
-                    "Alex: Welcome to AI Pulse Daily! I'm Alex, joined by Sarah.\n"
-                    "Sarah: Thanks Alex! Today we have exciting tech news about AI reasoning and autonomous agents.\n"
-                    "Alex: Absolutely. Researchers have introduced new models capable of full-stack software development.\n"
-                    "Sarah: Exactly. It opens up brand new possibilities for developers around the world.\n"
-                    "Alex: Thanks for tuning in today, stay curious!"
-                )
-            return {
-                "title": f"Fluent AI Daily - {today_formatted}",
-                "script": content,
-                "summary": "Daily conversational podcast covering the latest artificial intelligence breakthroughs, tech startups, and software engineering in clear, articulate English.",
-                "bulletin_summary": "<p>Today's AI and Tech developments.</p>"
-            }
-        else:
-            return {
-                "title": f"Fluent AI Daily (Monologue) - {today_formatted}",
-                "script": "Hello listeners! Welcome to today's AI and Tech digest. Today we explore developments in artificial intelligence, robotics, and software innovation.",
-                "summary": "Daily conversational podcast covering the latest artificial intelligence breakthroughs, tech startups, and software engineering in clear, articulate English.",
-                "bulletin_summary": "<p>Daily AI news summary.</p>"
-            }
-
-    def _format_bulletin_summary(self, script_text: str) -> str:
-        """Formats the script into an attractive HTML email summary block."""
-        paragraphs = [p.strip() for p in script_text.split("\n\n") if p.strip()]
-        
-        html = "<h3 style='color: #1e3c72; border-bottom: 2px solid #1e3c72; padding-bottom: 5px;'>📰 Today's News Headlines</h3><ul>"
-        
-        stories_count = 0
-        for p in paragraphs:
-            if any(p.lower().startswith(prefix) for prefix in ["hello", "welcome", "title:"]):
-                continue
-            if len(p) > 60 and stories_count < 8:
-                first_sentence = p.split(".")[0] + "."
-                html += f"<li style='margin-bottom: 10px;'><strong>Headline:</strong> {first_sentence}</li>"
-                stories_count += 1
-
-        html += "</ul>"
-        return html
