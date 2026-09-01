@@ -1,126 +1,47 @@
 <?xml version="1.0" ?>
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <atom:link href="https://monurium.github.io/daily-podcast-generator/podcast.xml" rel="self" type="application/rss+xml"/>
-    <title>Fluent AI Daily</title>
-    <link>https://monurium.github.io/daily-podcast-generator</link>
-    <language>en-us</language>
-    <description>Master English with daily AI news! Engaging conversational podcast covering the latest artificial intelligence breakthroughs, tech startups, and software engineering in clear, articulate English.</description>
-    <itunes:author>Monurium</itunes:author>
-    <itunes:summary>Master English with daily AI news! Engaging conversational podcast covering the latest artificial intelligence breakthroughs, tech startups, and software engineering in clear, articulate English.</itunes:summary>
+    <atom:link href="https://monurium.github.io/m1-podcast-generator/podcast.xml" rel="self" type="application/rss+xml"/>
+    <title>M1 Podcast - Günlük Yapay Zeka &amp; Teknoloji Bülteni</title>
+    <link>https://monurium.github.io/m1-podcast-generator</link>
+    <language>tr-TR</language>
+    <description>Günün en sıcak yapay zeka ve teknoloji gelişmelerini, çarpıcı haber özetleri ve derinlemesine analizlerle sunan günlük Türkçe podcast.</description>
+    <itunes:author>M1</itunes:author>
+    <itunes:summary>Günün en sıcak yapay zeka ve teknoloji gelişmelerini, çarpıcı haber özetleri ve derinlemesine analizlerle sunan günlük Türkçe podcast.</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:owner>
-      <itunes:name>Monurium</itunes:name>
+      <itunes:name>M1</itunes:name>
       <itunes:email>mehmetonurberber@gmail.com</itunes:email>
     </itunes:owner>
     <itunes:category text="Technology">
       <itunes:category text="Tech News"/>
     </itunes:category>
-    <itunes:image href="https://monurium.github.io/daily-podcast-generator/cover.jpg"/>
+    <itunes:image href="https://monurium.github.io/m1-podcast-generator/cover.jpg"/>
     <image>
-      <url>https://monurium.github.io/daily-podcast-generator/cover.jpg</url>
-      <title>Fluent AI Daily</title>
-      <link>https://monurium.github.io/daily-podcast-generator</link>
+      <url>https://monurium.github.io/m1-podcast-generator/cover.jpg</url>
+      <title>M1 Podcast - Günlük Yapay Zeka &amp; Teknoloji Bülteni</title>
+      <link>https://monurium.github.io/m1-podcast-generator</link>
     </image>
     <item>
-      <title>Fluent AI Daily - September 01, 2026: AI Innovations &amp; Agents</title>
-      <description>Alex and Sarah unpack the latest breakthroughs in artificial intelligence, autonomous agents, and enterprise software in clear, articulate English.</description>
-      <pubDate>Tue, 01 Sep 2026 11:20:26 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260901_podcast_9ff2ab</guid>
-      <itunes:author>Monurium</itunes:author>
-      <itunes:duration>00:08:18</itunes:duration>
+      <title>M1 Podcast - Microsoft'un Yapay Zeka Hamlesi &amp; Copilot Devrimi (01.09.2026)</title>
+      <description>Microsoft'un yeni nesil Copilot ajanları, Windows 11 Copilot+ PC yenilikleri, Phi-4 küçük dil modelleri ve Azure AI altyapısındaki son dev gelişmeler masaya yatırılıyor.
+⚡ GÜNÜN ÇARPICI HABERLERİ:
+1. Microsoft Copilot Workspace: Bağımsız Çalışan Otonom İş Ajanları Tanıtıldı
+Microsoft, kurumsal üretkenliği yeni bir seviyeye taşıyan Copilot Workspace ekosistemini duyurdu. Yeni sistem, karmaşık projeleri adımlara bölerek ekip arkadaşı gibi bağımsız çalışabiliyor.
+Önemli Noktalar: Copilot artık sadece komut bekleyen bir sohbet botu değil, arka planda görevleri tamamlayan otonom bir iş ortağı • Word, Excel, PowerPoint ve GitHub arasında çapraz iş akışlarını otomatik yürütüyor
+2. Windows 11 Copilot+ PC ve Yerel NPU Gücü: Buluta İhtiyaç Duymadan AI Deneyimi
+Microsoft, yeni nesil Surface ve iş ortağı dizüstü bilgisayarlarda yerel yapay zeka hızlandırmasını standart hale getirdi. Bu sayede veriler cihaz dışına çıkmadan yüksek performanslı analiz yapılabiliyor.
+Önemli Noktalar: 40+ TOPS NPU gücüyle tüm işlemler cihaz üzerinde yerel olarak işleniyor • Gelişmiş Windows Recall ve canlı altyazı çevirisi sıfır gecikmeyle çalışıyor
+3. Microsoft Phi-4 ve Küçük Dil Modellerinde Yeni Standart: Verimlilik Zirvede
+Microsoft Araştırma ekibi tarafından geliştirilen Phi-4 modeli, matematiksel akıl yürütme ve kodlama kıyaslamalarında açık kaynak dünyasında yeni bir rekora imza attı.
+Önemli Noktalar: Çok daha az parametreyle devasa modellerin mantık yürütme skorlarına ulaşıldı • Mobil ve gömülü sistemlerde doğrudan çalışabilecek mimari</description>
+      <itunes:summary>Microsoft'un yeni nesil Copilot ajanları, Windows 11 Copilot+ PC yenilikleri, Phi-4 küçük dil modelleri ve Azure AI altyapısındaki son dev gelişmeler masaya yatırılıyor.</itunes:summary>
+      <pubDate>Tue, 01 Sep 2026 15:55:06 GMT</pubDate>
+      <guid isPermaLink="false">ep_20260901_microsoft_a6aa7b</guid>
+      <itunes:author>M1</itunes:author>
+      <itunes:duration>00:00:48</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/daily-podcast-generator/episodes/ep_20260901_podcast_9ff2ab.mp3" length="7973376" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>Fluent AI Daily - August 23, 2026</title>
-      <description>What happens when your professor is a digital clone, and why is OpenAI suddenly asking for stricter AI rules? Today, we unpack Harvard’s new AI avatar coaches for executive students, OpenAI’s surprising support for California’s safety bill, and a study exposing frontier labs’ missing plans for containing rogue AI models.</description>
-      <pubDate>Sun, 23 Aug 2026 06:21:37 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260823_podcast_2d5192</guid>
-      <itunes:author>Monurium</itunes:author>
-      <itunes:duration>00:08:18</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/daily-podcast-generator/episodes/ep_20260823_podcast_2d5192.mp3" length="7973376" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>Fluent AI Daily - August 22, 2026</title>
-      <description>Why are investors throwing millions at a startup in just 48 hours, and can businesses stay loyal to AI labs when models keep shifting? Today, we unpack Rillet’s lightning-fast unicorn round, OpenAI’s surprising enterprise gains over Anthropic, and Nvidia’s strategic bet on data center infrastructure.</description>
-      <pubDate>Sat, 22 Aug 2026 06:20:00 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260822_podcast_847808</guid>
-      <itunes:author>Monurium</itunes:author>
-      <itunes:duration>00:03:37</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/daily-podcast-generator/episodes/ep_20260822_podcast_847808.mp3" length="3472107" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>Fluent AI Daily - August 21, 2026</title>
-      <description>Are tech giants losing their grip on enterprise loyalty as AI capabilities rapidly evolve? Today, we unpack volatile corporate AI spending, OpenAI pausing its Astra model over safety risks, and major breakthroughs in adaptable robotics. Plus, we examine why digital content watermarks are proving so difficult to enforce.</description>
-      <pubDate>Fri, 21 Aug 2026 11:45:38 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260821_podcast_0065f6</guid>
-      <itunes:author>Monurium</itunes:author>
-      <itunes:duration>00:09:37</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/daily-podcast-generator/episodes/ep_20260821_podcast_0065f6.mp3" length="9247872" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>Fluent AI Daily - August 20, 2026</title>
-      <description>Daily conversational podcast covering the latest artificial intelligence breakthroughs, tech startups, and software engineering news in clear, articulate English.</description>
-      <pubDate>Thu, 20 Aug 2026 06:24:23 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260820_podcast_d0a075</guid>
-      <itunes:author>Monurium</itunes:author>
-      <itunes:duration>00:09:36</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/daily-podcast-generator/episodes/ep_20260820_podcast_d0a075.mp3" length="4614846" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>Fluent AI Daily - August 19, 2026</title>
-      <description>Daily conversational podcast covering the latest artificial intelligence breakthroughs, tech startups, and software engineering news in clear, articulate English.</description>
-      <pubDate>Wed, 19 Aug 2026 06:23:34 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260819_podcast_479aae</guid>
-      <itunes:author>Monurium</itunes:author>
-      <itunes:duration>00:10:16</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/daily-podcast-generator/episodes/ep_20260819_podcast_479aae.mp3" length="4932090" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>Fluent AI Daily - August 18, 2026</title>
-      <description>Daily conversational podcast covering the latest artificial intelligence breakthroughs, tech startups, and software engineering news in clear, articulate English.</description>
-      <pubDate>Tue, 18 Aug 2026 06:22:44 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260818_podcast_14c925</guid>
-      <itunes:author>Monurium</itunes:author>
-      <itunes:duration>00:11:00</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/daily-podcast-generator/episodes/ep_20260818_podcast_14c925.mp3" length="5280066" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>Fluent AI Daily - August 17, 2026</title>
-      <description>Daily conversational podcast covering the latest artificial intelligence breakthroughs, tech startups, and software engineering news in clear, articulate English.</description>
-      <pubDate>Mon, 17 Aug 2026 06:30:14 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260817_podcast_807117</guid>
-      <itunes:author>Monurium</itunes:author>
-      <itunes:duration>00:09:59</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/daily-podcast-generator/episodes/ep_20260817_podcast_807117.mp3" length="4795266" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>Fluent AI Daily - August 16, 2026</title>
-      <description>Today's Topics: In today's episode, Alex and Sarah explore Anthropic's new AI watermarking technology, SpaceX's major acquisition of AI coding assistant Cursor, essential security tips to audit your AI accounts, breakthroughs with the Unitree G1 humanoid robot, and record-breaking investments in clean fusion energy.</description>
-      <pubDate>Sun, 16 Aug 2026 06:20:36 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260816_podcast_e865d2</guid>
-      <itunes:author>Monurium</itunes:author>
-      <itunes:duration>00:08:25</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/daily-podcast-generator/episodes/ep_20260816_podcast_e865d2.mp3" length="4040670" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>Fluent AI Daily - August 15, 2026</title>
-      <description>Today's Topics: In this episode, Alex and Sarah dive into OpenAI's latest reasoning models, autonomous agent architectures, next-gen hardware acceleration, and pivotal software engineering breakthroughs.</description>
-      <pubDate>Sat, 15 Aug 2026 21:02:40 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260815_daily_tech_ai_dialogue</guid>
-      <itunes:author>Monurium</itunes:author>
-      <itunes:duration>00:08:08</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/daily-podcast-generator/episodes/ep_20260815_daily_tech_ai_dialogue.mp3" length="3904266" type="audio/mpeg"/>
+      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_microsoft_a6aa7b.mp3" length="776256" type="audio/mpeg"/>
     </item>
   </channel>
 </rss>

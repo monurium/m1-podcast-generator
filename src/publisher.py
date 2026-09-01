@@ -62,6 +62,7 @@ class Publisher:
             "duration_formatted": episode_meta["duration_formatted"],
             "duration_seconds": episode_meta.get("duration_seconds", 0),
             "bulletin_summary": episode_meta.get("bulletin_summary", episode_meta["summary"]),
+            "news_items": episode_meta.get("news_items", []),
             "chapters": episode_meta.get("chapters", []),
             "vocabulary": episode_meta.get("vocabulary", []),
             "sentences": episode_meta.get("sentences", [])
