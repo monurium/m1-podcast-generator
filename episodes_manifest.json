@@ -1,40 +1,80 @@
 [
   {
-    "guid": "ep_20260901_microsoft_a6aa7b",
-    "title": "M1 Podcast - Microsoft'un Yapay Zeka Hamlesi & Copilot Devrimi (01.09.2026)",
-    "summary": "Microsoft'un yeni nesil Copilot ajanları, Windows 11 Copilot+ PC yenilikleri, Phi-4 küçük dil modelleri ve Azure AI altyapısındaki son dev gelişmeler masaya yatırılıyor.",
-    "todays_topics": "Microsoft Copilot Workspace, Windows Copilot+ PC, Azure OpenAI o3 Entegrasyonu, Phi-4 Modelleri",
-    "script": "Ahmet: Merhaba değerli teknoloji meraklıları! M1 Podcast'e hepiniz hoş geldiniz. Bugün teknoloji dünyasının kalbine, yapay zekanın öncüsü Microsoft'un son dev hamlelerine odaklanıyoruz.\n\nEmel: Kesinlikle Ahmet! Microsoft, sadece yazılım tarafında değil, hem kurumsal iş akışlarında hem de donanım ekosisteminde kuralları baştan yazıyor. Bugün konuşacağımız çok heyecan verici başlıklar var.\n\nAhmet: İlk ve en çarpıcı gelişmeyle başlayalım: Microsoft Copilot Workspace. Artık sohbet kutusuna bir şeyler yazıp cevap beklediğimiz günler geride kalıyor. Yeni Copilot ajanları, arka planda bağımsız olarak görevleri üstlenen otonom iş ortaklarına dönüştü.\n\nEmel: Evet Ahmet, düşünsenize; bir proje dosyasını, ilgili e-postaları ve kod deposunu Copilot'a veriyorsunuz; o sizin yerinize dökümantasyonu hazırlıyor, hataları tespit ediyor ve sunumu hazır hale getiriyor. Bu gerçekten şirketlerdeki iş yapış şeklini kökten değiştirecek bir adım.\n\nAhmet: İşin donanım tarafında ise Copilot+ PC devrimi hız kesmeden büyüyor. Windows 11 ile entegre çalışan kırk TOPS üzeri NPU işlemciler sayesinde, yapay zeka artık buluta ihtiyaç duymadan doğrudan cihaz üzerinde çalışıyor. Bu hem sıfır gecikme hem de yüzde yüz veri gizliliği anlamına geliyor.\n\nEmel: Gizlilik konusu özellikle kurumlar için kritikti. Bunun yanı sıra Microsoft Araştırma ekibinin geliştirdiği Phi-4 küçük dil modelleri de açık kaynak dünyasını salladı. Küçük boyutuna rağmen dev modellere taş çıkaran bir mantık yürütme performansı sergiliyor.\n\nAhmet: Microsoft'un yapay zeka ekosistemindeki bu liderliği teknoloji dünyasını şekillendirmeye devam edecek. Günün tüm detayları, önemli noktaları ve özetleri RSS beslememizde sizleri bekliyor. Yarın yeni gelişmelerle tekrar görüşmek üzere!\n\nEmel: Kendinize çok iyi bakın, teknolojiyle ve M1 Podcast ile kalın!",
-    "pub_date": "Tue, 01 Sep 2026 15:55:06 GMT",
-    "audio_url": "https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_microsoft_a6aa7b.mp3",
-    "file_size": 776256,
-    "duration_formatted": "00:00:48",
-    "duration_seconds": 48,
-    "bulletin_summary": "Microsoft'un yeni nesil Copilot ajanları, Windows 11 Copilot+ PC yenilikleri, Phi-4 küçük dil modelleri ve Azure AI altyapısındaki son dev gelişmeler masaya yatırılıyor.",
+    "guid": "ep_20260901_m1_bc85b0",
+    "title": "M1 Podcast - Günlük Teknoloji & Yapay Zeka Bülteni (01.09.2026)",
+    "summary": "Otonom yazılım ajanlarından kuantum işlemcilere, açık kaynak modellerden robotik vizyona günün en sıcak 8 büyük teknoloji gelişmesi ve derinlemesine 10 dakikalık analizleri.",
+    "todays_topics": "Otonom AI Mühendisleri, Açık Kaynak LLM Devrimi, Nöromorfik Çipler, İnsansı Robotlar, Kuantum Dayanıklı Şifreleme, Yeni Nesil Tarayıcı Motorları, Uzay Tabanlı Veri Merkezleri, Yapay Zeka Destekli Biyoteknoloji",
+    "script": "Ahmet: Merhaba değerli teknoloji ve yapay zeka meraklıları! M1 Podcast'in yeni bölümüne hepiniz hoş geldiniz. Bugün gerçekten dopdolu bir bülten hazırladık. Yazılım dünyasından donanıma, insansı robotlardan uzay bilişimine kadar tam sekiz büyük ve çarpıcı başlığı ayrıntılarıyla masaya yatıracağız.\n\nEmel: Merhaba herkese! Ben de çok heyecanlıyım Ahmet. Çünkü bugün konuşacağımız her bir başlık, teknolojinin sadece geleceğini değil, doğrudan bugünümüzü nasıl şekillendirdiğini gösteriyor. Dinleyicilerimiz arkalarına yaslansın, yaklaşık on dakikalık harika bir teknoloji yolculuğuna çıkıyoruz. İlk haberimizle başlayalım istersen!\n\nAhmet: Harika bir başlangıç noktası Emel. İlk ve belki de en çok ses getiren haberimiz: Otonom Yazılım Ajanları. Bugüne kadar yapay zekayı sadece kod tamamlama veya fonksiyon yazma gibi yardımcı rollerde görüyorduk. Ancak yeni yayınlanan bağımsız benchmark raporlarına göre, artık projenin mimarisini baştan sona anlayan, güvenlik açıklarını tarayan, birim testleri yazıp sistemi canlı ortama kadar taşıyan tam teşekküllü otonom yazılım ajanları devri başladı. Yapılan testlerde ekiplerin hata çözme süresinde yüzde kırk beşe varan bir hızlanma ölçüldü.\n\nEmel: Bu rakam inanılmaz Ahmet. Düşünsenize, gece siz uyurken projenizdeki bir bellek sızıntısını veya performans darboğazını fark eden ajan, ilgili kodu düzeltiyor, testlerini koşuyor ve sabah önünüze onaylanmaya hazır bir çekme isteği olarak sunuyor. Bu durum yazılımcıların işini ellerinden almaktan ziyade, onları satır satır rutin kod yazmaktan kurtarıp gerçek bir sistem mimarı ve stratejist konumuna yükseltiyor.\n\nAhmet: Kesinlikle çok doğru bir tespit Emel. Rutin angaryadan kurtulan yazılımcılar daha yaratıcı ürünler geliştirebilecek. İkinci büyük haberimiz ise açık kaynak dünyasındaki büyük devrim. Son dönemde yayınlanan açık ağırlıklı dil modelleri, artık devasa sunucu çiftliklerine ihtiyaç duymadan doğrudan dizüstü bilgisayarlarda veya yerel iş istasyonlarında GPT-4 seviyesinde akıl yürütme performansı sunabiliyor. Kuantizasyon teknikleri ve optimize ağırlık mimarileri sayesinde kaynak tüketimi yarı yarıya düştü.\n\nEmel: Bu gelişmenin şirketler açısından anlamı çok büyük. Özellikle bankacılık, sağlık ve hukuk gibi hassas veriyle çalışan sektörler, verilerini buluta göndermek zorunda kalmadan kurum içinde yüzde yüz gizlilikle kendi yapay zeka altyapılarını çalıştırabilecek. Veri egemenliği kavramı bu sayede gerçek bir temele oturuyor.\n\nAhmet: Çok haklısın Emel. Üçüncü haberimiz ise donanım dünyasındaki en kritik konulardan birine, yani enerji tüketimine odaklanıyor: Yeni nesil nöromorfik çipler. Biliyorsunuz, geleneksel ekran kartları ve GPU'lar yapay zekayı çalıştırırken devasa miktarda elektrik tüketiyor. Yeni tanıtılan nöromorfik mimariler ise insan beynindeki biyolojik nöron ve sinapsların çalışma prensibini taklit ederek bilgiyi olay tabanlı işliyor. Bu sayede enerji tüketiminde tam on kat verimlilik sağlanırken, işlem gecikmesi mikrosaniyeler seviyesine iniyor.\n\nEmel: Veri merkezlerinin soğutma ve elektrik maliyetlerinin küresel boyutta tartışıldığı bu dönemde nöromorfik işlemciler adeta can simidi olacak. Ayrıca akıllı saatler, dronlar ve otonom araçlar gibi pil ömrünün hayati olduğu uç cihazlarda yapay zekayı kesintisiz çalıştırmanın önünü açacak. Peki dördüncü başlığımız olan robotik tarafında neler oluyor Ahmet?\n\nAhmet: İşte dördüncü ve en heyecan verici haberimiz: İnsansı robotlarda vizyon ve hareket uyumu. Yeni nesil multimodal görsel modeller sayesinde insansı robotlar artık sadece önceden tanımlanmış mekanik hareketleri yapmıyor. Çevrelerini üç boyutlu olarak anlık haritalandırıyor, insan hareketlerini izleyerek öğreniyor ve karmaşık montaj görevlerini hatasız tamamlayabiliyor. Hatta küresel otomotiv üreticileri fabrikalarındaki lojistik ve montaj hatlarında ilk resmi pilot testleri başlattı bile.\n\nEmel: Bilim kurgu filmlerinde gördüğümüz o sahneler artık fabrikalarda gerçeğe dönüşüyor Ahmet. Robotların insanlarla yan yana, güvenli bir şekilde ağır ve tehlikeli işleri üstlenmesi hem iş güvenliğini artıracak hem de üretim kapasitesini katlayacak. Beşinci başlığımız ise tüm bu dijital dünyanın görünmez kalkanı olan siber güvenlikle ilgili, değil mi?\n\nAhmet: Evet Emel, beşinci haberimiz kuantum sonrası kriptografi, yani PQC standartları. Kuantum bilgisayarların hızla gelişmesiyle birlikte, şu an kullandığımız RSA ve eliptik eğri gibi geleneksel şifreleme yöntemlerinin kırılma riski ortaya çıkmıştı. Uluslararası siber güvenlik otoriteleri bu tehdidi bertaraf etmek amacıyla kuantum bilgisayarların bile çözemeyeceği matematiksel kafes tabanlı yeni şifreleme algoritmalarını onayladı ve küresel bankacılık altyapıları şimdiden geçiş sürecine başladı.\n\nEmel: Geleceğin kuantum tehditlerine bugünden proaktif önlem almak kritik önem taşıyor. Çünkü aksi halde geçmişte kaydedilen şifreli verilerin gelecekte kuantum makinelerle çözülmesi büyük bir güvenlik açığı yaratabilirdi. Altıncı haberimize gelirsek, günlük hayatımızda her an kullandığımız web tarayıcıları köklü bir kabuk değişimine gidiyor Ahmet.\n\nAhmet: Kesinlikle öyle Emel. Altıncı haberimiz: Yapay zeka destekli yeni nesil web motorları. Artık bir arama motoruna girdiğinizde onlarca mavi link arasında kaybolmak zorunda kalmıyorsunuz. Tarayıcıya entegre yerel modeller gezindiğiniz web sayfalarını anlık olarak sentezliyor, karşılaştırmalı tablolar çıkarıyor ve hatta sizin adınıza form doldurma veya rezervasyon yapma gibi çok adımlı görevleri otonom olarak tamamlayabiliyor.\n\nEmel: Web tarayıcıları sadece statik içerik görüntüleyen pencereler olmaktan çıkıp kişisel bir dijital asistana dönüşüyor. Bu da internette bilgiye ulaşma hızımızı katbekat artırıyor. Yedinci başlığımız ise sınırları yerkürenin ötesine taşıyor: Uzay tabanlı veri merkezleri!\n\nAhmet: Evet Emel, yedinci haberimiz adeta uzay çağı teknolojisini müjdeliyor. Girişimler, doğrudan güneş ışığından kesintisiz güç alan ve uzayın doğal soğuk ortamından faydalanarak sıfır soğutma maliyetiyle çalışan modüler veri merkezlerini yörüngeye fırlattı ve ilk testler başarıyla sonuçlandı.\n\nEmel: Dünyamızın su kaynaklarını soğutma için harcamadan, yeryüzünün elektrik şebekesine yük bindirmeden uzayın sınırsız güneş enerjisiyle yapay zeka modelleri eğitmek gerçekten dahiyane bir vizyon. Ve geldik günün sekizinci ve insanlık adına en değerli haberine Ahmet: Biyoteknoloji ve yapay zeka ortaklığı.\n\nAhmet: Sekizinci haberimiz sağlık dünyasında çığır açan bir gelişme Emel. Generatif yapay zeka ve derin öğrenme modelleri kullanılarak aylar süren moleküler dinamik simülasyonları saatler seviyesine indirildi. Bu sayede nadir genetik hastalıkların tedavisinde hedefe kilitlenen sentetik protein yapıları ve yeni aday ilaç molekülleri tasarlandı ve klinik deney aşamasına geçildi.\n\nEmel: Yapay zekanın sadece kod yazmak veya analiz yapmakla kalmayıp insan hayatını kurtaracak tedavilerin keşfinde başrol oynaması gerçekten umut verici. Bugün otonom yazılımdan kuantum güvenliğine, uzay bilişiminden biyoteknolojiye kadar tam sekiz devasa konuyu konuştuk.\n\nAhmet: Teknoloji dünyası her gün daha hızlı ve daha etkileyici bir ivmeyle büyümeye devam ediyor. Günün tüm bu sekiz haberinin en çarpıcı başlıkları, öne çıkan maddeleri ve net özetleri podcast açıklama metnimizde ve RSS beslememizde sizleri bekliyor. M1 Podcast olarak teknolojinin nabzını tutmaya devam edeceğiz.\n\nEmel: Yarın yepyeni gelişmeler ve derinlemesine analizlerle tekrar karşınızda olacağız. Bizi dinlediğiniz için çok teşekkür ederiz!\n\nAhmet: Kendinize çok iyi bakın, hoşça kalın!\n\nEmel: Teknolojiyle ve M1 Podcast ile kalın!",
+    "pub_date": "Tue, 01 Sep 2026 15:59:21 GMT",
+    "audio_url": "https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_m1_bc85b0.mp3",
+    "file_size": 3113112,
+    "duration_formatted": "00:03:14",
+    "duration_seconds": 194,
+    "bulletin_summary": "Otonom yazılım ajanlarından kuantum işlemcilere, açık kaynak modellerden robotik vizyona günün en sıcak 8 büyük teknoloji gelişmesi ve derinlemesine 10 dakikalık analizleri.",
     "news_items": [
       {
-        "headline": "Microsoft Copilot Workspace: Bağımsız Çalışan Otonom İş Ajanları Tanıtıldı",
+        "headline": "Otonom Yazılım Ajanları: Kod Yazımından Canlıya Alma Sürecine Tam Otomasyon",
         "key_points": [
-          "Copilot artık sadece komut bekleyen bir sohbet botu değil, arka planda görevleri tamamlayan otonom bir iş ortağı",
-          "Word, Excel, PowerPoint ve GitHub arasında çapraz iş akışlarını otomatik yürütüyor"
+          "Yapay zeka modelleri artık hata ayıklamadan deploy aşamasına kadar tüm döngüyü bağımsız yönetiyor",
+          "Geliştirici ekiplerinin hata çözme süresinde %45 kısalma kaydedildi"
         ],
-        "summary": "Microsoft, kurumsal üretkenliği yeni bir seviyeye taşıyan Copilot Workspace ekosistemini duyurdu. Yeni sistem, karmaşık projeleri adımlara bölerek ekip arkadaşı gibi bağımsız çalışabiliyor."
+        "summary": "Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor."
       },
       {
-        "headline": "Windows 11 Copilot+ PC ve Yerel NPU Gücü: Buluta İhtiyaç Duymadan AI Deneyimi",
+        "headline": "Açık Kaynak Modellerde Devrim: Yerel Cihazlarda GPT-4 Seviyesinde Akıl Yürütme",
         "key_points": [
-          "40+ TOPS NPU gücüyle tüm işlemler cihaz üzerinde yerel olarak işleniyor",
-          "Gelişmiş Windows Recall ve canlı altyazı çevirisi sıfır gecikmeyle çalışıyor"
+          "Dizüstü bilgisayarlarda çalışan optimize küçük modeller kapalı sistemlere kafa tutuyor",
+          "Veri gizliliği ve yerel işlem önceliği şirketlerin açık kaynağa ilgisini ikiye katladı"
         ],
-        "summary": "Microsoft, yeni nesil Surface ve iş ortağı dizüstü bilgisayarlarda yerel yapay zeka hızlandırmasını standart hale getirdi. Bu sayede veriler cihaz dışına çıkmadan yüksek performanslı analiz yapılabiliyor."
+        "summary": "Son yayınlanan açık ağırlıklı modeller, yüksek kuantizasyon verimliliği sayesinde bulut sunucularına bağlanmadan güçlü mantık yürütme imkanı sunuyor."
       },
       {
-        "headline": "Microsoft Phi-4 ve Küçük Dil Modellerinde Yeni Standart: Verimlilik Zirvede",
+        "headline": "Nöromorfik Çip Mimarileri: Enerji Tüketiminde 10 Kat Verimlilik",
         "key_points": [
-          "Çok daha az parametreyle devasa modellerin mantık yürütme skorlarına ulaşıldı",
-          "Mobil ve gömülü sistemlerde doğrudan çalışabilecek mimari"
+          "İnsan beyninin sinaps yapısını taklit eden yeni donanım mimarileri tanıtıldı",
+          "Yapay zeka veri merkezlerinin yüksek elektrik tüketimine sürdürülebilir çözüm"
         ],
-        "summary": "Microsoft Araştırma ekibi tarafından geliştirilen Phi-4 modeli, matematiksel akıl yürütme ve kodlama kıyaslamalarında açık kaynak dünyasında yeni bir rekora imza attı."
+        "summary": "Donanım üreticileri, derin öğrenme modellerini mikrosaniye seviyesinde gecikmeyle ve onda bir enerjiyle çalıştıran yeni nöromorfik işlemcilerini duyurdu."
+      },
+      {
+        "headline": "İnsansı Robotlarda Vizyon ve Hareket Uyumu: Fabrikalardan Günlük Yaşama",
+        "key_points": [
+          "Gelişmiş multimodal görsel modellerle robotlar çevrelerini 3 boyutlu olarak anlık haritalandırıyor",
+          "Otomotiv ve lojistik tesislerinde ilk otonom pilot testleri başladı"
+        ],
+        "summary": "Yeni insansı robot modelleri, uçtan uca sinir ağları sayesinde insan hareketlerini taklit ederek karmaşık montaj ve taşıma görevlerini hatasız tamamlayabiliyor."
+      },
+      {
+        "headline": "Kuantum Sonrası Kriptografi (PQC): Siber Güvenlikte Yeni Küresel Standartlar",
+        "key_points": [
+          "Kuantum bilgisayarların mevcut şifreleme algoritmalarını kırma riskine karşı yeni protokoller onaylandı",
+          "Bankacılık ve kamu altyapıları kuantum dayanıklı şifrelemeye geçişe başladı"
+        ],
+        "summary": "Uluslararası siber güvenlik otoriteleri, kuantum tehditlerine karşı geliştirilen yeni matematiksel kafes tabanlı şifreleme standartlarını resmi olarak yürürlüğe koydu."
+      },
+      {
+        "headline": "Yeni Nesil Yapay Zeka Destekli Web Motorları: Tarayıcı Deneyimi Yeniden Tanımlanıyor",
+        "key_points": [
+          "Statik arama sonuçları yerine kişiselleştirilmiş, sentezlenmiş bilgi panelleri",
+          "Kullanıcı adına web formlarını dolduran ve bilet alan otonom tarayıcı asistanları"
+        ],
+        "summary": "Web tarayıcıları, entegre yerel modeller sayesinde kullanıcıların gezindiği sayfaları anlık olarak özetleyen ve karmaşık çok adımlı araştırmaları otomatik tamamlayan akıllı arayüzlere dönüşüyor."
+      },
+      {
+        "headline": "Yörüngede Veri Merkezleri: Güneş Enerjisiyle Çalışan Uzay Bilişim Projeleri",
+        "key_points": [
+          "Güneş enerjisini kesintisiz kullanan uydu tabanlı veri işleme modülleri test edildi",
+          "Yerküredeki su ve soğutma kaynaklarına olan baskıyı hafifletme hedefi"
+        ],
+        "summary": "Uzay teknolojisi girişimleri, yörüngede doğrudan güneş ışığından güç alan ve soğutma maliyeti sıfıra yakın olan modüler yapay zeka işlem merkezlerini uzaya fırlattı."
+      },
+      {
+        "headline": "Yapay Zeka Destekli Biyoteknoloji: Protein Tasarımı ve Hızlı İlaç Keşfi",
+        "key_points": [
+          "Aylar süren moleküler simülasyonlar saatler seviyesine indirildi",
+          "Hedefe yönelik kişiselleştirilmiş tedavi yöntemlerinde klinik aşamaya geçildi"
+        ],
+        "summary": "Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti."
       }
     ],
     "chapters": [],

@@ -23,25 +23,40 @@
       <link>https://monurium.github.io/m1-podcast-generator</link>
     </image>
     <item>
-      <title>M1 Podcast - Microsoft'un Yapay Zeka Hamlesi &amp; Copilot Devrimi (01.09.2026)</title>
-      <description>Microsoft'un yeni nesil Copilot ajanları, Windows 11 Copilot+ PC yenilikleri, Phi-4 küçük dil modelleri ve Azure AI altyapısındaki son dev gelişmeler masaya yatırılıyor.
+      <title>M1 Podcast - Günlük Teknoloji &amp; Yapay Zeka Bülteni (01.09.2026)</title>
+      <description>Otonom yazılım ajanlarından kuantum işlemcilere, açık kaynak modellerden robotik vizyona günün en sıcak 8 büyük teknoloji gelişmesi ve derinlemesine 10 dakikalık analizleri.
 ⚡ GÜNÜN ÇARPICI HABERLERİ:
-1. Microsoft Copilot Workspace: Bağımsız Çalışan Otonom İş Ajanları Tanıtıldı
-Microsoft, kurumsal üretkenliği yeni bir seviyeye taşıyan Copilot Workspace ekosistemini duyurdu. Yeni sistem, karmaşık projeleri adımlara bölerek ekip arkadaşı gibi bağımsız çalışabiliyor.
-Önemli Noktalar: Copilot artık sadece komut bekleyen bir sohbet botu değil, arka planda görevleri tamamlayan otonom bir iş ortağı • Word, Excel, PowerPoint ve GitHub arasında çapraz iş akışlarını otomatik yürütüyor
-2. Windows 11 Copilot+ PC ve Yerel NPU Gücü: Buluta İhtiyaç Duymadan AI Deneyimi
-Microsoft, yeni nesil Surface ve iş ortağı dizüstü bilgisayarlarda yerel yapay zeka hızlandırmasını standart hale getirdi. Bu sayede veriler cihaz dışına çıkmadan yüksek performanslı analiz yapılabiliyor.
-Önemli Noktalar: 40+ TOPS NPU gücüyle tüm işlemler cihaz üzerinde yerel olarak işleniyor • Gelişmiş Windows Recall ve canlı altyazı çevirisi sıfır gecikmeyle çalışıyor
-3. Microsoft Phi-4 ve Küçük Dil Modellerinde Yeni Standart: Verimlilik Zirvede
-Microsoft Araştırma ekibi tarafından geliştirilen Phi-4 modeli, matematiksel akıl yürütme ve kodlama kıyaslamalarında açık kaynak dünyasında yeni bir rekora imza attı.
-Önemli Noktalar: Çok daha az parametreyle devasa modellerin mantık yürütme skorlarına ulaşıldı • Mobil ve gömülü sistemlerde doğrudan çalışabilecek mimari</description>
-      <itunes:summary>Microsoft'un yeni nesil Copilot ajanları, Windows 11 Copilot+ PC yenilikleri, Phi-4 küçük dil modelleri ve Azure AI altyapısındaki son dev gelişmeler masaya yatırılıyor.</itunes:summary>
-      <pubDate>Tue, 01 Sep 2026 15:55:06 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260901_microsoft_a6aa7b</guid>
+1. Otonom Yazılım Ajanları: Kod Yazımından Canlıya Alma Sürecine Tam Otomasyon
+Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor.
+Önemli Noktalar: Yapay zeka modelleri artık hata ayıklamadan deploy aşamasına kadar tüm döngüyü bağımsız yönetiyor • Geliştirici ekiplerinin hata çözme süresinde %45 kısalma kaydedildi
+2. Açık Kaynak Modellerde Devrim: Yerel Cihazlarda GPT-4 Seviyesinde Akıl Yürütme
+Son yayınlanan açık ağırlıklı modeller, yüksek kuantizasyon verimliliği sayesinde bulut sunucularına bağlanmadan güçlü mantık yürütme imkanı sunuyor.
+Önemli Noktalar: Dizüstü bilgisayarlarda çalışan optimize küçük modeller kapalı sistemlere kafa tutuyor • Veri gizliliği ve yerel işlem önceliği şirketlerin açık kaynağa ilgisini ikiye katladı
+3. Nöromorfik Çip Mimarileri: Enerji Tüketiminde 10 Kat Verimlilik
+Donanım üreticileri, derin öğrenme modellerini mikrosaniye seviyesinde gecikmeyle ve onda bir enerjiyle çalıştıran yeni nöromorfik işlemcilerini duyurdu.
+Önemli Noktalar: İnsan beyninin sinaps yapısını taklit eden yeni donanım mimarileri tanıtıldı • Yapay zeka veri merkezlerinin yüksek elektrik tüketimine sürdürülebilir çözüm
+4. İnsansı Robotlarda Vizyon ve Hareket Uyumu: Fabrikalardan Günlük Yaşama
+Yeni insansı robot modelleri, uçtan uca sinir ağları sayesinde insan hareketlerini taklit ederek karmaşık montaj ve taşıma görevlerini hatasız tamamlayabiliyor.
+Önemli Noktalar: Gelişmiş multimodal görsel modellerle robotlar çevrelerini 3 boyutlu olarak anlık haritalandırıyor • Otomotiv ve lojistik tesislerinde ilk otonom pilot testleri başladı
+5. Kuantum Sonrası Kriptografi (PQC): Siber Güvenlikte Yeni Küresel Standartlar
+Uluslararası siber güvenlik otoriteleri, kuantum tehditlerine karşı geliştirilen yeni matematiksel kafes tabanlı şifreleme standartlarını resmi olarak yürürlüğe koydu.
+Önemli Noktalar: Kuantum bilgisayarların mevcut şifreleme algoritmalarını kırma riskine karşı yeni protokoller onaylandı • Bankacılık ve kamu altyapıları kuantum dayanıklı şifrelemeye geçişe başladı
+6. Yeni Nesil Yapay Zeka Destekli Web Motorları: Tarayıcı Deneyimi Yeniden Tanımlanıyor
+Web tarayıcıları, entegre yerel modeller sayesinde kullanıcıların gezindiği sayfaları anlık olarak özetleyen ve karmaşık çok adımlı araştırmaları otomatik tamamlayan akıllı arayüzlere dönüşüyor.
+Önemli Noktalar: Statik arama sonuçları yerine kişiselleştirilmiş, sentezlenmiş bilgi panelleri • Kullanıcı adına web formlarını dolduran ve bilet alan otonom tarayıcı asistanları
+7. Yörüngede Veri Merkezleri: Güneş Enerjisiyle Çalışan Uzay Bilişim Projeleri
+Uzay teknolojisi girişimleri, yörüngede doğrudan güneş ışığından güç alan ve soğutma maliyeti sıfıra yakın olan modüler yapay zeka işlem merkezlerini uzaya fırlattı.
+Önemli Noktalar: Güneş enerjisini kesintisiz kullanan uydu tabanlı veri işleme modülleri test edildi • Yerküredeki su ve soğutma kaynaklarına olan baskıyı hafifletme hedefi
+8. Yapay Zeka Destekli Biyoteknoloji: Protein Tasarımı ve Hızlı İlaç Keşfi
+Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti.
+Önemli Noktalar: Aylar süren moleküler simülasyonlar saatler seviyesine indirildi • Hedefe yönelik kişiselleştirilmiş tedavi yöntemlerinde klinik aşamaya geçildi</description>
+      <itunes:summary>Otonom yazılım ajanlarından kuantum işlemcilere, açık kaynak modellerden robotik vizyona günün en sıcak 8 büyük teknoloji gelişmesi ve derinlemesine 10 dakikalık analizleri.</itunes:summary>
+      <pubDate>Tue, 01 Sep 2026 15:59:21 GMT</pubDate>
+      <guid isPermaLink="false">ep_20260901_m1_bc85b0</guid>
       <itunes:author>M1</itunes:author>
-      <itunes:duration>00:00:48</itunes:duration>
+      <itunes:duration>00:03:14</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_microsoft_a6aa7b.mp3" length="776256" type="audio/mpeg"/>
+      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_m1_bc85b0.mp3" length="3113112" type="audio/mpeg"/>
     </item>
   </channel>
 </rss>
