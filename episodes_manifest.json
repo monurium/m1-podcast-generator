@@ -1,12 +1,12 @@
 [
   {
-    "guid": "ep_20260901_m1_8f91f9",
+    "guid": "ep_20260901_m1_ba8b30",
     "title": "M1 Podcast - Günlük Teknoloji & Yapay Zeka Bülteni (01.09.2026)",
-    "summary": "Otonom yazılım ajanlarından kuantum işlemcilere, açık kaynak modellerden robotik vizyona günün en sıcak teknoloji gelişmeleri ve derinlemesine analizleri.",
-    "todays_topics": "Otonom AI Mühendisleri, Açık Kaynak LLM Devrimi, Nöromorfik Çipler, İnsansı Robotlar, Kuantum Dayanıklı Şifreleme, Yeni Nesil Tarayıcı Motorları, Uzay Tabanlı Veri Merkezleri, Yapay Zeka Destekli Biyoteknoloji",
+    "summary": "Otonom yazılım mühendislerinden kuantum dayanıklı şifrelemeye, nöromorfik çiplerden yerel dil modellerine teknolojinin en sıcak gelişmeleri ve derinlemesine sohbeti.",
+    "todays_topics": "Otonom Yazılım Ajanları, Yerel Açık Kaynak LLM ve Kuantizasyon, Nöromorfik Çip Mimarisi, İnsansı Robotlarda Multimodal Görüş, Kuantum Sonrası Kriptografi (PQC), Yapay Zeka ile Sentetik Protein Tasarımı",
     "news_items": [
       {
-        "headline": "Otonom Yazılım Ajanları: Kod Yazımından Canlıya Alma Sürecine Tam Otomasyon",
+        "headline": "Otonom Yazılım Ajanları: Kod Tamamlamadan Tam Teşekküllü Mühendisliğe",
         "key_points": [
           "Yapay zeka modelleri artık hata ayıklamadan deploy aşamasına kadar tüm döngüyü bağımsız yönetiyor",
           "Geliştirici ekiplerinin hata çözme süresinde %45 kısalma kaydedildi"
@@ -14,31 +14,31 @@
         "summary": "Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor."
       },
       {
-        "headline": "Açık Kaynak Modellerde Devrim: Yerel Cihazlarda GPT-4 Seviyesinde Akıl Yürütme",
+        "headline": "Açık Kaynak Modellerde Kuantizasyon Devrimi: Dizüstünde GPT-4 Seviyesi",
         "key_points": [
-          "Dizüstü bilgisayarlarda çalışan optimize küçük modeller kapalı sistemlere kafa tutuyor",
-          "Veri gizliliği ve yerel işlem önceliği şirketlerin açık kaynağa ilgisini ikiye katladı"
+          "Kuantizasyon tekniği ile modeller sıkıştırılarak standart bilgisayarlarda çalıştırılıyor",
+          "Şirket içi veri gizliliği ve yerel işlem önceliği talebi katladı"
         ],
         "summary": "Son yayınlanan açık ağırlıklı modeller, yüksek kuantizasyon verimliliği sayesinde bulut sunucularına bağlanmadan güçlü mantık yürütme imkanı sunuyor."
       },
       {
-        "headline": "Nöromorfik Çip Mimarileri: Enerji Tüketiminde 10 Kat Verimlilik",
+        "headline": "Nöromorfik Çipler ve Enerji Verimliliği: Beyin Biyolojisini Taklit Eden Donanım",
         "key_points": [
           "İnsan beyninin sinaps yapısını taklit eden yeni donanım mimarileri tanıtıldı",
-          "Yapay zeka veri merkezlerinin yüksek elektrik tüketimine sürdürülebilir çözüm"
+          "Veri merkezlerinin yüksek elektrik tüketimine 10 kat daha verimli sürdürülebilir çözüm"
         ],
         "summary": "Donanım üreticileri, derin öğrenme modellerini mikrosaniye seviyesinde gecikmeyle ve onda bir enerjiyle çalıştıran yeni nöromorfik işlemcilerini duyurdu."
       },
       {
-        "headline": "İnsansı Robotlarda Vizyon ve Hareket Uyumu: Fabrikalardan Günlük Yaşama",
+        "headline": "İnsansı Robotlarda Multimodal Haritalama: Fabrikalardan Günlük Yaşama",
         "key_points": [
-          "Gelişmiş multimodal görsel modellerle robotlar çevrelerini 3 boyutlu olarak anlık haritalandırıyor",
-          "Otomotiv ve lojistik tesislerinde ilk otonom pilot testleri başladı"
+          "Görsel ve dokunsal veriyi birleştiren multimodal sinir ağları kullanılıyor",
+          "Otomotiv ve lojistik tesislerinde ilk otonom montaj testleri başladı"
         ],
         "summary": "Yeni insansı robot modelleri, uçtan uca sinir ağları sayesinde insan hareketlerini taklit ederek karmaşık montaj ve taşıma görevlerini hatasız tamamlayabiliyor."
       },
       {
-        "headline": "Kuantum Sonrası Kriptografi (PQC): Siber Güvenlikte Yeni Küresel Standartlar",
+        "headline": "Kuantum Sonrası Kriptografi (PQC): Geleceğin Siber Saldırılarına Karşı Kalkan",
         "key_points": [
           "Kuantum bilgisayarların mevcut şifreleme algoritmalarını kırma riskine karşı yeni protokoller onaylandı",
           "Bankacılık ve kamu altyapıları kuantum dayanıklı şifrelemeye geçişe başladı"
@@ -46,23 +46,7 @@
         "summary": "Uluslararası siber güvenlik otoriteleri, kuantum tehditlerine karşı geliştirilen yeni matematiksel kafes tabanlı şifreleme standartlarını resmi olarak yürürlüğe koydu."
       },
       {
-        "headline": "Yeni Nesil Yapay Zeka Destekli Web Motorları: Tarayıcı Deneyimi Yeniden Tanımlanıyor",
-        "key_points": [
-          "Statik arama sonuçları yerine kişiselleştirilmiş, sentezlenmiş bilgi panelleri",
-          "Kullanıcı adına web formlarını dolduran ve bilet alan otonom tarayıcı asistanları"
-        ],
-        "summary": "Web tarayıcıları, entegre yerel modeller sayesinde kullanıcıların gezindiği sayfaları anlık olarak özetleyen ve karmaşık çok adımlı araştırmaları otomatik tamamlayan akıllı arayüzlere dönüşüyor."
-      },
-      {
-        "headline": "Yörüngede Veri Merkezleri: Güneş Enerjisiyle Çalışan Uzay Bilişim Projeleri",
-        "key_points": [
-          "Güneş enerjisini kesintisiz kullanan uydu tabanlı veri işleme modülleri test edildi",
-          "Yerküredeki su ve soğutma kaynaklarına olan baskıyı hafifletme hedefi"
-        ],
-        "summary": "Uzay teknolojisi girişimleri, yörüngede doğrudan güneş ışığından güç alan ve soğutma maliyeti sıfıra yakın olan modüler yapay zeka işlem merkezlerini uzaya fırlattı."
-      },
-      {
-        "headline": "Yapay Zeka Destekli Biyoteknoloji: Protein Tasarımı ve Hızlı İlaç Keşfi",
+        "headline": "Biyoteknolojide Generatif Yapay Zeka: Saatler İçinde Sentetik Protein Tasarımı",
         "key_points": [
           "Aylar süren moleküler simülasyonlar saatler seviyesine indirildi",
           "Hedefe yönelik kişiselleştirilmiş tedavi yöntemlerinde klinik aşamaya geçildi"
@@ -70,11 +54,11 @@
         "summary": "Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti."
       }
     ],
-    "script": "Ahmet: Merhaba teknoloji meraklıları, M1 Podcast'e hoş geldiniz. Yazılım dünyasında taşları yerinden oynatan otonom kodlama ajanlarındaki son sıçramayla başlayalım. Son yayınlanan benchmark raporları, yapay zekanın sadece kod tamamlayan bir araç olmaktan çıkıp projenin tüm mimarisini anlayan bağımsız bir mühendise dönüştüğünü gösteriyor.\n\nEmel: İşin en çarpıcı tarafı, hata çözme sürelerinde ölçülen yüzde kırk beşlik hızlanma. Eskiden saatler süren bellek sızıntısı veya bağımlılık çakışması gibi sorunları bu ajanlar siz daha fark etmeden tespit edip birim testleriyle birlikte düzeltiyor.\n\nAhmet: Bu durum yazılımcıların sorumluluk alanını da doğrudan değiştiriyor. Satır satır rutin kod yazma yükü hafifledikçe, mühendisler sistem mimarisi tasarlamaya ve iş mantığını kurgulamaya odaklanabiliyor.\n\nEmel: Tabii bu gücün sadece bulut devlerinin elinde kalmaması da sevindirici. Açık kaynak dünyasında son haftalarda yayınlanan modeller, artık dizüstü bilgisayarlarda bile GPT-4 seviyesinde akıl yürütme performansı sergileyebiliyor.\n\nAhmet: Kuantizasyon tekniklerindeki optimizasyon gerçekten inanılmaz bir noktaya geldi. Bilgisayarınızın belleğini tüketmeden, tamamen yerel ve çevrimdışı çalışan bu modeller sayesinde verilerinizi üçüncü parti sunuculara göndermek zorunda kalmıyorsunuz.\n\nEmel: Özellikle bankacılık, sağlık ve hukuk gibi gizliliğin kırmızı çizgi olduğu sektörler için yerel modeller vazgeçilmez hale geliyor. Şirketler kendi verilerini kendi bünyelerinde işleyerek tam bir veri egemenliği kurabiliyor.\n\nAhmet: Yazılım tarafındaki bu ilerlemeyi donanım tarafında nöromorfik çipler takip ediyor. Geleneksel ekran kartlarının yapay zeka çalıştırırken tükettiği devasa elektrik miktarı veri merkezleri için büyük bir problemdi. Yeni nöromorfik işlemciler ise insan beynindeki biyolojik sinapsları taklit ederek bilgiyi olay tabanlı işliyor.\n\nEmel: Enerji tüketimindeki on katlık düşüş sadece veri merkezlerini rahatlatmakla kalmayacak; akıllı saatler, dronlar ve otonom araçlar gibi pil ömrünün kritik olduğu tüm uç cihazlarda yapay zekanın kesintisiz çalışmasını sağlayacak.\n\nAhmet: Uç cihazlardan bahsetmişken robotik dünyasındaki hareketliliğe de değinmek gerekiyor. İnsansı robotlar artık sadece önceden tanımlanmış mekanik rotaları takip etmiyor. Yeni multimodal görsel modeller sayesinde çevrelerini üç boyutlu olarak anlık haritalandırıp insan hareketlerini izleyerek öğrenebiliyorlar.\n\nEmel: Otomotiv fabrikalarındaki lojistik ve montaj hatlarında başlayan pilot testler, robotların insanlarla yan yana güvenle çalışabileceğini gösteriyor. Ağır ve tehlikeli işlerin otonom sistemlere devredilmesi iş güvenliği açısından dev bir kazanım.\n\nAhmet: Tüm bu dijitalleşme sürecinin güvenliğini sağlamak adına siber güvenlik tarafında da tarihi bir adım atıldı. Kuantum bilgisayarların mevcut şifreleme algoritmalarını kırma riskine karşı geliştirilen kafes tabanlı yeni kriptografi standartları resmi olarak onaylandı.\n\nEmel: Bankalar ve kamu kurumları şimdiden bu kuantum dayanıklı şifreleme protokollerine geçişe başladı. Çünkü gelecekte güçlü kuantum makineler ortaya çıktığında geriye dönük veri sızıntılarını engellemenin tek yolu bugünden önlem almak.\n\nAhmet: Güvenlik altyapısı güçlenirken günlük hayatımızın vazgeçilmezi olan web tarayıcıları da köklü bir değişim geçiriyor. Arama yaptığımızda artık onlarca mavi bağlantı yerine, yerel modeller tarafından sentezlenmiş doğrudan yanıtlar ve karşılaştırmalı tablolar görüyoruz.\n\nEmel: Tarayıcılar sadece web sayfalarını görüntüleyen pencereler olmaktan çıkıp, kullanıcı adına form dolduran veya rezervasyon araştıran kişisel dijital asistanlara evriliyor. Bilgiye ulaşma şeklimiz tamamen değişiyor.\n\nAhmet: Bilgi işlemin sınırları ise yerkürenin ötesine taştı. Girişimler, doğrudan güneş ışığından güç alan ve uzayın doğal soğuk ortamından yararlanarak sıfır soğutma maliyetiyle çalışan modüler veri merkezlerini yörüngeye fırlattı.\n\nEmel: Dünyadaki su ve elektrik şebekelerine yük bindirmeden, uzayın sınırsız enerjisiyle yapay zeka modelleri eğitmek geleceğin veri mimarisini şimdiden şekillendiriyor.\n\nAhmet: Sağlık ve biyoteknoloji alanında da benzer bir dönüşüm yaşanıyor. Generatif yapay zeka sayesinde aylar süren moleküler simülasyonlar saatler seviyesine indi ve nadir hastalıkların tedavisinde hedefe kilitlenen sentetik protein yapıları tasarlandı.\n\nEmel: Moleküler tasarımların doğrudan klinik deney aşamasına geçmesi, kişiselleştirilmiş tıbbın hayat kurtaran bir gerçeğe dönüşmesini hızlandırıyor.\n\nAhmet: Yazılımdan donanıma, uzay teknolojilerinden biyoteknolojiye kadar teknolojinin nabzını tutmaya devam edeceğiz. Günün öne çıkan başlıkları ve ayrıntılı özetleri RSS beslememizde hazır.\n\nEmel: Yarın yeni gelişmeler ve analizlerle tekrar birlikte olmak dileğiyle, hoşça kalın!\n\nAhmet: Hoşça kalın, teknolojiyle kalın!",
-    "pub_date": "Tue, 01 Sep 2026 16:04:50 GMT",
-    "audio_url": "https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_m1_8f91f9.mp3",
-    "file_size": 1924164,
-    "duration_formatted": "00:02:00",
-    "duration_seconds": 120
+    "script": "Ahmet: Merhaba teknoloji meraklıları, M1 Podcast'e hoş geldiniz. Yazılım dünyasında taşları yerinden oynatan otonom kodlama ajanlarındaki son sıçramayla başlıyoruz. Yeni yayınlanan benchmark raporları, yapay zekanın sadece kod tamamlayan bir yardımcı olmaktan çıkıp projenin tüm mimarisini anlayan bağımsız bir mühendise dönüştüğünü gösteriyor.\n\nEmel: Ahmet, burada otonom ajan derken tam olarak neyi kastediyoruz? Yani bildiğimiz sohbet botlarından veya otomatik kod tamamlama eklentilerinden farkı ne?\n\nAhmet: Çok yerinde bir soru. Klasik asistanlar sizden bir fonksiyon yazmanızı beklerken, otonom ajan projenin tüm git geçmişini, veritabanı şemasını ve bağımlılıklarını tarıyor. Bir hata bildirdiğinizde sadece hatanın olduğu yeri değil, o hatanın tetiklediği diğer tüm yan etkileri hesaplayıp kendi kendine birim testi yazıyor ve düzeltmeyi pull request olarak önünüze getiriyor. Yapılan testlerde ekiplerin hata çözme süresinde yüzde kırk beşlik bir hızlanma ölçüldü.\n\nEmel: Peki bu durum yazılımcıların rolünü nasıl etkileyecek? Yani ekipler artık kod yazmayı tamamen bırakacak mı?\n\nAhmet: Aslında tam tersine, yazılımcının görevi satır satır rutin kod yazmaktan çıkıp sistem mimarı olmaya evriliyor. Mühendis iş mantığını ve sınırları belirliyor, ajan ise ham işçiliği üstleniyor.\n\nEmel: Bu dönüşümün bir diğer ayağı da açık kaynak dünyasında yaşanıyor. Eskiden bu seviyedeki akıl yürütme için mutlaka devasa bulut API'lerine bağlanmak gerekiyordu. Fakat son günlerde kuantizasyon teknikleri sayesinde modeller dizüstü bilgisayarlara kadar indi.\n\nAhmet: Emel, dinleyicilerimiz için kuantizasyon kavramını biraz açalım mı? Teknik olarak arka planda ne oluyor da dev bir model bir dizüstü bilgisayarda çalışabiliyor?\n\nAhmet: Kuantizasyonu basitçe devasa bir fotoğraf dosyasını kaliteden ödün vermeden sıkıştırmak gibi düşünebiliriz. Normalde on altı bitlik yüksek hassasiyetli sayılarla çalışan model ağırlıklarını, dört veya sekiz bite indiriyoruz. Bu sayede modelin boyutu ve bellek tüketimi dörtte bire düşüyor ama akıl yürütme yeteneğini neredeyse tamamen koruyor.\n\nEmel: İşte bu sayede bankalar, hastaneler veya hukuk büroları en hassas verilerini üçüncü parti bir bulut sunucusuna göndermeden, kendi ofislerindeki bilgisayarlarda güvenle yapay zeka çalıştırabiliyor.\n\nAhmet: Veri egemenliği açısından tarihi bir eşik. Ancak yazılım bu kadar hızlanırken donanım tarafında da büyük bir darboğaz vardı: Devasa elektrik tüketimi. İşte bu noktada nöromorfik çipler sahneye çıktı.\n\nEmel: Nöromorfik derken insan beyninin biyolojisinden mi ilham alınıyor Ahmet? Klasik işlemcilerden farkı ne?\n\nAhmet: Aynen öyle. Geleneksel işlemciler sürekli elektrik çeker ve her saat döngüsünde veri işler. Nöromorfik çipler ise insan beynindeki nöron ve sinapslar gibi çalışır; yani sadece bir uyarı, bir olay gerçekleştiğinde elektrik sinyali üretir. Bilgi olmadığı an enerji tüketimi sıfıra yakındır. Bu mimari enerji tüketiminde tam on kat tasarruf sağlıyor.\n\nEmel: Düşünsenize, akıllı saatler, dronlar veya küçük sağlık sensörleri şarja ihtiyaç duymadan haftalarca cihaz üzerinde yapay zeka çalıştırabilecek. Peki donanımdaki bu hafifleme robotik tarafını nasıl etkiliyor?\n\nAhmet: İşte bu bizi robotik dünyasındaki en kritik gelişmeye, yani multimodal görsel ve dokunsal haritalamaya götürüyor. İnsansı robotlar artık sadece önceden programlanmış kör rotaları takip etmiyor. Kameralardan gelen görüntüyü ve sensörlerden gelen dokunma hissini aynı anda işleyerek çevrelerini anlık üç boyutlu haritalandırıyorlar.\n\nEmel: Otomotiv fabrikalarında montaj hatlarında pilot testler başlamış durumda. Ağır parçaları taşırken veya hassas vidalama yaparken robotun anlık duruma göre kuvvetini ayarlayabilmesi insanlarla yan yana güvenle çalışmasını mümkün kılıyor.\n\nAhmet: Kesinlikle iş güvenliği açısından devrimsel. Ancak fabrikalardan bankalara kadar tüm sistemler dijitalleştikçe siber güvenlikte de büyük bir alarm verildi: Kuantum tehdidi. Ve bu hafta kuantum sonrası kriptografi standartları resmen onaylandı.\n\nEmel: Ahmet, kuantum bilgisayarlar mevcut şifrelemeyi kırabilir derken tehlike tam olarak neydi ve bu yeni standart neyi değiştiriyor?\n\nAhmet: Bugün kullandığımız bankacılık şifreleri çok büyük asal sayıların çarpımına dayanıyor. Klasik bilgisayarlar bu sayıları çözemez ama kuantum bilgisayarlar birkaç dakikada çözebilir. Yeni onaylanan kuantum sonrası kriptografi ise sayı çarpanlarına değil, çok boyutlu karmaşık matematiksel kafes problemlerine dayanıyor. Kuantum bilgisayarlar bile bu kafes yapısını çözemiyor.\n\nEmel: Bankalar ve kamu kurumları şimdiden bu yeni protokollere geçmeye başladı bile. Gelecekte yaşanabilecek geriye dönük veri hırsızlıklarının önüne şimdiden geçilmiş oluyor.\n\nAhmet: Dijital dünyadan biyolojiye geçersek, sağlık tarafında da yapay zekanın doğrudan hayat kurtardığı bir döneme girdik. Generatif yapay zeka artık metin veya resim üretmekle kalmıyor, doğrudan sentetik protein tasarlıyor.\n\nEmel: Normalde bir proteinin üç boyutlu katlanmasını ve bir hastalığın reseptörüne nasıl bağlanacağını laboratuvarda simüle etmek aylar hatta yıllar alıyordu. Şimdi derin öğrenme modelleri bu simülasyonları birkaç saate indirmiş durumda.\n\nAhmet: Hatta nadir görülen genetik hastalıklar için tasarlanan sentetik aday moleküller klinik deney aşamasına geçti. Bu da kişiye özel ilaç tedavisinin çok yakında hayatımıza gireceğini gösteriyor.\n\nEmel: Yazılımdan nöromorfik donanımlara, kuantum kalkanından sağlığa kadar teknolojinin sınırlarının nasıl genişlediğini adım adım konuştuk. Tüm bu gelişmelerin özetleri ve can alıcı maddeleri RSS beslememizde sizleri bekliyor.\n\nAhmet: Yarın yepyeni teknoloji başlıkları ve analizlerle tekrar karşınızda olacağız. Bizi dinlediğiniz için teşekkür ederiz, hoşça kalın!\n\nEmel: Kendinize çok iyi bakın, teknolojiyle kalın!",
+    "pub_date": "Tue, 01 Sep 2026 16:10:13 GMT",
+    "audio_url": "https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_m1_ba8b30.mp3",
+    "file_size": 2430228,
+    "duration_formatted": "00:02:31",
+    "duration_seconds": 151
   }
 ]

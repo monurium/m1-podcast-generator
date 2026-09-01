@@ -24,39 +24,33 @@
     </image>
     <item>
       <title>M1 Podcast - Günlük Teknoloji &amp; Yapay Zeka Bülteni (01.09.2026)</title>
-      <description>Otonom yazılım ajanlarından kuantum işlemcilere, açık kaynak modellerden robotik vizyona günün en sıcak teknoloji gelişmeleri ve derinlemesine analizleri.
+      <description>Otonom yazılım mühendislerinden kuantum dayanıklı şifrelemeye, nöromorfik çiplerden yerel dil modellerine teknolojinin en sıcak gelişmeleri ve derinlemesine sohbeti.
 ⚡ GÜNÜN ÇARPICI HABERLERİ:
-1. Otonom Yazılım Ajanları: Kod Yazımından Canlıya Alma Sürecine Tam Otomasyon
+1. Otonom Yazılım Ajanları: Kod Tamamlamadan Tam Teşekküllü Mühendisliğe
 Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor.
 Önemli Noktalar: Yapay zeka modelleri artık hata ayıklamadan deploy aşamasına kadar tüm döngüyü bağımsız yönetiyor • Geliştirici ekiplerinin hata çözme süresinde %45 kısalma kaydedildi
-2. Açık Kaynak Modellerde Devrim: Yerel Cihazlarda GPT-4 Seviyesinde Akıl Yürütme
+2. Açık Kaynak Modellerde Kuantizasyon Devrimi: Dizüstünde GPT-4 Seviyesi
 Son yayınlanan açık ağırlıklı modeller, yüksek kuantizasyon verimliliği sayesinde bulut sunucularına bağlanmadan güçlü mantık yürütme imkanı sunuyor.
-Önemli Noktalar: Dizüstü bilgisayarlarda çalışan optimize küçük modeller kapalı sistemlere kafa tutuyor • Veri gizliliği ve yerel işlem önceliği şirketlerin açık kaynağa ilgisini ikiye katladı
-3. Nöromorfik Çip Mimarileri: Enerji Tüketiminde 10 Kat Verimlilik
+Önemli Noktalar: Kuantizasyon tekniği ile modeller sıkıştırılarak standart bilgisayarlarda çalıştırılıyor • Şirket içi veri gizliliği ve yerel işlem önceliği talebi katladı
+3. Nöromorfik Çipler ve Enerji Verimliliği: Beyin Biyolojisini Taklit Eden Donanım
 Donanım üreticileri, derin öğrenme modellerini mikrosaniye seviyesinde gecikmeyle ve onda bir enerjiyle çalıştıran yeni nöromorfik işlemcilerini duyurdu.
-Önemli Noktalar: İnsan beyninin sinaps yapısını taklit eden yeni donanım mimarileri tanıtıldı • Yapay zeka veri merkezlerinin yüksek elektrik tüketimine sürdürülebilir çözüm
-4. İnsansı Robotlarda Vizyon ve Hareket Uyumu: Fabrikalardan Günlük Yaşama
+Önemli Noktalar: İnsan beyninin sinaps yapısını taklit eden yeni donanım mimarileri tanıtıldı • Veri merkezlerinin yüksek elektrik tüketimine 10 kat daha verimli sürdürülebilir çözüm
+4. İnsansı Robotlarda Multimodal Haritalama: Fabrikalardan Günlük Yaşama
 Yeni insansı robot modelleri, uçtan uca sinir ağları sayesinde insan hareketlerini taklit ederek karmaşık montaj ve taşıma görevlerini hatasız tamamlayabiliyor.
-Önemli Noktalar: Gelişmiş multimodal görsel modellerle robotlar çevrelerini 3 boyutlu olarak anlık haritalandırıyor • Otomotiv ve lojistik tesislerinde ilk otonom pilot testleri başladı
-5. Kuantum Sonrası Kriptografi (PQC): Siber Güvenlikte Yeni Küresel Standartlar
+Önemli Noktalar: Görsel ve dokunsal veriyi birleştiren multimodal sinir ağları kullanılıyor • Otomotiv ve lojistik tesislerinde ilk otonom montaj testleri başladı
+5. Kuantum Sonrası Kriptografi (PQC): Geleceğin Siber Saldırılarına Karşı Kalkan
 Uluslararası siber güvenlik otoriteleri, kuantum tehditlerine karşı geliştirilen yeni matematiksel kafes tabanlı şifreleme standartlarını resmi olarak yürürlüğe koydu.
 Önemli Noktalar: Kuantum bilgisayarların mevcut şifreleme algoritmalarını kırma riskine karşı yeni protokoller onaylandı • Bankacılık ve kamu altyapıları kuantum dayanıklı şifrelemeye geçişe başladı
-6. Yeni Nesil Yapay Zeka Destekli Web Motorları: Tarayıcı Deneyimi Yeniden Tanımlanıyor
-Web tarayıcıları, entegre yerel modeller sayesinde kullanıcıların gezindiği sayfaları anlık olarak özetleyen ve karmaşık çok adımlı araştırmaları otomatik tamamlayan akıllı arayüzlere dönüşüyor.
-Önemli Noktalar: Statik arama sonuçları yerine kişiselleştirilmiş, sentezlenmiş bilgi panelleri • Kullanıcı adına web formlarını dolduran ve bilet alan otonom tarayıcı asistanları
-7. Yörüngede Veri Merkezleri: Güneş Enerjisiyle Çalışan Uzay Bilişim Projeleri
-Uzay teknolojisi girişimleri, yörüngede doğrudan güneş ışığından güç alan ve soğutma maliyeti sıfıra yakın olan modüler yapay zeka işlem merkezlerini uzaya fırlattı.
-Önemli Noktalar: Güneş enerjisini kesintisiz kullanan uydu tabanlı veri işleme modülleri test edildi • Yerküredeki su ve soğutma kaynaklarına olan baskıyı hafifletme hedefi
-8. Yapay Zeka Destekli Biyoteknoloji: Protein Tasarımı ve Hızlı İlaç Keşfi
+6. Biyoteknolojide Generatif Yapay Zeka: Saatler İçinde Sentetik Protein Tasarımı
 Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti.
 Önemli Noktalar: Aylar süren moleküler simülasyonlar saatler seviyesine indirildi • Hedefe yönelik kişiselleştirilmiş tedavi yöntemlerinde klinik aşamaya geçildi</description>
-      <itunes:summary>Otonom yazılım ajanlarından kuantum işlemcilere, açık kaynak modellerden robotik vizyona günün en sıcak teknoloji gelişmeleri ve derinlemesine analizleri.</itunes:summary>
-      <pubDate>Tue, 01 Sep 2026 16:04:50 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260901_m1_8f91f9</guid>
+      <itunes:summary>Otonom yazılım mühendislerinden kuantum dayanıklı şifrelemeye, nöromorfik çiplerden yerel dil modellerine teknolojinin en sıcak gelişmeleri ve derinlemesine sohbeti.</itunes:summary>
+      <pubDate>Tue, 01 Sep 2026 16:10:13 GMT</pubDate>
+      <guid isPermaLink="false">ep_20260901_m1_ba8b30</guid>
       <itunes:author>M1</itunes:author>
-      <itunes:duration>00:02:00</itunes:duration>
+      <itunes:duration>00:02:31</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_m1_8f91f9.mp3" length="1924164" type="audio/mpeg"/>
+      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_m1_ba8b30.mp3" length="2430228" type="audio/mpeg"/>
     </item>
   </channel>
 </rss>
