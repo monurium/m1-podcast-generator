@@ -22,12 +22,12 @@ if hasattr(sys.stdout, "reconfigure"):
 
 load_dotenv()
 
-def run_daily_podcast_pipeline(test_mode: bool = False, slack_test: bool = False):
+def run_daily_podcast_pipeline(test_mode: bool = False):
     print("=" * 65)
     if test_mode:
         print("🧪 TEST / DRY-RUN MODU: Yerel test dosyaları üretiliyor (Prod RSS etkilenmez)")
     else:
-        print("🎙️ M1 GÜNLÜK TÜRKÇE PODCAST & SLACK YAYINLAMA BORU HATTI")
+        print("🎙️ M1 GÜNLÜK TÜRKÇE PODCAST & RSS YAYINLAMA BORU HATTI")
     print("=" * 65)
 
     # 1. Load Configurations
@@ -56,7 +56,7 @@ def run_daily_podcast_pipeline(test_mode: bool = False, slack_test: bool = False
             print(f"⚠️ Geçmiş bülten kayıtları yüklenirken not: {e}")
 
     # 3. Fetch Fresh Turkish & Global News
-    print("\n[Adım 1/4] Güncel Teknoloji & Yapay Zeka RSS kaynakları taranıyor...")
+    print("\n[Adım 1/3] Güncel Teknoloji & Yapay Zeka RSS kaynakları taranıyor...")
     content_gen = ContentGenerator()
     
     exclude_keywords = []
@@ -88,11 +88,11 @@ def run_daily_podcast_pipeline(test_mode: bool = False, slack_test: bool = False
     pub_date = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
 
     if test_mode:
-        print("\n[Adım 2/4] 🧪 Türkçe 2-Sunuculu (Ahmet & Emel) Test Sesi Sentezleniyor...")
+        print("\n[Adım 2/3] 🧪 Türkçe 2-Sunuculu (Ahmet & Emel) Test Sesi Sentezleniyor...")
         test_audio_path = os.path.join("output", "test_dialogue_podcast.mp3")
         dialogue_audio_meta = audio_gen.dialogue_to_audio(dialogue_script_data["script"], test_audio_path)
 
-        print("\n[Adım 3/4] 🧪 Test RSS Beslemesi ve Manifest ./output/ içinde oluşturuluyor...")
+        print("\n[Adım 3/3] 🧪 Test RSS Beslemesi ve Manifest ./output/ içinde oluşturuluyor...")
         test_publisher = Publisher(output_dir="output")
         test_episode_meta = {
             "id": "ep_test_m1_podcast",
@@ -111,10 +111,6 @@ def run_daily_podcast_pipeline(test_mode: bool = False, slack_test: bool = False
         test_xml_path = os.path.join("output", "test_podcast.xml")
         test_rss_builder.build_feed(test_episodes, test_xml_path)
 
-        print("\n[Adım 4/4] 🧪 Slack Bildirimi Test Ediliyor...")
-        slack = SlackNotifier()
-        slack.send_notification(test_episode_meta, base_url=base_url)
-
         print("\n" + "=" * 65)
         print("🎉 TEST BAŞARIYLA TAMAMLANDI!")
         print(f"📄 Metin Dosyası: {dialogue_file_path}")
@@ -128,7 +124,7 @@ def run_daily_podcast_pipeline(test_mode: bool = False, slack_test: bool = False
 
     dialogue_episode_id = f"ep_{today_str}_m1_{uuid.uuid4().hex[:6]}"
     temp_dialogue_path = os.path.join("output", "temp", f"{dialogue_episode_id}.mp3")
-    print("\n[Adım 2/4] Türkçe 2-Sunuculu (Ahmet & Emel) MP3 Podcast Sentezleniyor...")
+    print("\n[Adım 2/3] Türkçe 2-Sunuculu (Ahmet & Emel) MP3 Podcast Sentezleniyor...")
 
     try:
         dialogue_audio_meta = audio_gen.dialogue_to_audio(dialogue_script_data["script"], temp_dialogue_path)
@@ -165,7 +161,7 @@ def run_daily_podcast_pipeline(test_mode: bool = False, slack_test: bool = False
         all_episodes = publisher.add_episode(episode_dict, temp_mono_path, base_url)
 
     # 5. RSS XML Feed Generation
-    print("\n[Adım 3/4] RSS XML Beslemesi ve Web Dosyaları Güncelleniyor...")
+    print("\n[Adım 3/3] RSS XML Beslemesi ve Web Dosyaları Güncelleniyor...")
     rss_builder = RSSBuilder(config=config)
     rss_dist_path = os.path.join(output_dir, config.get("feed_filename", "podcast.xml"))
     rss_root_path = config.get("feed_filename", "podcast.xml")
@@ -179,23 +175,24 @@ def run_daily_podcast_pipeline(test_mode: bool = False, slack_test: bool = False
     if os.path.exists("cover.jpg"):
         shutil.copy2("cover.jpg", os.path.join(output_dir, "cover.jpg"))
 
-    # 6. Slack Notification & Highlights Publishing
-    print("\n[Adım 4/4] Günlük Podcast & Çarpıcı Haber Özetleri Slack Kanalına Gönderiliyor...")
-    slack = SlackNotifier()
-    # Retrieve final episode audio URL from all_episodes
-    latest_ep = all_episodes[0] if all_episodes else episode_dict
-    slack.send_notification(latest_ep, base_url=base_url)
+    # Optional: Slack Notification if configured
+    if os.getenv("SLACK_WEBHOOK_URL") or (os.getenv("SLACK_BOT_TOKEN") and os.getenv("SLACK_CHANNEL_ID")):
+        try:
+            slack = SlackNotifier()
+            latest_ep = all_episodes[0] if all_episodes else episode_dict
+            slack.send_notification(latest_ep, base_url=base_url)
+        except Exception as slack_err:
+            print(f"ℹ️ Slack bildirimi atlandı: {slack_err}")
 
     print("\n" + "=" * 65)
-    print("🎉 BAŞARILI: M1 Günlük Podcast üretildi, RSS güncellendi ve Slack'e aktarıldı!")
+    print("🎉 BAŞARILI: M1 Günlük Podcast üretildi ve RSS beslemesi güncellendi!")
     print(f"📡 RSS Beslemesi: {base_url.rstrip('/')}/{config.get('feed_filename', 'podcast.xml')}")
     print(f"🎧 Web Oynatıcı: {base_url.rstrip('/')}/")
     print("=" * 65)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="M1 Günlük Türkçe Podcast ve Slack Entegrasyonu")
+    parser = argparse.ArgumentParser(description="M1 Günlük Türkçe Podcast ve RSS Beslemesi")
     parser.add_argument("--test", "--dry-run", action="store_true", help="Prod RSS/dist değiştirmeden yerel test modunda çalıştır")
-    parser.add_argument("--slack-test", action="store_true", help="Slack bildirim formatını test et")
     args = parser.parse_args()
 
-    run_daily_podcast_pipeline(test_mode=args.test, slack_test=args.slack_test)
+    run_daily_podcast_pipeline(test_mode=args.test)
