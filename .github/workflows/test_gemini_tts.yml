@@ -61,6 +61,7 @@ jobs:
         with:
           name: gemini-tts-test-output
           path: |
+            test_gemini_sample.mp3
             output/
             output/test_dialogue_podcast.mp3
             output/dialogue_script.txt

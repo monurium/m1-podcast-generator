@@ -211,7 +211,7 @@ class AudioGenerator:
             prompt = f"Lütfen bu podcast diyaloğunu doğal, akıcı ve samimi bir Türkçe ile seslendir: {clean_text}"
 
             raw_pcm = None
-            candidate_models = [working_model] if working_model else ["gemini-3.1-flash-tts-preview", "gemini-2.5-flash-preview-tts", "gemini-3.6-flash"]
+            candidate_models = [working_model] if working_model else ["gemini-2.5-flash-preview-tts", "gemini-3.1-flash-tts-preview"]
             for model_name in candidate_models:
                 try:
                     response = client.models.generate_content(
