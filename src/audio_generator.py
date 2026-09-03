@@ -20,7 +20,17 @@ EDGE_VOICE_MAP = {
     "Sunucu": "tr-TR-AhmetNeural"
 }
 
+GEMINI_TTS_MODELS = (
+    "gemini-2.5-flash-preview-tts",
+    "gemini-2.5-flash-native-audio-latest",
+    "gemini-2.5-flash"
+)
+
 GEMINI_VOICE_MAP = {
+    # Türkçe teknoloji ve bülten podcasti için en doğal karakter eşleşmeleri:
+    # Ahmet (Erkek): "Puck" (Dinamik, enerjik, samimi teknoloji sunucusu tonu - Upbeat)
+    # Emel (Kadın): "Aoede" (Doğal, akıcı, sıcak ve samimi kadın tonu - Breezy)
+    # Alternatifler: Charon (Haber bülteni/Ağırbaşlı), Kore (Ciddi haber spikeri tonu)
     "Ahmet": "Puck",
     "Emel": "Aoede",
     "Alex": "Puck",
@@ -211,7 +221,7 @@ class AudioGenerator:
             prompt = f"Lütfen bu podcast diyaloğunu doğal, akıcı ve samimi bir Türkçe ile seslendir: {clean_text}"
 
             raw_pcm = None
-            candidate_models = [working_model] if working_model else ["gemini-2.5-flash-preview-tts", "gemini-3.1-flash-tts-preview"]
+            candidate_models = [working_model] if working_model else list(GEMINI_TTS_MODELS)
             for model_name in candidate_models:
                 try:
                     response = client.models.generate_content(

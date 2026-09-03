@@ -29,9 +29,8 @@ except Exception as e:
 # Test speech generation with candidate models
 candidate_models = [
     "gemini-2.5-flash-preview-tts",
-    "gemini-3.1-flash-tts-preview",
-    "gemini-2.5-flash",
-    "gemini-2.0-flash-exp"
+    "gemini-2.5-flash-native-audio-latest",
+    "gemini-2.5-flash"
 ]
 
 test_text = "Merhaba, Migros OneCast AI yapay zeka podcastine hoş geldiniz."
