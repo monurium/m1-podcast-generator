@@ -23,6 +23,48 @@
       <link>https://monurium.github.io/m1-podcast-generator</link>
     </image>
     <item>
+      <title>M1 Podcast - Günlük Teknoloji &amp; Yapay Zeka Bülteni (03.09.2026)</title>
+      <description>Otonom yazılım ajanlarından kuantum sonrası şifrelemeye, nöromorfik çiplerden katı hal bataryalara teknolojinin en sıcak 10 gelişmesi ve 1.5 kat genişletilmiş derinlemesine analizi.
+⚡ GÜNÜN ÇARPICI HABERLERİ:
+1. Otonom Yazılım Ajanları: Kod Tamamlamadan Tam Teşekküllü Mühendisliğe
+Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor.
+Önemli Noktalar: Modeller artık tüm repo bağımlılıklarını analiz edip uçtan uca hata ayıklıyor • Geliştirici ekiplerinin hata çözme süresinde %45 kısalma kaydedildi
+2. Açık Kaynak Modellerde Kuantizasyon Devrimi: Dizüstünde GPT-4 Seviyesi
+Son yayınlanan açık ağırlıklı modeller, yüksek kuantizasyon verimliliği sayesinde bulut sunucularına bağlanmadan güçlü mantık yürütme imkanı sunuyor.
+Önemli Noktalar: Kuantizasyon tekniği ile modeller sıkıştırılarak standart bilgisayarlarda çalıştırılıyor • Şirket içi veri gizliliği ve yerel işlem önceliği talebi katladı
+3. Nöromorfik Çipler ve Enerji Verimliliği: Beyin Biyolojisini Taklit Eden Donanım
+Donanım üreticileri, derin öğrenme modellerini mikrosaniye seviyesinde gecikmeyle ve onda bir enerjiyle çalıştıran yeni nöromorfik işlemcilerini duyurdu.
+Önemli Noktalar: İnsan beyninin sinaps yapısını taklit eden yeni donanım mimarileri tanıtıldı • Veri merkezlerinin yüksek elektrik tüketimine 10 kat daha verimli sürdürülebilir çözüm
+4. İnsansı Robotlarda Multimodal Haritalama: Fabrikalardan Günlük Yaşama
+Yeni insansı robot modelleri, uçtan uca sinir ağları sayesinde insan hareketlerini taklit ederek karmaşık montaj ve taşıma görevlerini hatasız tamamlayabiliyor.
+Önemli Noktalar: Görsel ve dokunsal veriyi birleştiren multimodal sinir ağları kullanılıyor • Otomotiv montaj hatlarında insan işçilerle yan yana pilot testler başladı
+5. Kuantum Sonrası Kriptografi (PQC): Geleceğin Siber Saldırılarına Karşı Kalkan
+Uluslararası siber güvenlik otoriteleri, kuantum tehditlerine karşı geliştirilen yeni matematiksel kafes tabanlı şifreleme standartlarını resmi olarak yürürlüğe koydu.
+Önemli Noktalar: Kuantum bilgisayarların mevcut şifreleme algoritmalarını kırma riskine karşı yeni protokoller onaylandı • Bankacılık ve kamu altyapıları kuantum dayanıklı şifrelemeye geçişe başladı
+6. Biyoteknolojide Generatif Yapay Zeka: Saatler İçinde Sentetik Protein Tasarımı
+Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti.
+Önemli Noktalar: Aylar süren moleküler simülasyonlar saatler seviyesine indirildi • Nadir hastalıklar için hedefe yönelik aday moleküller klinik aşamaya ulaştı
+7. LEO Takımyıldızlarında Optik Lazer İletişimi: Uzayda Gigabit İnternet Omurgası
+Alçak dünya yörüngesindeki uydular arasında devreye alınan optik lazer haberleşmesi, küresel internet omurgasını uzaya taşıyarak karasal fiber hatlara rakip oluyor.
+Önemli Noktalar: Uydular arası lazer ışınları, karasal fiber kablolardan %40 daha hızlı veri aktarıyor • Kıtalararası finansal işlemlerde ve kutup bölgelerinde gecikme süreleri dibe çekildi
+8. Yeni Nesil Katı Hal (Solid-State) Bataryalar: Seri Üretim Takvimi Netleşti
+Katı hal batarya teknolojisinde beklenen büyük atılım gerçekleşti; laboratuvar testleri tamamlanan hücrelerin ticari elektrikli araçlara entegrasyonu duyuruldu.
+Önemli Noktalar: Sıvı elektrolit yerine seramik polimer kullanılarak yangın riski tamamen sıfırlandı • 10 dakikada şarj ve 1000 kilometreyi aşan menzil ile 2027 başında ticari araçlara giriyor
+9. Otonom Web ve Tarayıcı Ajanları: İnternet Gezintisinde İnsan Yerine Yapay Zeka
+Web sitelerinde insan yerine gezinip form dolduran, uçak bileti arayan ve karmaşık e-ticaret süreçlerini yöneten otonom tarayıcı ajanları yaygınlaşıyor.
+Önemli Noktalar: Kullanıcı talimatıyla çok adımlı rezervasyon, araştırma ve satın alma görevleri tamamlanıyor • Görsel arayüzleri analiz eden yeni nesil çok modlu ajanlar siteleri otonom geziyor
+10. Açık Ağırlıklı Yapay Zekada Küresel Güvenlik ve Kırmızı Takım Standartları
+Yapay zeka güvenlik otoriteleri, açık ağırlıklı modellerin güvenliğini teyit eden kapsamlı kırmızı takım ve stres testi standartlarını duyurdu.
+Önemli Noktalar: Modellerin tehlikeli senaryolara karşı dayanıklılığını ölçen küresel denetim çerçevesi açıklandı • Kötü niyetli manipülasyonları engelleyen yazılımsal ve donanımsal güvenlik kalkanları devreye girdi</description>
+      <itunes:summary>Otonom yazılım ajanlarından kuantum sonrası şifrelemeye, nöromorfik çiplerden katı hal bataryalara teknolojinin en sıcak 10 gelişmesi ve 1.5 kat genişletilmiş derinlemesine analizi.</itunes:summary>
+      <pubDate>Thu, 03 Sep 2026 14:22:00 GMT</pubDate>
+      <guid isPermaLink="false">ep_20260903_m1_044b78</guid>
+      <itunes:author>M1</itunes:author>
+      <itunes:duration>00:13:44</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_044b78.mp3" length="4949496" type="audio/mpeg"/>
+    </item>
+    <item>
       <title>M1 Podcast - Günlük Teknoloji &amp; Yapay Zeka Bülteni (01.09.2026)</title>
       <description>Otonom yazılım mühendislerinden kuantum dayanıklı şifrelemeye, nöromorfik çiplerden yerel dil modellerine teknolojinin en sıcak gelişmeleri ve derinlemesine sohbeti.
 ⚡ GÜNÜN ÇARPICI HABERLERİ:

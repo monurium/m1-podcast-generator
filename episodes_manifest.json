@@ -1,5 +1,99 @@
 [
   {
+    "guid": "ep_20260903_m1_044b78",
+    "title": "M1 Podcast - Günlük Teknoloji & Yapay Zeka Bülteni (03.09.2026)",
+    "summary": "Otonom yazılım ajanlarından kuantum sonrası şifrelemeye, nöromorfik çiplerden katı hal bataryalara teknolojinin en sıcak 10 gelişmesi ve 1.5 kat genişletilmiş derinlemesine analizi.",
+    "todays_topics": "Otonom Yazılım Ajanları, Yerel Açık Kaynak LLM ve Kuantizasyon, Nöromorfik Çip Mimarisi, İnsansı Robotlarda Multimodal Haritalama, Kuantum Sonrası Kriptografi (PQC), Biyoteknolojide Sentetik Protein Tasarımı, LEO Uydularında Optik Lazer Haberleşmesi, Katı Hal (Solid-State) Bataryalar, Otonom Web ve Tarayıcı Ajanları, Açık Ağırlıklı Yapay Zeka Güvenliği",
+    "news_items": [
+      {
+        "headline": "Otonom Yazılım Ajanları: Kod Tamamlamadan Tam Teşekküllü Mühendisliğe",
+        "key_points": [
+          "Modeller artık tüm repo bağımlılıklarını analiz edip uçtan uca hata ayıklıyor",
+          "Geliştirici ekiplerinin hata çözme süresinde %45 kısalma kaydedildi"
+        ],
+        "summary": "Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor."
+      },
+      {
+        "headline": "Açık Kaynak Modellerde Kuantizasyon Devrimi: Dizüstünde GPT-4 Seviyesi",
+        "key_points": [
+          "Kuantizasyon tekniği ile modeller sıkıştırılarak standart bilgisayarlarda çalıştırılıyor",
+          "Şirket içi veri gizliliği ve yerel işlem önceliği talebi katladı"
+        ],
+        "summary": "Son yayınlanan açık ağırlıklı modeller, yüksek kuantizasyon verimliliği sayesinde bulut sunucularına bağlanmadan güçlü mantık yürütme imkanı sunuyor."
+      },
+      {
+        "headline": "Nöromorfik Çipler ve Enerji Verimliliği: Beyin Biyolojisini Taklit Eden Donanım",
+        "key_points": [
+          "İnsan beyninin sinaps yapısını taklit eden yeni donanım mimarileri tanıtıldı",
+          "Veri merkezlerinin yüksek elektrik tüketimine 10 kat daha verimli sürdürülebilir çözüm"
+        ],
+        "summary": "Donanım üreticileri, derin öğrenme modellerini mikrosaniye seviyesinde gecikmeyle ve onda bir enerjiyle çalıştıran yeni nöromorfik işlemcilerini duyurdu."
+      },
+      {
+        "headline": "İnsansı Robotlarda Multimodal Haritalama: Fabrikalardan Günlük Yaşama",
+        "key_points": [
+          "Görsel ve dokunsal veriyi birleştiren multimodal sinir ağları kullanılıyor",
+          "Otomotiv montaj hatlarında insan işçilerle yan yana pilot testler başladı"
+        ],
+        "summary": "Yeni insansı robot modelleri, uçtan uca sinir ağları sayesinde insan hareketlerini taklit ederek karmaşık montaj ve taşıma görevlerini hatasız tamamlayabiliyor."
+      },
+      {
+        "headline": "Kuantum Sonrası Kriptografi (PQC): Geleceğin Siber Saldırılarına Karşı Kalkan",
+        "key_points": [
+          "Kuantum bilgisayarların mevcut şifreleme algoritmalarını kırma riskine karşı yeni protokoller onaylandı",
+          "Bankacılık ve kamu altyapıları kuantum dayanıklı şifrelemeye geçişe başladı"
+        ],
+        "summary": "Uluslararası siber güvenlik otoriteleri, kuantum tehditlerine karşı geliştirilen yeni matematiksel kafes tabanlı şifreleme standartlarını resmi olarak yürürlüğe koydu."
+      },
+      {
+        "headline": "Biyoteknolojide Generatif Yapay Zeka: Saatler İçinde Sentetik Protein Tasarımı",
+        "key_points": [
+          "Aylar süren moleküler simülasyonlar saatler seviyesine indirildi",
+          "Nadir hastalıklar için hedefe yönelik aday moleküller klinik aşamaya ulaştı"
+        ],
+        "summary": "Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti."
+      },
+      {
+        "headline": "LEO Takımyıldızlarında Optik Lazer İletişimi: Uzayda Gigabit İnternet Omurgası",
+        "key_points": [
+          "Uydular arası lazer ışınları, karasal fiber kablolardan %40 daha hızlı veri aktarıyor",
+          "Kıtalararası finansal işlemlerde ve kutup bölgelerinde gecikme süreleri dibe çekildi"
+        ],
+        "summary": "Alçak dünya yörüngesindeki uydular arasında devreye alınan optik lazer haberleşmesi, küresel internet omurgasını uzaya taşıyarak karasal fiber hatlara rakip oluyor."
+      },
+      {
+        "headline": "Yeni Nesil Katı Hal (Solid-State) Bataryalar: Seri Üretim Takvimi Netleşti",
+        "key_points": [
+          "Sıvı elektrolit yerine seramik polimer kullanılarak yangın riski tamamen sıfırlandı",
+          "10 dakikada şarj ve 1000 kilometreyi aşan menzil ile 2027 başında ticari araçlara giriyor"
+        ],
+        "summary": "Katı hal batarya teknolojisinde beklenen büyük atılım gerçekleşti; laboratuvar testleri tamamlanan hücrelerin ticari elektrikli araçlara entegrasyonu duyuruldu."
+      },
+      {
+        "headline": "Otonom Web ve Tarayıcı Ajanları: İnternet Gezintisinde İnsan Yerine Yapay Zeka",
+        "key_points": [
+          "Kullanıcı talimatıyla çok adımlı rezervasyon, araştırma ve satın alma görevleri tamamlanıyor",
+          "Görsel arayüzleri analiz eden yeni nesil çok modlu ajanlar siteleri otonom geziyor"
+        ],
+        "summary": "Web sitelerinde insan yerine gezinip form dolduran, uçak bileti arayan ve karmaşık e-ticaret süreçlerini yöneten otonom tarayıcı ajanları yaygınlaşıyor."
+      },
+      {
+        "headline": "Açık Ağırlıklı Yapay Zekada Küresel Güvenlik ve Kırmızı Takım Standartları",
+        "key_points": [
+          "Modellerin tehlikeli senaryolara karşı dayanıklılığını ölçen küresel denetim çerçevesi açıklandı",
+          "Kötü niyetli manipülasyonları engelleyen yazılımsal ve donanımsal güvenlik kalkanları devreye girdi"
+        ],
+        "summary": "Yapay zeka güvenlik otoriteleri, açık ağırlıklı modellerin güvenliğini teyit eden kapsamlı kırmızı takım ve stres testi standartlarını duyurdu."
+      }
+    ],
+    "script": "Ahmet: Merhaba teknoloji meraklıları, M1 Podcast'e hoş geldiniz. Bugün yapay zeka laboratuvarlarından kuantum şifrelemeye, nöromorfik donanımlardan yeni nesil bataryalara kadar tam on sıcak ve kritik başlıkla karşınızdayız. İlk durağımız, yazılım dünyasında ezberleri tamamen bozan otonom kodlama ajanlarındaki son sıçrama. Yayınlanan yeni benchmark raporları, yapay zekanın basit bir kod tamamlama eklentisi olmaktan çıkıp projenin tüm mimarisini anlayan bağımsız bir yazılım mühendisine dönüştüğünü gösteriyor.\n\nEmel: Ahmet, burada otonom ajan derken tam olarak neyi kastediyoruz? Yani yıllardır kullandığımız GitHub Copilot gibi akıllı asistanlardan veya sohbet botlarından farkı ne?\n\nAhmet: Çok kritik bir ayrım. Klasik yardımcılar sizden tekil bir fonksiyon veya kod bloğu yazmanızı bekler. Otonom ajan ise projenin tüm git geçmişini, veritabanı şemasını, mikroservis bağlarını ve birim testlerini aynı anda hafızasına alıyor. Sistemde bir hata bildirdiğinizde sadece hatanın olduğu satırı değil, o değişikliğin tetikleyeceği diğer tüm servisleri analiz ediyor, kendi kendine yeni birim testleri yazıyor ve doğrulanmış düzeltmeyi doğrudan bir pull request olarak geliştiricinin önüne koyuyor. Büyük teknoloji şirketlerinde yapılan testlerde ekiplerin hata çözme süresinde yüzde kırk beşlik devasa bir kısalma görüldü.\n\nEmel: Peki Ahmet, bu ajanların yazdığı kodlar sisteme bilmeden yeni güvenlik açıkları veya mimari hatalar sokabilir mi? Denetim mekanizması pratikte nasıl kurgulanıyor?\n\nAhmet: Çok haklı ve yerinde bir endişe. İşte bu yüzden ajanlar kodu doğrudan prodüksiyon dalına basmıyor; izole sanal alanlarda güvenlik taramasından geçirip statik kod analiziyle test ettikten sonra insan kıdemli mühendisin onayına sunuyor. Yani yazılımcı artık rutin sözdizimi hatalarıyla veya mekanik kod bloklarıyla vakit kaybetmek yerine sistem mimarı ve nihai karar verici rolüne geçiyor. İş mantığını ve sınırları insan belirliyor, ham işçiliği ise ajanlar sırtlanıyor.\n\nEmel: Kodlama tarafındaki bu hızlanma, açık kaynak modellerin yerel cihazlarda çalıştırılabilmesiyle birleştiğinde etkisi ikiye katlanıyor. Eskiden bu düzeyde akıl yürüten modelleri kullanmak için mutlaka dev bulut sağlayıcılarının API'lerine bağlanmak ve yüksek faturalar ödemek zorundaydık. Ancak son günlerde kuantizasyon teknolojisindeki atılımlar, GPT-4 sınıfı modelleri standart dizüstü bilgisayarlara kadar indirdi.\n\nAhmet: Emel, dinleyicilerimizin zihninde netleşmesi için kuantizasyon kavramını biraz somutlaştıralım mı? Teknik olarak arka planda ne yapılıyor da devasa bir yapay zeka modeli sıradan bir bilgisayarın belleğine sığabiliyor?\n\nEmel: Kuantizasyonu devasa bir yüksek çözünürlüklü RAW fotoğrafı, insan gözünün fark edemeyeceği kadar az bir kayıpla sıkıştırmaya benzetebiliriz. Normalde on altı bitlik yüksek hassasiyetli kayan noktalı sayılarla saklanan yüz milyarlarca model ağırlığını, özel algoritmalarla dört veya sekiz bite indiriyoruz. Böylece modelin kapladığı bellek alanı dörtte birine düşerken, mantık yürütme kabiliyeti yüzde doksan beşin üzerinde korunuyor.\n\nAhmet: İşte bu sayede bankalar, hastaneler veya savunma sanayii firmaları en kritik verilerini şirket dışındaki üçüncü parti bir bulut sunucusuna göndermeden, kendi ofislerindeki bilgisayarlarda yerel olarak yapay zeka çalıştırabiliyor. Veri gizliliği ve kurumsal egemenlik açısından tarihi bir eşik aşıldı.\n\nEmel: Kesinlikle öyle. Fakat modeller yerelleştikçe ve veri merkezleri katlanarak büyüdükçe başka bir devasa darboğazla yüzleştik: Elektrik tüketimi. Yapay zeka sunucularının enerji iştahı ülkelerin şebekelerini zorlarken, bu hafta nöromorfik çip mimarilerinde tarihi bir dönüm noktası duyuruldu.\n\nAhmet: Nöromorfik derken insan beyninin biyolojisinden ilham alan donanımları kastediyoruz değil mi Emel? Klasik işlemcilerden mimari farkı ne tam olarak?\n\nEmel: Aynen öyle Ahmet. Geleneksel bilgisayar işlemcileri saat frekansına göre sürekli elektrik çeker ve her döngüde hafıza ile işlemci arasında veri taşır. Nöromorfik çipler ise insan beynindeki biyolojik nöron ve sinapslar gibi çalışır; yani sadece bir uyarı, bir sinyal geldiğinde elektrik harcar. Bilgi akışı yoksa bekleme modundadır ve enerji tüketimi neredeyse sıfıra iner. Yeni tanıtılan prototipler, derin öğrenme çıkarımlarını klasik çiplere göre onda bir enerjiyle ve mikrosaniye seviyesinde gecikmeyle tamamlayabiliyor.\n\nAhmet: Düşünsenize, akıllı saatler, kalp pilleri veya minyatür dronlar şarja ihtiyaç duymadan haftalarca kendi üzerinde yapay zeka çalıştırabilecek. Donanımdaki bu hafifleme ve verimlilik, bizi dördüncü sıcak konumuza, insansı robotlardaki multimodal haritalama devrimine götürüyor.\n\nEmel: Robotik dünyası son bir yılda laboratuvar deneylerinden çıkıp doğrudan fabrika zeminine indi. İnsansı robotlar artık sadece önceden koordinatları girilmiş sabit rotaları takip etmiyor; multimodal görsel ve dokunsal algılayıcılarla çevrelerini dinamik olarak öğreniyorlar.\n\nAhmet: Burada multimodal derken neyi kastediyoruz, biraz detaylandıralım. Robot sadece kameralardan gelen iki boyutlu piksellere bakmıyor. Parmak uçlarındaki basınç sensörleri, gövdesindeki jiroskoplar ve derinlik kameralarından gelen tüm veriler tek bir sinir ağında birleşiyor. Böylece robot yumuşak bir meyveyi ezip ezmediğini, elindeki ağır bir otomotiv parçasının dengesini anlık olarak hissedip tutuş kuvvetini milisaniyeler içinde ayarlayabiliyor.\n\nEmel: Hatta küresel otomotiv devlerinin montaj hatlarında insansı robotlar insan işçilerle yan yana çalışmaya başladı bile. Tehlikeli, yüksek sıcaklıklı veya tekrarlı montaj görevlerini hatasız şekilde üstleniyorlar.\n\nAhmet: İş güvenliği ve verimlilikte devrim yaşanırken, fabrikayı, finansı ve bulutu birbirine bağlayan dijital altyapılarda ise çok büyük bir alarm çalıyordu: Kuantum tehdidi. Ve bu hafta siber güvenlik dünyası için tarihi bir gün yaşandı; kuantum sonrası kriptografi standartları resmi olarak yürürlüğe girdi.\n\nEmel: Ahmet, kuantum bilgisayarlar bugünkü şifreleme sistemlerini kırabilir denildiğinde genelde insanlarda soyut bir korku oluşuyor. Tehlike tam olarak nereden kaynaklanıyordu ve yeni onaylanan PQC protokolleri bunu nasıl engelliyor?\n\nAhmet: Harika bir soru. Bugün e-ticaretten bankacılık uygulamalarına kadar internetteki güvenliğin temeli RSA ve eliptik eğri şifrelemesine dayanıyor. Bu sistemlerin güvenliği, çok büyük iki asal sayının çarpımını asal çarpanlarına ayırmanın klasik bilgisayarlar için yüzlerce yıl sürmesi prensibine dayanır. Oysa yeterince güçlü bir kuantum bilgisayar, Shor algoritması sayesinde bu çarpanları birkaç dakika içinde bulabilir.\n\nEmel: Yani bugüne kadar saklanan tüm şifreli yazışmalar, devlet sırları ve banka kayıtları geriye dönük olarak çözülebilir riski taşıyordu.\n\nAhmet: Kesinlikle. İşte yeni onaylanan kuantum sonrası kriptografi, yani PQC algoritmaları, asal sayılar yerine çok boyutlu karmaşık matematiksel kafes yapılarına dayanıyor. Bu kafes problemleri öylesine çetrefilli ki, kuantum bilgisayarlar bile bilinen hiçbir algoritmayla bu şifreyi çözemiyor. Bankalar ve kamu kurumları şimdiden sunucularını bu yeni kafes tabanlı şifreleme kütüphanelerine güncellemeye başladı.\n\nEmel: Güvenlik tarafında bu kalkan kurulurken, biyoteknoloji laboratuvarlarından gelen haberler ise insan ömrünü ve sağlığını doğrudan etkileyecek cinsten. Generatif yapay zeka artık yalnızca metin veya resim üretmiyor, atomik düzeyde sentetik proteinler tasarlıyor.\n\nAhmet: Emel, bir proteinin yapısını tasarlamak neden tıp dünyası için bu kadar devasa bir mesele?\n\nEmel: Ahmet, vücudumuzdaki her bir hastalık veya virüs, belirli hücre reseptörlerine kilit-anahtar uyumuyla bağlanır. Bir hastalığı durdurmak için o kilide tam oturan yepyeni bir molekül veya protein tasarlamanız gerekir. Eskiden bir proteinin üç boyutlu olarak nasıl katlanacağını laboratuvarda deneme yanılma yoluyla simüle etmek aylar, bazen yıllar sürerdi. Şimdi derin öğrenme modelleri, hedeflenen hastalığa kilitlenecek yepyeni sentetik protein tasarımlarını birkaç saat içinde üretebiliyor.\n\nAhmet: Hatta nadir görülen genetik hastalıklar ve kanser türleri için tasarlanan sentetik aday moleküller klinik deney aşamasına ulaştı bile. Kişiye özel hedefe yönelik ilaçların geliştirilme süresi yıllardan aylara iniyor.\n\nEmel: Tıptaki bu mucizevi sıçramanın ardından rotamızı gökyüzüne, hatta dünyanın yörüngesine çeviriyoruz. Alçak dünya yörüngesindeki uydu takımyıldızlarında optik lazer haberleşmesi küresel internet ağını baştan aşağı değiştiriyor.\n\nAhmet: Emel, uydudan internet dediğimizde çoğu insanın aklına klasik radyo frekansları ve baz istasyonları gelir. Lazer ile veri iletimi neyi farklı kılıyor?\n\nEmel: Klasik radyo dalgaları uzay boşluğunda geniş bir alana yayılır, bant genişliği sınırlıdır ve atmosferik parazitlerden kolayca etkilenir. Yeni nesil optik lazer bağlantıları ise binlerce kilometre ötedeki uyduları saç teli kalınlığında odaklanmış ışık demetleriyle birbirine bağlıyor. Işık uzay boşluğunda, karasal fiber optik kablolardaki cam ortamına göre yüzde kırk daha hızlı ilerler.\n\nAhmet: Yani Londra ile Tokyo arasındaki bir finans işlemi veya kritik veri paketi, yerin altındaki fiber kablolardan daha hızlı bir şekilde uzaydaki lazer ağı üzerinden hedefine ulaşıyor. Hem gecikme süresi dramatik biçimde düşüyor hem de okyanusun ortasındaki bir gemi ya da kutuplardaki bir araştırma istasyonu gigabit hızında internete kavuşuyor.\n\nEmel: Uzaydaki bu iletişim ağı dünyadaki elektrikli mobilite devrimiyle birleştiğinde geleceğin akıllı şehirleri şekilleniyor. Ve mobilite alanındaki en büyük haberimiz, katı hal batarya teknolojilerinde nihayet seri üretim takviminin netleşmesi.\n\nAhmet: Katı hal, yani solid-state piller otomotiv sektörünün kutsal kasesi olarak görülüyordu Emel. Mevcut lityum iyon pillerden temel farkı ve kullanıcının hayatına getireceği değişim nedir?\n\nEmel: Mevcut lityum iyon pillerde anot ve katot arasında sıvı bir elektrolit bulunur. Bu sıvı aşırı ısınmada yanma riski taşır, soğuk havalarda verimi düşer ve şarj süresini sınırlar. Katı hal bataryalarda ise bu sıvı katı seramik veya polimer bir malzeme ile değiştiriliyor. Bu sayede pil yanma riski taşımıyor, aynı hacimde iki kat daha fazla enerji depolayabiliyor ve on dakikada yüzde seksen şarj olabiliyor. Üstelik dondurucu kış şartlarında yaşanan menzil düşüşü de tarihe karışıyor.\n\nAhmet: Yani bir elektrikli otomobil tek şarjla bin kilometrenin üzerinde yol yapabilecek ve şarj istasyonunda kahvenizi alana kadar bataryası dolmuş olacak. İlk ticari araçların 2027 yılı başında yollara çıkacağı duyuruldu.\n\nEmel: Mobilitedeki bu konforun ardından yazılım tarafındaki bir diğer dev yeniliğe, otonom web ajanlarına bakalım. Artık web siteleri sadece insanların tıklaması için değil, arkada görev koşan yapay zeka ajanlarının gezinmesi için optimize ediliyor.\n\nAhmet: Emel, tarayıcı ajanları dediğimizde ne anlamalıyız? Mesela bir tatil planı veya karmaşık bir uçak bileti rezervasyonunda nasıl çalışıyorlar?\n\nEmel: Siz sadece 'Önümüzdeki ay Roma seyahatim için bütçeme en uygun uçak ve otel rezervasyonlarını ayarla' diyorsunuz. Ajan tarayıcıyı açıyor, siteleri ziyaret ediyor, filtreleri uyguluyor, şartları inceliyor ve satın alma adımına kadar tüm süreci uçtan uca yürütüyor.\n\nAhmet: Web sayfalarındaki butonları ve formları bir insan gibi algılayan bu çok modlu modeller internet kullanım alışkanlıklarımızı kökten değiştirecek. Ve günün son büyük başlığı: Açık ağırlıklı modeller için küresel kırmızı takım ve güvenlik standartlarının duyurulması.\n\nEmel: Modellerin biyolojik, kimyasal veya siber saldırılarda kötüye kullanılmasını engellemek için bağımsız etik hackerların denetiminden geçmesi zorunlu hale getirildi. Böylece yapay zeka inovasyonu güvenli temeller üzerinde büyüyecek.\n\nAhmet: Otonom mühendislerden kuantizasyona, nöromorfik çiplerden uzay lazerlerine, katı hal pillerden yapay zeka güvenliğine kadar tam on büyük gelişmeyi tüm boyutlarıyla masaya yatırdık.\n\nEmel: Tüm bu haberlerin özetleri, can alıcı maddeleri ve kaynak bağlantıları podcast açıklama metnimizde ve RSS beslememizde sizleri bekliyor.\n\nAhmet: M1 Podcast'in bugünkü bölümünün sonuna geldik. Yarın yepyeni teknoloji başlıklarıyla tekrar görüşmek dileğiyle, hoşça kalın!\n\nEmel: Kendinize çok iyi bakın, bilimle ve teknolojiyle kalın!",
+    "pub_date": "Thu, 03 Sep 2026 14:22:00 GMT",
+    "audio_url": "https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_044b78.mp3",
+    "file_size": 4949496,
+    "duration_formatted": "00:13:44",
+    "duration_seconds": 824
+  },
+  {
     "guid": "ep_20260901_m1_ba8b30",
     "title": "M1 Podcast - Günlük Teknoloji & Yapay Zeka Bülteni (01.09.2026)",
     "summary": "Otonom yazılım mühendislerinden kuantum dayanıklı şifrelemeye, nöromorfik çiplerden yerel dil modellerine teknolojinin en sıcak gelişmeleri ve derinlemesine sohbeti.",
