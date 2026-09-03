@@ -27,6 +27,8 @@ ENV/
 # Output directories & Media (episodes and dist are committed for Apple Podcasts & GitHub Pages)
 output/
 audio_cache/
+downloaded_artifacts/
+temp_test/
 
 # IDEs
 .idea/

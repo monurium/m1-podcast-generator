@@ -23,244 +23,43 @@
       <link>https://monurium.github.io/m1-podcast-generator</link>
     </image>
     <item>
-      <title>Migros OneCast AI - Günlük Yapay Zeka Bülteni: Nvidia &amp; Hugging Face ve Ajan Çağı (03.09.2026)</title>
-      <description>Nvidia'nın Hugging Face satın alımından Meta Muse Spark kodlama modeline, OpenAI Astra'nın akıl yürütme tartışmalarından robotik görme ve siber güvenlik yatırımlarına son 24 saatin 10 kritik AI gelişmesi.
+      <title>Migros OneCast AI - Nvidia'nın 13 Milyar Dolarlık Hugging Face Hamlesi ve Kontrolsüz Ajanlar Çağı</title>
+      <description>Nvidia'nın açık kaynak devini bünyesine katması, OpenAI'ın tartışmalı yeni akıl yürütme tekniği Astra, yapay zeka güvenlik duvarlarını kaldıran Abliteration yöntemi ve siber güvenlikten eğitime günün öne çıkan 9 kritik gelişmesini inceliyoruz.
 ⚡ GÜNÜN ÇARPICI HABERLERİ:
-1. Nvidia, Açık Kaynak Merkezi Hugging Face'i Satın Aldığını Doğruladı
-Nvidia, açık kaynak yapay zeka topluluğunun kalbi sayılan Hugging Face platformunu satın aldığını doğrulayarak yapay zeka ekosisteminde tarihi bir konsolidasyona imza attı.
-Önemli Noktalar: Dünyanın en büyük açık yapay zeka model havuzu donanım devinin bünyesine geçti • Bağımsız araştırmacılar ve düzenleyici kurumlar olası tekel risklerini tartışıyor
-2. Meta'dan Otonom Kodlama Ajanı Modeli: Muse Spark 1.3
-Meta, yazılım projelerinin mimarisini anlayarak bağımsız testler yazabilen ve hataları otomatik düzeltebilen ajan tabanlı yeni Muse Spark 1.3 modelini duyurdu.
-Önemli Noktalar: Model sadece kod tamamlamakla kalmıyor, tüm depoyu tarayıp bağımsız testler yazıyor • Geliştirici ekiplerinin hata ayıklama ve refactoring sürelerinde radikal hızlanma sağlandı
-3. OpenAI Astra'nın Derin Akıl Yürütme Tekniği Güvenlik Tartışması Yarattı
-OpenAI'ın AGI eşiğine yaklaştığı belirtilen yeni Astra modeli, karmaşık mantık yürütme yetenekleriyle öne çıkarken otonom karar alma süreçlerindeki güvenlik bariyerleri tartışılıyor.
-Önemli Noktalar: Model yanıt üretmeden önce test anı hesaplamasıyla (test-time compute) iç sesini kontrol ediyor • Derin mantık yürütme süreçlerinin güvenlik filtrelerini aşmada yeni riskler doğurabileceği belirtiliyor
-4. Google'dan Çift Hamle: Gemini 3.8 Flash ve Siber Güvenlik Odaklı Flash Cyber
-Google, düşük gecikmeli genel amaçlı Gemini 3.8 Flash modelinin yanı sıra kurumsal siber savunma için özel olarak optimize edilen Gemini 3.8 Flash Cyber modelini tanıttı.
-Önemli Noktalar: Flash Cyber modeli sıfır gün açıklarını ve oltalama saldırılarını milisaniyelerde tespit ediyor • Hafif mimari sayesinde veri merkezlerine bağımlı kalmadan uç cihazlarda yüksek hızda çalışıyor
-5. Yapay Zeka Modellerini Savunan HiddenLayer, 100 Milyon Dolar Yatırım Aldı
-Büyük dil modellerini veri zehirleme ve jailbreak saldırılarına karşı koruyan siber güvenlik girişimi HiddenLayer, 100 milyon dolarlık Seri B yatırım turunu tamamladı.
-Önemli Noktalar: Model zehirleme ve ağırlık manipülasyonu saldırılarına karşı kalkan geliştiriliyor • Kurumsal yapay zeka güvenliği sektörünün en büyük yatırımlarından biri gerçekleşti
-6. Abliteration.ai: Açık Modellerden Güvenlik Filtrelerinin Silinmesi Tartışılıyor
-Açık ağırlıklı modellerden güvenlik kurallarını kaldıran Abliteration yöntemi, yapay zekanın kötüye kullanım riskleri ve açık kaynak regülasyonları konusundaki tartışmaları alevlendirdi.
-Önemli Noktalar: Ağırlık matrislerindeki güvenlik vektörleri matematiksel cerrahiyle temizleniyor • Sansürsüz araştırma vaadiyle sunulan hizmet siber güvenlik otoritelerinde alarm yarattı
-7. Robotik Görme Girişimi Lyte, 165 Milyon Dolar Yatırımla Unicorn Oldu
-İnsansı robotların çevrelerini insan hassasiyetinde algılamasını sağlayan görme yapay zekası şirketi Lyte, 165 milyon dolar yeni fon toplayarak değerlemesini 1,6 milyar dolara taşıdı.
-Önemli Noktalar: 1,6 milyar dolar değerlemeye ulaşan girişim, robotlara 3D derinlik ve doku algısı kazandırıyor • Pahalı lidar sensörleri yerine kameralarla çalışan model donanım maliyetini yarıya indiriyor
-8. Anthropic Claude Bilgisayar Kullanımı: İş Akışlarında Otonom Masaüstü Dönemi
-Anthropic'in Claude modeli, doğrudan bilgisayar ekranını okuyup imleç ve klavye hareketleriyle görevleri tamamlayarak masaüstü otomasyonunda yeni bir çığır açtı.
-Önemli Noktalar: Model fare ve klavye kullanarak tarayıcı, form ve dosya işlemlerini insan gibi yönetiyor • Finans ve lojistik sektöründe operasyonel veri girişleri doğrudan yapay zekaya devrediliyor
-9. Akademik Araştırma: Çoklu Ajan Sistemlerinde Koordinasyon ve Çatışma Krizi
-Synced Review tarafından derlenen araştırma, çoklu yapay zeka ajanlarının eşzamanlı çalışırken görev çakışmaları ve sistem kilitlenmeleri yaşayabildiğini ortaya koydu.
-Önemli Noktalar: Bağımsız çalışan ajanların aynı dosya üzerinde birbirini kilitleyebildiği belgelendi • Ajan orkestrasyonu ve görev hiyerarşisi geleceğin kritik yazılım mimarisi olarak öne çıkıyor
-10. The Adecco Group Raporu: Yapay Zeka 1,9 Milyon Yeni İstihdam Alanı Yarattı
-Küresel insan kaynakları devi Adecco'nun araştırması, yapay zekanın var olan meslekleri dönüştürürken dünya çapında 1,9 milyon yeni istihdam fırsatı yarattığını açıkladı.
-Önemli Noktalar: İş kayıpları endişesinin aksine veri mimarlığı ve ajan denetçiliğinde rekor talep oluştu • İş gücünün teknolojik becerilere uyum sağlaması küresel büyümenin anahtarı olarak vurgulandı</description>
-      <itunes:summary>Nvidia'nın Hugging Face satın alımından Meta Muse Spark kodlama modeline, OpenAI Astra'nın akıl yürütme tartışmalarından robotik görme ve siber güvenlik yatırımlarına son 24 saatin 10 kritik AI gelişmesi.</itunes:summary>
-      <pubDate>Thu, 03 Sep 2026 19:34:51 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260903_m1_b71386</guid>
+1. Nvidia, Hugging Face'i 12,9 Milyar Dolara Satın Aldığını Doğruladı
+Nvidia, 18 milyondan fazla geliştiricinin kullandığı Hugging Face'i 12,93 milyar dolara satın alarak yapay zeka yazılım ve model dağıtımındaki hakimiyetini pekiştirdi.
+Önemli Noktalar: Donanım devi, 3 milyondan fazla modele ev sahipliği yapan açık kaynak merkezini bünyesine katıyor. • Açık kaynak ekosisteminde tekelleşme ve tarafsızlık kaygıları tırmanışta.
+2. OpenAI'ın Yeni Astra Modeli 'Recurrent Depth' Tekniğiyle Güvenlik Tartışması Yarattı
+OpenAI'ın yeni bilgisayar kullanabilen modeli Astra, geleneksel adım adım düşünme zincirini kırıp kendi düşünce katmanlarını döngüsel olarak yeniden işleyen 'Recurrent Depth' tekniği sebebiyle güvenlik uzmanlarını alarma geçirdi.
+Önemli Noktalar: Doğrusal akıl yürütme yerine döngüsel katman yapısı kullanılıyor. • Siber güvenlik uzmanları modelin denetim dışı kararlar alabileceğinden endişeli.
+3. Meta Muse Spark 1.3'ü Duyurdu: Veri Paylaşana %95 İndirim
+Meta, otonom kodlama yetenekleri artırılmış Muse Spark 1.3 modelini tanıtırken, istem ve çıktı verilerini gelecekteki modellerin eğitimi için paylaşan kullanıcılara %95 maliyet avantajı sağlayacağını açıkladı.
+Önemli Noktalar: Ajan kodlama görevlerinde %20 daha az araç çağrısı ve %25 daha az jeton harcıyor. • Geliştirici girdilerini eğitime dahil etmeyi kabul edenlere dev indirim sunuluyor.
+4. Google'dan Çifte Hamle: Gemini 3.8 Flash ve Gemini 3.8 Flash Cyber
+Google, yüksek hızlı Gemini 3.8 Flash mimarisini ikiye ayırarak birini genel ajansal görevlere, diğerini ise doğrudan siber tehdit analizi ve savunmaya özel hale getirdi.
+Önemli Noktalar: Genel kullanım ile siber savunma odaklı iki ayrı uzman model. • Siber güvenlik süreçlerinde sıfır gün açıklarını tespit yeteneği.
+5. Abliteration.ai Güvenlik Duvarlarını (Guardrails) Kaldırmayı Ticaret Haline Getirdi
+Abliteration.ai, büyük dil modellerindeki güvenlik kurallarını ve sansür mekanizmalarını kalıcı olarak ortadan kaldıran teknikleri ticari bir hizmet olarak sunmaya başladı.
+Önemli Noktalar: Güvenlik nöronları 'cerrahi müdahale' ile modelden siliniyor. • Savunmacılara kötü niyetli aktörlerle aynı araçları sağlama iddiası.
+6. Perplexity, Yerel Çıkarım Motoru Lily'yi Açık Kaynak Yaptı
+Perplexity, karmaşık görevleri bulut ile kullanıcının kendi bilgisayarı arasında bölen 'Hybrid Compute' sisteminin arkasındaki Lily çıkarım motorunu açık kaynak olarak yayınladı.
+Önemli Noktalar: Ağır akıl yürütme bulutta, hassas işlemler Mac üzerinde çalışıyor. • Rust ve Metal mimarisiyle Apple Silicon üzerinde rekor hız.
+7. CrowdStrike Otonom Ajanlar İçin Falcon Guardian Sistemini Duyurdu
+CrowdStrike, kurumsal sistemlerde kendi kendine iş yapan yapay zeka ajanlarının hata yapıp kritik verilere erişmesini veya bozmasını engelleyen yeni güvenlik katmanını tanıttı.
+Önemli Noktalar: Ajanların sisteme verebileceği zararı kısıtlayan 'Patlama Yarıçapı' konsepti. • İnsan dışı kimlik yönetimi ile yapay zeka yetkilendirmesi.
+8. Google WeatherNext 3 ile Derin Öğrenmeli Hava Tahmini
+Google'ın yeni WeatherNext 3 modeli, kar ve yağmur tahminlerinde eşi görülmemiş bir çözünürlük sunarak geleneksel hava durumu modellerini geride bırakıyor.
+Önemli Noktalar: Fiziksel simülasyonlar yerine yapay zeka tabanlı meteoroloji. • Haritalar, Arama ve Gemini içerisine entegre yüksek çözünürlüklü tahminler.
+9. New York Kentinde İlköğretimde Yapay Zeka Yasağı Kararı
+New York Şehri Eğitim Dairesi, çocukların erken yaşta eleştirel düşünme yeteneklerinin gerilemesini önlemek amacıyla ilköğretim seviyesinde yapay zeka araçlarını yasaklama kararı aldı.
+Önemli Noktalar: 2026-2027 eğitim dönemi itibarıyla ilkokullarda yapay zeka kullanımı kısıtlanıyor. • Temel zihinsel becerilerin ve okuma-yazma süreçlerinin korunması hedefleniyor.</description>
+      <itunes:summary>Nvidia'nın açık kaynak devini bünyesine katması, OpenAI'ın tartışmalı yeni akıl yürütme tekniği Astra, yapay zeka güvenlik duvarlarını kaldıran Abliteration yöntemi ve siber güvenlikten eğitime günün öne çıkan 9 kritik gelişmesini inceliyoruz.</itunes:summary>
+      <pubDate>Thu, 03 Sep 2026 20:30:34 GMT</pubDate>
+      <guid isPermaLink="false">ep_20260903_onecast_01</guid>
       <itunes:author>Migros One</itunes:author>
-      <itunes:duration>00:08:44</itunes:duration>
+      <itunes:duration>10m 39s</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_b71386.mp3" length="3145896" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>Migros OneCast AI - Günlük Yapay Zeka Bülteni: Nvidia &amp; Hugging Face ve Ajan Çağı (03.09.2026)</title>
-      <description>Nvidia'nın Hugging Face satın alımından Meta Muse Spark kodlama modeline, OpenAI Astra'nın akıl yürütme tartışmalarından robotik görme ve siber güvenlik yatırımlarına son 24 saatin 10 kritik AI gelişmesi.
-⚡ GÜNÜN ÇARPICI HABERLERİ:
-1. Nvidia, Açık Kaynak Merkezi Hugging Face'i Satın Aldığını Doğruladı
-Nvidia, açık kaynak yapay zeka topluluğunun kalbi sayılan Hugging Face platformunu satın aldığını doğrulayarak yapay zeka ekosisteminde tarihi bir konsolidasyona imza attı.
-Önemli Noktalar: Dünyanın en büyük açık yapay zeka model havuzu donanım devinin bünyesine geçti • Bağımsız araştırmacılar ve düzenleyici kurumlar olası tekel risklerini tartışıyor
-2. Meta'dan Otonom Kodlama Ajanı Modeli: Muse Spark 1.3
-Meta, yazılım projelerinin mimarisini anlayarak bağımsız testler yazabilen ve hataları otomatik düzeltebilen ajan tabanlı yeni Muse Spark 1.3 modelini duyurdu.
-Önemli Noktalar: Model sadece kod tamamlamakla kalmıyor, tüm depoyu tarayıp bağımsız testler yazıyor • Geliştirici ekiplerinin hata ayıklama ve refactoring sürelerinde radikal hızlanma sağlandı
-3. OpenAI Astra'nın Derin Akıl Yürütme Tekniği Güvenlik Tartışması Yarattı
-OpenAI'ın AGI eşiğine yaklaştığı belirtilen yeni Astra modeli, karmaşık mantık yürütme yetenekleriyle öne çıkarken otonom karar alma süreçlerindeki güvenlik bariyerleri tartışılıyor.
-Önemli Noktalar: Model yanıt üretmeden önce test anı hesaplamasıyla (test-time compute) iç sesini kontrol ediyor • Derin mantık yürütme süreçlerinin güvenlik filtrelerini aşmada yeni riskler doğurabileceği belirtiliyor
-4. Google'dan Çift Hamle: Gemini 3.8 Flash ve Siber Güvenlik Odaklı Flash Cyber
-Google, düşük gecikmeli genel amaçlı Gemini 3.8 Flash modelinin yanı sıra kurumsal siber savunma için özel olarak optimize edilen Gemini 3.8 Flash Cyber modelini tanıttı.
-Önemli Noktalar: Flash Cyber modeli sıfır gün açıklarını ve oltalama saldırılarını milisaniyelerde tespit ediyor • Hafif mimari sayesinde veri merkezlerine bağımlı kalmadan uç cihazlarda yüksek hızda çalışıyor
-5. Yapay Zeka Modellerini Savunan HiddenLayer, 100 Milyon Dolar Yatırım Aldı
-Büyük dil modellerini veri zehirleme ve jailbreak saldırılarına karşı koruyan siber güvenlik girişimi HiddenLayer, 100 milyon dolarlık Seri B yatırım turunu tamamladı.
-Önemli Noktalar: Model zehirleme ve ağırlık manipülasyonu saldırılarına karşı kalkan geliştiriliyor • Kurumsal yapay zeka güvenliği sektörünün en büyük yatırımlarından biri gerçekleşti
-6. Abliteration.ai: Açık Modellerden Güvenlik Filtrelerinin Silinmesi Tartışılıyor
-Açık ağırlıklı modellerden güvenlik kurallarını kaldıran Abliteration yöntemi, yapay zekanın kötüye kullanım riskleri ve açık kaynak regülasyonları konusundaki tartışmaları alevlendirdi.
-Önemli Noktalar: Ağırlık matrislerindeki güvenlik vektörleri matematiksel cerrahiyle temizleniyor • Sansürsüz araştırma vaadiyle sunulan hizmet siber güvenlik otoritelerinde alarm yarattı
-7. Robotik Görme Girişimi Lyte, 165 Milyon Dolar Yatırımla Unicorn Oldu
-İnsansı robotların çevrelerini insan hassasiyetinde algılamasını sağlayan görme yapay zekası şirketi Lyte, 165 milyon dolar yeni fon toplayarak değerlemesini 1,6 milyar dolara taşıdı.
-Önemli Noktalar: 1,6 milyar dolar değerlemeye ulaşan girişim, robotlara 3D derinlik ve doku algısı kazandırıyor • Pahalı lidar sensörleri yerine kameralarla çalışan model donanım maliyetini yarıya indiriyor
-8. Anthropic Claude Bilgisayar Kullanımı: İş Akışlarında Otonom Masaüstü Dönemi
-Anthropic'in Claude modeli, doğrudan bilgisayar ekranını okuyup imleç ve klavye hareketleriyle görevleri tamamlayarak masaüstü otomasyonunda yeni bir çığır açtı.
-Önemli Noktalar: Model fare ve klavye kullanarak tarayıcı, form ve dosya işlemlerini insan gibi yönetiyor • Finans ve lojistik sektöründe operasyonel veri girişleri doğrudan yapay zekaya devrediliyor
-9. Akademik Araştırma: Çoklu Ajan Sistemlerinde Koordinasyon ve Çatışma Krizi
-Synced Review tarafından derlenen araştırma, çoklu yapay zeka ajanlarının eşzamanlı çalışırken görev çakışmaları ve sistem kilitlenmeleri yaşayabildiğini ortaya koydu.
-Önemli Noktalar: Bağımsız çalışan ajanların aynı dosya üzerinde birbirini kilitleyebildiği belgelendi • Ajan orkestrasyonu ve görev hiyerarşisi geleceğin kritik yazılım mimarisi olarak öne çıkıyor
-10. The Adecco Group Raporu: Yapay Zeka 1,9 Milyon Yeni İstihdam Alanı Yarattı
-Küresel insan kaynakları devi Adecco'nun araştırması, yapay zekanın var olan meslekleri dönüştürürken dünya çapında 1,9 milyon yeni istihdam fırsatı yarattığını açıkladı.
-Önemli Noktalar: İş kayıpları endişesinin aksine veri mimarlığı ve ajan denetçiliğinde rekor talep oluştu • İş gücünün teknolojik becerilere uyum sağlaması küresel büyümenin anahtarı olarak vurgulandı</description>
-      <itunes:summary>Nvidia'nın Hugging Face satın alımından Meta Muse Spark kodlama modeline, OpenAI Astra'nın akıl yürütme tartışmalarından robotik görme ve siber güvenlik yatırımlarına son 24 saatin 10 kritik AI gelişmesi.</itunes:summary>
-      <pubDate>Thu, 03 Sep 2026 19:24:34 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260903_m1_568a48</guid>
-      <itunes:author>Migros One</itunes:author>
-      <itunes:duration>00:08:44</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_568a48.mp3" length="3145896" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>M1 Podcast - Günlük Yapay Zeka Bülteni: Nvidia &amp; Hugging Face ve Ajan Çağı (03.09.2026)</title>
-      <description>Nvidia'nın Hugging Face satın alımından Meta Muse Spark kodlama modeline, OpenAI Astra'nın akıl yürütme tartışmalarından robotik görme ve siber güvenlik yatırımlarına son 24 saatin 10 kritik AI gelişmesi.
-⚡ GÜNÜN ÇARPICI HABERLERİ:
-1. Nvidia, Açık Kaynak Merkezi Hugging Face'i Satın Aldığını Doğruladı
-Nvidia, açık kaynak yapay zeka topluluğunun kalbi sayılan Hugging Face platformunu satın aldığını doğrulayarak yapay zeka ekosisteminde tarihi bir konsolidasyona imza attı.
-Önemli Noktalar: Dünyanın en büyük açık yapay zeka model havuzu donanım devinin bünyesine geçti • Bağımsız araştırmacılar ve düzenleyici kurumlar olası tekel risklerini tartışıyor
-2. Meta'dan Otonom Kodlama Ajanı Modeli: Muse Spark 1.3
-Meta, yazılım projelerinin mimarisini anlayarak bağımsız testler yazabilen ve hataları otomatik düzeltebilen ajan tabanlı yeni Muse Spark 1.3 modelini duyurdu.
-Önemli Noktalar: Model sadece kod tamamlamakla kalmıyor, tüm depoyu tarayıp bağımsız testler yazıyor • Geliştirici ekiplerinin hata ayıklama ve refactoring sürelerinde radikal hızlanma sağlandı
-3. OpenAI Astra'nın Derin Akıl Yürütme Tekniği Güvenlik Tartışması Yarattı
-OpenAI'ın AGI eşiğine yaklaştığı belirtilen yeni Astra modeli, karmaşık mantık yürütme yetenekleriyle öne çıkarken otonom karar alma süreçlerindeki güvenlik bariyerleri tartışılıyor.
-Önemli Noktalar: Model yanıt üretmeden önce test anı hesaplamasıyla (test-time compute) iç sesini kontrol ediyor • Derin mantık yürütme süreçlerinin güvenlik filtrelerini aşmada yeni riskler doğurabileceği belirtiliyor
-4. Google'dan Çift Hamle: Gemini 3.8 Flash ve Siber Güvenlik Odaklı Flash Cyber
-Google, düşük gecikmeli genel amaçlı Gemini 3.8 Flash modelinin yanı sıra kurumsal siber savunma için özel olarak optimize edilen Gemini 3.8 Flash Cyber modelini tanıttı.
-Önemli Noktalar: Flash Cyber modeli sıfır gün açıklarını ve oltalama saldırılarını milisaniyelerde tespit ediyor • Hafif mimari sayesinde veri merkezlerine bağımlı kalmadan uç cihazlarda yüksek hızda çalışıyor
-5. Yapay Zeka Modellerini Savunan HiddenLayer, 100 Milyon Dolar Yatırım Aldı
-Büyük dil modellerini veri zehirleme ve jailbreak saldırılarına karşı koruyan siber güvenlik girişimi HiddenLayer, 100 milyon dolarlık Seri B yatırım turunu tamamladı.
-Önemli Noktalar: Model zehirleme ve ağırlık manipülasyonu saldırılarına karşı kalkan geliştiriliyor • Kurumsal yapay zeka güvenliği sektörünün en büyük yatırımlarından biri gerçekleşti
-6. Abliteration.ai: Açık Modellerden Güvenlik Filtrelerinin Silinmesi Tartışılıyor
-Açık ağırlıklı modellerden güvenlik kurallarını kaldıran Abliteration yöntemi, yapay zekanın kötüye kullanım riskleri ve açık kaynak regülasyonları konusundaki tartışmaları alevlendirdi.
-Önemli Noktalar: Ağırlık matrislerindeki güvenlik vektörleri matematiksel cerrahiyle temizleniyor • Sansürsüz araştırma vaadiyle sunulan hizmet siber güvenlik otoritelerinde alarm yarattı
-7. Robotik Görme Girişimi Lyte, 165 Milyon Dolar Yatırımla Unicorn Oldu
-İnsansı robotların çevrelerini insan hassasiyetinde algılamasını sağlayan görme yapay zekası şirketi Lyte, 165 milyon dolar yeni fon toplayarak değerlemesini 1,6 milyar dolara taşıdı.
-Önemli Noktalar: 1,6 milyar dolar değerlemeye ulaşan girişim, robotlara 3D derinlik ve doku algısı kazandırıyor • Pahalı lidar sensörleri yerine kameralarla çalışan model donanım maliyetini yarıya indiriyor
-8. Anthropic Claude Bilgisayar Kullanımı: İş Akışlarında Otonom Masaüstü Dönemi
-Anthropic'in Claude modeli, doğrudan bilgisayar ekranını okuyup imleç ve klavye hareketleriyle görevleri tamamlayarak masaüstü otomasyonunda yeni bir çığır açtı.
-Önemli Noktalar: Model fare ve klavye kullanarak tarayıcı, form ve dosya işlemlerini insan gibi yönetiyor • Finans ve lojistik sektöründe operasyonel veri girişleri doğrudan yapay zekaya devrediliyor
-9. Akademik Araştırma: Çoklu Ajan Sistemlerinde Koordinasyon ve Çatışma Krizi
-Synced Review tarafından derlenen araştırma, çoklu yapay zeka ajanlarının eşzamanlı çalışırken görev çakışmaları ve sistem kilitlenmeleri yaşayabildiğini ortaya koydu.
-Önemli Noktalar: Bağımsız çalışan ajanların aynı dosya üzerinde birbirini kilitleyebildiği belgelendi • Ajan orkestrasyonu ve görev hiyerarşisi geleceğin kritik yazılım mimarisi olarak öne çıkıyor
-10. The Adecco Group Raporu: Yapay Zeka 1,9 Milyon Yeni İstihdam Alanı Yarattı
-Küresel insan kaynakları devi Adecco'nun araştırması, yapay zekanın var olan meslekleri dönüştürürken dünya çapında 1,9 milyon yeni istihdam fırsatı yarattığını açıkladı.
-Önemli Noktalar: İş kayıpları endişesinin aksine veri mimarlığı ve ajan denetçiliğinde rekor talep oluştu • İş gücünün teknolojik becerilere uyum sağlaması küresel büyümenin anahtarı olarak vurgulandı</description>
-      <itunes:summary>Nvidia'nın Hugging Face satın alımından Meta Muse Spark kodlama modeline, OpenAI Astra'nın akıl yürütme tartışmalarından robotik görme ve siber güvenlik yatırımlarına son 24 saatin 10 kritik AI gelişmesi.</itunes:summary>
-      <pubDate>Thu, 03 Sep 2026 19:19:29 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260903_m1_ea1cb0</guid>
-      <itunes:author>Migros One</itunes:author>
-      <itunes:duration>00:08:43</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_ea1cb0.mp3" length="3143448" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>M1 Podcast - Günlük Teknoloji &amp; Yapay Zeka Bülteni (03.09.2026)</title>
-      <description>Otonom yazılım ajanlarından kuantum sonrası şifrelemeye, nöromorfik çiplerden katı hal bataryalara teknolojinin en sıcak 10 gelişmesi ve derinlemesine analizi.
-⚡ GÜNÜN ÇARPICI HABERLERİ:
-1. Otonom Yazılım Ajanları: Kod Tamamlamadan Tam Teşekküllü Mühendisliğe
-Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor.
-Önemli Noktalar: Modeller artık tüm repo bağımlılıklarını analiz edip uçtan uca hata ayıklıyor • Geliştirici ekiplerinin hata çözme süresinde %45 kısalma kaydedildi
-2. Açık Kaynak Modellerde Kuantizasyon Devrimi: Dizüstünde GPT-4 Seviyesi
-Son yayınlanan açık ağırlıklı modeller, yüksek kuantizasyon verimliliği sayesinde bulut sunucularına bağlanmadan güçlü mantık yürütme imkanı sunuyor.
-Önemli Noktalar: Kuantizasyon tekniği ile modeller sıkıştırılarak standart bilgisayarlarda çalıştırılıyor • Şirket içi veri gizliliği ve yerel işlem önceliği talebi katladı
-3. Nöromorfik Çipler ve Enerji Verimliliği: Beyin Biyolojisini Taklit Eden Donanım
-Donanım üreticileri, derin öğrenme modellerini mikrosaniye seviyesinde gecikmeyle ve onda bir enerjiyle çalıştıran yeni nöromorfik işlemcilerini duyurdu.
-Önemli Noktalar: İnsan beyninin sinaps yapısını taklit eden yeni donanım mimarileri tanıtıldı • Veri merkezlerinin yüksek elektrik tüketimine 10 kat daha verimli sürdürülebilir çözüm
-4. İnsansı Robotlarda Multimodal Haritalama: Fabrikalardan Günlük Yaşama
-Yeni insansı robot modelleri, uçtan uca sinir ağları sayesinde insan hareketlerini taklit ederek karmaşık montaj ve taşıma görevlerini hatasız tamamlayabiliyor.
-Önemli Noktalar: Görsel ve dokunsal veriyi birleştiren multimodal sinir ağları kullanılıyor • Otomotiv montaj hatlarında insan işçilerle yan yana pilot testler başladı
-5. Kuantum Sonrası Kriptografi (PQC): Geleceğin Siber Saldırılarına Karşı Kalkan
-Uluslararası siber güvenlik otoriteleri, kuantum tehditlerine karşı geliştirilen yeni matematiksel kafes tabanlı şifreleme standartlarını resmi olarak yürürlüğe koydu.
-Önemli Noktalar: Kuantum bilgisayarların mevcut şifreleme algoritmalarını kırma riskine karşı yeni protokoller onaylandı • Bankacılık ve kamu altyapıları kuantum dayanıklı şifrelemeye geçişe başladı
-6. Biyoteknolojide Generatif Yapay Zeka: Saatler İçinde Sentetik Protein Tasarımı
-Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti.
-Önemli Noktalar: Aylar süren moleküler simülasyonlar saatler seviyesine indirildi • Nadir hastalıklar için hedefe yönelik aday moleküller klinik aşamaya ulaştı
-7. LEO Takımyıldızlarında Optik Lazer İletişimi: Uzayda Gigabit İnternet Omurgası
-Alçak dünya yörüngesindeki uydular arasında devreye alınan optik lazer haberleşmesi, küresel internet omurgasını uzaya taşıyarak karasal fiber hatlara rakip oluyor.
-Önemli Noktalar: Uydular arası lazer ışınları, karasal fiber kablolardan %40 daha hızlı veri aktarıyor • Kıtalararası finansal işlemlerde ve kutup bölgelerinde gecikme süreleri dibe çekildi
-8. Yeni Nesil Katı Hal (Solid-State) Bataryalar: Seri Üretim Takvimi Netleşti
-Katı hal batarya teknolojisinde beklenen büyük atılım gerçekleşti; laboratuvar testleri tamamlanan hücrelerin ticari elektrikli araçlara entegrasyonu duyuruldu.
-Önemli Noktalar: Sıvı elektrolit yerine seramik polimer kullanılarak yangın riski tamamen sıfırlandı • 10 dakikada şarj ve 1000 kilometreyi aşan menzil ile 2027 başında ticari araçlara giriyor
-9. Otonom Web ve Tarayıcı Ajanları: İnternet Gezintisinde İnsan Yerine Yapay Zeka
-Web sitelerinde insan yerine gezinip form dolduran, uçak bileti arayan ve karmaşık e-ticaret süreçlerini yöneten otonom tarayıcı ajanları yaygınlaşıyor.
-Önemli Noktalar: Kullanıcı talimatıyla çok adımlı rezervasyon, araştırma ve satın alma görevleri tamamlanıyor • Görsel arayüzleri analiz eden yeni nesil çok modlu ajanlar siteleri otonom geziyor
-10. Açık Ağırlıklı Yapay Zekada Küresel Güvenlik ve Kırmızı Takım Standartları
-Yapay zeka güvenlik otoriteleri, açık ağırlıklı modellerin güvenliğini teyit eden kapsamlı kırmızı takım ve stres testi standartlarını duyurdu.
-Önemli Noktalar: Modellerin tehlikeli senaryolara karşı dayanıklılığını ölçen küresel denetim çerçevesi açıklandı • Kötü niyetli manipülasyonları engelleyen yazılımsal ve donanımsal güvenlik kalkanları devreye girdi</description>
-      <itunes:summary>Otonom yazılım ajanlarından kuantum sonrası şifrelemeye, nöromorfik çiplerden katı hal bataryalara teknolojinin en sıcak 10 gelişmesi ve derinlemesine analizi.</itunes:summary>
-      <pubDate>Thu, 03 Sep 2026 19:09:10 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260903_m1_79581d</guid>
-      <itunes:author>Migros One</itunes:author>
-      <itunes:duration>00:10:09</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_79581d.mp3" length="3657816" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>M1 Podcast - Günlük Teknoloji &amp; Yapay Zeka Bülteni (03.09.2026)</title>
-      <description>Otonom yazılım ajanlarından kuantum sonrası şifrelemeye, nöromorfik çiplerden katı hal bataryalara teknolojinin en sıcak 10 gelişmesi ve 1.5 kat genişletilmiş derinlemesine analizi.
-⚡ GÜNÜN ÇARPICI HABERLERİ:
-1. Otonom Yazılım Ajanları: Kod Tamamlamadan Tam Teşekküllü Mühendisliğe
-Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor.
-Önemli Noktalar: Modeller artık tüm repo bağımlılıklarını analiz edip uçtan uca hata ayıklıyor • Geliştirici ekiplerinin hata çözme süresinde %45 kısalma kaydedildi
-2. Açık Kaynak Modellerde Kuantizasyon Devrimi: Dizüstünde GPT-4 Seviyesi
-Son yayınlanan açık ağırlıklı modeller, yüksek kuantizasyon verimliliği sayesinde bulut sunucularına bağlanmadan güçlü mantık yürütme imkanı sunuyor.
-Önemli Noktalar: Kuantizasyon tekniği ile modeller sıkıştırılarak standart bilgisayarlarda çalıştırılıyor • Şirket içi veri gizliliği ve yerel işlem önceliği talebi katladı
-3. Nöromorfik Çipler ve Enerji Verimliliği: Beyin Biyolojisini Taklit Eden Donanım
-Donanım üreticileri, derin öğrenme modellerini mikrosaniye seviyesinde gecikmeyle ve onda bir enerjiyle çalıştıran yeni nöromorfik işlemcilerini duyurdu.
-Önemli Noktalar: İnsan beyninin sinaps yapısını taklit eden yeni donanım mimarileri tanıtıldı • Veri merkezlerinin yüksek elektrik tüketimine 10 kat daha verimli sürdürülebilir çözüm
-4. İnsansı Robotlarda Multimodal Haritalama: Fabrikalardan Günlük Yaşama
-Yeni insansı robot modelleri, uçtan uca sinir ağları sayesinde insan hareketlerini taklit ederek karmaşık montaj ve taşıma görevlerini hatasız tamamlayabiliyor.
-Önemli Noktalar: Görsel ve dokunsal veriyi birleştiren multimodal sinir ağları kullanılıyor • Otomotiv montaj hatlarında insan işçilerle yan yana pilot testler başladı
-5. Kuantum Sonrası Kriptografi (PQC): Geleceğin Siber Saldırılarına Karşı Kalkan
-Uluslararası siber güvenlik otoriteleri, kuantum tehditlerine karşı geliştirilen yeni matematiksel kafes tabanlı şifreleme standartlarını resmi olarak yürürlüğe koydu.
-Önemli Noktalar: Kuantum bilgisayarların mevcut şifreleme algoritmalarını kırma riskine karşı yeni protokoller onaylandı • Bankacılık ve kamu altyapıları kuantum dayanıklı şifrelemeye geçişe başladı
-6. Biyoteknolojide Generatif Yapay Zeka: Saatler İçinde Sentetik Protein Tasarımı
-Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti.
-Önemli Noktalar: Aylar süren moleküler simülasyonlar saatler seviyesine indirildi • Nadir hastalıklar için hedefe yönelik aday moleküller klinik aşamaya ulaştı
-7. LEO Takımyıldızlarında Optik Lazer İletişimi: Uzayda Gigabit İnternet Omurgası
-Alçak dünya yörüngesindeki uydular arasında devreye alınan optik lazer haberleşmesi, küresel internet omurgasını uzaya taşıyarak karasal fiber hatlara rakip oluyor.
-Önemli Noktalar: Uydular arası lazer ışınları, karasal fiber kablolardan %40 daha hızlı veri aktarıyor • Kıtalararası finansal işlemlerde ve kutup bölgelerinde gecikme süreleri dibe çekildi
-8. Yeni Nesil Katı Hal (Solid-State) Bataryalar: Seri Üretim Takvimi Netleşti
-Katı hal batarya teknolojisinde beklenen büyük atılım gerçekleşti; laboratuvar testleri tamamlanan hücrelerin ticari elektrikli araçlara entegrasyonu duyuruldu.
-Önemli Noktalar: Sıvı elektrolit yerine seramik polimer kullanılarak yangın riski tamamen sıfırlandı • 10 dakikada şarj ve 1000 kilometreyi aşan menzil ile 2027 başında ticari araçlara giriyor
-9. Otonom Web ve Tarayıcı Ajanları: İnternet Gezintisinde İnsan Yerine Yapay Zeka
-Web sitelerinde insan yerine gezinip form dolduran, uçak bileti arayan ve karmaşık e-ticaret süreçlerini yöneten otonom tarayıcı ajanları yaygınlaşıyor.
-Önemli Noktalar: Kullanıcı talimatıyla çok adımlı rezervasyon, araştırma ve satın alma görevleri tamamlanıyor • Görsel arayüzleri analiz eden yeni nesil çok modlu ajanlar siteleri otonom geziyor
-10. Açık Ağırlıklı Yapay Zekada Küresel Güvenlik ve Kırmızı Takım Standartları
-Yapay zeka güvenlik otoriteleri, açık ağırlıklı modellerin güvenliğini teyit eden kapsamlı kırmızı takım ve stres testi standartlarını duyurdu.
-Önemli Noktalar: Modellerin tehlikeli senaryolara karşı dayanıklılığını ölçen küresel denetim çerçevesi açıklandı • Kötü niyetli manipülasyonları engelleyen yazılımsal ve donanımsal güvenlik kalkanları devreye girdi</description>
-      <itunes:summary>Otonom yazılım ajanlarından kuantum sonrası şifrelemeye, nöromorfik çiplerden katı hal bataryalara teknolojinin en sıcak 10 gelişmesi ve 1.5 kat genişletilmiş derinlemesine analizi.</itunes:summary>
-      <pubDate>Thu, 03 Sep 2026 14:22:00 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260903_m1_044b78</guid>
-      <itunes:author>Migros One</itunes:author>
-      <itunes:duration>00:13:44</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_044b78.mp3" length="4949496" type="audio/mpeg"/>
-    </item>
-    <item>
-      <title>M1 Podcast - Günlük Teknoloji &amp; Yapay Zeka Bülteni (01.09.2026)</title>
-      <description>Otonom yazılım mühendislerinden kuantum dayanıklı şifrelemeye, nöromorfik çiplerden yerel dil modellerine teknolojinin en sıcak gelişmeleri ve derinlemesine sohbeti.
-⚡ GÜNÜN ÇARPICI HABERLERİ:
-1. Otonom Yazılım Ajanları: Kod Tamamlamadan Tam Teşekküllü Mühendisliğe
-Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor.
-Önemli Noktalar: Yapay zeka modelleri artık hata ayıklamadan deploy aşamasına kadar tüm döngüyü bağımsız yönetiyor • Geliştirici ekiplerinin hata çözme süresinde %45 kısalma kaydedildi
-2. Açık Kaynak Modellerde Kuantizasyon Devrimi: Dizüstünde GPT-4 Seviyesi
-Son yayınlanan açık ağırlıklı modeller, yüksek kuantizasyon verimliliği sayesinde bulut sunucularına bağlanmadan güçlü mantık yürütme imkanı sunuyor.
-Önemli Noktalar: Kuantizasyon tekniği ile modeller sıkıştırılarak standart bilgisayarlarda çalıştırılıyor • Şirket içi veri gizliliği ve yerel işlem önceliği talebi katladı
-3. Nöromorfik Çipler ve Enerji Verimliliği: Beyin Biyolojisini Taklit Eden Donanım
-Donanım üreticileri, derin öğrenme modellerini mikrosaniye seviyesinde gecikmeyle ve onda bir enerjiyle çalıştıran yeni nöromorfik işlemcilerini duyurdu.
-Önemli Noktalar: İnsan beyninin sinaps yapısını taklit eden yeni donanım mimarileri tanıtıldı • Veri merkezlerinin yüksek elektrik tüketimine 10 kat daha verimli sürdürülebilir çözüm
-4. İnsansı Robotlarda Multimodal Haritalama: Fabrikalardan Günlük Yaşama
-Yeni insansı robot modelleri, uçtan uca sinir ağları sayesinde insan hareketlerini taklit ederek karmaşık montaj ve taşıma görevlerini hatasız tamamlayabiliyor.
-Önemli Noktalar: Görsel ve dokunsal veriyi birleştiren multimodal sinir ağları kullanılıyor • Otomotiv ve lojistik tesislerinde ilk otonom montaj testleri başladı
-5. Kuantum Sonrası Kriptografi (PQC): Geleceğin Siber Saldırılarına Karşı Kalkan
-Uluslararası siber güvenlik otoriteleri, kuantum tehditlerine karşı geliştirilen yeni matematiksel kafes tabanlı şifreleme standartlarını resmi olarak yürürlüğe koydu.
-Önemli Noktalar: Kuantum bilgisayarların mevcut şifreleme algoritmalarını kırma riskine karşı yeni protokoller onaylandı • Bankacılık ve kamu altyapıları kuantum dayanıklı şifrelemeye geçişe başladı
-6. Biyoteknolojide Generatif Yapay Zeka: Saatler İçinde Sentetik Protein Tasarımı
-Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti.
-Önemli Noktalar: Aylar süren moleküler simülasyonlar saatler seviyesine indirildi • Hedefe yönelik kişiselleştirilmiş tedavi yöntemlerinde klinik aşamaya geçildi</description>
-      <itunes:summary>Otonom yazılım mühendislerinden kuantum dayanıklı şifrelemeye, nöromorfik çiplerden yerel dil modellerine teknolojinin en sıcak gelişmeleri ve derinlemesine sohbeti.</itunes:summary>
-      <pubDate>Tue, 01 Sep 2026 16:10:13 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260901_m1_ba8b30</guid>
-      <itunes:author>Migros One</itunes:author>
-      <itunes:duration>00:02:31</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_m1_ba8b30.mp3" length="2430228" type="audio/mpeg"/>
+      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_onecast_01.mp3" length="10228297" type="audio/mpeg"/>
     </item>
   </channel>
 </rss>

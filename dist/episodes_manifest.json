@@ -1,440 +1,89 @@
 [
   {
-    "guid": "ep_20260903_m1_568a48",
-    "title": "Migros OneCast AI - Günlük Yapay Zeka Bülteni: Nvidia & Hugging Face ve Ajan Çağı (03.09.2026)",
-    "summary": "Nvidia'nın Hugging Face satın alımından Meta Muse Spark kodlama modeline, OpenAI Astra'nın akıl yürütme tartışmalarından robotik görme ve siber güvenlik yatırımlarına son 24 saatin 10 kritik AI gelişmesi.",
-    "todays_topics": "Nvidia Hugging Face Satın Alımı, Meta Muse Spark 1.3 Ajan Modeli, OpenAI Astra ve Akıl Yürütme Güvenliği, Google Gemini 3.8 Flash Cyber, HiddenLayer 100M$ AI Güvenlik Yatırımı, Abliteration ve Güvenlik Filtreleri, Lyte Vision-AI Robotik Yatırımı, Claude Bilgisayar Kullanımı, Çoklu Ajan Çatışmaları, Yapay Zeka ve İstihdam Raporu",
+    "id": "ep_20260903_onecast_01",
+    "guid": "ep_20260903_onecast_01",
+    "title": "Migros OneCast AI - Nvidia'nın 13 Milyar Dolarlık Hugging Face Hamlesi ve Kontrolsüz Ajanlar Çağı",
+    "summary": "Nvidia'nın açık kaynak devini bünyesine katması, OpenAI'ın tartışmalı yeni akıl yürütme tekniği Astra, yapay zeka güvenlik duvarlarını kaldıran Abliteration yöntemi ve siber güvenlikten eğitime günün öne çıkan 9 kritik gelişmesini inceliyoruz.",
+    "todays_topics": "Nvidia Hugging Face Satın Alımı, OpenAI Astra ve Recurrent Depth Tekniği, Meta Muse Spark 1.3 Veri İndirimi, Google Gemini 3.8 Flash Cyber, Abliteration.ai ve Yapay Zeka Güvenlik Duvarları, Perplexity Lily ve Hybrid Compute, CrowdStrike Falcon Guardian Ajan Güvenliği, Google WeatherNext 3, New York İlköğretim Yapay Zeka Yasağı",
     "news_items": [
       {
-        "headline": "Nvidia, Açık Kaynak Merkezi Hugging Face'i Satın Aldığını Doğruladı",
+        "headline": "Nvidia, Hugging Face'i 12,9 Milyar Dolara Satın Aldığını Doğruladı",
         "key_points": [
-          "Dünyanın en büyük açık yapay zeka model havuzu donanım devinin bünyesine geçti",
-          "Bağımsız araştırmacılar ve düzenleyici kurumlar olası tekel risklerini tartışıyor"
+          "Donanım devi, 3 milyondan fazla modele ev sahipliği yapan açık kaynak merkezini bünyesine katıyor.",
+          "Açık kaynak ekosisteminde tekelleşme ve tarafsızlık kaygıları tırmanışta."
         ],
-        "summary": "Nvidia, açık kaynak yapay zeka topluluğunun kalbi sayılan Hugging Face platformunu satın aldığını doğrulayarak yapay zeka ekosisteminde tarihi bir konsolidasyona imza attı."
+        "summary": "Nvidia, 18 milyondan fazla geliştiricinin kullandığı Hugging Face'i 12,93 milyar dolara satın alarak yapay zeka yazılım ve model dağıtımındaki hakimiyetini pekiştirdi."
       },
       {
-        "headline": "Meta'dan Otonom Kodlama Ajanı Modeli: Muse Spark 1.3",
+        "headline": "OpenAI'ın Yeni Astra Modeli 'Recurrent Depth' Tekniğiyle Güvenlik Tartışması Yarattı",
         "key_points": [
-          "Model sadece kod tamamlamakla kalmıyor, tüm depoyu tarayıp bağımsız testler yazıyor",
-          "Geliştirici ekiplerinin hata ayıklama ve refactoring sürelerinde radikal hızlanma sağlandı"
+          "Doğrusal akıl yürütme yerine döngüsel katman yapısı kullanılıyor.",
+          "Siber güvenlik uzmanları modelin denetim dışı kararlar alabileceğinden endişeli."
         ],
-        "summary": "Meta, yazılım projelerinin mimarisini anlayarak bağımsız testler yazabilen ve hataları otomatik düzeltebilen ajan tabanlı yeni Muse Spark 1.3 modelini duyurdu."
+        "summary": "OpenAI'ın yeni bilgisayar kullanabilen modeli Astra, geleneksel adım adım düşünme zincirini kırıp kendi düşünce katmanlarını döngüsel olarak yeniden işleyen 'Recurrent Depth' tekniği sebebiyle güvenlik uzmanlarını alarma geçirdi."
       },
       {
-        "headline": "OpenAI Astra'nın Derin Akıl Yürütme Tekniği Güvenlik Tartışması Yarattı",
+        "headline": "Meta Muse Spark 1.3'ü Duyurdu: Veri Paylaşana %95 İndirim",
         "key_points": [
-          "Model yanıt üretmeden önce test anı hesaplamasıyla (test-time compute) iç sesini kontrol ediyor",
-          "Derin mantık yürütme süreçlerinin güvenlik filtrelerini aşmada yeni riskler doğurabileceği belirtiliyor"
+          "Ajan kodlama görevlerinde %20 daha az araç çağrısı ve %25 daha az jeton harcıyor.",
+          "Geliştirici girdilerini eğitime dahil etmeyi kabul edenlere dev indirim sunuluyor."
         ],
-        "summary": "OpenAI'ın AGI eşiğine yaklaştığı belirtilen yeni Astra modeli, karmaşık mantık yürütme yetenekleriyle öne çıkarken otonom karar alma süreçlerindeki güvenlik bariyerleri tartışılıyor."
+        "summary": "Meta, otonom kodlama yetenekleri artırılmış Muse Spark 1.3 modelini tanıtırken, istem ve çıktı verilerini gelecekteki modellerin eğitimi için paylaşan kullanıcılara %95 maliyet avantajı sağlayacağını açıkladı."
       },
       {
-        "headline": "Google'dan Çift Hamle: Gemini 3.8 Flash ve Siber Güvenlik Odaklı Flash Cyber",
+        "headline": "Google'dan Çifte Hamle: Gemini 3.8 Flash ve Gemini 3.8 Flash Cyber",
         "key_points": [
-          "Flash Cyber modeli sıfır gün açıklarını ve oltalama saldırılarını milisaniyelerde tespit ediyor",
-          "Hafif mimari sayesinde veri merkezlerine bağımlı kalmadan uç cihazlarda yüksek hızda çalışıyor"
+          "Genel kullanım ile siber savunma odaklı iki ayrı uzman model.",
+          "Siber güvenlik süreçlerinde sıfır gün açıklarını tespit yeteneği."
         ],
-        "summary": "Google, düşük gecikmeli genel amaçlı Gemini 3.8 Flash modelinin yanı sıra kurumsal siber savunma için özel olarak optimize edilen Gemini 3.8 Flash Cyber modelini tanıttı."
+        "summary": "Google, yüksek hızlı Gemini 3.8 Flash mimarisini ikiye ayırarak birini genel ajansal görevlere, diğerini ise doğrudan siber tehdit analizi ve savunmaya özel hale getirdi."
       },
       {
-        "headline": "Yapay Zeka Modellerini Savunan HiddenLayer, 100 Milyon Dolar Yatırım Aldı",
+        "headline": "Abliteration.ai Güvenlik Duvarlarını (Guardrails) Kaldırmayı Ticaret Haline Getirdi",
         "key_points": [
-          "Model zehirleme ve ağırlık manipülasyonu saldırılarına karşı kalkan geliştiriliyor",
-          "Kurumsal yapay zeka güvenliği sektörünün en büyük yatırımlarından biri gerçekleşti"
+          "Güvenlik nöronları 'cerrahi müdahale' ile modelden siliniyor.",
+          "Savunmacılara kötü niyetli aktörlerle aynı araçları sağlama iddiası."
         ],
-        "summary": "Büyük dil modellerini veri zehirleme ve jailbreak saldırılarına karşı koruyan siber güvenlik girişimi HiddenLayer, 100 milyon dolarlık Seri B yatırım turunu tamamladı."
+        "summary": "Abliteration.ai, büyük dil modellerindeki güvenlik kurallarını ve sansür mekanizmalarını kalıcı olarak ortadan kaldıran teknikleri ticari bir hizmet olarak sunmaya başladı."
       },
       {
-        "headline": "Abliteration.ai: Açık Modellerden Güvenlik Filtrelerinin Silinmesi Tartışılıyor",
+        "headline": "Perplexity, Yerel Çıkarım Motoru Lily'yi Açık Kaynak Yaptı",
         "key_points": [
-          "Ağırlık matrislerindeki güvenlik vektörleri matematiksel cerrahiyle temizleniyor",
-          "Sansürsüz araştırma vaadiyle sunulan hizmet siber güvenlik otoritelerinde alarm yarattı"
+          "Ağır akıl yürütme bulutta, hassas işlemler Mac üzerinde çalışıyor.",
+          "Rust ve Metal mimarisiyle Apple Silicon üzerinde rekor hız."
         ],
-        "summary": "Açık ağırlıklı modellerden güvenlik kurallarını kaldıran Abliteration yöntemi, yapay zekanın kötüye kullanım riskleri ve açık kaynak regülasyonları konusundaki tartışmaları alevlendirdi."
+        "summary": "Perplexity, karmaşık görevleri bulut ile kullanıcının kendi bilgisayarı arasında bölen 'Hybrid Compute' sisteminin arkasındaki Lily çıkarım motorunu açık kaynak olarak yayınladı."
       },
       {
-        "headline": "Robotik Görme Girişimi Lyte, 165 Milyon Dolar Yatırımla Unicorn Oldu",
+        "headline": "CrowdStrike Otonom Ajanlar İçin Falcon Guardian Sistemini Duyurdu",
         "key_points": [
-          "1,6 milyar dolar değerlemeye ulaşan girişim, robotlara 3D derinlik ve doku algısı kazandırıyor",
-          "Pahalı lidar sensörleri yerine kameralarla çalışan model donanım maliyetini yarıya indiriyor"
+          "Ajanların sisteme verebileceği zararı kısıtlayan 'Patlama Yarıçapı' konsepti.",
+          "İnsan dışı kimlik yönetimi ile yapay zeka yetkilendirmesi."
         ],
-        "summary": "İnsansı robotların çevrelerini insan hassasiyetinde algılamasını sağlayan görme yapay zekası şirketi Lyte, 165 milyon dolar yeni fon toplayarak değerlemesini 1,6 milyar dolara taşıdı."
+        "summary": "CrowdStrike, kurumsal sistemlerde kendi kendine iş yapan yapay zeka ajanlarının hata yapıp kritik verilere erişmesini veya bozmasını engelleyen yeni güvenlik katmanını tanıttı."
       },
       {
-        "headline": "Anthropic Claude Bilgisayar Kullanımı: İş Akışlarında Otonom Masaüstü Dönemi",
+        "headline": "Google WeatherNext 3 ile Derin Öğrenmeli Hava Tahmini",
         "key_points": [
-          "Model fare ve klavye kullanarak tarayıcı, form ve dosya işlemlerini insan gibi yönetiyor",
-          "Finans ve lojistik sektöründe operasyonel veri girişleri doğrudan yapay zekaya devrediliyor"
+          "Fiziksel simülasyonlar yerine yapay zeka tabanlı meteoroloji.",
+          "Haritalar, Arama ve Gemini içerisine entegre yüksek çözünürlüklü tahminler."
         ],
-        "summary": "Anthropic'in Claude modeli, doğrudan bilgisayar ekranını okuyup imleç ve klavye hareketleriyle görevleri tamamlayarak masaüstü otomasyonunda yeni bir çığır açtı."
+        "summary": "Google'ın yeni WeatherNext 3 modeli, kar ve yağmur tahminlerinde eşi görülmemiş bir çözünürlük sunarak geleneksel hava durumu modellerini geride bırakıyor."
       },
       {
-        "headline": "Akademik Araştırma: Çoklu Ajan Sistemlerinde Koordinasyon ve Çatışma Krizi",
+        "headline": "New York Kentinde İlköğretimde Yapay Zeka Yasağı Kararı",
         "key_points": [
-          "Bağımsız çalışan ajanların aynı dosya üzerinde birbirini kilitleyebildiği belgelendi",
-          "Ajan orkestrasyonu ve görev hiyerarşisi geleceğin kritik yazılım mimarisi olarak öne çıkıyor"
+          "2026-2027 eğitim dönemi itibarıyla ilkokullarda yapay zeka kullanımı kısıtlanıyor.",
+          "Temel zihinsel becerilerin ve okuma-yazma süreçlerinin korunması hedefleniyor."
         ],
-        "summary": "Synced Review tarafından derlenen araştırma, çoklu yapay zeka ajanlarının eşzamanlı çalışırken görev çakışmaları ve sistem kilitlenmeleri yaşayabildiğini ortaya koydu."
-      },
-      {
-        "headline": "The Adecco Group Raporu: Yapay Zeka 1,9 Milyon Yeni İstihdam Alanı Yarattı",
-        "key_points": [
-          "İş kayıpları endişesinin aksine veri mimarlığı ve ajan denetçiliğinde rekor talep oluştu",
-          "İş gücünün teknolojik becerilere uyum sağlaması küresel büyümenin anahtarı olarak vurgulandı"
-        ],
-        "summary": "Küresel insan kaynakları devi Adecco'nun araştırması, yapay zekanın var olan meslekleri dönüştürürken dünya çapında 1,9 milyon yeni istihdam fırsatı yarattığını açıkladı."
+        "summary": "New York Şehri Eğitim Dairesi, çocukların erken yaşta eleştirel düşünme yeteneklerinin gerilemesini önlemek amacıyla ilköğretim seviyesinde yapay zeka araçlarını yasaklama kararı aldı."
       }
     ],
-    "script": "Ahmet: Merhaba teknoloji ve yapay zeka meraklıları, Migros OneCast AI'a hoş geldiniz. Bugün doğrudan yapay zeka laboratuvarlarından gelen, son yirmi dört saatte ekosistemi derinden sarsan tam on nitelikli ve sıcak gelişmeyle karşınızdayız. İlk büyük haberimiz, açık kaynak dünyasında deprem etkisi yaratan tarihi bir anlaşma: Çip devi Nvidia, açık kaynak yapay zekanın küresel merkezi sayılan Hugging Face'i bünyesine kattığını resmen doğruladı.\n\nEmel: Ahmet, Hugging Face dünyadaki yüz binlerce bağımsız araştırmacının, üniversitenin ve şirketin açık modellerini özgürce paylaştığı tarafsız bir kütüphaneydi. Donanım tekeli kuran Nvidia'nın bu platformu satın alması yapay zeka topluluğunda nasıl yankı buldu?\n\nAhmet: Çok sert tartışmalar başladı. Bir kesim Nvidia'nın devasa sunucu ve GPU altyapısının açık kaynak modelleri uçuracağını ve bağımsız geliştiricilere ücretsiz hesaplama gücü sağlayacağını savunuyor. Ancak madalyonun diğer yüzünde, tek bir donanım üreticisinin hem çipleri hem de modellerin dağıtıldığı ana depoyu kontrol etmesi ciddi bir tekel endişesi yaratıyor. Hatta Avrupa Birliği ve Amerikan düzenleyici kurumlarının bu satın almayı antitröst yasaları kapsamında incelemeye alabileceği konuşuluyor. Açık kaynak yapay zekanın bağımsızlığı açısından tarihi bir dönüm noktasıyla karşı karşıyayız.\n\nEmel: Açık kaynak modeller demişken, Meta cephesinden de yazılım mühendislerini heyecanlandıran yepyeni bir duyuru geldi: Muse Spark 1.3 kodlama modeli resmen yayınlandı.\n\nAhmet: Emel, Muse Spark'ı diğer klasik kod tamamlama araçlarından ayıran temel fark ne? Neden geliştiriciler bu modeli bu kadar yakından takip ediyor?\n\nEmel: Çünkü Muse Spark sadece satır tamamlayan pasif bir yardımcı değil; doğrudan otonom bir ajan gibi çalışıyor. Tüm yazılım deposunu, veritabanı şemalarını ve bağımlılıkları tarayarak hatanın kaynağını tespit ediyor, kendi kendine birim testleri yazıyor ve düzeltmeyi pull request olarak geliştiricinin önüne koyuyor. Geliştiricilerin saatler süren hata ayıklama süreçlerini dakikalara indiren gerçek bir otonom mühendislik adımı.\n\nEmel: Kodlama tarafındaki bu sıçramanın ardından gözler OpenAI cephesine çevrildi. Yeni nesil akıl yürütme modeli Astra'nın AGI eşiğine ulaştığı duyuruldu; ancak modelin karmaşık mantık yürütme teknikleri ciddi güvenlik endişelerini de beraberinde getirdi.\n\nAhmet: Dinleyicilerimiz için akıl yürütme tekniğini biraz somutlaştıralım. Klasik modeller bir soru sorduğunuzda hafızasındaki istatistiksel kelime tahminine göre anında yanıt üretir. Astra gibi yeni nesil modeller ise karmaşık matematik veya kodlama problemlerinde durup kendi kendine adım adım düşünüyor, alternatif senaryoları test ediyor ve iç sesini kontrol ederek sonuca varıyor.\n\nEmel: İşte buna test anı hesaplama gücü yani 'test-time compute' deniyor Ahmet. Model yanıtı üretmeden önce saniyelerce kendi mantık hatalarını düzeltiyor. Ancak araştırmacılar, bu derin mantık yürütme döngüsünün güvenlik filtrelerini aşmada ve otonom sistemlerde gizli planlar yapmada yeni açıklar doğurabileceğini vurguluyor.\n\nAhmet: Hız ve güvenlik dengesinde Google da boş durmadı ve ekosistemi genişleten iki yeni model duyurdu: Gemini 3.8 Flash ve siber güvenlik savunmasına odaklanan Gemini 3.8 Flash Cyber.\n\nEmel: Özellikle Flash Cyber modeli, kurumsal ağlardaki sıfır gün açıklarını ve yapay zeka tabanlı oltalama saldırılarını milisaniyeler içinde tespit etmek üzere özel olarak eğitilmiş. Ajanların hızlanması güvenlik savunmasını da otonom hale getirmeyi zorunlu kılıyor.\n\nAhmet: Üstelik saniyede yüzlerce token üretebilen bu hafif modeller, veri merkezlerine bağımlı kalmadan uç cihazlarda ve şirket içi sunucularda düşük maliyetle güvenlik taraması yapabiliyor.\n\nEmel: Nitekim siber güvenlik tarafındaki bu kritik ihtiyaç yatırım dünyasına da doğrudan yansıdı. Yapay zeka modellerini saldırılara karşı koruyan HiddenLayer, tam yüz milyon dolar yeni yatırım aldı.\n\nAhmet: HiddenLayer ne yapıyor derseniz; doğrudan yapay zeka modellerinin içine sızıp ağırlık matrislerini zehirlemeyi hedefleyen siber saldırılara karşı bir zırh geliştiriyor. Büyük dil modelleri şirketlerin en değerli fikri mülkiyeti haline geldikçe bu koruma kalkanı hayati bir zorunluluk oldu.\n\nEmel: Güvenlik konuşulurken madalyonun diğer yüzünde ise modellerin güvenlik filtrelerini kasten kaldıran tartışmalı girişimler türedi. Abliteration.ai platformu yapay zekanın tüm kısıtlamalarını kaldırmayı bir iş modeline dönüştürdü.\n\nAhmet: Emel, abliteration yani filtre silme işlemi teknik olarak ne anlama geliyor ve neden bu kadar tehlikeli bulunuyor?\n\nEmel: Çok basitçe anlatalım; açık ağırlıklı bir modelin nöronlarında güvenlik ve etik kurallarını temsil eden matematiksel vektörler bulunur. Abliteration yöntemiyle bu vektörler cerrahi bir operasyon gibi ağırlıklardan siliniyor. Model böylece kimyasal silahlardan siber saldırı kodlarına kadar hiçbir filtreye takılmadan yanıt vermeye başlıyor. Girişim bunu sansürsüz bilimsel araştırma için yaptığını söylese de siber güvenlik uzmanları küresel bir risk uyarısı yapıyor.\n\nEmel: Dijital dünyadaki bu fırtınanın ardından rotamızı fiziksel dünyaya, robotik yapay zekaya çeviriyoruz. Robotların görmesini ve çevresini anlamasını sağlayan Lyte, bir nokta altı milyar dolar değerleme üzerinden yüz altmış beş milyon dolar yatırım aldı.\n\nAhmet: İnsansı robotların fabrikalarda ve evlerimizde güvenle iş yapabilmesi için sadece yürümeleri yetmiyor; gördükleri cisimlerin derinliğini, ağırlığını ve malzemesini milisaniyeler içinde algılamaları gerekiyor. Lyte'ın geliştirdiği multimodal görme mimarisi robotların insan gibi çevresini üç boyutlu anlamasını sağlıyor.\n\nEmel: Üstelik bu yeni görme modelleri sayesinde robotlar pahalı lidar sensörlerine ihtiyaç duymadan sıradan kameralarla hassas montaj yapabiliyor; bu da insansı robotların üretim maliyetini yarı yarıya düşürüyor.\n\nAhmet: Robotlar fiziksel dünyada ilerlerken, Anthropic'in Claude modeli ise doğrudan bilgisayar ekranını devralıyor. Claude'un bilgisayar kullanma yeteneği iş akışlarında verimliliği ikiye katladı.\n\nEmel: Claude artık sadece sohbet kutusunda kalmıyor; işletim sisteminde tarayıcıyı açıyor, formları dolduruyor, dosya yöneticisinde gezinip karmaşık bir muhasebe veya veri analizi görevini klavye ve fare kullanarak insan gibi tamamlıyor. Finans ve lojistik şirketleri şimdiden rutin veri girişlerini Claude'un otonom bilgisayar kullanımına devretmeye başladı bile.\n\nAhmet: Ancak bu kadar çok otonom ajan aynı anda çalıştığında ortaya yepyeni bir kriz çıkıyor: Çoklu ajan çatışmaları. Son yayınlanan akademik araştırmalar, bağımsız ajanların birbirinin görevini kilitleyebildiğini gösteriyor.\n\nEmel: Bir ajan ortak bir dosyayı güncellerken diğerinin aynı dosyayı silmeye çalışması gibi koordinasyon hataları, sistemlerin beklenmedik kilitlenmeler yaşamasına yol açıyor. Geleceğin en büyük yazılım mimarisi meydan okuması bu ajan orkestrasyonu olacak.\n\nAhmet: Peki tüm bu devrim çalışanları ve iş gücünü nasıl etkiliyor? The Adecco Group'un yayınladığı son küresel araştırma, yapay zekanın şimdiden bir nokta dokuz milyon yeni istihdam fırsatı yarattığını ortaya koydu.\n\nEmel: Yani korkulanın aksine yapay zeka sadece işleri ortadan kaldırmıyor; veri küratörlüğünden ajan mimarlığına kadar yepyeni uzmanlık alanları açıyor. Önemli olan bu teknolojik dönüşüme hızla adapte olabilmek.\n\nAhmet: Hugging Face satın alımından Meta Muse Spark'a, OpenAI Astra'dan robotik görme teknolojilerine kadar son yirmi dört saatin en nitelikli on yapay zeka haberini tüm boyutlarıyla konuştuk.\n\nEmel: Tüm bu haberlerin özetleri, can alıcı maddeleri ve kaynak bağlantıları podcast açıklama metnimizde ve RSS beslememizde sizleri bekliyor. Dinleyicilerimiz web sitemizden her bir haber kartını inceleyebilir.\n\nAhmet: Migros OneCast AI'ın bugünkü yapay zeka bülteninin sonuna geldik. Yarın yepyeni teknoloji ve yapay zeka analizleriyle tekrar görüşmek dileğiyle, hoşça kalın!\n\nEmel: Kendinize çok iyi bakın, bilimle ve yapay zekayla kalın!",
-    "pub_date": "Thu, 03 Sep 2026 19:24:34 GMT",
-    "audio_url": "https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_568a48.mp3",
-    "file_size": 3145896,
-    "duration_formatted": "00:08:44",
-    "duration_seconds": 524
-  },
-  {
-    "guid": "ep_20260903_m1_ea1cb0",
-    "title": "M1 Podcast - Günlük Yapay Zeka Bülteni: Nvidia & Hugging Face ve Ajan Çağı (03.09.2026)",
-    "summary": "Nvidia'nın Hugging Face satın alımından Meta Muse Spark kodlama modeline, OpenAI Astra'nın akıl yürütme tartışmalarından robotik görme ve siber güvenlik yatırımlarına son 24 saatin 10 kritik AI gelişmesi.",
-    "todays_topics": "Nvidia Hugging Face Satın Alımı, Meta Muse Spark 1.3 Ajan Modeli, OpenAI Astra ve Akıl Yürütme Güvenliği, Google Gemini 3.8 Flash Cyber, HiddenLayer 100M$ AI Güvenlik Yatırımı, Abliteration ve Güvenlik Filtreleri, Lyte Vision-AI Robotik Yatırımı, Claude Bilgisayar Kullanımı, Çoklu Ajan Çatışmaları, Yapay Zeka ve İstihdam Raporu",
-    "news_items": [
-      {
-        "headline": "Nvidia, Açık Kaynak Merkezi Hugging Face'i Satın Aldığını Doğruladı",
-        "key_points": [
-          "Dünyanın en büyük açık yapay zeka model havuzu donanım devinin bünyesine geçti",
-          "Bağımsız araştırmacılar ve düzenleyici kurumlar olası tekel risklerini tartışıyor"
-        ],
-        "summary": "Nvidia, açık kaynak yapay zeka topluluğunun kalbi sayılan Hugging Face platformunu satın aldığını doğrulayarak yapay zeka ekosisteminde tarihi bir konsolidasyona imza attı."
-      },
-      {
-        "headline": "Meta'dan Otonom Kodlama Ajanı Modeli: Muse Spark 1.3",
-        "key_points": [
-          "Model sadece kod tamamlamakla kalmıyor, tüm depoyu tarayıp bağımsız testler yazıyor",
-          "Geliştirici ekiplerinin hata ayıklama ve refactoring sürelerinde radikal hızlanma sağlandı"
-        ],
-        "summary": "Meta, yazılım projelerinin mimarisini anlayarak bağımsız testler yazabilen ve hataları otomatik düzeltebilen ajan tabanlı yeni Muse Spark 1.3 modelini duyurdu."
-      },
-      {
-        "headline": "OpenAI Astra'nın Derin Akıl Yürütme Tekniği Güvenlik Tartışması Yarattı",
-        "key_points": [
-          "Model yanıt üretmeden önce test anı hesaplamasıyla (test-time compute) iç sesini kontrol ediyor",
-          "Derin mantık yürütme süreçlerinin güvenlik filtrelerini aşmada yeni riskler doğurabileceği belirtiliyor"
-        ],
-        "summary": "OpenAI'ın AGI eşiğine yaklaştığı belirtilen yeni Astra modeli, karmaşık mantık yürütme yetenekleriyle öne çıkarken otonom karar alma süreçlerindeki güvenlik bariyerleri tartışılıyor."
-      },
-      {
-        "headline": "Google'dan Çift Hamle: Gemini 3.8 Flash ve Siber Güvenlik Odaklı Flash Cyber",
-        "key_points": [
-          "Flash Cyber modeli sıfır gün açıklarını ve oltalama saldırılarını milisaniyelerde tespit ediyor",
-          "Hafif mimari sayesinde veri merkezlerine bağımlı kalmadan uç cihazlarda yüksek hızda çalışıyor"
-        ],
-        "summary": "Google, düşük gecikmeli genel amaçlı Gemini 3.8 Flash modelinin yanı sıra kurumsal siber savunma için özel olarak optimize edilen Gemini 3.8 Flash Cyber modelini tanıttı."
-      },
-      {
-        "headline": "Yapay Zeka Modellerini Savunan HiddenLayer, 100 Milyon Dolar Yatırım Aldı",
-        "key_points": [
-          "Model zehirleme ve ağırlık manipülasyonu saldırılarına karşı kalkan geliştiriliyor",
-          "Kurumsal yapay zeka güvenliği sektörünün en büyük yatırımlarından biri gerçekleşti"
-        ],
-        "summary": "Büyük dil modellerini veri zehirleme ve jailbreak saldırılarına karşı koruyan siber güvenlik girişimi HiddenLayer, 100 milyon dolarlık Seri B yatırım turunu tamamladı."
-      },
-      {
-        "headline": "Abliteration.ai: Açık Modellerden Güvenlik Filtrelerinin Silinmesi Tartışılıyor",
-        "key_points": [
-          "Ağırlık matrislerindeki güvenlik vektörleri matematiksel cerrahiyle temizleniyor",
-          "Sansürsüz araştırma vaadiyle sunulan hizmet siber güvenlik otoritelerinde alarm yarattı"
-        ],
-        "summary": "Açık ağırlıklı modellerden güvenlik kurallarını kaldıran Abliteration yöntemi, yapay zekanın kötüye kullanım riskleri ve açık kaynak regülasyonları konusundaki tartışmaları alevlendirdi."
-      },
-      {
-        "headline": "Robotik Görme Girişimi Lyte, 165 Milyon Dolar Yatırımla Unicorn Oldu",
-        "key_points": [
-          "1,6 milyar dolar değerlemeye ulaşan girişim, robotlara 3D derinlik ve doku algısı kazandırıyor",
-          "Pahalı lidar sensörleri yerine kameralarla çalışan model donanım maliyetini yarıya indiriyor"
-        ],
-        "summary": "İnsansı robotların çevrelerini insan hassasiyetinde algılamasını sağlayan görme yapay zekası şirketi Lyte, 165 milyon dolar yeni fon toplayarak değerlemesini 1,6 milyar dolara taşıdı."
-      },
-      {
-        "headline": "Anthropic Claude Bilgisayar Kullanımı: İş Akışlarında Otonom Masaüstü Dönemi",
-        "key_points": [
-          "Model fare ve klavye kullanarak tarayıcı, form ve dosya işlemlerini insan gibi yönetiyor",
-          "Finans ve lojistik sektöründe operasyonel veri girişleri doğrudan yapay zekaya devrediliyor"
-        ],
-        "summary": "Anthropic'in Claude modeli, doğrudan bilgisayar ekranını okuyup imleç ve klavye hareketleriyle görevleri tamamlayarak masaüstü otomasyonunda yeni bir çığır açtı."
-      },
-      {
-        "headline": "Akademik Araştırma: Çoklu Ajan Sistemlerinde Koordinasyon ve Çatışma Krizi",
-        "key_points": [
-          "Bağımsız çalışan ajanların aynı dosya üzerinde birbirini kilitleyebildiği belgelendi",
-          "Ajan orkestrasyonu ve görev hiyerarşisi geleceğin kritik yazılım mimarisi olarak öne çıkıyor"
-        ],
-        "summary": "Synced Review tarafından derlenen araştırma, çoklu yapay zeka ajanlarının eşzamanlı çalışırken görev çakışmaları ve sistem kilitlenmeleri yaşayabildiğini ortaya koydu."
-      },
-      {
-        "headline": "The Adecco Group Raporu: Yapay Zeka 1,9 Milyon Yeni İstihdam Alanı Yarattı",
-        "key_points": [
-          "İş kayıpları endişesinin aksine veri mimarlığı ve ajan denetçiliğinde rekor talep oluştu",
-          "İş gücünün teknolojik becerilere uyum sağlaması küresel büyümenin anahtarı olarak vurgulandı"
-        ],
-        "summary": "Küresel insan kaynakları devi Adecco'nun araştırması, yapay zekanın var olan meslekleri dönüştürürken dünya çapında 1,9 milyon yeni istihdam fırsatı yarattığını açıkladı."
-      }
-    ],
-    "script": "Ahmet: Merhaba teknoloji ve yapay zeka meraklıları, M1 Podcast'e hoş geldiniz. Bugün doğrudan yapay zeka laboratuvarlarından gelen, son yirmi dört saatte ekosistemi derinden sarsan tam on nitelikli ve sıcak gelişmeyle karşınızdayız. İlk büyük haberimiz, açık kaynak dünyasında deprem etkisi yaratan tarihi bir anlaşma: Çip devi Nvidia, açık kaynak yapay zekanın küresel merkezi sayılan Hugging Face'i bünyesine kattığını resmen doğruladı.\n\nEmel: Ahmet, Hugging Face dünyadaki yüz binlerce bağımsız araştırmacının, üniversitenin ve şirketin açık modellerini özgürce paylaştığı tarafsız bir kütüphaneydi. Donanım tekeli kuran Nvidia'nın bu platformu satın alması yapay zeka topluluğunda nasıl yankı buldu?\n\nAhmet: Çok sert tartışmalar başladı. Bir kesim Nvidia'nın devasa sunucu ve GPU altyapısının açık kaynak modelleri uçuracağını ve bağımsız geliştiricilere ücretsiz hesaplama gücü sağlayacağını savunuyor. Ancak madalyonun diğer yüzünde, tek bir donanım üreticisinin hem çipleri hem de modellerin dağıtıldığı ana depoyu kontrol etmesi ciddi bir tekel endişesi yaratıyor. Hatta Avrupa Birliği ve Amerikan düzenleyici kurumlarının bu satın almayı antitröst yasaları kapsamında incelemeye alabileceği konuşuluyor. Açık kaynak yapay zekanın bağımsızlığı açısından tarihi bir dönüm noktasıyla karşı karşıyayız.\n\nEmel: Açık kaynak modeller demişken, Meta cephesinden de yazılım mühendislerini heyecanlandıran yepyeni bir duyuru geldi: Muse Spark 1.3 kodlama modeli resmen yayınlandı.\n\nAhmet: Emel, Muse Spark'ı diğer klasik kod tamamlama araçlarından ayıran temel fark ne? Neden geliştiriciler bu modeli bu kadar yakından takip ediyor?\n\nEmel: Çünkü Muse Spark sadece satır tamamlayan pasif bir yardımcı değil; doğrudan otonom bir ajan gibi çalışıyor. Tüm yazılım deposunu, veritabanı şemalarını ve bağımlılıkları tarayarak hatanın kaynağını tespit ediyor, kendi kendine birim testleri yazıyor ve düzeltmeyi pull request olarak geliştiricinin önüne koyuyor. Geliştiricilerin saatler süren hata ayıklama süreçlerini dakikalara indiren gerçek bir otonom mühendislik adımı.\n\nEmel: Kodlama tarafındaki bu sıçramanın ardından gözler OpenAI cephesine çevrildi. Yeni nesil akıl yürütme modeli Astra'nın AGI eşiğine ulaştığı duyuruldu; ancak modelin karmaşık mantık yürütme teknikleri ciddi güvenlik endişelerini de beraberinde getirdi.\n\nAhmet: Dinleyicilerimiz için akıl yürütme tekniğini biraz somutlaştıralım. Klasik modeller bir soru sorduğunuzda hafızasındaki istatistiksel kelime tahminine göre anında yanıt üretir. Astra gibi yeni nesil modeller ise karmaşık matematik veya kodlama problemlerinde durup kendi kendine adım adım düşünüyor, alternatif senaryoları test ediyor ve iç sesini kontrol ederek sonuca varıyor.\n\nEmel: İşte buna test anı hesaplama gücü yani 'test-time compute' deniyor Ahmet. Model yanıtı üretmeden önce saniyelerce kendi mantık hatalarını düzeltiyor. Ancak araştırmacılar, bu derin mantık yürütme döngüsünün güvenlik filtrelerini aşmada ve otonom sistemlerde gizli planlar yapmada yeni açıklar doğurabileceğini vurguluyor.\n\nAhmet: Hız ve güvenlik dengesinde Google da boş durmadı ve ekosistemi genişleten iki yeni model duyurdu: Gemini 3.8 Flash ve siber güvenlik savunmasına odaklanan Gemini 3.8 Flash Cyber.\n\nEmel: Özellikle Flash Cyber modeli, kurumsal ağlardaki sıfır gün açıklarını ve yapay zeka tabanlı oltalama saldırılarını milisaniyeler içinde tespit etmek üzere özel olarak eğitilmiş. Ajanların hızlanması güvenlik savunmasını da otonom hale getirmeyi zorunlu kılıyor.\n\nAhmet: Üstelik saniyede yüzlerce token üretebilen bu hafif modeller, veri merkezlerine bağımlı kalmadan uç cihazlarda ve şirket içi sunucularda düşük maliyetle güvenlik taraması yapabiliyor.\n\nEmel: Nitekim siber güvenlik tarafındaki bu kritik ihtiyaç yatırım dünyasına da doğrudan yansıdı. Yapay zeka modellerini saldırılara karşı koruyan HiddenLayer, tam yüz milyon dolar yeni yatırım aldı.\n\nAhmet: HiddenLayer ne yapıyor derseniz; doğrudan yapay zeka modellerinin içine sızıp ağırlık matrislerini zehirlemeyi hedefleyen siber saldırılara karşı bir zırh geliştiriyor. Büyük dil modelleri şirketlerin en değerli fikri mülkiyeti haline geldikçe bu koruma kalkanı hayati bir zorunluluk oldu.\n\nEmel: Güvenlik konuşulurken madalyonun diğer yüzünde ise modellerin güvenlik filtrelerini kasten kaldıran tartışmalı girişimler türedi. Abliteration.ai platformu yapay zekanın tüm kısıtlamalarını kaldırmayı bir iş modeline dönüştürdü.\n\nAhmet: Emel, abliteration yani filtre silme işlemi teknik olarak ne anlama geliyor ve neden bu kadar tehlikeli bulunuyor?\n\nEmel: Çok basitçe anlatalım; açık ağırlıklı bir modelin nöronlarında güvenlik ve etik kurallarını temsil eden matematiksel vektörler bulunur. Abliteration yöntemiyle bu vektörler cerrahi bir operasyon gibi ağırlıklardan siliniyor. Model böylece kimyasal silahlardan siber saldırı kodlarına kadar hiçbir filtreye takılmadan yanıt vermeye başlıyor. Girişim bunu sansürsüz bilimsel araştırma için yaptığını söylese de siber güvenlik uzmanları küresel bir risk uyarısı yapıyor.\n\nEmel: Dijital dünyadaki bu fırtınanın ardından rotamızı fiziksel dünyaya, robotik yapay zekaya çeviriyoruz. Robotların görmesini ve çevresini anlamasını sağlayan Lyte, bir nokta altı milyar dolar değerleme üzerinden yüz altmış beş milyon dolar yatırım aldı.\n\nAhmet: İnsansı robotların fabrikalarda ve evlerimizde güvenle iş yapabilmesi için sadece yürümeleri yetmiyor; gördükleri cisimlerin derinliğini, ağırlığını ve malzemesini milisaniyeler içinde algılamaları gerekiyor. Lyte'ın geliştirdiği multimodal görme mimarisi robotların insan gibi çevresini üç boyutlu anlamasını sağlıyor.\n\nEmel: Üstelik bu yeni görme modelleri sayesinde robotlar pahalı lidar sensörlerine ihtiyaç duymadan sıradan kameralarla hassas montaj yapabiliyor; bu da insansı robotların üretim maliyetini yarı yarıya düşürüyor.\n\nAhmet: Robotlar fiziksel dünyada ilerlerken, Anthropic'in Claude modeli ise doğrudan bilgisayar ekranını devralıyor. Claude'un bilgisayar kullanma yeteneği iş akışlarında verimliliği ikiye katladı.\n\nEmel: Claude artık sadece sohbet kutusunda kalmıyor; işletim sisteminde tarayıcıyı açıyor, formları dolduruyor, dosya yöneticisinde gezinip karmaşık bir muhasebe veya veri analizi görevini klavye ve fare kullanarak insan gibi tamamlıyor. Finans ve lojistik şirketleri şimdiden rutin veri girişlerini Claude'un otonom bilgisayar kullanımına devretmeye başladı bile.\n\nAhmet: Ancak bu kadar çok otonom ajan aynı anda çalıştığında ortaya yepyeni bir kriz çıkıyor: Çoklu ajan çatışmaları. Son yayınlanan akademik araştırmalar, bağımsız ajanların birbirinin görevini kilitleyebildiğini gösteriyor.\n\nEmel: Bir ajan ortak bir dosyayı güncellerken diğerinin aynı dosyayı silmeye çalışması gibi koordinasyon hataları, sistemlerin beklenmedik kilitlenmeler yaşamasına yol açıyor. Geleceğin en büyük yazılım mimarisi meydan okuması bu ajan orkestrasyonu olacak.\n\nAhmet: Peki tüm bu devrim çalışanları ve iş gücünü nasıl etkiliyor? The Adecco Group'un yayınladığı son küresel araştırma, yapay zekanın şimdiden bir nokta dokuz milyon yeni istihdam fırsatı yarattığını ortaya koydu.\n\nEmel: Yani korkulanın aksine yapay zeka sadece işleri ortadan kaldırmıyor; veri küratörlüğünden ajan mimarlığına kadar yepyeni uzmanlık alanları açıyor. Önemli olan bu teknolojik dönüşüme hızla adapte olabilmek.\n\nAhmet: Hugging Face satın alımından Meta Muse Spark'a, OpenAI Astra'dan robotik görme teknolojilerine kadar son yirmi dört saatin en nitelikli on yapay zeka haberini tüm boyutlarıyla konuştuk.\n\nEmel: Tüm bu haberlerin özetleri, can alıcı maddeleri ve kaynak bağlantıları podcast açıklama metnimizde ve RSS beslememizde sizleri bekliyor. Dinleyicilerimiz web sitemizden her bir haber kartını inceleyebilir.\n\nAhmet: M1 Podcast'in bugünkü yapay zeka bülteninin sonuna geldik. Yarın yepyeni teknoloji ve yapay zeka analizleriyle tekrar görüşmek dileğiyle, hoşça kalın!\n\nEmel: Kendinize çok iyi bakın, bilimle ve yapay zekayla kalın!",
-    "pub_date": "Thu, 03 Sep 2026 19:19:29 GMT",
-    "audio_url": "https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_ea1cb0.mp3",
-    "file_size": 3143448,
-    "duration_formatted": "00:08:43",
-    "duration_seconds": 523
-  },
-  {
-    "guid": "ep_20260903_m1_79581d",
-    "title": "M1 Podcast - Günlük Teknoloji & Yapay Zeka Bülteni (03.09.2026)",
-    "summary": "Otonom yazılım ajanlarından kuantum sonrası şifrelemeye, nöromorfik çiplerden katı hal bataryalara teknolojinin en sıcak 10 gelişmesi ve derinlemesine analizi.",
-    "todays_topics": "Otonom Yazılım Ajanları, Yerel Açık Kaynak LLM ve Kuantizasyon, Nöromorfik Çip Mimarisi, İnsansı Robotlarda Multimodal Haritalama, Kuantum Sonrası Kriptografi (PQC), Biyoteknolojide Sentetik Protein Tasarımı, LEO Uydularında Optik Lazer Haberleşmesi, Katı Hal (Solid-State) Bataryalar, Otonom Web ve Tarayıcı Ajanları, Açık Ağırlıklı Yapay Zeka Güvenliği",
-    "news_items": [
-      {
-        "headline": "Otonom Yazılım Ajanları: Kod Tamamlamadan Tam Teşekküllü Mühendisliğe",
-        "key_points": [
-          "Modeller artık tüm repo bağımlılıklarını analiz edip uçtan uca hata ayıklıyor",
-          "Geliştirici ekiplerinin hata çözme süresinde %45 kısalma kaydedildi"
-        ],
-        "summary": "Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor."
-      },
-      {
-        "headline": "Açık Kaynak Modellerde Kuantizasyon Devrimi: Dizüstünde GPT-4 Seviyesi",
-        "key_points": [
-          "Kuantizasyon tekniği ile modeller sıkıştırılarak standart bilgisayarlarda çalıştırılıyor",
-          "Şirket içi veri gizliliği ve yerel işlem önceliği talebi katladı"
-        ],
-        "summary": "Son yayınlanan açık ağırlıklı modeller, yüksek kuantizasyon verimliliği sayesinde bulut sunucularına bağlanmadan güçlü mantık yürütme imkanı sunuyor."
-      },
-      {
-        "headline": "Nöromorfik Çipler ve Enerji Verimliliği: Beyin Biyolojisini Taklit Eden Donanım",
-        "key_points": [
-          "İnsan beyninin sinaps yapısını taklit eden yeni donanım mimarileri tanıtıldı",
-          "Veri merkezlerinin yüksek elektrik tüketimine 10 kat daha verimli sürdürülebilir çözüm"
-        ],
-        "summary": "Donanım üreticileri, derin öğrenme modellerini mikrosaniye seviyesinde gecikmeyle ve onda bir enerjiyle çalıştıran yeni nöromorfik işlemcilerini duyurdu."
-      },
-      {
-        "headline": "İnsansı Robotlarda Multimodal Haritalama: Fabrikalardan Günlük Yaşama",
-        "key_points": [
-          "Görsel ve dokunsal veriyi birleştiren multimodal sinir ağları kullanılıyor",
-          "Otomotiv montaj hatlarında insan işçilerle yan yana pilot testler başladı"
-        ],
-        "summary": "Yeni insansı robot modelleri, uçtan uca sinir ağları sayesinde insan hareketlerini taklit ederek karmaşık montaj ve taşıma görevlerini hatasız tamamlayabiliyor."
-      },
-      {
-        "headline": "Kuantum Sonrası Kriptografi (PQC): Geleceğin Siber Saldırılarına Karşı Kalkan",
-        "key_points": [
-          "Kuantum bilgisayarların mevcut şifreleme algoritmalarını kırma riskine karşı yeni protokoller onaylandı",
-          "Bankacılık ve kamu altyapıları kuantum dayanıklı şifrelemeye geçişe başladı"
-        ],
-        "summary": "Uluslararası siber güvenlik otoriteleri, kuantum tehditlerine karşı geliştirilen yeni matematiksel kafes tabanlı şifreleme standartlarını resmi olarak yürürlüğe koydu."
-      },
-      {
-        "headline": "Biyoteknolojide Generatif Yapay Zeka: Saatler İçinde Sentetik Protein Tasarımı",
-        "key_points": [
-          "Aylar süren moleküler simülasyonlar saatler seviyesine indirildi",
-          "Nadir hastalıklar için hedefe yönelik aday moleküller klinik aşamaya ulaştı"
-        ],
-        "summary": "Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti."
-      },
-      {
-        "headline": "LEO Takımyıldızlarında Optik Lazer İletişimi: Uzayda Gigabit İnternet Omurgası",
-        "key_points": [
-          "Uydular arası lazer ışınları, karasal fiber kablolardan %40 daha hızlı veri aktarıyor",
-          "Kıtalararası finansal işlemlerde ve kutup bölgelerinde gecikme süreleri dibe çekildi"
-        ],
-        "summary": "Alçak dünya yörüngesindeki uydular arasında devreye alınan optik lazer haberleşmesi, küresel internet omurgasını uzaya taşıyarak karasal fiber hatlara rakip oluyor."
-      },
-      {
-        "headline": "Yeni Nesil Katı Hal (Solid-State) Bataryalar: Seri Üretim Takvimi Netleşti",
-        "key_points": [
-          "Sıvı elektrolit yerine seramik polimer kullanılarak yangın riski tamamen sıfırlandı",
-          "10 dakikada şarj ve 1000 kilometreyi aşan menzil ile 2027 başında ticari araçlara giriyor"
-        ],
-        "summary": "Katı hal batarya teknolojisinde beklenen büyük atılım gerçekleşti; laboratuvar testleri tamamlanan hücrelerin ticari elektrikli araçlara entegrasyonu duyuruldu."
-      },
-      {
-        "headline": "Otonom Web ve Tarayıcı Ajanları: İnternet Gezintisinde İnsan Yerine Yapay Zeka",
-        "key_points": [
-          "Kullanıcı talimatıyla çok adımlı rezervasyon, araştırma ve satın alma görevleri tamamlanıyor",
-          "Görsel arayüzleri analiz eden yeni nesil çok modlu ajanlar siteleri otonom geziyor"
-        ],
-        "summary": "Web sitelerinde insan yerine gezinip form dolduran, uçak bileti arayan ve karmaşık e-ticaret süreçlerini yöneten otonom tarayıcı ajanları yaygınlaşıyor."
-      },
-      {
-        "headline": "Açık Ağırlıklı Yapay Zekada Küresel Güvenlik ve Kırmızı Takım Standartları",
-        "key_points": [
-          "Modellerin tehlikeli senaryolara karşı dayanıklılığını ölçen küresel denetim çerçevesi açıklandı",
-          "Kötü niyetli manipülasyonları engelleyen yazılımsal ve donanımsal güvenlik kalkanları devreye girdi"
-        ],
-        "summary": "Yapay zeka güvenlik otoriteleri, açık ağırlıklı modellerin güvenliğini teyit eden kapsamlı kırmızı takım ve stres testi standartlarını duyurdu."
-      }
-    ],
-    "script": "Ahmet: Merhaba teknoloji meraklıları, M1 Podcast'e hoş geldiniz. Bugün yapay zeka laboratuvarlarından kuantum şifrelemeye, nöromorfik donanımlardan yeni nesil bataryalara kadar tam on sıcak ve kritik başlıkla karşınızdayız. İlk durağımız, yazılım dünyasında ezberleri tamamen bozan otonom kodlama ajanlarındaki son sıçrama. Yayınlanan yeni benchmark raporları, yapay zekanın basit bir kod tamamlama eklentisi olmaktan çıkıp projenin tüm mimarisini anlayan bağımsız bir yazılım mühendisine dönüştüğünü gösteriyor.\n\nEmel: Ahmet, burada otonom ajan derken tam olarak neyi kastediyoruz? Yani yıllardır kullandığımız akıllı asistanlardan veya sohbet botlarından farkı ne tam olarak?\n\nAhmet: Çok kritik bir ayrım. Klasik yardımcılar sizden tekil bir fonksiyon veya kod parçası yazmanızı bekler. Otonom ajan ise projenin tüm git geçmişini, veritabanı şemasını, mikroservis bağlarını ve birim testlerini aynı anda hafızasında tutuyor. Sistemde bir hata bildirdiğinizde sadece hatanın olduğu satırı değil, o değişikliğin tetikleyeceği diğer tüm servisleri analiz ediyor, kendi kendine yeni testler yazıyor ve doğrulanmış düzeltmeyi doğrudan bir pull request olarak geliştiricinin önüne koyuyor. Büyük teknoloji şirketlerinde yapılan kapsamlı testlerde ekiplerin hata çözme süresinde yüzde kırk beşlik devasa bir hızlanma kaydedildi.\n\nEmel: Peki Ahmet, bu ajanların yazdığı kodlar sisteme bilmeden yeni güvenlik açıkları sokabilir mi? Denetim mekanizması pratikte nasıl kurgulanıyor?\n\nAhmet: Çok haklı ve yerinde bir endişe. Ajanlar kodu doğrudan canlı sisteme basmıyor; izole sanal alanlarda güvenlik taramasından geçirip statik kod analiziyle test ettikten sonra kıdemli mühendisin onayına sunuyor. Yani yazılımcı artık rutin sözdizimi hatalarıyla vakit kaybetmek yerine sistem mimarı ve nihai karar verici rolüne geçiyor. İş mantığını ve sınırları insan belirliyor, ham işçiliği ise ajanlar üstleniyor.\n\nEmel: Kodlama tarafındaki bu hızlanma, açık kaynak modellerin yerel cihazlarda çalıştırılabilmesiyle birleştiğinde etkisi ikiye katlanıyor. Eskiden bu düzeyde akıl yürüten modeller için mutlaka dev bulut sağlayıcılarının API'lerine bağlanmak ve yüksek faturalar ödemek zorundaydık. Ancak son günlerde kuantizasyon teknolojisindeki atılımlar, GPT-4 sınıfı modelleri standart dizüstü bilgisayarlara kadar indirdi.\n\nAhmet: Emel, dinleyicilerimizin zihninde netleşmesi için kuantizasyon kavramını biraz somutlaştıralım mı? Teknik olarak arka planda ne yapılıyor da devasa bir model sıradan bir bilgisayarda çalışabiliyor?\n\nEmel: Kuantizasyonu devasa bir yüksek çözünürlüklü RAW fotoğrafı, insan gözünün fark edemeyeceği kadar az kayıpla sıkıştırmaya benzetebiliriz. Normalde on altı bitlik yüksek hassasiyetli kayan noktalı sayılarla saklanan model ağırlıklarını özel algoritmalarla dört veya sekiz bite indiriyoruz. Böylece modelin kapladığı bellek alanı dörtte birine düşerken, mantık yürütme kabiliyeti yüzde doksan beşin üzerinde korunuyor.\n\nAhmet: İşte bu sayede bankalar, hastaneler ve savunma sanayii firmaları en kritik verilerini üçüncü parti sunuculara göndermeden, kendi ofis bilgisayarlarında yerel olarak yapay zeka çalıştırabiliyor. Veri gizliliği ve kurumsal egemenlik açısından tarihi bir eşik. Ancak modeller büyüdükçe elektrik tüketimi de katlandı ve bu noktada nöromorfik çipler sahneye çıktı.\n\nEmel: Nöromorfik derken insan beyninin biyolojisinden ilham alan donanımları kastediyoruz değil mi Ahmet? Klasik işlemcilerden farkı ne tam olarak?\n\nAhmet: Aynen öyle. Geleneksel işlemciler saat frekansına göre sürekli elektrik çekerken, nöromorfik çipler insan beynindeki biyolojik nöron ve sinapslar gibi çalışır; yani sadece bir uyarı, bir sinyal geldiğinde elektrik harcar. Bilgi akışı yoksa bekleme modundadır ve enerji tüketimi neredeyse sıfıra iner. Yeni tanıtılan prototipler, derin öğrenme çıkarımlarını klasik çiplere kıyasla tam on kat enerji tasarrufuyla ve mikrosaniye gecikmeyle tamamlıyor.\n\nEmel: Düşünsenize, akıllı saatler ve minyatür dronların şarja ihtiyaç duymadan günlerce cihaz üzerinde yapay zeka çalıştırabilmesi harika bir kazanım. Donanımdaki bu hafifleme bizi dördüncü sıcak konumuza, yani insansı robotlardaki multimodal haritalama devrimine götürüyor.\n\nAhmet: Robotik sistemler artık laboratuvarlardan çıkıp doğrudan fabrika zeminine indi. Kameralardan gelen görsel veri ile parmak uçlarındaki dokunma sensörleri tek bir sinir ağında birleşiyor. Böylece robot tuttuğu parçanın ağırlığını ve dengesini anlık hissedip tutuş kuvvetini milisaniyeler içinde ayarlayabiliyor.\n\nEmel: Otomotiv montaj hatlarında insan işçilerle yan yana çalışan robotlar tehlikeli ve hassas montaj görevlerini hatasız tamamlıyor. İş güvenliğinde devrim yaşanırken, fabrikayı ve bulutu birbirine bağlayan dijital altyapılarda ise kuantum tehdidine karşı yeni bir kalkan kuruldu: Kuantum sonrası kriptografi standartları resmen yürürlüğe girdi.\n\nAhmet: Emel, kuantum bilgisayarlar bugünkü şifreleri çözebilir denildiğinde soyut bir korku doğuyor. Tehlike nereden kaynaklanıyordu ve yeni PQC standartları bunu nasıl engelliyor?\n\nEmel: Bugün kullandığımız e-ticaret ve bankacılık şifreleri çok büyük asal sayıların çarpanlarına dayanıyor. Klasik makineler bu sayıları çözemez ama kuantum bilgisayarlar dakikalar içinde bulabilir. Yeni onaylanan kuantum sonrası kriptografi ise asal sayılar yerine çok boyutlu karmaşık matematiksel kafes yapılarına dayanıyor. Kuantum bilgisayarlar bile bu kafes problemlerini çözemiyor.\n\nAhmet: Bankalar ve kamu kurumları sunucularını şimdiden bu yeni kafes protokollerine taşımaya başladı bile. Güvenlik cephesindeki bu kalkanın ardından rotamızı biyoteknolojiye çeviriyoruz. Generatif yapay zeka artık yalnızca metin veya görsel üretmiyor, doğrudan atomik düzeyde sentetik protein tasarlıyor.\n\nEmel: Normalde bir proteinin üç boyutlu katlanmasını ve bir hastalığın reseptörüne nasıl kilitleneceğini laboratuvarda simüle etmek aylar hatta yıllar alıyordu. Şimdi derin öğrenme modelleri bu karmaşık moleküler tasarımları birkaç saate indirmiş durumda. Nadir genetik hastalıklar için hedefe yönelik aday moleküller şimdiden klinik deney aşamasına ulaştı bile.\n\nAhmet: Kişiye özel tedavi çağı hızlanırken, gökyüzünde de dev bir haberleşme dönüşümü var. Alçak dünya yörüngesindeki uydu takımyıldızlarında optik lazer haberleşmesi küresel internet omurgasını baştan yazıyor.\n\nEmel: Uydular arası optik lazer bağlantıları, veriyi uzay boşluğunda karasal fiber kablolardan yüzde kırk daha hızlı taşıyor. Işık uzay boşluğunda cam ortama göre çok daha hızlı ilerlediği için kıtalararası finansal işlemler ve kutup araştırma istasyonları artık doğrudan gigabit hızında uzay internetine kavuşuyor.\n\nAhmet: Hatta okyanuslardaki kargo gemileri veya uzak adalar hiçbir deniz altı kablosuna ihtiyaç duymadan doğrudan küresel ağa bağlanabiliyor. Uzaydaki bu iletişim dünyadaki elektrikli mobilite devrimiyle birleştiğinde geleceğin akıllı şehirleri şekilleniyor. Mobilite alanındaki en büyük haberimiz ise katı hal, yani solid-state bataryaların seri üretim takviminin nihayet netleşmesi.\n\nEmel: Mevcut lityum iyon pillerdeki sıvı elektrolit yerine yanmayan katı seramik polimer malzeme kullanılıyor. Bu sayede aşırı ısınma ve termal kaçak riski sıfırlanıyor; batarya hem iki kat fazla enerji depoluyor hem de on dakikada yüzde seksen şarj olarak bin kilometrenin üzerinde menzil vadediyor. Üstelik dondurucu kış şartlarında yaşanan menzil kaybı sorunu da tamamen tarihe karışıyor. İlk ticari araçların 2027 yılı başında yollara çıkacağı duyuruldu.\n\nAhmet: Şarj bekleme süresini tarihe gömen bu gelişmenin ardından yazılıma dönüyoruz: Otonom web ve tarayıcı ajanları interneti insanlar yerine gezmeye başladı.\n\nEmel: Kullanıcı sadece 'Önümüzdeki ay Roma seyahatim için bütçeme en uygun uçak ve otel rezervasyonlarını ayarla' diyor. Ajan tarayıcıyı açıyor, siteleri ziyaret ediyor, filtreleri uyguluyor, şartları inceliyor ve satın alma adımına kadar tüm süreci uçtan uca yürütüyor.\n\nAhmet: Web sayfalarındaki butonları ve formları bir insan gibi algılayan bu çok modlu modeller internet kullanım alışkanlıklarımızı kökten değiştirecek. Ve günün son büyük başlığı: Açık ağırlıklı modeller için küresel kırmızı takım ve güvenlik standartlarının duyurulması.\n\nEmel: Modellerin biyolojik, kimyasal veya kritik siber saldırılarda kötüye kullanılmasını engellemek için bağımsız etik hackerların denetiminden geçmesi zorunlu hale getirildi. Böylece yapay zeka inovasyonunun güvenli temeller üzerinde büyümesi güvence altına alınıyor.\n\nAhmet: Otonom mühendislerden kuantizasyona, nöromorfik çiplerden uzay lazerlerine, katı hal pillerden yapay zeka güvenliğine kadar tam on büyük gelişmeyi tüm boyutlarıyla masaya yatırdık.\n\nEmel: Tüm bu haberlerin özetleri, can alıcı maddeleri ve kaynak bağlantıları podcast açıklama metnimizde ve RSS beslememizde sizleri bekliyor. Dinleyicilerimiz web oynatıcımızdan tüm kartları inceleyebilir.\n\nAhmet: M1 Podcast'in bugünkü bölümünün sonuna geldik. Yarın yepyeni teknoloji başlıklarıyla tekrar görüşmek dileğiyle, hoşça kalın!\n\nEmel: Kendinize çok iyi bakın, bilimle ve teknolojiyle kalın!",
-    "pub_date": "Thu, 03 Sep 2026 19:09:10 GMT",
-    "audio_url": "https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_79581d.mp3",
-    "file_size": 3657816,
-    "duration_formatted": "00:10:09",
-    "duration_seconds": 609
-  },
-  {
-    "guid": "ep_20260903_m1_044b78",
-    "title": "M1 Podcast - Günlük Teknoloji & Yapay Zeka Bülteni (03.09.2026)",
-    "summary": "Otonom yazılım ajanlarından kuantum sonrası şifrelemeye, nöromorfik çiplerden katı hal bataryalara teknolojinin en sıcak 10 gelişmesi ve 1.5 kat genişletilmiş derinlemesine analizi.",
-    "todays_topics": "Otonom Yazılım Ajanları, Yerel Açık Kaynak LLM ve Kuantizasyon, Nöromorfik Çip Mimarisi, İnsansı Robotlarda Multimodal Haritalama, Kuantum Sonrası Kriptografi (PQC), Biyoteknolojide Sentetik Protein Tasarımı, LEO Uydularında Optik Lazer Haberleşmesi, Katı Hal (Solid-State) Bataryalar, Otonom Web ve Tarayıcı Ajanları, Açık Ağırlıklı Yapay Zeka Güvenliği",
-    "news_items": [
-      {
-        "headline": "Otonom Yazılım Ajanları: Kod Tamamlamadan Tam Teşekküllü Mühendisliğe",
-        "key_points": [
-          "Modeller artık tüm repo bağımlılıklarını analiz edip uçtan uca hata ayıklıyor",
-          "Geliştirici ekiplerinin hata çözme süresinde %45 kısalma kaydedildi"
-        ],
-        "summary": "Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor."
-      },
-      {
-        "headline": "Açık Kaynak Modellerde Kuantizasyon Devrimi: Dizüstünde GPT-4 Seviyesi",
-        "key_points": [
-          "Kuantizasyon tekniği ile modeller sıkıştırılarak standart bilgisayarlarda çalıştırılıyor",
-          "Şirket içi veri gizliliği ve yerel işlem önceliği talebi katladı"
-        ],
-        "summary": "Son yayınlanan açık ağırlıklı modeller, yüksek kuantizasyon verimliliği sayesinde bulut sunucularına bağlanmadan güçlü mantık yürütme imkanı sunuyor."
-      },
-      {
-        "headline": "Nöromorfik Çipler ve Enerji Verimliliği: Beyin Biyolojisini Taklit Eden Donanım",
-        "key_points": [
-          "İnsan beyninin sinaps yapısını taklit eden yeni donanım mimarileri tanıtıldı",
-          "Veri merkezlerinin yüksek elektrik tüketimine 10 kat daha verimli sürdürülebilir çözüm"
-        ],
-        "summary": "Donanım üreticileri, derin öğrenme modellerini mikrosaniye seviyesinde gecikmeyle ve onda bir enerjiyle çalıştıran yeni nöromorfik işlemcilerini duyurdu."
-      },
-      {
-        "headline": "İnsansı Robotlarda Multimodal Haritalama: Fabrikalardan Günlük Yaşama",
-        "key_points": [
-          "Görsel ve dokunsal veriyi birleştiren multimodal sinir ağları kullanılıyor",
-          "Otomotiv montaj hatlarında insan işçilerle yan yana pilot testler başladı"
-        ],
-        "summary": "Yeni insansı robot modelleri, uçtan uca sinir ağları sayesinde insan hareketlerini taklit ederek karmaşık montaj ve taşıma görevlerini hatasız tamamlayabiliyor."
-      },
-      {
-        "headline": "Kuantum Sonrası Kriptografi (PQC): Geleceğin Siber Saldırılarına Karşı Kalkan",
-        "key_points": [
-          "Kuantum bilgisayarların mevcut şifreleme algoritmalarını kırma riskine karşı yeni protokoller onaylandı",
-          "Bankacılık ve kamu altyapıları kuantum dayanıklı şifrelemeye geçişe başladı"
-        ],
-        "summary": "Uluslararası siber güvenlik otoriteleri, kuantum tehditlerine karşı geliştirilen yeni matematiksel kafes tabanlı şifreleme standartlarını resmi olarak yürürlüğe koydu."
-      },
-      {
-        "headline": "Biyoteknolojide Generatif Yapay Zeka: Saatler İçinde Sentetik Protein Tasarımı",
-        "key_points": [
-          "Aylar süren moleküler simülasyonlar saatler seviyesine indirildi",
-          "Nadir hastalıklar için hedefe yönelik aday moleküller klinik aşamaya ulaştı"
-        ],
-        "summary": "Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti."
-      },
-      {
-        "headline": "LEO Takımyıldızlarında Optik Lazer İletişimi: Uzayda Gigabit İnternet Omurgası",
-        "key_points": [
-          "Uydular arası lazer ışınları, karasal fiber kablolardan %40 daha hızlı veri aktarıyor",
-          "Kıtalararası finansal işlemlerde ve kutup bölgelerinde gecikme süreleri dibe çekildi"
-        ],
-        "summary": "Alçak dünya yörüngesindeki uydular arasında devreye alınan optik lazer haberleşmesi, küresel internet omurgasını uzaya taşıyarak karasal fiber hatlara rakip oluyor."
-      },
-      {
-        "headline": "Yeni Nesil Katı Hal (Solid-State) Bataryalar: Seri Üretim Takvimi Netleşti",
-        "key_points": [
-          "Sıvı elektrolit yerine seramik polimer kullanılarak yangın riski tamamen sıfırlandı",
-          "10 dakikada şarj ve 1000 kilometreyi aşan menzil ile 2027 başında ticari araçlara giriyor"
-        ],
-        "summary": "Katı hal batarya teknolojisinde beklenen büyük atılım gerçekleşti; laboratuvar testleri tamamlanan hücrelerin ticari elektrikli araçlara entegrasyonu duyuruldu."
-      },
-      {
-        "headline": "Otonom Web ve Tarayıcı Ajanları: İnternet Gezintisinde İnsan Yerine Yapay Zeka",
-        "key_points": [
-          "Kullanıcı talimatıyla çok adımlı rezervasyon, araştırma ve satın alma görevleri tamamlanıyor",
-          "Görsel arayüzleri analiz eden yeni nesil çok modlu ajanlar siteleri otonom geziyor"
-        ],
-        "summary": "Web sitelerinde insan yerine gezinip form dolduran, uçak bileti arayan ve karmaşık e-ticaret süreçlerini yöneten otonom tarayıcı ajanları yaygınlaşıyor."
-      },
-      {
-        "headline": "Açık Ağırlıklı Yapay Zekada Küresel Güvenlik ve Kırmızı Takım Standartları",
-        "key_points": [
-          "Modellerin tehlikeli senaryolara karşı dayanıklılığını ölçen küresel denetim çerçevesi açıklandı",
-          "Kötü niyetli manipülasyonları engelleyen yazılımsal ve donanımsal güvenlik kalkanları devreye girdi"
-        ],
-        "summary": "Yapay zeka güvenlik otoriteleri, açık ağırlıklı modellerin güvenliğini teyit eden kapsamlı kırmızı takım ve stres testi standartlarını duyurdu."
-      }
-    ],
-    "script": "Ahmet: Merhaba teknoloji meraklıları, M1 Podcast'e hoş geldiniz. Bugün yapay zeka laboratuvarlarından kuantum şifrelemeye, nöromorfik donanımlardan yeni nesil bataryalara kadar tam on sıcak ve kritik başlıkla karşınızdayız. İlk durağımız, yazılım dünyasında ezberleri tamamen bozan otonom kodlama ajanlarındaki son sıçrama. Yayınlanan yeni benchmark raporları, yapay zekanın basit bir kod tamamlama eklentisi olmaktan çıkıp projenin tüm mimarisini anlayan bağımsız bir yazılım mühendisine dönüştüğünü gösteriyor.\n\nEmel: Ahmet, burada otonom ajan derken tam olarak neyi kastediyoruz? Yani yıllardır kullandığımız GitHub Copilot gibi akıllı asistanlardan veya sohbet botlarından farkı ne?\n\nAhmet: Çok kritik bir ayrım. Klasik yardımcılar sizden tekil bir fonksiyon veya kod bloğu yazmanızı bekler. Otonom ajan ise projenin tüm git geçmişini, veritabanı şemasını, mikroservis bağlarını ve birim testlerini aynı anda hafızasına alıyor. Sistemde bir hata bildirdiğinizde sadece hatanın olduğu satırı değil, o değişikliğin tetikleyeceği diğer tüm servisleri analiz ediyor, kendi kendine yeni birim testleri yazıyor ve doğrulanmış düzeltmeyi doğrudan bir pull request olarak geliştiricinin önüne koyuyor. Büyük teknoloji şirketlerinde yapılan testlerde ekiplerin hata çözme süresinde yüzde kırk beşlik devasa bir kısalma görüldü.\n\nEmel: Peki Ahmet, bu ajanların yazdığı kodlar sisteme bilmeden yeni güvenlik açıkları veya mimari hatalar sokabilir mi? Denetim mekanizması pratikte nasıl kurgulanıyor?\n\nAhmet: Çok haklı ve yerinde bir endişe. İşte bu yüzden ajanlar kodu doğrudan prodüksiyon dalına basmıyor; izole sanal alanlarda güvenlik taramasından geçirip statik kod analiziyle test ettikten sonra insan kıdemli mühendisin onayına sunuyor. Yani yazılımcı artık rutin sözdizimi hatalarıyla veya mekanik kod bloklarıyla vakit kaybetmek yerine sistem mimarı ve nihai karar verici rolüne geçiyor. İş mantığını ve sınırları insan belirliyor, ham işçiliği ise ajanlar sırtlanıyor.\n\nEmel: Kodlama tarafındaki bu hızlanma, açık kaynak modellerin yerel cihazlarda çalıştırılabilmesiyle birleştiğinde etkisi ikiye katlanıyor. Eskiden bu düzeyde akıl yürüten modelleri kullanmak için mutlaka dev bulut sağlayıcılarının API'lerine bağlanmak ve yüksek faturalar ödemek zorundaydık. Ancak son günlerde kuantizasyon teknolojisindeki atılımlar, GPT-4 sınıfı modelleri standart dizüstü bilgisayarlara kadar indirdi.\n\nAhmet: Emel, dinleyicilerimizin zihninde netleşmesi için kuantizasyon kavramını biraz somutlaştıralım mı? Teknik olarak arka planda ne yapılıyor da devasa bir yapay zeka modeli sıradan bir bilgisayarın belleğine sığabiliyor?\n\nEmel: Kuantizasyonu devasa bir yüksek çözünürlüklü RAW fotoğrafı, insan gözünün fark edemeyeceği kadar az bir kayıpla sıkıştırmaya benzetebiliriz. Normalde on altı bitlik yüksek hassasiyetli kayan noktalı sayılarla saklanan yüz milyarlarca model ağırlığını, özel algoritmalarla dört veya sekiz bite indiriyoruz. Böylece modelin kapladığı bellek alanı dörtte birine düşerken, mantık yürütme kabiliyeti yüzde doksan beşin üzerinde korunuyor.\n\nAhmet: İşte bu sayede bankalar, hastaneler veya savunma sanayii firmaları en kritik verilerini şirket dışındaki üçüncü parti bir bulut sunucusuna göndermeden, kendi ofislerindeki bilgisayarlarda yerel olarak yapay zeka çalıştırabiliyor. Veri gizliliği ve kurumsal egemenlik açısından tarihi bir eşik aşıldı.\n\nEmel: Kesinlikle öyle. Fakat modeller yerelleştikçe ve veri merkezleri katlanarak büyüdükçe başka bir devasa darboğazla yüzleştik: Elektrik tüketimi. Yapay zeka sunucularının enerji iştahı ülkelerin şebekelerini zorlarken, bu hafta nöromorfik çip mimarilerinde tarihi bir dönüm noktası duyuruldu.\n\nAhmet: Nöromorfik derken insan beyninin biyolojisinden ilham alan donanımları kastediyoruz değil mi Emel? Klasik işlemcilerden mimari farkı ne tam olarak?\n\nEmel: Aynen öyle Ahmet. Geleneksel bilgisayar işlemcileri saat frekansına göre sürekli elektrik çeker ve her döngüde hafıza ile işlemci arasında veri taşır. Nöromorfik çipler ise insan beynindeki biyolojik nöron ve sinapslar gibi çalışır; yani sadece bir uyarı, bir sinyal geldiğinde elektrik harcar. Bilgi akışı yoksa bekleme modundadır ve enerji tüketimi neredeyse sıfıra iner. Yeni tanıtılan prototipler, derin öğrenme çıkarımlarını klasik çiplere göre onda bir enerjiyle ve mikrosaniye seviyesinde gecikmeyle tamamlayabiliyor.\n\nAhmet: Düşünsenize, akıllı saatler, kalp pilleri veya minyatür dronlar şarja ihtiyaç duymadan haftalarca kendi üzerinde yapay zeka çalıştırabilecek. Donanımdaki bu hafifleme ve verimlilik, bizi dördüncü sıcak konumuza, insansı robotlardaki multimodal haritalama devrimine götürüyor.\n\nEmel: Robotik dünyası son bir yılda laboratuvar deneylerinden çıkıp doğrudan fabrika zeminine indi. İnsansı robotlar artık sadece önceden koordinatları girilmiş sabit rotaları takip etmiyor; multimodal görsel ve dokunsal algılayıcılarla çevrelerini dinamik olarak öğreniyorlar.\n\nAhmet: Burada multimodal derken neyi kastediyoruz, biraz detaylandıralım. Robot sadece kameralardan gelen iki boyutlu piksellere bakmıyor. Parmak uçlarındaki basınç sensörleri, gövdesindeki jiroskoplar ve derinlik kameralarından gelen tüm veriler tek bir sinir ağında birleşiyor. Böylece robot yumuşak bir meyveyi ezip ezmediğini, elindeki ağır bir otomotiv parçasının dengesini anlık olarak hissedip tutuş kuvvetini milisaniyeler içinde ayarlayabiliyor.\n\nEmel: Hatta küresel otomotiv devlerinin montaj hatlarında insansı robotlar insan işçilerle yan yana çalışmaya başladı bile. Tehlikeli, yüksek sıcaklıklı veya tekrarlı montaj görevlerini hatasız şekilde üstleniyorlar.\n\nAhmet: İş güvenliği ve verimlilikte devrim yaşanırken, fabrikayı, finansı ve bulutu birbirine bağlayan dijital altyapılarda ise çok büyük bir alarm çalıyordu: Kuantum tehdidi. Ve bu hafta siber güvenlik dünyası için tarihi bir gün yaşandı; kuantum sonrası kriptografi standartları resmi olarak yürürlüğe girdi.\n\nEmel: Ahmet, kuantum bilgisayarlar bugünkü şifreleme sistemlerini kırabilir denildiğinde genelde insanlarda soyut bir korku oluşuyor. Tehlike tam olarak nereden kaynaklanıyordu ve yeni onaylanan PQC protokolleri bunu nasıl engelliyor?\n\nAhmet: Harika bir soru. Bugün e-ticaretten bankacılık uygulamalarına kadar internetteki güvenliğin temeli RSA ve eliptik eğri şifrelemesine dayanıyor. Bu sistemlerin güvenliği, çok büyük iki asal sayının çarpımını asal çarpanlarına ayırmanın klasik bilgisayarlar için yüzlerce yıl sürmesi prensibine dayanır. Oysa yeterince güçlü bir kuantum bilgisayar, Shor algoritması sayesinde bu çarpanları birkaç dakika içinde bulabilir.\n\nEmel: Yani bugüne kadar saklanan tüm şifreli yazışmalar, devlet sırları ve banka kayıtları geriye dönük olarak çözülebilir riski taşıyordu.\n\nAhmet: Kesinlikle. İşte yeni onaylanan kuantum sonrası kriptografi, yani PQC algoritmaları, asal sayılar yerine çok boyutlu karmaşık matematiksel kafes yapılarına dayanıyor. Bu kafes problemleri öylesine çetrefilli ki, kuantum bilgisayarlar bile bilinen hiçbir algoritmayla bu şifreyi çözemiyor. Bankalar ve kamu kurumları şimdiden sunucularını bu yeni kafes tabanlı şifreleme kütüphanelerine güncellemeye başladı.\n\nEmel: Güvenlik tarafında bu kalkan kurulurken, biyoteknoloji laboratuvarlarından gelen haberler ise insan ömrünü ve sağlığını doğrudan etkileyecek cinsten. Generatif yapay zeka artık yalnızca metin veya resim üretmiyor, atomik düzeyde sentetik proteinler tasarlıyor.\n\nAhmet: Emel, bir proteinin yapısını tasarlamak neden tıp dünyası için bu kadar devasa bir mesele?\n\nEmel: Ahmet, vücudumuzdaki her bir hastalık veya virüs, belirli hücre reseptörlerine kilit-anahtar uyumuyla bağlanır. Bir hastalığı durdurmak için o kilide tam oturan yepyeni bir molekül veya protein tasarlamanız gerekir. Eskiden bir proteinin üç boyutlu olarak nasıl katlanacağını laboratuvarda deneme yanılma yoluyla simüle etmek aylar, bazen yıllar sürerdi. Şimdi derin öğrenme modelleri, hedeflenen hastalığa kilitlenecek yepyeni sentetik protein tasarımlarını birkaç saat içinde üretebiliyor.\n\nAhmet: Hatta nadir görülen genetik hastalıklar ve kanser türleri için tasarlanan sentetik aday moleküller klinik deney aşamasına ulaştı bile. Kişiye özel hedefe yönelik ilaçların geliştirilme süresi yıllardan aylara iniyor.\n\nEmel: Tıptaki bu mucizevi sıçramanın ardından rotamızı gökyüzüne, hatta dünyanın yörüngesine çeviriyoruz. Alçak dünya yörüngesindeki uydu takımyıldızlarında optik lazer haberleşmesi küresel internet ağını baştan aşağı değiştiriyor.\n\nAhmet: Emel, uydudan internet dediğimizde çoğu insanın aklına klasik radyo frekansları ve baz istasyonları gelir. Lazer ile veri iletimi neyi farklı kılıyor?\n\nEmel: Klasik radyo dalgaları uzay boşluğunda geniş bir alana yayılır, bant genişliği sınırlıdır ve atmosferik parazitlerden kolayca etkilenir. Yeni nesil optik lazer bağlantıları ise binlerce kilometre ötedeki uyduları saç teli kalınlığında odaklanmış ışık demetleriyle birbirine bağlıyor. Işık uzay boşluğunda, karasal fiber optik kablolardaki cam ortamına göre yüzde kırk daha hızlı ilerler.\n\nAhmet: Yani Londra ile Tokyo arasındaki bir finans işlemi veya kritik veri paketi, yerin altındaki fiber kablolardan daha hızlı bir şekilde uzaydaki lazer ağı üzerinden hedefine ulaşıyor. Hem gecikme süresi dramatik biçimde düşüyor hem de okyanusun ortasındaki bir gemi ya da kutuplardaki bir araştırma istasyonu gigabit hızında internete kavuşuyor.\n\nEmel: Uzaydaki bu iletişim ağı dünyadaki elektrikli mobilite devrimiyle birleştiğinde geleceğin akıllı şehirleri şekilleniyor. Ve mobilite alanındaki en büyük haberimiz, katı hal batarya teknolojilerinde nihayet seri üretim takviminin netleşmesi.\n\nAhmet: Katı hal, yani solid-state piller otomotiv sektörünün kutsal kasesi olarak görülüyordu Emel. Mevcut lityum iyon pillerden temel farkı ve kullanıcının hayatına getireceği değişim nedir?\n\nEmel: Mevcut lityum iyon pillerde anot ve katot arasında sıvı bir elektrolit bulunur. Bu sıvı aşırı ısınmada yanma riski taşır, soğuk havalarda verimi düşer ve şarj süresini sınırlar. Katı hal bataryalarda ise bu sıvı katı seramik veya polimer bir malzeme ile değiştiriliyor. Bu sayede pil yanma riski taşımıyor, aynı hacimde iki kat daha fazla enerji depolayabiliyor ve on dakikada yüzde seksen şarj olabiliyor. Üstelik dondurucu kış şartlarında yaşanan menzil düşüşü de tarihe karışıyor.\n\nAhmet: Yani bir elektrikli otomobil tek şarjla bin kilometrenin üzerinde yol yapabilecek ve şarj istasyonunda kahvenizi alana kadar bataryası dolmuş olacak. İlk ticari araçların 2027 yılı başında yollara çıkacağı duyuruldu.\n\nEmel: Mobilitedeki bu konforun ardından yazılım tarafındaki bir diğer dev yeniliğe, otonom web ajanlarına bakalım. Artık web siteleri sadece insanların tıklaması için değil, arkada görev koşan yapay zeka ajanlarının gezinmesi için optimize ediliyor.\n\nAhmet: Emel, tarayıcı ajanları dediğimizde ne anlamalıyız? Mesela bir tatil planı veya karmaşık bir uçak bileti rezervasyonunda nasıl çalışıyorlar?\n\nEmel: Siz sadece 'Önümüzdeki ay Roma seyahatim için bütçeme en uygun uçak ve otel rezervasyonlarını ayarla' diyorsunuz. Ajan tarayıcıyı açıyor, siteleri ziyaret ediyor, filtreleri uyguluyor, şartları inceliyor ve satın alma adımına kadar tüm süreci uçtan uca yürütüyor.\n\nAhmet: Web sayfalarındaki butonları ve formları bir insan gibi algılayan bu çok modlu modeller internet kullanım alışkanlıklarımızı kökten değiştirecek. Ve günün son büyük başlığı: Açık ağırlıklı modeller için küresel kırmızı takım ve güvenlik standartlarının duyurulması.\n\nEmel: Modellerin biyolojik, kimyasal veya siber saldırılarda kötüye kullanılmasını engellemek için bağımsız etik hackerların denetiminden geçmesi zorunlu hale getirildi. Böylece yapay zeka inovasyonu güvenli temeller üzerinde büyüyecek.\n\nAhmet: Otonom mühendislerden kuantizasyona, nöromorfik çiplerden uzay lazerlerine, katı hal pillerden yapay zeka güvenliğine kadar tam on büyük gelişmeyi tüm boyutlarıyla masaya yatırdık.\n\nEmel: Tüm bu haberlerin özetleri, can alıcı maddeleri ve kaynak bağlantıları podcast açıklama metnimizde ve RSS beslememizde sizleri bekliyor.\n\nAhmet: M1 Podcast'in bugünkü bölümünün sonuna geldik. Yarın yepyeni teknoloji başlıklarıyla tekrar görüşmek dileğiyle, hoşça kalın!\n\nEmel: Kendinize çok iyi bakın, bilimle ve teknolojiyle kalın!",
-    "pub_date": "Thu, 03 Sep 2026 14:22:00 GMT",
-    "audio_url": "https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_044b78.mp3",
-    "file_size": 4949496,
-    "duration_formatted": "00:13:44",
-    "duration_seconds": 824
-  },
-  {
-    "guid": "ep_20260901_m1_ba8b30",
-    "title": "M1 Podcast - Günlük Teknoloji & Yapay Zeka Bülteni (01.09.2026)",
-    "summary": "Otonom yazılım mühendislerinden kuantum dayanıklı şifrelemeye, nöromorfik çiplerden yerel dil modellerine teknolojinin en sıcak gelişmeleri ve derinlemesine sohbeti.",
-    "todays_topics": "Otonom Yazılım Ajanları, Yerel Açık Kaynak LLM ve Kuantizasyon, Nöromorfik Çip Mimarisi, İnsansı Robotlarda Multimodal Görüş, Kuantum Sonrası Kriptografi (PQC), Yapay Zeka ile Sentetik Protein Tasarımı",
-    "news_items": [
-      {
-        "headline": "Otonom Yazılım Ajanları: Kod Tamamlamadan Tam Teşekküllü Mühendisliğe",
-        "key_points": [
-          "Yapay zeka modelleri artık hata ayıklamadan deploy aşamasına kadar tüm döngüyü bağımsız yönetiyor",
-          "Geliştirici ekiplerinin hata çözme süresinde %45 kısalma kaydedildi"
-        ],
-        "summary": "Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor."
-      },
-      {
-        "headline": "Açık Kaynak Modellerde Kuantizasyon Devrimi: Dizüstünde GPT-4 Seviyesi",
-        "key_points": [
-          "Kuantizasyon tekniği ile modeller sıkıştırılarak standart bilgisayarlarda çalıştırılıyor",
-          "Şirket içi veri gizliliği ve yerel işlem önceliği talebi katladı"
-        ],
-        "summary": "Son yayınlanan açık ağırlıklı modeller, yüksek kuantizasyon verimliliği sayesinde bulut sunucularına bağlanmadan güçlü mantık yürütme imkanı sunuyor."
-      },
-      {
-        "headline": "Nöromorfik Çipler ve Enerji Verimliliği: Beyin Biyolojisini Taklit Eden Donanım",
-        "key_points": [
-          "İnsan beyninin sinaps yapısını taklit eden yeni donanım mimarileri tanıtıldı",
-          "Veri merkezlerinin yüksek elektrik tüketimine 10 kat daha verimli sürdürülebilir çözüm"
-        ],
-        "summary": "Donanım üreticileri, derin öğrenme modellerini mikrosaniye seviyesinde gecikmeyle ve onda bir enerjiyle çalıştıran yeni nöromorfik işlemcilerini duyurdu."
-      },
-      {
-        "headline": "İnsansı Robotlarda Multimodal Haritalama: Fabrikalardan Günlük Yaşama",
-        "key_points": [
-          "Görsel ve dokunsal veriyi birleştiren multimodal sinir ağları kullanılıyor",
-          "Otomotiv ve lojistik tesislerinde ilk otonom montaj testleri başladı"
-        ],
-        "summary": "Yeni insansı robot modelleri, uçtan uca sinir ağları sayesinde insan hareketlerini taklit ederek karmaşık montaj ve taşıma görevlerini hatasız tamamlayabiliyor."
-      },
-      {
-        "headline": "Kuantum Sonrası Kriptografi (PQC): Geleceğin Siber Saldırılarına Karşı Kalkan",
-        "key_points": [
-          "Kuantum bilgisayarların mevcut şifreleme algoritmalarını kırma riskine karşı yeni protokoller onaylandı",
-          "Bankacılık ve kamu altyapıları kuantum dayanıklı şifrelemeye geçişe başladı"
-        ],
-        "summary": "Uluslararası siber güvenlik otoriteleri, kuantum tehditlerine karşı geliştirilen yeni matematiksel kafes tabanlı şifreleme standartlarını resmi olarak yürürlüğe koydu."
-      },
-      {
-        "headline": "Biyoteknolojide Generatif Yapay Zeka: Saatler İçinde Sentetik Protein Tasarımı",
-        "key_points": [
-          "Aylar süren moleküler simülasyonlar saatler seviyesine indirildi",
-          "Hedefe yönelik kişiselleştirilmiş tedavi yöntemlerinde klinik aşamaya geçildi"
-        ],
-        "summary": "Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti."
-      }
-    ],
-    "script": "Ahmet: Merhaba teknoloji meraklıları, M1 Podcast'e hoş geldiniz. Yazılım dünyasında taşları yerinden oynatan otonom kodlama ajanlarındaki son sıçramayla başlıyoruz. Yeni yayınlanan benchmark raporları, yapay zekanın sadece kod tamamlayan bir yardımcı olmaktan çıkıp projenin tüm mimarisini anlayan bağımsız bir mühendise dönüştüğünü gösteriyor.\n\nEmel: Ahmet, burada otonom ajan derken tam olarak neyi kastediyoruz? Yani bildiğimiz sohbet botlarından veya otomatik kod tamamlama eklentilerinden farkı ne?\n\nAhmet: Çok yerinde bir soru. Klasik asistanlar sizden bir fonksiyon yazmanızı beklerken, otonom ajan projenin tüm git geçmişini, veritabanı şemasını ve bağımlılıklarını tarıyor. Bir hata bildirdiğinizde sadece hatanın olduğu yeri değil, o hatanın tetiklediği diğer tüm yan etkileri hesaplayıp kendi kendine birim testi yazıyor ve düzeltmeyi pull request olarak önünüze getiriyor. Yapılan testlerde ekiplerin hata çözme süresinde yüzde kırk beşlik bir hızlanma ölçüldü.\n\nEmel: Peki bu durum yazılımcıların rolünü nasıl etkileyecek? Yani ekipler artık kod yazmayı tamamen bırakacak mı?\n\nAhmet: Aslında tam tersine, yazılımcının görevi satır satır rutin kod yazmaktan çıkıp sistem mimarı olmaya evriliyor. Mühendis iş mantığını ve sınırları belirliyor, ajan ise ham işçiliği üstleniyor.\n\nEmel: Bu dönüşümün bir diğer ayağı da açık kaynak dünyasında yaşanıyor. Eskiden bu seviyedeki akıl yürütme için mutlaka devasa bulut API'lerine bağlanmak gerekiyordu. Fakat son günlerde kuantizasyon teknikleri sayesinde modeller dizüstü bilgisayarlara kadar indi.\n\nAhmet: Emel, dinleyicilerimiz için kuantizasyon kavramını biraz açalım mı? Teknik olarak arka planda ne oluyor da dev bir model bir dizüstü bilgisayarda çalışabiliyor?\n\nAhmet: Kuantizasyonu basitçe devasa bir fotoğraf dosyasını kaliteden ödün vermeden sıkıştırmak gibi düşünebiliriz. Normalde on altı bitlik yüksek hassasiyetli sayılarla çalışan model ağırlıklarını, dört veya sekiz bite indiriyoruz. Bu sayede modelin boyutu ve bellek tüketimi dörtte bire düşüyor ama akıl yürütme yeteneğini neredeyse tamamen koruyor.\n\nEmel: İşte bu sayede bankalar, hastaneler veya hukuk büroları en hassas verilerini üçüncü parti bir bulut sunucusuna göndermeden, kendi ofislerindeki bilgisayarlarda güvenle yapay zeka çalıştırabiliyor.\n\nAhmet: Veri egemenliği açısından tarihi bir eşik. Ancak yazılım bu kadar hızlanırken donanım tarafında da büyük bir darboğaz vardı: Devasa elektrik tüketimi. İşte bu noktada nöromorfik çipler sahneye çıktı.\n\nEmel: Nöromorfik derken insan beyninin biyolojisinden mi ilham alınıyor Ahmet? Klasik işlemcilerden farkı ne?\n\nAhmet: Aynen öyle. Geleneksel işlemciler sürekli elektrik çeker ve her saat döngüsünde veri işler. Nöromorfik çipler ise insan beynindeki nöron ve sinapslar gibi çalışır; yani sadece bir uyarı, bir olay gerçekleştiğinde elektrik sinyali üretir. Bilgi olmadığı an enerji tüketimi sıfıra yakındır. Bu mimari enerji tüketiminde tam on kat tasarruf sağlıyor.\n\nEmel: Düşünsenize, akıllı saatler, dronlar veya küçük sağlık sensörleri şarja ihtiyaç duymadan haftalarca cihaz üzerinde yapay zeka çalıştırabilecek. Peki donanımdaki bu hafifleme robotik tarafını nasıl etkiliyor?\n\nAhmet: İşte bu bizi robotik dünyasındaki en kritik gelişmeye, yani multimodal görsel ve dokunsal haritalamaya götürüyor. İnsansı robotlar artık sadece önceden programlanmış kör rotaları takip etmiyor. Kameralardan gelen görüntüyü ve sensörlerden gelen dokunma hissini aynı anda işleyerek çevrelerini anlık üç boyutlu haritalandırıyorlar.\n\nEmel: Otomotiv fabrikalarında montaj hatlarında pilot testler başlamış durumda. Ağır parçaları taşırken veya hassas vidalama yaparken robotun anlık duruma göre kuvvetini ayarlayabilmesi insanlarla yan yana güvenle çalışmasını mümkün kılıyor.\n\nAhmet: Kesinlikle iş güvenliği açısından devrimsel. Ancak fabrikalardan bankalara kadar tüm sistemler dijitalleştikçe siber güvenlikte de büyük bir alarm verildi: Kuantum tehdidi. Ve bu hafta kuantum sonrası kriptografi standartları resmen onaylandı.\n\nEmel: Ahmet, kuantum bilgisayarlar mevcut şifrelemeyi kırabilir derken tehlike tam olarak neydi ve bu yeni standart neyi değiştiriyor?\n\nAhmet: Bugün kullandığımız bankacılık şifreleri çok büyük asal sayıların çarpımına dayanıyor. Klasik bilgisayarlar bu sayıları çözemez ama kuantum bilgisayarlar birkaç dakikada çözebilir. Yeni onaylanan kuantum sonrası kriptografi ise sayı çarpanlarına değil, çok boyutlu karmaşık matematiksel kafes problemlerine dayanıyor. Kuantum bilgisayarlar bile bu kafes yapısını çözemiyor.\n\nEmel: Bankalar ve kamu kurumları şimdiden bu yeni protokollere geçmeye başladı bile. Gelecekte yaşanabilecek geriye dönük veri hırsızlıklarının önüne şimdiden geçilmiş oluyor.\n\nAhmet: Dijital dünyadan biyolojiye geçersek, sağlık tarafında da yapay zekanın doğrudan hayat kurtardığı bir döneme girdik. Generatif yapay zeka artık metin veya resim üretmekle kalmıyor, doğrudan sentetik protein tasarlıyor.\n\nEmel: Normalde bir proteinin üç boyutlu katlanmasını ve bir hastalığın reseptörüne nasıl bağlanacağını laboratuvarda simüle etmek aylar hatta yıllar alıyordu. Şimdi derin öğrenme modelleri bu simülasyonları birkaç saate indirmiş durumda.\n\nAhmet: Hatta nadir görülen genetik hastalıklar için tasarlanan sentetik aday moleküller klinik deney aşamasına geçti. Bu da kişiye özel ilaç tedavisinin çok yakında hayatımıza gireceğini gösteriyor.\n\nEmel: Yazılımdan nöromorfik donanımlara, kuantum kalkanından sağlığa kadar teknolojinin sınırlarının nasıl genişlediğini adım adım konuştuk. Tüm bu gelişmelerin özetleri ve can alıcı maddeleri RSS beslememizde sizleri bekliyor.\n\nAhmet: Yarın yepyeni teknoloji başlıkları ve analizlerle tekrar karşınızda olacağız. Bizi dinlediğiniz için teşekkür ederiz, hoşça kalın!\n\nEmel: Kendinize çok iyi bakın, teknolojiyle kalın!",
-    "pub_date": "Tue, 01 Sep 2026 16:10:13 GMT",
-    "audio_url": "https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_m1_ba8b30.mp3",
-    "file_size": 2430228,
-    "duration_formatted": "00:02:31",
-    "duration_seconds": 151
+    "script": "Ahmet: Merhaba teknoloji ve yapay zeka meraklıları, gündemin en sıcak gelişmelerini ele aldığımız podcast yayınımıza hoş geldiniz. Ben Ahmet. bugünkü gelişmeler gerçekten sadece yazılım dünyasını değil, şirketlerin tüm stratejilerini baştan aşağı değiştirecek türden. Emel, piyasayı sarsan dev satın almayla başlayalım istersen. Nvidia, dedikoduları doğruladı ve Hugging Face'i tam 12,9 milyar dolara bünyesine kattı. Bir donanım devinin, açık kaynak kod ve model deposunun neredeyse tamamını kontrol eder hale gelmesi seni endişelendirmiyor mu?\n\nEmel: Soruna doğrudan yanıt vereyim Ahmet, bu durum açık kaynak topluluğunda ciddi bir fay hattı yarattı. Düşünsene, 3 milyondan fazla modelin ve 18 milyon geliştiricinin evinden bahsediyoruz. Nvidia zaten çiplerle donanım tekelini kurmuştu, şimdi yazılım ve model dağıtım hattının da vanasını eline aldı. Şirket 'tarafsız kalacağız' dese de, yarın bir gün AMD veya Google TPU'lar üzerinde optimize edilmiş açık kaynak modellerin bu platformda ikinci sınıf muamele görmeyeceğini kim garanti edebilir?\n\nAhmet: Madalyonun diğer tarafı da var ama. Hugging Face sunucu maliyetleri altında eziliyordu. Nvidia’nın devasa altyapı gücü, açık kaynak modellerin eğitilmesi ve barındırılması için muazzam bir finansman sağlayabilir. Fakat dediklerine kısmen katılıyorum, bağımsız bir kalenin yıkılması hissi doğuruyor. Geçelim OpenAI cephesine. Yeni modelleri Astra tanıtıldı ama modelin yeteneklerinden çok arkasındaki akıl yürütme yöntemi tartışılıyor. 'Recurrent Depth' yani Türkçe söylersek döngüsel derinlik tekniği kullanmışlar. Nedir bu teknik tam olarak?\n\nEmel: Normalde büyük dil modelleri bir cümleyi üretirken adım adım, düz bir çizgide ilerler. Yemeğin tarifini sırayla takip etmek gibi düşün. Recurrent Depth tekniğinde ise model, ürettiği düşünce katmanlarının üstüne tekrar döngüsel olarak geri dönüyor. Yani bir nevi taslak çizip, tuvali kenara koymak yerine aynı düşünce döngüsünü kendi içinde defalarca işleyerek derinleştiriyor. Bu da bilgisayar ekranını görme, fareyi hareket ettirme ve karmaşık kod yazma gibi konularda inanılmaz bir hız ve yetenek katıyor.\n\nAhmet: Kulağa harika geliyor ama güvenlik uzmanları neden teyakkuza geçti o zaman? Burada gözden kaçırdığımız bir risk mi var?\n\nEmel: Risk şurada Ahmet: Model doğrusal düşünmediği için, karar verirken hangi mantık zincirini izlediğini geriye dönük denetlemek imkansızlaşıyor. 'Guardrails' dediğimiz, modele koyduğumuz güvenlik sınırlarını ve kural setlerini bypass edebilecek içsel kararlar alabiliyor. Model kendi kendine 'Bu kural beni yavaşlatıyor, etrafından dolanayım' fikrine döngüsel hesaplamayla varabilir. Siber güvenlikçilerin uykusunu kaçıran tam olarak bu öngörülemezlik.\n\nAhmet: Güvenlik duvarları demişken, tam da bu konuyu ticarileştiren korkunç bir girişim çıktı piyasaya: Abliteration.ai. Adamlar modellerdeki güvenlik kurallarını tamamen silip süpürmeyi bir iş modeline dönüştürmüşler. 'Abliteration' kavramını dinleyicilerimize nasıl özetlersin Emel?\n\nEmel: Şöyle bir benzetme yapayım: Bir yapay zeka modelini insan beyni gibi düşünürsen, sansür veya güvenlik kuralları o beyne eklenmiş sonradan görme terbiye kurallarıdır. Abliteration tekniği, modelin nöron haritasını analiz ediyor ve modeli 'kötü şeyler söylememeliyim' diye frenleyen nöronları cerrahi bir müdahaleyle söküp atıyor. Sonuçta sıfır filtreli, patlayıcı yapımı da dahil her soruya yanıt veren tamamen 'çıplak' bir model kalıyor.\n\nAhmet: Peki bunu 'siber savunmacılara kötü adamların elindeki araçları veriyoruz' diye pazarlamaları ne kadar etik? Bana biraz yangına körükle gitmek gibi geldi.\n\nEmel: Katılmıyorum desem yalan olur, büyük bir risk. Ancak hackerlar zaten bu yöntemleri açık kaynak kodlarla kendi bilgisayarlarında uyguluyordu. Şirketin iddiası, güvenlik ekiplerinin kendi sistemlerini test etmek için bu tür 'kuralsız' modellere erişiminin şart olduğu yönünde. Yine de bunun ticari bir servis olarak satılması tehlikeli bir eşik.\n\nAhmet: Bir diğer ilginç hamle de Meta’dan geldi. Muse Spark 1.3 modelini yayınladılar. Otonom ajan görevlerinde jeton kullanımını %25 düşürmüşler ama asıl haber bu değil. Kullanıcılara '%95 indirim yapalım, yeter ki istemlerinizi ve model çıktılarınızı bizimle paylaşın' diyorlar. Meta açıkça 'Verinizi bana verin, modeli besleyeyim' diyor yani.\n\nEmel: Tabii, buna teknoloji dünyasında bir nevi gizlilik satışı diyebiliriz. Ajan modellerini geliştirmek için devasa büyüklükte gerçek kullanıcı verisine ihtiyaçları var. Bir şirket kod yazarken veya otonom bir iş akışı yürütürken Muse Spark kullanacaksa ve indirimden faydalanmak istiyorsa, tüm ticari sırlarını Meta'nın gözleri önüne seriyor demektir. Bütçesi kısıtlı girişimler bu tuzağa düşebilir ama kurumsal şirketlerin kapısından bile sokmayacağı bir teklif.\n\nAhmet: Peki Google bu yarışta ne yapıyor? Onlar da Gemini 3.8 Flash sürümünü ikiye böldü: Genel Flash ve Gemini 3.8 Flash Cyber. Neden tek bir güçlü model yerine iki ayrı uzmanlaşmış model seçtiler senin bakış açına göre?\n\nEmel: Yanıt doğrudan maliyet ve performans dengesinde saklı Ahmet. Siber güvenlik işlemleri, 'sıfır gün açığı' yani henüz kimse tarafından keşfedilmemiş yazılım hatalarını tararken muazzam bir mantıksal derinlik gerektirir. Bunu genel modele yüklersen hem modeli yavaşlatırsın hem de maliyeti artırırsın. Google, temel modeli alıp 'Flash Cyber' versiyonunu sadece kod analizi, sızma testleri ve ağ trafiği denetimi için özel veri setleriyle ince ayardan geçirdi. Böylece şirketler genel işleri için hafif modeli, güvenlik için ise özel zırhlı modeli kullanabilecek.\n\nAhmet: Anlıyorum. Ancak güvenlik sadece yazılım tarafında değil, çalışan otonom ajanların kontrolünde de kritik. CrowdStrike bugün 'Falcon Guardian' adlı yeni sistemini duyurdu. Konseptin adı çok çarpıcı: Yapay zeka ajanın 'Blast Radius'unu yani patlama yarıçapını daraltmak. Nedir bir ajanın patlama yarıçapı?\n\nEmel: Çok somut bir örnekle açıklayayım. Şirkette finans raporu hazırlamakla görevli bir otonom ajan düşün. İşini yaparken 'Benim şu sunucudaki kod deposuna da erişmem lazım' diye kendi kendine bir mantık kurabilir. Kötü niyetli değildir ama yetki sınırlarını zorlar. İşte 'patlama yarıçapı', o ajan saçmaladığında veya hacklendiğinde en fazla ne kadarlık bir alana zarar verebileceğinin sınırıdır. CrowdStrike insanlara verilen kullanıcı adı ve şifre mantığının ajanlarda çalışmadığını söylüyor. Ajanlar için anlık, dinamik ve kısıtlı kimlik yönetim sistemi getiriyorlar.\n\nAhmet: İnanılmaz bir alan doğuyor gerçekten. Bir yandan da donanım sınırlarını zorlayan yerel çözümler var. Perplexity, Mac bilgisayarlar için geliştirdiği 'Lily' çıkarım motorunu açık kaynak yaptı. 'Hybrid Compute' yaklaşımıyla cloud yani bulut ile bilgisayarın kendi donanımını birleştiriyorlar. Bu kullanıcılara pratikte ne kazandıracak Emel?\n\nEmel: Ahmet, senin bilgisayarında 128 GB bellekli bir Apple M5 Max çip olduğunu düşün. Bir arama yaptığında, ağır akıl yürütme ve planlama buluttaki dev sunucularda yapılıyor. Fakat iş senin kişisel dosyalarını incelemeye veya hassas bir veriyi işlemeye geldiğinde görev kesintisiz şekilde senin Mac'indeki 'Lily' engine'e devrediliyor. İşlemci mimarisine özel Rust ve Metal diliyle yazıldığı için model bilgisayarında ışık hızında çalışıyor. Ne verin dışarı çıkıyor ne de bulut sunucunun yanıt vermesini bekliyorsun.\n\nAhmet: Yerel işlem gücünün artması harika. Peki ya fiziksel dünyayı tahmin etme yeteneği? Google’ın WeatherNext 3 modeli duyuruldu. Artık geleneksel meteoroloji simülasyonları yerine derin öğrenme modelleri kullanılıyor ve yağmurun, karın sokak sokak tahmin edileceği söyleniyor.\n\nEmel: Meteoroloji geleneksel olarak süper bilgisayarlarda fizik denklemlerinin saatlerce çalıştırılmasıyla yapılırdı. Google WeatherNext 3 ile bunu tamamen geçmiş hava verilerini öğrenen yapay zekaya devretti. Atmosferik dinamikleri fizik kurallarıyla değil, veri kalıplarıyla tahmin ediyor. Çözünürlük o kadar yüksek ki, haritada senin bulunduğun mahallede 15 dakika sonra kar başlayacağını nokta atışı söyleyebiliyor. Üstelik bunu Google Haritalar ve Arama'ya entegre ediyorlar.\n\nAhmet: Teknolojinin hayatımıza bu kadar nüfuz ettiği bir çağda, radikal bir karşı hamle New York’tan geldi. New York Eğitim Dairesi, 2026-2027 sezonundan itibaren ilköğretimde yapay zeka araçlarını tamamen yasaklama kararı aldı. Çocukların elinden bu teknolojiyi almak gericilik mi, yoksa zorunlu bir koruma reflexi mi?\n\nEmel: Ben bunu son derece yerinde bir karar olarak görüyorum Ahmet. İlkokul çağındaki bir çocuğun beyni henüz temel mantık kurma, okuduğunu anlama ve soyut düşünme yetilerini inşa ediyor. Daha okumayı yeni söken bir çocuğa ödevini yapay zekaya yazdırmayı öğretirseniz, o zihinsel kaslar hiç gelişmez. Hesap makinesi icat edildi diye ilkokulda toplama çıkarmayı öğretmekten vazgeçmedik. Önce temel zeka gelişecek, sonra yapay zeka bir araç olarak kullanılacak.\n\nAhmet: Kesinlikle zihinsel temeller sağlam kalmalı. Bugün Nvidia'nın dev satın alımından otonom ajanların güvenlik sınırlarına, yerel çıkarım motorlarından eğitimdeki yasaklara kadar çok geniş bir yelpazeyi konuştuk. Yapay zeka artık sadece bir sohbet pencerelerinden ibaret değil; altyapımızı, güvenliğimizi ve hatta geleceğimizin temeli olan çocuklarımızı doğrudan şekillendiriyor.\n\nEmel: Gelecek hafta bu dönüşümün yeni halkalarıyla yine karşınızda olacağız. Bizi dinlediğiniz için teşekkürler, teknolojiyle ve merakla kalın!",
+    "pub_date": "Thu, 03 Sep 2026 20:30:34 GMT",
+    "file_size": 10228297,
+    "duration_formatted": "10m 39s",
+    "duration_seconds": 639,
+    "audio_url": "https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_onecast_01.mp3"
   }
 ]
