@@ -1,32 +1,31 @@
 import os
-import shutil
-import json
-import uuid
-import datetime
-import re
-import argparse
 import sys
+import json
+import argparse
+import datetime
+import uuid
+import shutil
 from dotenv import load_dotenv
 
 from src.content_generator import ContentGenerator
 from src.audio_generator import AudioGenerator
-from src.rss_builder import RSSBuilder
 from src.publisher import Publisher
+from src.rss_builder import RSSBuilder
 
 if hasattr(sys.stdout, "reconfigure"):
     try:
-        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     except Exception:
         pass
 
 load_dotenv()
 
-def run_daily_podcast_pipeline(test_mode: bool = False):
+def run_daily_podcast_pipeline(test_mode: bool = False, tts_engine: str = "edge"):
     print("=" * 65)
     if test_mode:
-        print("🧪 TEST / DRY-RUN MODU: Yerel test dosyaları üretiliyor (Prod RSS etkilenmez)")
+        print(f"🧪 TEST / DRY-RUN MODU [{tts_engine.upper()}]: Yerel test dosyaları üretiliyor (Prod RSS etkilenmez)")
     else:
-        print("🎙️ MIGROS ONECAST AI - GÜNLÜK TÜRKÇE YAPAY ZEKA PODCAST BORU HATTI")
+        print(f"🎙️ MIGROS ONECAST AI [{tts_engine.upper()}] - GÜNLÜK TÜRKÇE YAPAY ZEKA PODCAST BORU HATTI")
     print("=" * 65)
 
     # 1. Load Configurations
@@ -38,45 +37,37 @@ def run_daily_podcast_pipeline(test_mode: bool = False):
     output_dir = config.get("output_dir", "dist")
 
     # 2. Extract Recent Topics from Manifest for Duplicate Prevention
-    recent_manifest_path = "episodes_manifest.json"
+    manifest_path = "episodes_manifest.json"
     recent_topics = []
-    if os.path.exists(recent_manifest_path):
+    if os.path.exists(manifest_path):
         try:
-            with open(recent_manifest_path, "r", encoding="utf-8") as f:
-                past_episodes = json.load(f)
-                if past_episodes:
-                    for ep in past_episodes[:5]:
-                        t_summary = ep.get("todays_topics", "") or ep.get("summary", "")
-                        if t_summary:
-                            recent_topics.append(t_summary)
+            with open(manifest_path, "r", encoding="utf-8") as f:
+                prev_manifest = json.load(f)
+                for ep in prev_manifest[:3]:
+                    if "news_items" in ep:
+                        for it in ep["news_items"]:
+                            recent_topics.append(it.get("headline", ""))
+                    elif "todays_topics" in ep:
+                        recent_topics.extend([t.strip() for t in ep["todays_topics"].split(",")])
         except Exception as e:
-            print(f"⚠️ Geçmiş bülten kayıtları yüklenirken not: {e}")
+            print(f"Manifest okuma uyarısı: {e}")
 
-    # 3. Fetch Fresh Turkish & Global News
+    # 3. Content Generation
     print("\n[Adım 1/3] Güncel Teknoloji & Yapay Zeka RSS kaynakları taranıyor...")
-    content_gen = ContentGenerator()
-    
-    exclude_keywords = []
-    for topic in recent_topics:
-        exclude_keywords.extend(re.findall(r'\b[A-ZÇĞİÖŞÜa-zçğıöşü]{4,}\b', topic))
+    generator = ContentGenerator()
+    news_context = generator.fetch_fresh_news(hours_limit=24, exclude_keywords=recent_topics)
 
-    raw_news = content_gen.fetch_fresh_news(hours_limit=24, exclude_keywords=list(set(exclude_keywords)))
-    if not raw_news:
-        print("⚠️ 24 saatlik filtrede yeterli haber bulunamadı, 48 saatlik aralık taranıyor...")
-        raw_news = content_gen.fetch_fresh_news(hours_limit=48)
+    dialogue_script_data = generator.generate_dialogue_script(news_context, recent_topics=recent_topics)
+    script_data = generator.generate_script(news_context)
 
-    # Generate dialogue and monologue scripts
-    dialogue_script_data = content_gen.generate_dialogue_script(raw_news, recent_topics=recent_topics)
-    script_data = content_gen.generate_script(raw_news)
-
-    # Save script texts locally
+    # Save scripts to output
     os.makedirs("output", exist_ok=True)
     dialogue_file_path = os.path.join("output", "dialogue_script.txt")
     with open(dialogue_file_path, "w", encoding="utf-8") as f:
-        f.write(dialogue_script_data["script"])
-        
+        f.write(dialogue_script_data.get("script", ""))
+
     print(f"📄 Türkçe Podcast Metni Kaydedildi: {dialogue_file_path}")
-    print(f"💡 Bölüm Başlığı: {dialogue_script_data['title']}")
+    print(f"💡 Bölüm Başlığı: {dialogue_script_data.get('title')}")
     print(f"⚡ Çarpıcı Haber Sayısı: {len(dialogue_script_data.get('news_items', []))}")
 
     # 4. Audio Synthesis (Ahmet: Male, Emel: Female)
@@ -85,14 +76,14 @@ def run_daily_podcast_pipeline(test_mode: bool = False):
     pub_date = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
 
     if test_mode:
-        print("\n[Adım 2/3] 🧪 Türkçe 2-Sunuculu (Ahmet & Emel) Test Sesi Sentezleniyor...")
+        print(f"\n[Adım 2/3] 🧪 Türkçe 2-Sunuculu (Ahmet & Emel) Test Sesi Sentezleniyor [{tts_engine.upper()}]...")
         test_audio_path = os.path.join("output", "test_dialogue_podcast.mp3")
-        dialogue_audio_meta = audio_gen.dialogue_to_audio(dialogue_script_data["script"], test_audio_path)
+        dialogue_audio_meta = audio_gen.dialogue_to_audio(dialogue_script_data["script"], test_audio_path, engine=tts_engine)
 
         print("\n[Adım 3/3] 🧪 Test RSS Beslemesi ve Manifest ./output/ içinde oluşturuluyor...")
         test_publisher = Publisher(output_dir="output")
         test_episode_meta = {
-            "id": "ep_test_m1_podcast",
+            "id": "ep_test_onecast_podcast",
             "title": "[TEST] " + dialogue_script_data["title"],
             "summary": dialogue_script_data["summary"],
             "todays_topics": dialogue_script_data.get("todays_topics", ""),
@@ -109,7 +100,7 @@ def run_daily_podcast_pipeline(test_mode: bool = False):
         test_rss_builder.build_feed(test_episodes, test_xml_path)
 
         print("\n" + "=" * 65)
-        print("🎉 TEST BAŞARIYLA TAMAMLANDI!")
+        print(f"🎉 TEST BAŞARIYLA TAMAMLANDI [{tts_engine.upper()}]!")
         print(f"📄 Metin Dosyası: {dialogue_file_path}")
         print(f"🎧 Ses Dosyası: {test_audio_path}")
         print(f"📡 Test RSS XML: {test_xml_path}")
@@ -121,10 +112,10 @@ def run_daily_podcast_pipeline(test_mode: bool = False):
 
     dialogue_episode_id = f"ep_{today_str}_m1_{uuid.uuid4().hex[:6]}"
     temp_dialogue_path = os.path.join("output", "temp", f"{dialogue_episode_id}.mp3")
-    print("\n[Adım 2/3] Türkçe 2-Sunuculu (Ahmet & Emel) MP3 Podcast Sentezleniyor...")
+    print(f"\n[Adım 2/3] Türkçe 2-Sunuculu (Ahmet & Emel) MP3 Podcast Sentezleniyor [{tts_engine.upper()}]...")
 
     try:
-        dialogue_audio_meta = audio_gen.dialogue_to_audio(dialogue_script_data["script"], temp_dialogue_path)
+        dialogue_audio_meta = audio_gen.dialogue_to_audio(dialogue_script_data["script"], temp_dialogue_path, engine=tts_engine)
         episode_dict = {
             "id": dialogue_episode_id,
             "title": dialogue_script_data["title"],
@@ -181,6 +172,7 @@ def run_daily_podcast_pipeline(test_mode: bool = False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Migros OneCast AI - Günlük Türkçe Yapay Zeka Podcasti ve RSS Beslemesi")
     parser.add_argument("--test", "--dry-run", action="store_true", help="Prod RSS/dist değiştirmeden yerel test modunda çalıştır")
+    parser.add_argument("--tts", choices=["edge", "gemini"], default=os.getenv("TTS_ENGINE", "edge"), help="TTS motoru (edge veya gemini)")
     args = parser.parse_args()
 
-    run_daily_podcast_pipeline(test_mode=args.test)
+    run_daily_podcast_pipeline(test_mode=args.test, tts_engine=args.tts)

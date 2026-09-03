@@ -20,6 +20,14 @@ EDGE_VOICE_MAP = {
     "Sunucu": "tr-TR-AhmetNeural"
 }
 
+GEMINI_VOICE_MAP = {
+    "Ahmet": "Puck",
+    "Emel": "Aoede",
+    "Alex": "Puck",
+    "Sarah": "Aoede",
+    "Sunucu": "Puck"
+}
+
 def generate_silent_mp3_bytes(duration_ms: int = 500) -> bytes:
     """Generates standard silent MP3 frame buffer for turn pacing."""
     num_frames = max(1, int(duration_ms / 100))
@@ -27,7 +35,7 @@ def generate_silent_mp3_bytes(duration_ms: int = 500) -> bytes:
     return silent_frame * num_frames
 
 class AudioGenerator:
-    """High-performance Turkish Neural TTS Audio Generator using Microsoft Edge-TTS."""
+    """High-performance Turkish Neural TTS Audio Generator supporting Edge-TTS and Google Gemini TTS."""
 
     def __init__(self, default_voice: str = DEFAULT_EDGE_VOICE):
         self.default_voice = default_voice
@@ -61,7 +69,6 @@ class AudioGenerator:
                     speaker = "Emel"
                 else:
                     speaker = speaker_raw
-
                 text = match.group(2).strip()
                 turns.append((speaker, text))
             else:
@@ -125,7 +132,7 @@ class AudioGenerator:
     async def build_audio_dialogue_edge(self, dialogue_script: str, output_mp3: str) -> str:
         """Turkish Edge-TTS audio generator for 2-host dialogue (Ahmet & Emel)."""
         import edge_tts
-        print("🎙️ Türkçe 2-Sunuculu Diyalog Sentezleniyor (Ahmet & Emel)...")
+        print("🎙️ Türkçe 2-Sunuculu Edge-TTS Sentezleniyor (Ahmet & Emel)...")
         turns = self._parse_dialogue_turns(dialogue_script)
         base_dir = os.path.dirname(output_mp3) if os.path.dirname(output_mp3) else "."
         os.makedirs(base_dir, exist_ok=True)
@@ -162,6 +169,91 @@ class AudioGenerator:
 
         return output_mp3
 
+    def build_audio_dialogue_gemini(self, dialogue_script: str, output_mp3: str) -> str:
+        """Turkish Gemini TTS audio generator for 2-host dialogue (Ahmet & Emel)."""
+        from google import genai
+        from google.genai import types
+        import lameenc
+        
+        gemini_api_key = os.getenv("GEMINI_API_KEY")
+        if not gemini_api_key:
+            print("ℹ️ GEMINI_API_KEY bulunamadı, Edge-TTS motoruna geçiliyor...")
+            return asyncio.run(self.build_audio_dialogue_edge(dialogue_script, output_mp3))
+
+        print("🎙️ Türkçe 2-Sunuculu Google Gemini TTS Sentezleniyor (Puck & Aoede)...")
+        client = genai.Client(api_key=gemini_api_key)
+        turns = self._parse_dialogue_turns(dialogue_script)
+
+        turn_audio_buffers = []
+        for idx, (speaker, text) in enumerate(turns):
+            clean_text = re.sub(r'\[.*?\]|\(.*?\)', '', text).strip()
+            if not clean_text:
+                continue
+            voice_name = GEMINI_VOICE_MAP.get(speaker, "Puck" if speaker == "Ahmet" else "Aoede")
+            prompt = f"Lütfen bu podcast diyaloğunu doğal, akıcı ve samimi bir Türkçe ile seslendir: {clean_text}"
+
+            try:
+                response = client.models.generate_content(
+                    model="gemini-2.0-flash",
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        response_modalities=["AUDIO"],
+                        speech_config=types.SpeechConfig(
+                            voice_config=types.VoiceConfig(
+                                prebuilt_voice_config=types.PrebuiltVoiceConfig(
+                                    voice_name=voice_name
+                                )
+                            )
+                        )
+                    )
+                )
+                raw_pcm = None
+                for part in response.candidates[0].content.parts:
+                    if part.inline_data:
+                        raw_data = part.inline_data.data
+                        if isinstance(raw_data, str):
+                            import base64
+                            raw_data = base64.b64decode(raw_data)
+                        raw_pcm = raw_data
+                        break
+
+                if raw_pcm:
+                    encoder = lameenc.Encoder()
+                    encoder.set_bit_rate(128)
+                    encoder.set_in_sample_rate(24000)
+                    encoder.set_channels(1)
+                    encoder.set_quality(2)
+                    mp3_buf = encoder.encode(raw_pcm) + encoder.flush()
+                    turn_audio_buffers.append(mp3_buf)
+                else:
+                    raise ValueError("Ses verisi döndürülemedi")
+            except Exception as e:
+                print(f"⚠️ Gemini TTS sıra {idx} uyarısı ({e}), Edge-TTS ile tamamlanıyor...")
+                import edge_tts
+                voice = EDGE_VOICE_MAP.get(speaker, "tr-TR-AhmetNeural" if speaker == "Ahmet" else "tr-TR-EmelNeural")
+                edge_file = os.path.join(tempfile.gettempdir(), f"gemini_fallback_{idx}.mp3")
+                asyncio.run(edge_tts.Communicate(clean_text, voice, rate="+1%").save(edge_file))
+                if os.path.exists(edge_file):
+                    with open(edge_file, "rb") as f:
+                        turn_audio_buffers.append(f.read())
+                    try:
+                        os.remove(edge_file)
+                    except Exception:
+                        pass
+
+        if not turn_audio_buffers:
+            raise ValueError("Hiçbir ses sırası sentezlenemedi.")
+
+        pause_bytes = generate_silent_mp3_bytes(450)
+        base_dir = os.path.dirname(output_mp3) if os.path.dirname(output_mp3) else "."
+        os.makedirs(base_dir, exist_ok=True)
+        with open(output_mp3, "wb") as f:
+            for buf in turn_audio_buffers:
+                f.write(buf)
+                f.write(pause_bytes)
+
+        return output_mp3
+
     def _calculate_duration(self, output_path: str) -> int:
         """Calculates accurate duration for the podcast MP3 based on header bitrate."""
         if not os.path.exists(output_path):
@@ -182,14 +274,22 @@ class AudioGenerator:
                         return max(30, int(file_size_bytes / bytes_per_sec))
         except Exception:
             pass
-        # Default fallback for Edge-TTS (48 kbps = 6,000 bytes/sec)
         return max(30, int(file_size_bytes / 6000))
 
-    def dialogue_to_audio(self, dialogue_script: str, output_path: str) -> Dict[str, Any]:
-        """Synthesizes 2-host Turkish podcast conversation."""
-        asyncio.run(self.build_audio_dialogue_edge(dialogue_script, output_path))
+    def dialogue_to_audio(self, dialogue_script: str, output_path: str, engine: str = "edge") -> Dict[str, Any]:
+        """Synthesizes 2-host Turkish podcast conversation using selected TTS engine."""
+        selected_engine = (engine or os.getenv("TTS_ENGINE", "edge")).lower()
+        if selected_engine == "gemini":
+            try:
+                self.build_audio_dialogue_gemini(dialogue_script, output_path)
+            except Exception as e:
+                print(f"⚠️ Gemini TTS hatası ({e}), Edge-TTS motoruna dönülüyor...")
+                asyncio.run(self.build_audio_dialogue_edge(dialogue_script, output_path))
+        else:
+            asyncio.run(self.build_audio_dialogue_edge(dialogue_script, output_path))
+
         duration_seconds = self._calculate_duration(output_path)
-        print(f"🎉 Türkçe Podcast MP3 oluşturuldu: {output_path} ({duration_seconds // 60}m {duration_seconds % 60}s)")
+        print(f"🎉 Türkçe Podcast MP3 oluşturuldu [{selected_engine.upper()}]: {output_path} ({duration_seconds // 60}m {duration_seconds % 60}s)")
         return self._build_audio_metadata(output_path, duration_seconds)
 
     def text_to_audio(self, script_text: str, output_path: str) -> Dict[str, Any]:

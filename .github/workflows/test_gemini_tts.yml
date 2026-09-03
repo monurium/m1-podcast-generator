@@ -1,0 +1,60 @@
+name: Test Gemini TTS Generation
+
+on:
+  workflow_dispatch:
+    inputs:
+      tts_engine:
+        description: 'Kullanılacak TTS Motoru'
+        type: choice
+        default: 'gemini'
+        options:
+          - gemini
+          - edge
+      test_mode:
+        description: 'Test Modunda Çalıştır (Prod RSS/dist etkilenmez)'
+        type: boolean
+        default: true
+
+jobs:
+  run-tts-test:
+    name: Run Gemini TTS Test Pipeline
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Pipeline with Gemini TTS
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          TTS_ENGINE: ${{ inputs.tts_engine }}
+        run: |
+          if [ "${{ inputs.test_mode }}" = "true" ]; then
+            python main.py --test --tts ${{ inputs.tts_engine }}
+          else
+            python main.py --tts ${{ inputs.tts_engine }}
+          fi
+
+      - name: Upload Generated Audio & Script Artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gemini-tts-test-output
+          path: |
+            output/
+            output/test_dialogue_podcast.mp3
+            output/dialogue_script.txt
+            output/test_podcast.xml
+          retention-days: 7
