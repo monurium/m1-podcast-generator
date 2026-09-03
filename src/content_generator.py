@@ -7,7 +7,7 @@ from typing import List, Dict, Any, Optional
 from openai import OpenAI
 
 class ContentGenerator:
-    """Fetches latest Turkish & Global tech news and generates interactive 8-10 minute podcast scripts with natural explanations."""
+    """Fetches latest Turkish & Global tech news and generates interactive 9-11 minute (~10 min) podcast scripts with 8-10 news stories and natural explanations."""
 
     def __init__(self, api_key: str = None):
         self.api_key = api_key or os.getenv("DEEPSEEK_API_KEY") or os.getenv("OPENAI_API_KEY")
@@ -26,12 +26,15 @@ class ContentGenerator:
             "https://www.chip.com.tr/rss/",
             "https://www.donanimhaber.com/rss/tum/",
             "https://evrimagaci.org/rss.xml",
+            "https://techcrunch.com/feed/",
             "https://techcrunch.com/category/artificial-intelligence/feed/",
+            "https://www.theverge.com/rss/index.xml",
             "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
             "https://arstechnica.com/feed/",
             "https://venturebeat.com/category/ai/feed/",
             "https://www.wired.com/feed/category/business/latest/rss",
-            "https://feeds.bbci.co.uk/news/technology/rss.xml"
+            "https://feeds.bbci.co.uk/news/technology/rss.xml",
+            "https://gizmodo.com/rss"
         ]
 
     def fetch_fresh_news(self, hours_limit: int = 24, exclude_keywords: List[str] = None) -> str:
@@ -51,7 +54,7 @@ class ContentGenerator:
         for feed_url in self.rss_feeds:
             try:
                 parsed = feedparser.parse(feed_url)
-                for entry in parsed.entries[:10]:
+                for entry in parsed.entries[:20]:
                     title = entry.get("title", "").strip()
                     summary = entry.get("summary", "") or entry.get("description", "")
                     summary = re.sub(r'<[^>]+>', '', summary).strip()
@@ -73,25 +76,28 @@ class ContentGenerator:
         if not fresh_articles:
             return ""
 
-        return "\n\n".join(fresh_articles[:20])
+        return "\n\n".join(fresh_articles[:40])
 
     def generate_dialogue_script(self, raw_news_context: str, recent_topics: List[str] = None) -> Dict[str, Any]:
-        """Generates dynamic 8-10 minute Turkish podcast dialogue (Ahmet & Emel) with interactive back-and-forth and technical explanations."""
-        print("🤖 Etkileşimli ve terim açıklamalı 8-10 dakikalık Türkçe podcast metni üretiliyor...")
+        """Generates dynamic 9-11 minute Turkish podcast dialogue (Ahmet & Emel) with 8-10 news stories, interactive back-and-forth, and technical explanations."""
+        print("🤖 Etkileşimli, 8-10 haberli ve terim açıklamalı ~10 dakikalık Türkçe podcast metni üretiliyor...")
         today_date_str = datetime.date.today().strftime('%d.%m.%Y')
 
         system_prompt = (
             "Sen iki deneyimli teknoloji sunucusu (Ahmet ve Emel) için canlı, samimi ve son derece etkileşimli bir Türkçe podcast metni yazan kıdemli bir yapımcısın.\n\n"
             "MANDATORY FORMAT VE KURALLAR:\n"
-            "1. HEDEF SÜRE VE HABER SAYISI: Podcast süresi TAM 8-10 DAKİKA ARASINDA (1200 - 1450 KELİME) olmalıdır. "
-            "Bu süreye ulaşmak için 5 veya 6 adet güçlü ana haber seç ve her birini derinlemesine tartış.\n"
-            "2. GERÇEK ETKİLEŞİM VE DİYALOG:\n"
+            "1. HEDEF SÜRE VE KELİME HEDEFİ: Podcast süresi TAM 9-11 DAKİKA ARASINDA (1050 - 1250 KELİME) olmalıdır. "
+            "Çıktının 5 dakikada kalmaması için seçilen tüm haberler derinlemesine, teknik ve pratik boyutlarıyla detaylandırılmalı, karşılıklı sorularla geliştirilmelidir.\n"
+            "2. HABER SAYISI: 8 ile 10 adet (en az 8 haber) güçlü ana teknoloji & yapay zeka haberi seç. "
+            "Tüm bu haberler hem 'news_items' dizisinde yer almalı hem de sunucular tarafından diyalog akışında sırayla ele alınmalıdır.\n"
+            "3. GERÇEK ETKİLEŞİM VE DİYALOG:\n"
             "   - Sunucular birbirini papağan gibi onaylamamalı ('kesinlikle', 'çok haklısın', 'aynen öyle' kalıplarını YASAKLA).\n"
             "   - Birbirlerine doğrudan sorular sorsunlar, şaşırsınlar, farklı bakış açıları sunsunlar ('Peki Emel, kullanıcı bunu günlük hayatta nasıl hissedecek?', 'Ahmet burada bir soru işareti var, güvenlik riski doğurmaz mı?').\n"
-            "3. TEKNİK TERİMLERİ AKIŞ İÇİNDE AÇIKLA:\n"
-            "   - Metinde geçen her teknik kavram (örn: Kuantizasyon, Nöromorfik çip, NPU / TOPS, Kuantum Sonrası Kriptografi, Otonom Ajan, Multimodal vb.) mutlaka konuşma akışını bozmadan günlük dilde tek cümleyle izah edilsin. Biri terimi kullandığında diğeri 'Yani aslında...' diyerek veya sorarak sadeleştirsin.\n"
-            "4. META BİLGİ YASAGI: Süreden ('8-10 dakikalık yayınımız'), haber sayısından ('5 haberimiz var', 'üçüncü haberimiz') ASLA bahsetme. Girişi uzatmadan doğrudan ilk konudan başlat.\n"
-            "5. ÇIKTI FORMATI: Yanıtını SADECE geçerli bir JSON nesnesi olarak ver.\n\n"
+            "   - Her haber için Ahmet ve Emel arasında en az 2-3 karşılıklı konuşma turu olmalı; haberler 1 cümlede aceleyle geçiştirilmemelidir.\n"
+            "4. TEKNİK TERİMLERİ AKIŞ İÇİNDE AÇIKLA:\n"
+            "   - Metinde geçen her teknik kavram (örn: Kuantizasyon, Nöromorfik çip, NPU / TOPS, Kuantum Sonrası Kriptografi, Otonom Ajan, Multimodal Haritalama, Katı Hal Bataryası, LEO Lazer İletişimi vb.) mutlaka konuşma akışını bozmadan günlük dilde somut benzetmelerle izah edilsin.\n"
+            "5. META BİLGİ YASAGI: Süreden ('10 dakikalık yayınımız'), haber sayısından ('8 haberimiz var', 'dördüncü haberimiz') ASLA bahsetme. Girişi uzatmadan doğrudan ilk konudan başlat.\n"
+            "6. ÇIKTI FORMATI: Yanıtını SADECE geçerli bir JSON nesnesi olarak ver.\n\n"
             "JSON Şeması:\n"
             "{\n"
             '  "title": "Bölümün dikkat çekici ana başlığı",\n'
@@ -103,19 +109,19 @@ class ContentGenerator:
             '      "summary": "Haberin 2-3 cümlelik net özeti."\n'
             "    }\n"
             "  ],\n"
-            '  "todays_topics": "Haber başlıklarının virgülle ayrılmış listesi",\n'
-            '  "script": "Ahmet: Merhaba teknoloji meraklıları, M1 Podcast\'e hoş geldiniz. Yazılım dünyasında devrim yaratan otonom ajanlarla başlıyoruz...\\n\\nEmel: ..."\n'
+            '  "todays_topics": "8-10 haber başlığının virgülle ayrılmış listesi",\n'
+            '  "script": "Ahmet: Merhaba teknoloji meraklıları, M1 Podcast\'e hoş geldiniz...\\n\\nEmel: ..."\n'
             "}"
         )
 
         user_prompt = (
             f"Tarih: {today_date_str}\n\n"
             f"Günün Ham Teknoloji & Yapay Zeka Haber Havuzu:\n\n{raw_news_context or 'Günün öne çıkan yapay zeka, yazılım, donanım ve teknoloji gelişmeleri.'}\n\n"
-            "Lütfen 5-6 haberi derinlemesine tartışan, teknik terimleri doğal dille açıklayan, yapay onaylama kalıplarından uzak ve karşılıklı soru-cevaplı 1200-1450 kelimelik (~8-10 dakika) Türkçe diyalog JSON çıktısını üret."
+            "Lütfen 8-10 haberi derinlemesine tartışan, teknik terimleri doğal dille açıklayan, yapay onaylama kalıplarından uzak, karşılıklı soru-cevaplı ve 1050-1250 KELİMELİK (~9.5 - 10.5 dakika) Türkçe diyalog JSON çıktısını üret."
         )
 
         if not self.client:
-            print("ℹ️ LLM API anahtarı bulunamadı, etkileşimli ve terim açıklamalı 8-10 dakikalık örnek şablon kullanılıyor.")
+            print("ℹ️ LLM API anahtarı bulunamadı, etkileşimli, 10 haberli ve 10 dakikalık örnek şablon kullanılıyor.")
             return self._get_fallback_turkish_script()
 
         try:
@@ -126,6 +132,7 @@ class ContentGenerator:
                     {"role": "user", "content": user_prompt}
                 ],
                 temperature=0.7,
+                max_tokens=4000,
                 response_format={"type": "json_object"}
             )
             raw_content = response.choices[0].message.content.strip()
@@ -153,17 +160,17 @@ class ContentGenerator:
         return dialogue_data
 
     def _get_fallback_turkish_script(self) -> Dict[str, Any]:
-        """Provides an interactive, deeply conversational ~8-10 minute (1300+ words) Turkish podcast episode explaining technical terms naturally."""
+        """Provides an interactive, deeply conversational ~10 minute (1050-1150 words, 10 stories) Turkish podcast episode explaining technical terms naturally."""
         today_date_str = datetime.date.today().strftime('%d.%m.%Y')
         return {
             "title": f"M1 Podcast - Günlük Teknoloji & Yapay Zeka Bülteni ({today_date_str})",
-            "summary": "Otonom yazılım mühendislerinden kuantum dayanıklı şifrelemeye, nöromorfik çiplerden yerel dil modellerine teknolojinin en sıcak gelişmeleri ve derinlemesine sohbeti.",
-            "todays_topics": "Otonom Yazılım Ajanları, Yerel Açık Kaynak LLM ve Kuantizasyon, Nöromorfik Çip Mimarisi, İnsansı Robotlarda Multimodal Görüş, Kuantum Sonrası Kriptografi (PQC), Yapay Zeka ile Sentetik Protein Tasarımı",
+            "summary": "Otonom yazılım ajanlarından kuantum sonrası şifrelemeye, nöromorfik çiplerden katı hal bataryalara teknolojinin en sıcak 10 gelişmesi ve derinlemesine analizi.",
+            "todays_topics": "Otonom Yazılım Ajanları, Yerel Açık Kaynak LLM ve Kuantizasyon, Nöromorfik Çip Mimarisi, İnsansı Robotlarda Multimodal Haritalama, Kuantum Sonrası Kriptografi (PQC), Biyoteknolojide Sentetik Protein Tasarımı, LEO Uydularında Optik Lazer Haberleşmesi, Katı Hal (Solid-State) Bataryalar, Otonom Web ve Tarayıcı Ajanları, Açık Ağırlıklı Yapay Zeka Güvenliği",
             "news_items": [
                 {
                     "headline": "Otonom Yazılım Ajanları: Kod Tamamlamadan Tam Teşekküllü Mühendisliğe",
                     "key_points": [
-                        "Yapay zeka modelleri artık hata ayıklamadan deploy aşamasına kadar tüm döngüyü bağımsız yönetiyor",
+                        "Modeller artık tüm repo bağımlılıklarını analiz edip uçtan uca hata ayıklıyor",
                         "Geliştirici ekiplerinin hata çözme süresinde %45 kısalma kaydedildi"
                     ],
                     "summary": "Yeni nesil otonom kodlama ajanları, karmaşık kurumsal projelerin kod tabanını analiz ederek bağımsız birim testleri yazabiliyor ve güvenlik açıklarını otomatik kapatıyor."
@@ -188,7 +195,7 @@ class ContentGenerator:
                     "headline": "İnsansı Robotlarda Multimodal Haritalama: Fabrikalardan Günlük Yaşama",
                     "key_points": [
                         "Görsel ve dokunsal veriyi birleştiren multimodal sinir ağları kullanılıyor",
-                        "Otomotiv ve lojistik tesislerinde ilk otonom montaj testleri başladı"
+                        "Otomotiv montaj hatlarında insan işçilerle yan yana pilot testler başladı"
                     ],
                     "summary": "Yeni insansı robot modelleri, uçtan uca sinir ağları sayesinde insan hareketlerini taklit ederek karmaşık montaj ve taşıma görevlerini hatasız tamamlayabiliyor."
                 },
@@ -204,36 +211,73 @@ class ContentGenerator:
                     "headline": "Biyoteknolojide Generatif Yapay Zeka: Saatler İçinde Sentetik Protein Tasarımı",
                     "key_points": [
                         "Aylar süren moleküler simülasyonlar saatler seviyesine indirildi",
-                        "Hedefe yönelik kişiselleştirilmiş tedavi yöntemlerinde klinik aşamaya geçildi"
+                        "Nadir hastalıklar için hedefe yönelik aday moleküller klinik aşamaya ulaştı"
                     ],
                     "summary": "Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein yapıları tasarladı ve nadir hastalıkların tedavisinde kritik aday moleküller keşfetti."
+                },
+                {
+                    "headline": "LEO Takımyıldızlarında Optik Lazer İletişimi: Uzayda Gigabit İnternet Omurgası",
+                    "key_points": [
+                        "Uydular arası lazer ışınları, karasal fiber kablolardan %40 daha hızlı veri aktarıyor",
+                        "Kıtalararası finansal işlemlerde ve kutup bölgelerinde gecikme süreleri dibe çekildi"
+                    ],
+                    "summary": "Alçak dünya yörüngesindeki uydular arasında devreye alınan optik lazer haberleşmesi, küresel internet omurgasını uzaya taşıyarak karasal fiber hatlara rakip oluyor."
+                },
+                {
+                    "headline": "Yeni Nesil Katı Hal (Solid-State) Bataryalar: Seri Üretim Takvimi Netleşti",
+                    "key_points": [
+                        "Sıvı elektrolit yerine seramik polimer kullanılarak yangın riski tamamen sıfırlandı",
+                        "10 dakikada şarj ve 1000 kilometreyi aşan menzil ile 2027 başında ticari araçlara giriyor"
+                    ],
+                    "summary": "Katı hal batarya teknolojisinde beklenen büyük atılım gerçekleşti; laboratuvar testleri tamamlanan hücrelerin ticari elektrikli araçlara entegrasyonu duyuruldu."
+                },
+                {
+                    "headline": "Otonom Web ve Tarayıcı Ajanları: İnternet Gezintisinde İnsan Yerine Yapay Zeka",
+                    "key_points": [
+                        "Kullanıcı talimatıyla çok adımlı rezervasyon, araştırma ve satın alma görevleri tamamlanıyor",
+                        "Görsel arayüzleri analiz eden yeni nesil çok modlu ajanlar siteleri otonom geziyor"
+                    ],
+                    "summary": "Web sitelerinde insan yerine gezinip form dolduran, uçak bileti arayan ve karmaşık e-ticaret süreçlerini yöneten otonom tarayıcı ajanları yaygınlaşıyor."
+                },
+                {
+                    "headline": "Açık Ağırlıklı Yapay Zekada Küresel Güvenlik ve Kırmızı Takım Standartları",
+                    "key_points": [
+                        "Modellerin tehlikeli senaryolara karşı dayanıklılığını ölçen küresel denetim çerçevesi açıklandı",
+                        "Kötü niyetli manipülasyonları engelleyen yazılımsal ve donanımsal güvenlik kalkanları devreye girdi"
+                    ],
+                    "summary": "Yapay zeka güvenlik otoriteleri, açık ağırlıklı modellerin güvenliğini teyit eden kapsamlı kırmızı takım ve stres testi standartlarını duyurdu."
                 }
             ],
             "script": (
-                "Ahmet: Merhaba teknoloji meraklıları, M1 Podcast'e hoş geldiniz. Yazılım dünyasında taşları yerinden oynatan otonom kodlama ajanlarındaki son sıçramayla başlıyoruz. Yeni yayınlanan benchmark raporları, yapay zekanın sadece kod tamamlayan bir yardımcı olmaktan çıkıp projenin tüm mimarisini anlayan bağımsız bir mühendise dönüştüğünü gösteriyor.\n\n"
-                "Emel: Ahmet, burada otonom ajan derken tam olarak neyi kastediyoruz? Yani bildiğimiz sohbet botlarından veya otomatik kod tamamlama eklentilerinden farkı ne?\n\n"
-                "Ahmet: Çok yerinde bir soru. Klasik asistanlar sizden bir fonksiyon yazmanızı beklerken, otonom ajan projenin tüm git geçmişini, veritabanı şemasını ve bağımlılıklarını tarıyor. Bir hata bildirdiğinizde sadece hatanın olduğu yeri değil, o hatanın tetiklediği diğer tüm yan etkileri hesaplayıp kendi kendine birim testi yazıyor ve düzeltmeyi pull request olarak önünüze getiriyor. Yapılan testlerde ekiplerin hata çözme süresinde yüzde kırk beşlik bir hızlanma ölçüldü.\n\n"
-                "Emel: Peki bu durum yazılımcıların rolünü nasıl etkileyecek? Yani ekipler artık kod yazmayı tamamen bırakacak mı?\n\n"
-                "Ahmet: Aslında tam tersine, yazılımcının görevi satır satır rutin kod yazmaktan çıkıp sistem mimarı olmaya evriliyor. Mühendis iş mantığını ve sınırları belirliyor, ajan ise ham işçiliği üstleniyor.\n\n"
-                "Emel: Bu dönüşümün bir diğer ayağı da açık kaynak dünyasında yaşanıyor. Eskiden bu seviyedeki akıl yürütme için mutlaka devasa bulut API'lerine bağlanmak gerekiyordu. Fakat son günlerde kuantizasyon teknikleri sayesinde modeller dizüstü bilgisayarlara kadar indi.\n\n"
-                "Ahmet: Emel, dinleyicilerimiz için kuantizasyon kavramını biraz açalım mı? Teknik olarak arka planda ne oluyor da dev bir model bir dizüstü bilgisayarda çalışabiliyor?\n\n"
-                "Ahmet: Kuantizasyonu basitçe devasa bir fotoğraf dosyasını kaliteden ödün vermeden sıkıştırmak gibi düşünebiliriz. Normalde on altı bitlik yüksek hassasiyetli sayılarla çalışan model ağırlıklarını, dört veya sekiz bite indiriyoruz. Bu sayede modelin boyutu ve bellek tüketimi dörtte bire düşüyor ama akıl yürütme yeteneğini neredeyse tamamen koruyor.\n\n"
-                "Emel: İşte bu sayede bankalar, hastaneler veya hukuk büroları en hassas verilerini üçüncü parti bir bulut sunucusuna göndermeden, kendi ofislerindeki bilgisayarlarda güvenle yapay zeka çalıştırabiliyor.\n\n"
-                "Ahmet: Veri egemenliği açısından tarihi bir eşik. Ancak yazılım bu kadar hızlanırken donanım tarafında da büyük bir darboğaz vardı: Devasa elektrik tüketimi. İşte bu noktada nöromorfik çipler sahneye çıktı.\n\n"
-                "Emel: Nöromorfik derken insan beyninin biyolojisinden mi ilham alınıyor Ahmet? Klasik işlemcilerden farkı ne?\n\n"
-                "Ahmet: Aynen öyle. Geleneksel işlemciler sürekli elektrik çeker ve her saat döngüsünde veri işler. Nöromorfik çipler ise insan beynindeki nöron ve sinapslar gibi çalışır; yani sadece bir uyarı, bir olay gerçekleştiğinde elektrik sinyali üretir. Bilgi olmadığı an enerji tüketimi sıfıra yakındır. Bu mimari enerji tüketiminde tam on kat tasarruf sağlıyor.\n\n"
-                "Emel: Düşünsenize, akıllı saatler, dronlar veya küçük sağlık sensörleri şarja ihtiyaç duymadan haftalarca cihaz üzerinde yapay zeka çalıştırabilecek. Peki donanımdaki bu hafifleme robotik tarafını nasıl etkiliyor?\n\n"
-                "Ahmet: İşte bu bizi robotik dünyasındaki en kritik gelişmeye, yani multimodal görsel ve dokunsal haritalamaya götürüyor. İnsansı robotlar artık sadece önceden programlanmış kör rotaları takip etmiyor. Kameralardan gelen görüntüyü ve sensörlerden gelen dokunma hissini aynı anda işleyerek çevrelerini anlık üç boyutlu haritalandırıyorlar.\n\n"
-                "Emel: Otomotiv fabrikalarında montaj hatlarında pilot testler başlamış durumda. Ağır parçaları taşırken veya hassas vidalama yaparken robotun anlık duruma göre kuvvetini ayarlayabilmesi insanlarla yan yana güvenle çalışmasını mümkün kılıyor.\n\n"
-                "Ahmet: Kesinlikle iş güvenliği açısından devrimsel. Ancak fabrikalardan bankalara kadar tüm sistemler dijitalleştikçe siber güvenlikte de büyük bir alarm verildi: Kuantum tehdidi. Ve bu hafta kuantum sonrası kriptografi standartları resmen onaylandı.\n\n"
-                "Emel: Ahmet, kuantum bilgisayarlar mevcut şifrelemeyi kırabilir derken tehlike tam olarak neydi ve bu yeni standart neyi değiştiriyor?\n\n"
-                "Ahmet: Bugün kullandığımız bankacılık şifreleri çok büyük asal sayıların çarpımına dayanıyor. Klasik bilgisayarlar bu sayıları çözemez ama kuantum bilgisayarlar birkaç dakikada çözebilir. Yeni onaylanan kuantum sonrası kriptografi ise sayı çarpanlarına değil, çok boyutlu karmaşık matematiksel kafes problemlerine dayanıyor. Kuantum bilgisayarlar bile bu kafes yapısını çözemiyor.\n\n"
-                "Emel: Bankalar ve kamu kurumları şimdiden bu yeni protokollere geçmeye başladı bile. Gelecekte yaşanabilecek geriye dönük veri hırsızlıklarının önüne şimdiden geçilmiş oluyor.\n\n"
-                "Ahmet: Dijital dünyadan biyolojiye geçersek, sağlık tarafında da yapay zekanın doğrudan hayat kurtardığı bir döneme girdik. Generatif yapay zeka artık metin veya resim üretmekle kalmıyor, doğrudan sentetik protein tasarlıyor.\n\n"
-                "Emel: Normalde bir proteinin üç boyutlu katlanmasını ve bir hastalığın reseptörüne nasıl bağlanacağını laboratuvarda simüle etmek aylar hatta yıllar alıyordu. Şimdi derin öğrenme modelleri bu simülasyonları birkaç saate indirmiş durumda.\n\n"
-                "Ahmet: Hatta nadir görülen genetik hastalıklar için tasarlanan sentetik aday moleküller klinik deney aşamasına geçti. Bu da kişiye özel ilaç tedavisinin çok yakında hayatımıza gireceğini gösteriyor.\n\n"
-                "Emel: Yazılımdan nöromorfik donanımlara, kuantum kalkanından sağlığa kadar teknolojinin sınırlarının nasıl genişlediğini adım adım konuştuk. Tüm bu gelişmelerin özetleri ve can alıcı maddeleri RSS beslememizde sizleri bekliyor.\n\n"
-                "Ahmet: Yarın yepyeni teknoloji başlıkları ve analizlerle tekrar karşınızda olacağız. Bizi dinlediğiniz için teşekkür ederiz, hoşça kalın!\n\n"
-                "Emel: Kendinize çok iyi bakın, teknolojiyle kalın!"
+                "Ahmet: Merhaba teknoloji meraklıları, M1 Podcast'e hoş geldiniz. Bugün yapay zeka laboratuvarlarından kuantum şifrelemeye, nöromorfik donanımlardan yeni nesil bataryalara kadar tam on sıcak başlıkla karşınızdayız. İlk durağımız, yazılım dünyasında ezberleri bozan otonom kodlama ajanlarındaki yeni sıçrama. Yeni benchmark raporları, yapay zekanın basit bir kod tamamlama eklentisi olmaktan çıkıp projenin tüm mimarisini anlayan bağımsız bir yazılım mühendisine dönüştüğünü kanıtlıyor.\n\n"
+                "Emel: Ahmet, burada otonom ajan derken klasik sohbet botlarından veya otomatik kod tamamlama eklentilerinden farkı ne tam olarak?\n\n"
+                "Ahmet: Klasik yardımcılar tekil bir fonksiyon yazarken, otonom ajan projenin tüm git geçmişini, veritabanı şemasını, bağımlılıklarını ve birim testlerini aynı anda hafızasında tutuyor. Sistemde bir hata bildirdiğinizde sadece hatanın olduğu yeri değil, o değişikliğin tetikleyeceği diğer tüm servisleri analiz ediyor, kendi kendine testler yazıyor ve doğrulanmış düzeltmeyi doğrudan bir pull request olarak geliştiricinin önüne koyuyor. Büyük teknoloji şirketlerinde yapılan testlerde ekiplerin hata çözme süresinde yüzde kırk beşlik bir hızlanma ölçüldü.\n\n"
+                "Emel: Peki Ahmet, bu ajanların yazdığı kodlar sisteme bilmeden yeni güvenlik açıkları sokabilir mi? Denetim mekanizması nasıl çalışıyor?\n\n"
+                "Ahmet: Çok haklı bir endişe. İşte bu yüzden ajanlar kodu doğrudan ana dala basmıyor; izole sanal alanlarda güvenlik taramasından geçirip statik kod analiziyle test ettikten sonra insan mühendisin onayına sunuyor. Yani yazılımcı artık rutin kod hamallığı yerine sistem mimarı ve karar verici rolüne geçiyor.\n\n"
+                "Emel: Kodlama tarafındaki bu hızlanma, açık kaynak modellerin yerel cihazlarda çalıştırılabilmesiyle birleştiğinde etkisi katlanıyor. Kuantizasyon teknolojisindeki atılımlar, GPT-4 sınıfı modelleri standart dizüstü bilgisayarlara kadar indirdi.\n\n"
+                "Ahmet: Emel, dinleyicilerimiz için kuantizasyon kavramını biraz somutlaştıralım mı? Teknik olarak arka planda ne yapılıyor da devasa bir model sıradan bir bilgisayarda çalışabiliyor?\n\n"
+                "Emel: Kuantizasyonu devasa bir yüksek çözünürlüklü RAW fotoğrafı, gözün fark edemeyeceği kadar az kayıpla sıkıştırmaya benzetebiliriz. Normalde on altı bitlik sayılarla saklanan yüz milyarlarca model ağırlığını, özel algoritmalarla dört veya sekiz bite indiriyoruz. Böylece modelin kapladığı bellek alanı dörtte birine düşerken, akıl yürütme kabiliyeti neredeyse tamamen korunuyor.\n\n"
+                "Ahmet: İşte bu sayede bankalar, hastaneler veya hukuk büroları en hassas verilerini üçüncü parti bir bulut sunucusuna göndermeden, kendi ofis bilgisayarlarında yerel olarak yapay zeka çalıştırabiliyor. Veri gizliliği açısından tarihi bir eşik. Ancak modeller büyüdükçe elektrik tüketimi de katlandı ve bu noktada nöromorfik çipler sahneye çıktı.\n\n"
+                "Emel: Nöromorfik derken insan beyninin biyolojisinden ilham alınıyor değil mi Ahmet? Klasik işlemcilerden farkı ne tam olarak?\n\n"
+                "Ahmet: Aynen öyle. Geleneksel işlemciler sürekli elektrik çeker ve her döngüde veri taşır. Nöromorfik çipler ise insan beynindeki biyolojik nöron ve sinapslar gibi çalışır; yani sadece bir uyarı, bir olay gerçekleştiğinde elektrik harcar. Bilgi akışı yoksa bekleme modundadır ve enerji tüketimi sıfıra yakındır. Bu mimari derin öğrenme çıkarımlarında klasik çiplere kıyasla tam on kat enerji tasarrufu sağlıyor.\n\n"
+                "Emel: Düşünsenize, akıllı saatler, kalp pilleri veya küçük dronlar şarj ihtiyacı duymadan haftalarca cihaz üzerinde yapay zeka çalıştırabilecek. Donanımdaki bu hafifleme ve verimlilik, bizi dördüncü sıcak konumuza, yani insansı robotlardaki multimodal haritalama devrimine götürüyor.\n\n"
+                "Ahmet: Robotik sistemler artık laboratuvarlardan çıkıp doğrudan fabrika zeminine indi. İnsansı robotlar artık sadece önceden programlanmış sabit rotaları takip etmiyor; multimodal görsel ve dokunsal algılayıcılarla çevrelerini anlık olarak öğreniyorlar. Kameralardan gelen görüntü ile parmak uçlarındaki dokunma sensörleri tek bir sinir ağında birleşiyor. Böylece robot tuttuğu parçanın ağırlığını ve dengesini anlık hissedip kuvvetini milisaniyeler içinde ayarlayabiliyor.\n\n"
+                "Emel: Otomotiv montaj hatlarında insan işçilerle yan yana çalışan robotlar tehlikeli ve hassas montaj görevlerini hatasız tamamlıyor. İş güvenliği ve verimlilikte devrim yaşanırken, dijital altyapılarda ise kuantum tehdidine karşı yeni bir kalkan kuruldu: Kuantum sonrası kriptografi standartları resmen yürürlüğe girdi.\n\n"
+                "Ahmet: Emel, kuantum bilgisayarlar bugünkü şifreleme sistemlerini kırabilir denildiğinde genelde insanlarda soyut bir endişe oluşuyor. Tehlike nereden kaynaklanıyordu ve yeni PQC standartları bunu nasıl çözüyor?\n\n"
+                "Emel: Bugün kullandığımız e-ticaret ve bankacılık şifreleri çok büyük asal sayıların çarpanlarına dayanıyor. Klasik makineler bu sayıları çözemez ama kuantum bilgisayarlar dakikalar içinde bulabilir. Yeni onaylanan kuantum sonrası kriptografi ise asal sayılar yerine çok boyutlu karmaşık matematiksel kafes yapılarına dayanıyor. Kuantum bilgisayarlar bile bu kafes problemlerini kıramıyor.\n\n"
+                "Ahmet: Bankalar ve kamu kurumları sunucularını şimdiden bu yeni kafes protokollerine taşımaya başladı bile. Güvenlik cephesindeki bu zaferin ardından rotamızı biyoteknolojiye çeviriyoruz. Generatif yapay zeka artık yalnızca metin veya görsel üretmiyor, doğrudan sentetik protein tasarlıyor.\n\n"
+                "Emel: Normalde bir proteinin üç boyutlu katlanmasını ve bir hastalığın reseptörüne nasıl kilitleneceğini laboratuvarda simüle etmek aylar hatta yıllar alıyordu. Şimdi derin öğrenme modelleri bu karmaşık tasarımları birkaç saate indirmiş durumda. Nadir genetik hastalıklar için hedefe yönelik aday moleküller şimdiden klinik deney aşamasına ulaştı.\n\n"
+                "Ahmet: Kişiye özel tedavi çağı kapıyı aralarken, gökyüzünde de dev bir haberleşme dönüşümü var. Alçak dünya yörüngesindeki uydu takımyıldızlarında optik lazer haberleşmesi küresel internet omurgasını baştan yazıyor.\n\n"
+                "Emel: Uydular arası optik lazer bağlantıları, veriyi uzay boşluğunda karasal fiber optik kablolardan yüzde kırk daha hızlı taşıyor. Işık uzay boşluğunda cam ortama göre çok daha hızlı ilerlediği için kıtalararası finansal işlemler ve kutup araştırma istasyonları artık doğrudan gigabit hızında uzay internetine kavuşuyor.\n\n"
+                "Ahmet: Hatta okyanusların ortasındaki kargo gemileri veya uzak adalar hiçbir deniz altı kablosuna ihtiyaç duymadan doğrudan küresel ağa bağlanabiliyor. Uzaydaki bu iletişim ağı dünyadaki mobilite devrimiyle birleştiğinde geleceğin akıllı şehirleri şekilleniyor. Mobilite alanındaki en büyük haberimiz ise katı hal, yani solid-state bataryaların seri üretim takviminin nihayet netleşmesi.\n\n"
+                "Emel: Mevcut lityum iyon pillerdeki sıvı elektrolit yerine yanmayan katı seramik polimer malzeme kullanılıyor. Bu sayede batarya hem iki kat daha fazla enerji depoluyor hem de on dakikada yüzde seksen şarj olarak bin kilometrenin üzerinde menzil vadediyor. Üstelik dondurucu kış aylarında menzil kaybı sorunu da tamamen tarihe karışıyor. İlk ticari araçların 2027 yılı başında yollara çıkacağı duyuruldu.\n\n"
+                "Ahmet: Şarj bekleme süresini tarihe gömen bu gelişmenin ardından yazılıma dönüyoruz: Otonom web ve tarayıcı ajanları interneti insanlar yerine gezmeye başladı.\n\n"
+                "Emel: Kullanıcı sadece 'Önümüzdeki ay Roma seyahatim için bütçeme en uygun uçak ve otel rezervasyonlarını ayarla' diyor. Ajan tarayıcıyı açıyor, siteleri ziyaret ediyor, filtreleri uyguluyor, şartları inceliyor ve satın alma adımına kadar tüm süreci uçtan uca yürütüyor.\n\n"
+                "Ahmet: Web sayfalarındaki butonları ve formları bir insan gibi algılayan bu çok modlu modeller internet kullanım alışkanlıklarımızı kökten değiştirecek. Ve günün son büyük başlığı: Açık ağırlıklı modeller için küresel kırmızı takım ve güvenlik standartlarının duyurulması.\n\n"
+                "Emel: Modellerin biyolojik, kimyasal veya siber saldırılarda kötüye kullanılmasını engellemek için bağımsız etik hackerların denetiminden geçmesi zorunlu hale getirildi. Böylece yapay zeka inovasyonu güvenli temeller üzerinde büyüyecek.\n\n"
+                "Ahmet: Otonom mühendislerden kuantizasyona, nöromorfik çiplerden uzay lazerlerine, katı hal pillerden yapay zeka güvenliğine kadar tam on büyük gelişmeyi tüm boyutlarıyla masaya yatırdık.\n\n"
+                "Emel: Tüm bu haberlerin özetleri, can alıcı maddeleri ve kaynak bağlantıları podcast açıklama metnimizde ve RSS beslememizde sizleri bekliyor.\n\n"
+                "Ahmet: M1 Podcast'in bugünkü bölümünün sonuna geldik. Yarın yepyeni teknoloji başlıklarıyla tekrar görüşmek dileğiyle, hoşça kalın!\n\n"
+                "Emel: Kendinize çok iyi bakın, bilimle ve teknolojiyle kalın!"
             )
         }

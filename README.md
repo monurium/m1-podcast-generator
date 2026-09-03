@@ -7,7 +7,7 @@ Günün en sıcak yapay zeka ve teknoloji gelişmelerini otomatik olarak toplaya
 ## 🌟 Temel Özellikler
 
 * **📡 Güncel Haber Taraması:** Webrazzi, ShiftDelete, Chip TR, DonanımHaber, Evrim Ağacı, TechCrunch, The Verge ve Wired gibi önde gelen teknoloji kaynaklarını tarar.
-* **⚡ 8 Başlıca Haber & Çarpıcı Özetler:** Her haber için vurucu başlık (`headline`), can alıcı noktalar (`key_points`) ve 2-3 cümlelik net özet (`summary`) üretir.
+* **⚡ 8-10 Başlıca Haber & Çarpıcı Özetler:** Her haber için vurucu başlık (`headline`), can alıcı noktalar (`key_points`) ve 2-3 cümlelik net özet (`summary`) üretir; podcast süresini ~10 dakikaya taşır.
 * **🗣️ Türkçe 2-Sunuculu Doğal Seslendirme:** Microsoft Edge-TTS Neural sesleri ile **Ahmet** (`tr-TR-AhmetNeural`) ve **Emel** (`tr-TR-EmelNeural`) arasında akıcı, samimi radyo diyaloğu.
 * **📻 Apple Podcasts & Spotify Uyumlu RSS 2.0:** Podcast oynatıcılarının bölüm açıklamalarına haberlerin çarpıcı başlık ve özetlerini otomatik yerleştirir.
 * **🎧 Modern Web Oynatıcı:** GitHub Pages üzerinde çalışan, ses dalgası görselleştiricili, hız kontrollü ve haber kartlarını listeleyen modern koyu mod web arayüzü.

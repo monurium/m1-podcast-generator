@@ -163,13 +163,27 @@ class AudioGenerator:
         return output_mp3
 
     def _calculate_duration(self, output_path: str) -> int:
-        """Calculates accurate duration for the podcast MP3 based on 128kbps standard bitrate."""
+        """Calculates accurate duration for the podcast MP3 based on header bitrate."""
         if not os.path.exists(output_path):
             return 0
         file_size_bytes = os.path.getsize(output_path)
-        # 128kbps = 16,000 bytes/sec
-        exact_duration_sec = max(30, int(file_size_bytes / 16000))
-        return exact_duration_sec
+        try:
+            with open(output_path, 'rb') as f:
+                header_bytes = f.read(4096)
+            for i in range(len(header_bytes) - 4):
+                if header_bytes[i] == 0xFF and (header_bytes[i+1] & 0xE0) == 0xE0:
+                    ver = (header_bytes[i+1] >> 3) & 3
+                    bitrate_idx = (header_bytes[i+2] >> 4) & 15
+                    bitrates_m2_l3 = [0, 8, 16, 24, 32, 40, 48, 56, 64, 80, 96, 112, 128, 144, 160, 0]
+                    bitrates_m1_l3 = [0, 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320, 0]
+                    kbps = bitrates_m1_l3[bitrate_idx] if ver == 3 else bitrates_m2_l3[bitrate_idx]
+                    if kbps > 0:
+                        bytes_per_sec = (kbps * 1000) / 8
+                        return max(30, int(file_size_bytes / bytes_per_sec))
+        except Exception:
+            pass
+        # Default fallback for Edge-TTS (48 kbps = 6,000 bytes/sec)
+        return max(30, int(file_size_bytes / 6000))
 
     def dialogue_to_audio(self, dialogue_script: str, output_path: str) -> Dict[str, Any]:
         """Synthesizes 2-host Turkish podcast conversation."""
