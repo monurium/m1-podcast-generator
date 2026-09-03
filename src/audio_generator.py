@@ -1,6 +1,8 @@
 import os
 import sys
 import re
+import time
+import base64
 import asyncio
 import tempfile
 from typing import Dict, Any, List, Tuple
@@ -45,7 +47,7 @@ def generate_silent_mp3_bytes(duration_ms: int = 500) -> bytes:
     return silent_frame * num_frames
 
 class AudioGenerator:
-    """High-performance Turkish Neural TTS Audio Generator supporting Edge-TTS and Google Gemini TTS."""
+    """High-performance Turkish Neural TTS Audio Generator supporting Edge-TTS, Google Gemini TTS, and Intro/Outro stitching."""
 
     def __init__(self, default_voice: str = DEFAULT_EDGE_VOICE):
         self.default_voice = default_voice
@@ -53,11 +55,13 @@ class AudioGenerator:
     def _build_audio_metadata(self, output_path: str, duration_seconds: int) -> Dict[str, Any]:
         """Constructs standardized audio metadata response dictionary."""
         file_size = os.path.getsize(output_path) if os.path.exists(output_path) else 0
+        minutes = duration_seconds // 60
+        seconds = duration_seconds % 60
         return {
             "file_path": output_path,
             "file_size": file_size,
             "duration_seconds": duration_seconds,
-            "duration_formatted": f"{duration_seconds // 3600:02d}:{(duration_seconds % 3600) // 60:02d}:{duration_seconds % 60:02d}"
+            "duration_formatted": f"{minutes}m {seconds:02d}s"
         }
 
     def _parse_dialogue_turns(self, script_text: str) -> List[Tuple[str, str]]:
@@ -89,6 +93,44 @@ class AudioGenerator:
                     turns.append(("Ahmet", line_str))
         return turns
 
+    def attach_intro_outro(self, body_mp3_path: str, intro_path: str = "assets/audio/intro.mp3", outro_path: str = "assets/audio/outro.mp3") -> str:
+        """Stitches intro and outro jingles to the synthesized episode body if available."""
+        if not (os.path.exists(intro_path) and os.path.exists(outro_path)):
+            return body_mp3_path
+
+        try:
+            import miniaudio
+            import lameenc
+
+            intro_dec = miniaudio.decode_file(intro_path)
+            body_dec = miniaudio.decode_file(body_mp3_path)
+            outro_dec = miniaudio.decode_file(outro_path)
+
+            pause_samples = int(44100 * 2 * 0.5)
+            pause_bytes = b'\x00' * (pause_samples * 2)
+
+            all_pcm = (
+                intro_dec.samples.tobytes() +
+                pause_bytes +
+                body_dec.samples.tobytes() +
+                pause_bytes +
+                outro_dec.samples.tobytes()
+            )
+
+            encoder = lameenc.Encoder()
+            encoder.set_bit_rate(128)
+            encoder.set_in_sample_rate(44100)
+            encoder.set_channels(2)
+            encoder.set_quality(2)
+            final_mp3 = encoder.encode(all_pcm) + encoder.flush()
+
+            with open(body_mp3_path, "wb") as f:
+                f.write(final_mp3)
+            print(f"🎵 Intro ve Outro başarıyla eklendi: {body_mp3_path}")
+        except Exception as e:
+            print(f"⚠️ Intro/Outro ekleme uyarısı ({e}), orijinal ses korunuyor.")
+        return body_mp3_path
+
     async def build_audio_monologue_edge(self, script_text: str, output_mp3: str) -> str:
         """Turkish Edge-TTS audio generator with natural sentence pacing."""
         import edge_tts
@@ -109,7 +151,7 @@ class AudioGenerator:
                         is_last = (s_idx == len(sentences) - 1)
                         sentence_map.append((global_idx, is_last))
                         t_path = os.path.join(temp_dir, f"mono_{global_idx:04d}.mp3")
-                        
+
                         async def _synth_sentence(t=sentence, p=t_path):
                             try:
                                 comm = edge_tts.Communicate(t, self.default_voice, rate="+0%", pitch="+0Hz")
@@ -118,7 +160,7 @@ class AudioGenerator:
                             except Exception as ex:
                                 print(f"Warning: TTS failed for sentence: {ex}")
                                 return ""
-                        
+
                         tasks.append(_synth_sentence())
                         global_idx += 1
 
@@ -184,8 +226,8 @@ class AudioGenerator:
         from google import genai
         from google.genai import types
         import lameenc
-        
-        import time
+        import edge_tts
+
         gemini_api_key = os.getenv("GEMINI_FREE_API_KEY") or os.getenv("GEMINI_API_KEY")
         if not gemini_api_key:
             print("ℹ️ GEMINI_FREE_API_KEY veya GEMINI_API_KEY bulunamadı, Edge-TTS motoruna geçiliyor...")
@@ -201,9 +243,9 @@ class AudioGenerator:
 
         for idx, (speaker, text) in enumerate(turns):
             if gemini_fail_count >= 2:
-                print(f"ℹ️ Gemini TTS çağrılarında limit/model uyarısı alındı. Kalan turlar hızlı Edge-TTS ile tamamlanıyor...")
+                print("ℹ️ Gemini TTS çağrılarında limit uyarısı alındı. Kalan turlar hızlı Edge-TTS ile tamamlanıyor...")
                 remaining_script = "\n\n".join([f"{s}: {t}" for s, t in turns[idx:]])
-                remaining_temp = os.path.join(tempfile.gettempdir(), f"edge_remaining.mp3")
+                remaining_temp = os.path.join(tempfile.gettempdir(), "edge_remaining.mp3")
                 asyncio.run(self.build_audio_dialogue_edge(remaining_script, remaining_temp))
                 if os.path.exists(remaining_temp):
                     with open(remaining_temp, "rb") as rf:
@@ -242,7 +284,6 @@ class AudioGenerator:
                         if part.inline_data:
                             raw_data = part.inline_data.data
                             if isinstance(raw_data, str):
-                                import base64
                                 raw_data = base64.b64decode(raw_data)
                             raw_pcm = raw_data
                             break
@@ -267,7 +308,6 @@ class AudioGenerator:
             except Exception as e:
                 gemini_fail_count += 1
                 print(f"⚠️ Gemini TTS sıra {idx} uyarısı ({e}), Edge-TTS ile tamamlanıyor...")
-                import edge_tts
                 voice = EDGE_VOICE_MAP.get(speaker, "tr-TR-AhmetNeural" if speaker == "Ahmet" else "tr-TR-EmelNeural")
                 edge_file = os.path.join(tempfile.gettempdir(), f"gemini_fallback_{idx}.mp3")
                 asyncio.run(edge_tts.Communicate(clean_text, voice, rate="+1%").save(edge_file))
@@ -293,9 +333,19 @@ class AudioGenerator:
         return output_mp3
 
     def _calculate_duration(self, output_path: str) -> int:
-        """Calculates accurate duration for the podcast MP3 based on header bitrate."""
+        """Calculates exact duration for the podcast MP3 using miniaudio, with frame header fallback."""
         if not os.path.exists(output_path):
             return 0
+
+        try:
+            import miniaudio
+            dec = miniaudio.decode_file(output_path)
+            duration = int(len(dec.samples) / (dec.sample_rate * dec.nchannels))
+            if duration > 0:
+                return duration
+        except Exception:
+            pass
+
         file_size_bytes = os.path.getsize(output_path)
         try:
             with open(output_path, 'rb') as f:
@@ -312,10 +362,10 @@ class AudioGenerator:
                         return max(30, int(file_size_bytes / bytes_per_sec))
         except Exception:
             pass
-        return max(30, int(file_size_bytes / 6000))
+        return max(30, int(file_size_bytes / 16000))
 
-    def dialogue_to_audio(self, dialogue_script: str, output_path: str, engine: str = "edge") -> Dict[str, Any]:
-        """Synthesizes 2-host Turkish podcast conversation using selected TTS engine."""
+    def dialogue_to_audio(self, dialogue_script: str, output_path: str, engine: str = "edge", with_jingle: bool = True) -> Dict[str, Any]:
+        """Synthesizes 2-host Turkish podcast conversation using selected TTS engine and attaches intro/outro jingles."""
         selected_engine = (engine or os.getenv("TTS_ENGINE", "edge")).lower()
         if selected_engine == "gemini":
             try:
@@ -326,13 +376,21 @@ class AudioGenerator:
         else:
             asyncio.run(self.build_audio_dialogue_edge(dialogue_script, output_path))
 
-        duration_seconds = self._calculate_duration(output_path)
-        print(f"🎉 Türkçe Podcast MP3 oluşturuldu [{selected_engine.upper()}]: {output_path} ({duration_seconds // 60}m {duration_seconds % 60}s)")
-        return self._build_audio_metadata(output_path, duration_seconds)
+        if with_jingle:
+            self.attach_intro_outro(output_path)
 
-    def text_to_audio(self, script_text: str, output_path: str) -> Dict[str, Any]:
+        duration_seconds = self._calculate_duration(output_path)
+        meta = self._build_audio_metadata(output_path, duration_seconds)
+        print(f"🎉 Türkçe Podcast MP3 oluşturuldu [{selected_engine.upper()}]: {output_path} ({meta['duration_formatted']})")
+        return meta
+
+    def text_to_audio(self, script_text: str, output_path: str, with_jingle: bool = True) -> Dict[str, Any]:
         """Synthesizes Turkish monologue podcast to MP3."""
         asyncio.run(self.build_audio_monologue_edge(script_text, output_path))
+        if with_jingle:
+            self.attach_intro_outro(output_path)
+
         duration_seconds = self._calculate_duration(output_path)
-        print(f"🎉 Türkçe Monolog MP3 oluşturuldu: {output_path} ({duration_seconds // 60}m {duration_seconds % 60}s)")
-        return self._build_audio_metadata(output_path, duration_seconds)
+        meta = self._build_audio_metadata(output_path, duration_seconds)
+        print(f"🎉 Türkçe Monolog MP3 oluşturuldu: {output_path} ({meta['duration_formatted']})")
+        return meta

@@ -20,7 +20,9 @@ if hasattr(sys.stdout, "reconfigure"):
 
 load_dotenv()
 
-def run_daily_podcast_pipeline(test_mode: bool = False, tts_engine: str = "edge"):
+def run_daily_podcast_pipeline(test_mode: bool = False, tts_engine: str = None):
+    if not tts_engine:
+        tts_engine = os.getenv("TTS_ENGINE", "gemini" if (os.getenv("GEMINI_FREE_API_KEY") or os.getenv("GEMINI_API_KEY")) else "edge")
     print("=" * 65)
     if test_mode:
         print(f"🧪 TEST / DRY-RUN MODU [{tts_engine.upper()}]: Yerel test dosyaları üretiliyor (Prod RSS etkilenmez)")
@@ -172,7 +174,7 @@ def run_daily_podcast_pipeline(test_mode: bool = False, tts_engine: str = "edge"
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Migros OneCast AI - Günlük Türkçe Yapay Zeka Podcasti ve RSS Beslemesi")
     parser.add_argument("--test", "--dry-run", action="store_true", help="Prod RSS/dist değiştirmeden yerel test modunda çalıştır")
-    parser.add_argument("--tts", choices=["edge", "gemini"], default=os.getenv("TTS_ENGINE", "edge"), help="TTS motoru (edge veya gemini)")
+    parser.add_argument("--tts", choices=["edge", "gemini"], default=None, help="TTS motoru (edge veya gemini)")
     args = parser.parse_args()
 
     run_daily_podcast_pipeline(test_mode=args.test, tts_engine=args.tts)

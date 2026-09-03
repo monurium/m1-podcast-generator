@@ -178,7 +178,7 @@ class ContentGenerator:
                 )
                 data = json.loads(response.text.strip())
                 if "script" in data and "news_items" in data:
-                    print("✅ Gemini 2.0 Flash ile podcast metni başarıyla üretildi!")
+                    print("✅ Gemini ile podcast metni başarıyla üretildi!")
                     return data
             except Exception as e:
                 print(f"⚠️ Gemini içerik üretim hatası ({e}). Fallback şablonuna geçiliyor...")
