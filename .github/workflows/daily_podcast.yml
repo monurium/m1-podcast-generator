@@ -1,8 +1,6 @@
 name: Migros OneCast AI Generator & RSS Publisher
 
 on:
-  schedule:
-    - cron: '0 6 * * *'  # Her gün sabah 06:00 UTC (09:00 Türkiye Saati)
   workflow_dispatch:
     inputs:
       tts_engine:
