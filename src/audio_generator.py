@@ -186,7 +186,24 @@ class AudioGenerator:
         turns = self._parse_dialogue_turns(dialogue_script)
 
         turn_audio_buffers = []
+        working_model = None
+        gemini_fail_count = 0
+
         for idx, (speaker, text) in enumerate(turns):
+            if gemini_fail_count >= 2:
+                print(f"ℹ️ Gemini TTS çağrılarında limit/model uyarısı alındı. Kalan turlar hızlı Edge-TTS ile tamamlanıyor...")
+                remaining_script = "\n\n".join([f"{s}: {t}" for s, t in turns[idx:]])
+                remaining_temp = os.path.join(tempfile.gettempdir(), f"edge_remaining.mp3")
+                asyncio.run(self.build_audio_dialogue_edge(remaining_script, remaining_temp))
+                if os.path.exists(remaining_temp):
+                    with open(remaining_temp, "rb") as rf:
+                        turn_audio_buffers.append(rf.read())
+                    try:
+                        os.remove(remaining_temp)
+                    except Exception:
+                        pass
+                break
+
             clean_text = re.sub(r'\[.*?\]|\(.*?\)', '', text).strip()
             if not clean_text:
                 continue
@@ -194,7 +211,8 @@ class AudioGenerator:
             prompt = f"Lütfen bu podcast diyaloğunu doğal, akıcı ve samimi bir Türkçe ile seslendir: {clean_text}"
 
             raw_pcm = None
-            for model_name in ["gemini-3.6-flash", "gemini-3.1-flash-tts-preview", "gemini-2.5-flash"]:
+            candidate_models = [working_model] if working_model else ["gemini-3.1-flash-tts-preview", "gemini-2.5-flash-preview-tts", "gemini-3.6-flash"]
+            for model_name in candidate_models:
                 try:
                     response = client.models.generate_content(
                         model=model_name,
@@ -219,8 +237,9 @@ class AudioGenerator:
                             raw_pcm = raw_data
                             break
                     if raw_pcm:
+                        working_model = model_name
                         break
-                except Exception as model_err:
+                except Exception:
                     continue
 
             try:
@@ -236,6 +255,7 @@ class AudioGenerator:
                 else:
                     raise ValueError("Gemini modellerinden ses verisi alınamadı")
             except Exception as e:
+                gemini_fail_count += 1
                 print(f"⚠️ Gemini TTS sıra {idx} uyarısı ({e}), Edge-TTS ile tamamlanıyor...")
                 import edge_tts
                 voice = EDGE_VOICE_MAP.get(speaker, "tr-TR-AhmetNeural" if speaker == "Ahmet" else "tr-TR-EmelNeural")
