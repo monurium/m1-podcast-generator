@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M1 Podcast - Günlük Yapay Zeka & Teknoloji Bülteni</title>
-  <meta name="description" content="Günün en sıcak yapay zeka ve teknoloji gelişmelerini, çarpıcı haber özetleri ve derinlemesine analizlerle sunan günlük Türkçe podcast." />
+  <title>Migros OneCast AI - Günlük Yapay Zeka Bülteni</title>
+  <meta name="description" content="Günün en sıcak yapay zeka ve teknoloji gelişmelerini, çarpıcı haber özetleri ve derinlemesine analizlerle sunan günlük Türkçe yapay zeka podcasti." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
@@ -594,7 +594,7 @@
     <header>
       <a href="#" class="brand-logo">
         <div class="brand-icon">🎙️</div>
-        <span class="brand-title">M1 Podcast</span>
+        <span class="brand-title">Migros OneCast AI</span>
       </a>
     </header>
 
@@ -602,10 +602,10 @@
       <!-- Hero Details & Artwork -->
       <section class="hero-player-grid">
         <div class="cover-wrapper">
-          <img src="cover.jpg" alt="M1 Podcast Kapak Görseli" class="cover-img" id="podcastCover" />
+          <img src="cover.jpg" alt="Migros OneCast AI Kapak Görseli" class="cover-img" id="podcastCover" />
         </div>
         <div class="hero-details">
-          <h1>M1 Podcast</h1>
+          <h1>Migros OneCast AI</h1>
           <p>Günün en sıcak yapay zeka ve teknoloji gelişmelerini, çarpıcı haber özetleri ve derinlemesine 10 dakikalık analizlerle sunan günlük Türkçe podcast.</p>
           <div class="button-group">
             <button class="btn btn-rss" id="copyRssBtn">
@@ -635,7 +635,7 @@
         <div class="player-header">
           <div>
             <div class="episode-meta-tag" id="epDate">SON BÖLÜM</div>
-            <h2 class="episode-title" id="epTitle">M1 Podcast</h2>
+            <h2 class="episode-title" id="epTitle">Migros OneCast AI</h2>
             <p class="episode-topics-summary" id="epTopics">Bölüm bilgileri yükleniyor...</p>
           </div>
         </div>
@@ -686,7 +686,7 @@
     </main>
 
     <footer>
-      <p>M1 Podcast • Microsoft Edge-TTS Türkçe Neural Sesler ile Güçlendirilmiştir • GitHub Pages</p>
+      <p>Migros OneCast AI • Microsoft Edge-TTS Türkçe Neural Sesler ile Güçlendirilmiştir • GitHub Pages</p>
     </footer>
   </div>
 
@@ -807,7 +807,7 @@
         episodeSelect.value = currentIdx;
       }
       
-      document.getElementById('epTitle').textContent = ep.title || 'M1 Podcast';
+      document.getElementById('epTitle').textContent = ep.title || 'Migros OneCast AI';
       document.getElementById('epDate').textContent = ep.pub_date ? ep.pub_date.split(' ').slice(0, 4).join(' ') : 'SON BÖLÜM';
       
       const topicsText = ep.todays_topics || ep.summary || '';

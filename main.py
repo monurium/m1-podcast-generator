@@ -26,7 +26,7 @@ def run_daily_podcast_pipeline(test_mode: bool = False):
     if test_mode:
         print("🧪 TEST / DRY-RUN MODU: Yerel test dosyaları üretiliyor (Prod RSS etkilenmez)")
     else:
-        print("🎙️ M1 GÜNLÜK TÜRKÇE PODCAST & RSS YAYINLAMA BORU HATTI")
+        print("🎙️ MIGROS ONECAST AI - GÜNLÜK TÜRKÇE YAPAY ZEKA PODCAST BORU HATTI")
     print("=" * 65)
 
     # 1. Load Configurations
@@ -173,13 +173,13 @@ def run_daily_podcast_pipeline(test_mode: bool = False):
         shutil.copy2("cover.jpg", os.path.join(output_dir, "cover.jpg"))
 
     print("\n" + "=" * 65)
-    print("🎉 BAŞARILI: M1 Günlük Podcast üretildi ve RSS beslemesi güncellendi!")
+    print("🎉 BAŞARILI: Migros OneCast AI Podcast üretildi ve RSS beslemesi güncellendi!")
     print(f"📡 RSS Beslemesi: {base_url.rstrip('/')}/{config.get('feed_filename', 'podcast.xml')}")
     print(f"🎧 Web Oynatıcı: {base_url.rstrip('/')}/")
     print("=" * 65)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="M1 Günlük Türkçe Podcast ve RSS Beslemesi")
+    parser = argparse.ArgumentParser(description="Migros OneCast AI - Günlük Türkçe Yapay Zeka Podcasti ve RSS Beslemesi")
     parser.add_argument("--test", "--dry-run", action="store_true", help="Prod RSS/dist değiştirmeden yerel test modunda çalıştır")
     args = parser.parse_args()
 

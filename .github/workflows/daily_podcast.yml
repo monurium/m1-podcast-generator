@@ -1,4 +1,4 @@
-name: M1 Daily Podcast Generator & RSS Publisher
+name: Migros OneCast AI Generator & RSS Publisher
 
 on:
   workflow_dispatch:

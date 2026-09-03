@@ -1,4 +1,4 @@
-# 🎙️ M1 Podcast Generator
+# 🎙️ Migros OneCast AI
 
 Günün en sıcak yapay zeka ve teknoloji gelişmelerini otomatik olarak toplayan, her haber için **çarpıcı başlıklar ve özetler** oluşturan ve **doğal Türkçe Neural ses modelleri** ile ~10 dakikalık diyalog podcast üreten açık kaynaklı otomatik podcast yayınlama sistemi.
 

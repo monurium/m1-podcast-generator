@@ -145,7 +145,7 @@ class ContentGenerator:
             "    }\n"
             "  ],\n"
             '  "todays_topics": "8-10 haber başlığının virgülle ayrılmış listesi",\n'
-            '  "script": "Ahmet: Merhaba teknoloji ve yapay zeka meraklıları, M1 Podcast\'e hoş geldiniz...\\n\\nEmel: ..."\n'
+            '  "script": "Ahmet: Merhaba teknoloji ve yapay zeka meraklıları, Migros OneCast AI\'a hoş geldiniz...\\n\\nEmel: ..."\n'
             "}"
         )
 
@@ -198,7 +198,7 @@ class ContentGenerator:
         """Provides an interactive, deeply conversational ~1010-word (10 minutes, 10 stories) Turkish podcast episode explaining technical terms naturally."""
         today_date_str = datetime.date.today().strftime('%d.%m.%Y')
         return {
-            "title": f"M1 Podcast - Günlük Yapay Zeka Bülteni: Nvidia & Hugging Face ve Ajan Çağı ({today_date_str})",
+            "title": f"Migros OneCast AI - Günlük Yapay Zeka Bülteni: Nvidia & Hugging Face ve Ajan Çağı ({today_date_str})",
             "summary": "Nvidia'nın Hugging Face satın alımından Meta Muse Spark kodlama modeline, OpenAI Astra'nın akıl yürütme tartışmalarından robotik görme ve siber güvenlik yatırımlarına son 24 saatin 10 kritik AI gelişmesi.",
             "todays_topics": "Nvidia Hugging Face Satın Alımı, Meta Muse Spark 1.3 Ajan Modeli, OpenAI Astra ve Akıl Yürütme Güvenliği, Google Gemini 3.8 Flash Cyber, HiddenLayer 100M$ AI Güvenlik Yatırımı, Abliteration ve Güvenlik Filtreleri, Lyte Vision-AI Robotik Yatırımı, Claude Bilgisayar Kullanımı, Çoklu Ajan Çatışmaları, Yapay Zeka ve İstihdam Raporu",
             "news_items": [
@@ -284,7 +284,7 @@ class ContentGenerator:
                 }
             ],
             "script": (
-                "Ahmet: Merhaba teknoloji ve yapay zeka meraklıları, M1 Podcast'e hoş geldiniz. Bugün doğrudan yapay zeka laboratuvarlarından gelen, son yirmi dört saatte ekosistemi derinden sarsan tam on nitelikli ve sıcak gelişmeyle karşınızdayız. İlk büyük haberimiz, açık kaynak dünyasında deprem etkisi yaratan tarihi bir anlaşma: Çip devi Nvidia, açık kaynak yapay zekanın küresel merkezi sayılan Hugging Face'i bünyesine kattığını resmen doğruladı.\n\n"
+                "Ahmet: Merhaba teknoloji ve yapay zeka meraklıları, Migros OneCast AI'a hoş geldiniz. Bugün doğrudan yapay zeka laboratuvarlarından gelen, son yirmi dört saatte ekosistemi derinden sarsan tam on nitelikli ve sıcak gelişmeyle karşınızdayız. İlk büyük haberimiz, açık kaynak dünyasında deprem etkisi yaratan tarihi bir anlaşma: Çip devi Nvidia, açık kaynak yapay zekanın küresel merkezi sayılan Hugging Face'i bünyesine kattığını resmen doğruladı.\n\n"
                 "Emel: Ahmet, Hugging Face dünyadaki yüz binlerce bağımsız araştırmacının, üniversitenin ve şirketin açık modellerini özgürce paylaştığı tarafsız bir kütüphaneydi. Donanım tekeli kuran Nvidia'nın bu platformu satın alması yapay zeka topluluğunda nasıl yankı buldu?\n\n"
                 "Ahmet: Çok sert tartışmalar başladı. Bir kesim Nvidia'nın devasa sunucu ve GPU altyapısının açık kaynak modelleri uçuracağını ve bağımsız geliştiricilere ücretsiz hesaplama gücü sağlayacağını savunuyor. Ancak madalyonun diğer yüzünde, tek bir donanım üreticisinin hem çipleri hem de modellerin dağıtıldığı ana depoyu kontrol etmesi ciddi bir tekel endişesi yaratıyor. Hatta Avrupa Birliği ve Amerikan düzenleyici kurumlarının bu satın almayı antitröst yasaları kapsamında incelemeye alabileceği konuşuluyor. Açık kaynak yapay zekanın bağımsızlığı açısından tarihi bir dönüm noktasıyla karşı karşıyayız.\n\n"
                 "Emel: Açık kaynak modeller demişken, Meta cephesinden de yazılım mühendislerini heyecanlandıran yepyeni bir duyuru geldi: Muse Spark 1.3 kodlama modeli resmen yayınlandı.\n\n"
@@ -312,7 +312,7 @@ class ContentGenerator:
                 "Emel: Yani korkulanın aksine yapay zeka sadece işleri ortadan kaldırmıyor; veri küratörlüğünden ajan mimarlığına kadar yepyeni uzmanlık alanları açıyor. Önemli olan bu teknolojik dönüşüme hızla adapte olabilmek.\n\n"
                 "Ahmet: Hugging Face satın alımından Meta Muse Spark'a, OpenAI Astra'dan robotik görme teknolojilerine kadar son yirmi dört saatin en nitelikli on yapay zeka haberini tüm boyutlarıyla konuştuk.\n\n"
                 "Emel: Tüm bu haberlerin özetleri, can alıcı maddeleri ve kaynak bağlantıları podcast açıklama metnimizde ve RSS beslememizde sizleri bekliyor. Dinleyicilerimiz web sitemizden her bir haber kartını inceleyebilir.\n\n"
-                "Ahmet: M1 Podcast'in bugünkü yapay zeka bülteninin sonuna geldik. Yarın yepyeni teknoloji ve yapay zeka analizleriyle tekrar görüşmek dileğiyle, hoşça kalın!\n\n"
+                "Ahmet: Migros OneCast AI'ın bugünkü yapay zeka bülteninin sonuna geldik. Yarın yepyeni teknoloji ve yapay zeka analizleriyle tekrar görüşmek dileğiyle, hoşça kalın!\n\n"
                 "Emel: Kendinize çok iyi bakın, bilimle ve yapay zekayla kalın!"
             )
         }

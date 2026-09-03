@@ -2,15 +2,15 @@
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <atom:link href="https://monurium.github.io/m1-podcast-generator/podcast.xml" rel="self" type="application/rss+xml"/>
-    <title>M1 Podcast - Günlük Yapay Zeka &amp; Teknoloji Bülteni</title>
+    <title>Migros OneCast AI - Günlük Yapay Zeka Bülteni</title>
     <link>https://monurium.github.io/m1-podcast-generator</link>
     <language>tr-TR</language>
-    <description>Günün en sıcak yapay zeka ve teknoloji gelişmelerini, çarpıcı haber özetleri ve derinlemesine analizlerle sunan günlük Türkçe podcast.</description>
-    <itunes:author>M1</itunes:author>
-    <itunes:summary>Günün en sıcak yapay zeka ve teknoloji gelişmelerini, çarpıcı haber özetleri ve derinlemesine analizlerle sunan günlük Türkçe podcast.</itunes:summary>
+    <description>Günün en sıcak yapay zeka ve teknoloji gelişmelerini, çarpıcı haber özetleri ve derinlemesine analizlerle sunan günlük Türkçe yapay zeka podcasti.</description>
+    <itunes:author>Migros One</itunes:author>
+    <itunes:summary>Günün en sıcak yapay zeka ve teknoloji gelişmelerini, çarpıcı haber özetleri ve derinlemesine analizlerle sunan günlük Türkçe yapay zeka podcasti.</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <itunes:owner>
-      <itunes:name>M1</itunes:name>
+      <itunes:name>Migros One</itunes:name>
       <itunes:email>mehmetonurberber@gmail.com</itunes:email>
     </itunes:owner>
     <itunes:category text="Technology">
@@ -19,9 +19,51 @@
     <itunes:image href="https://monurium.github.io/m1-podcast-generator/cover.jpg"/>
     <image>
       <url>https://monurium.github.io/m1-podcast-generator/cover.jpg</url>
-      <title>M1 Podcast - Günlük Yapay Zeka &amp; Teknoloji Bülteni</title>
+      <title>Migros OneCast AI - Günlük Yapay Zeka Bülteni</title>
       <link>https://monurium.github.io/m1-podcast-generator</link>
     </image>
+    <item>
+      <title>Migros OneCast AI - Günlük Yapay Zeka Bülteni: Nvidia &amp; Hugging Face ve Ajan Çağı (03.09.2026)</title>
+      <description>Nvidia'nın Hugging Face satın alımından Meta Muse Spark kodlama modeline, OpenAI Astra'nın akıl yürütme tartışmalarından robotik görme ve siber güvenlik yatırımlarına son 24 saatin 10 kritik AI gelişmesi.
+⚡ GÜNÜN ÇARPICI HABERLERİ:
+1. Nvidia, Açık Kaynak Merkezi Hugging Face'i Satın Aldığını Doğruladı
+Nvidia, açık kaynak yapay zeka topluluğunun kalbi sayılan Hugging Face platformunu satın aldığını doğrulayarak yapay zeka ekosisteminde tarihi bir konsolidasyona imza attı.
+Önemli Noktalar: Dünyanın en büyük açık yapay zeka model havuzu donanım devinin bünyesine geçti • Bağımsız araştırmacılar ve düzenleyici kurumlar olası tekel risklerini tartışıyor
+2. Meta'dan Otonom Kodlama Ajanı Modeli: Muse Spark 1.3
+Meta, yazılım projelerinin mimarisini anlayarak bağımsız testler yazabilen ve hataları otomatik düzeltebilen ajan tabanlı yeni Muse Spark 1.3 modelini duyurdu.
+Önemli Noktalar: Model sadece kod tamamlamakla kalmıyor, tüm depoyu tarayıp bağımsız testler yazıyor • Geliştirici ekiplerinin hata ayıklama ve refactoring sürelerinde radikal hızlanma sağlandı
+3. OpenAI Astra'nın Derin Akıl Yürütme Tekniği Güvenlik Tartışması Yarattı
+OpenAI'ın AGI eşiğine yaklaştığı belirtilen yeni Astra modeli, karmaşık mantık yürütme yetenekleriyle öne çıkarken otonom karar alma süreçlerindeki güvenlik bariyerleri tartışılıyor.
+Önemli Noktalar: Model yanıt üretmeden önce test anı hesaplamasıyla (test-time compute) iç sesini kontrol ediyor • Derin mantık yürütme süreçlerinin güvenlik filtrelerini aşmada yeni riskler doğurabileceği belirtiliyor
+4. Google'dan Çift Hamle: Gemini 3.8 Flash ve Siber Güvenlik Odaklı Flash Cyber
+Google, düşük gecikmeli genel amaçlı Gemini 3.8 Flash modelinin yanı sıra kurumsal siber savunma için özel olarak optimize edilen Gemini 3.8 Flash Cyber modelini tanıttı.
+Önemli Noktalar: Flash Cyber modeli sıfır gün açıklarını ve oltalama saldırılarını milisaniyelerde tespit ediyor • Hafif mimari sayesinde veri merkezlerine bağımlı kalmadan uç cihazlarda yüksek hızda çalışıyor
+5. Yapay Zeka Modellerini Savunan HiddenLayer, 100 Milyon Dolar Yatırım Aldı
+Büyük dil modellerini veri zehirleme ve jailbreak saldırılarına karşı koruyan siber güvenlik girişimi HiddenLayer, 100 milyon dolarlık Seri B yatırım turunu tamamladı.
+Önemli Noktalar: Model zehirleme ve ağırlık manipülasyonu saldırılarına karşı kalkan geliştiriliyor • Kurumsal yapay zeka güvenliği sektörünün en büyük yatırımlarından biri gerçekleşti
+6. Abliteration.ai: Açık Modellerden Güvenlik Filtrelerinin Silinmesi Tartışılıyor
+Açık ağırlıklı modellerden güvenlik kurallarını kaldıran Abliteration yöntemi, yapay zekanın kötüye kullanım riskleri ve açık kaynak regülasyonları konusundaki tartışmaları alevlendirdi.
+Önemli Noktalar: Ağırlık matrislerindeki güvenlik vektörleri matematiksel cerrahiyle temizleniyor • Sansürsüz araştırma vaadiyle sunulan hizmet siber güvenlik otoritelerinde alarm yarattı
+7. Robotik Görme Girişimi Lyte, 165 Milyon Dolar Yatırımla Unicorn Oldu
+İnsansı robotların çevrelerini insan hassasiyetinde algılamasını sağlayan görme yapay zekası şirketi Lyte, 165 milyon dolar yeni fon toplayarak değerlemesini 1,6 milyar dolara taşıdı.
+Önemli Noktalar: 1,6 milyar dolar değerlemeye ulaşan girişim, robotlara 3D derinlik ve doku algısı kazandırıyor • Pahalı lidar sensörleri yerine kameralarla çalışan model donanım maliyetini yarıya indiriyor
+8. Anthropic Claude Bilgisayar Kullanımı: İş Akışlarında Otonom Masaüstü Dönemi
+Anthropic'in Claude modeli, doğrudan bilgisayar ekranını okuyup imleç ve klavye hareketleriyle görevleri tamamlayarak masaüstü otomasyonunda yeni bir çığır açtı.
+Önemli Noktalar: Model fare ve klavye kullanarak tarayıcı, form ve dosya işlemlerini insan gibi yönetiyor • Finans ve lojistik sektöründe operasyonel veri girişleri doğrudan yapay zekaya devrediliyor
+9. Akademik Araştırma: Çoklu Ajan Sistemlerinde Koordinasyon ve Çatışma Krizi
+Synced Review tarafından derlenen araştırma, çoklu yapay zeka ajanlarının eşzamanlı çalışırken görev çakışmaları ve sistem kilitlenmeleri yaşayabildiğini ortaya koydu.
+Önemli Noktalar: Bağımsız çalışan ajanların aynı dosya üzerinde birbirini kilitleyebildiği belgelendi • Ajan orkestrasyonu ve görev hiyerarşisi geleceğin kritik yazılım mimarisi olarak öne çıkıyor
+10. The Adecco Group Raporu: Yapay Zeka 1,9 Milyon Yeni İstihdam Alanı Yarattı
+Küresel insan kaynakları devi Adecco'nun araştırması, yapay zekanın var olan meslekleri dönüştürürken dünya çapında 1,9 milyon yeni istihdam fırsatı yarattığını açıkladı.
+Önemli Noktalar: İş kayıpları endişesinin aksine veri mimarlığı ve ajan denetçiliğinde rekor talep oluştu • İş gücünün teknolojik becerilere uyum sağlaması küresel büyümenin anahtarı olarak vurgulandı</description>
+      <itunes:summary>Nvidia'nın Hugging Face satın alımından Meta Muse Spark kodlama modeline, OpenAI Astra'nın akıl yürütme tartışmalarından robotik görme ve siber güvenlik yatırımlarına son 24 saatin 10 kritik AI gelişmesi.</itunes:summary>
+      <pubDate>Thu, 03 Sep 2026 19:24:34 GMT</pubDate>
+      <guid isPermaLink="false">ep_20260903_m1_568a48</guid>
+      <itunes:author>Migros One</itunes:author>
+      <itunes:duration>00:08:44</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_568a48.mp3" length="3145896" type="audio/mpeg"/>
+    </item>
     <item>
       <title>M1 Podcast - Günlük Yapay Zeka Bülteni: Nvidia &amp; Hugging Face ve Ajan Çağı (03.09.2026)</title>
       <description>Nvidia'nın Hugging Face satın alımından Meta Muse Spark kodlama modeline, OpenAI Astra'nın akıl yürütme tartışmalarından robotik görme ve siber güvenlik yatırımlarına son 24 saatin 10 kritik AI gelişmesi.
@@ -59,7 +101,7 @@ Küresel insan kaynakları devi Adecco'nun araştırması, yapay zekanın var ol
       <itunes:summary>Nvidia'nın Hugging Face satın alımından Meta Muse Spark kodlama modeline, OpenAI Astra'nın akıl yürütme tartışmalarından robotik görme ve siber güvenlik yatırımlarına son 24 saatin 10 kritik AI gelişmesi.</itunes:summary>
       <pubDate>Thu, 03 Sep 2026 19:19:29 GMT</pubDate>
       <guid isPermaLink="false">ep_20260903_m1_ea1cb0</guid>
-      <itunes:author>M1</itunes:author>
+      <itunes:author>Migros One</itunes:author>
       <itunes:duration>00:08:43</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
       <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_ea1cb0.mp3" length="3143448" type="audio/mpeg"/>
@@ -101,7 +143,7 @@ Yapay zeka güvenlik otoriteleri, açık ağırlıklı modellerin güvenliğini 
       <itunes:summary>Otonom yazılım ajanlarından kuantum sonrası şifrelemeye, nöromorfik çiplerden katı hal bataryalara teknolojinin en sıcak 10 gelişmesi ve derinlemesine analizi.</itunes:summary>
       <pubDate>Thu, 03 Sep 2026 19:09:10 GMT</pubDate>
       <guid isPermaLink="false">ep_20260903_m1_79581d</guid>
-      <itunes:author>M1</itunes:author>
+      <itunes:author>Migros One</itunes:author>
       <itunes:duration>00:10:09</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
       <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_79581d.mp3" length="3657816" type="audio/mpeg"/>
@@ -143,7 +185,7 @@ Yapay zeka güvenlik otoriteleri, açık ağırlıklı modellerin güvenliğini 
       <itunes:summary>Otonom yazılım ajanlarından kuantum sonrası şifrelemeye, nöromorfik çiplerden katı hal bataryalara teknolojinin en sıcak 10 gelişmesi ve 1.5 kat genişletilmiş derinlemesine analizi.</itunes:summary>
       <pubDate>Thu, 03 Sep 2026 14:22:00 GMT</pubDate>
       <guid isPermaLink="false">ep_20260903_m1_044b78</guid>
-      <itunes:author>M1</itunes:author>
+      <itunes:author>Migros One</itunes:author>
       <itunes:duration>00:13:44</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
       <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_m1_044b78.mp3" length="4949496" type="audio/mpeg"/>
@@ -173,7 +215,7 @@ Biyoteknoloji laboratuvarları, generatif yapay zeka kullanarak sentetik protein
       <itunes:summary>Otonom yazılım mühendislerinden kuantum dayanıklı şifrelemeye, nöromorfik çiplerden yerel dil modellerine teknolojinin en sıcak gelişmeleri ve derinlemesine sohbeti.</itunes:summary>
       <pubDate>Tue, 01 Sep 2026 16:10:13 GMT</pubDate>
       <guid isPermaLink="false">ep_20260901_m1_ba8b30</guid>
-      <itunes:author>M1</itunes:author>
+      <itunes:author>Migros One</itunes:author>
       <itunes:duration>00:02:31</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
       <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260901_m1_ba8b30.mp3" length="2430228" type="audio/mpeg"/>
