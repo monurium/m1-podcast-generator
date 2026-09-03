@@ -193,31 +193,37 @@ class AudioGenerator:
             voice_name = GEMINI_VOICE_MAP.get(speaker, "Puck" if speaker == "Ahmet" else "Aoede")
             prompt = f"Lütfen bu podcast diyaloğunu doğal, akıcı ve samimi bir Türkçe ile seslendir: {clean_text}"
 
-            try:
-                response = client.models.generate_content(
-                    model="gemini-2.0-flash",
-                    contents=prompt,
-                    config=types.GenerateContentConfig(
-                        response_modalities=["AUDIO"],
-                        speech_config=types.SpeechConfig(
-                            voice_config=types.VoiceConfig(
-                                prebuilt_voice_config=types.PrebuiltVoiceConfig(
-                                    voice_name=voice_name
+            raw_pcm = None
+            for model_name in ["gemini-3.6-flash", "gemini-3.1-flash-tts-preview", "gemini-2.5-flash"]:
+                try:
+                    response = client.models.generate_content(
+                        model=model_name,
+                        contents=prompt,
+                        config=types.GenerateContentConfig(
+                            response_modalities=["AUDIO"],
+                            speech_config=types.SpeechConfig(
+                                voice_config=types.VoiceConfig(
+                                    prebuilt_voice_config=types.PrebuiltVoiceConfig(
+                                        voice_name=voice_name
+                                    )
                                 )
                             )
                         )
                     )
-                )
-                raw_pcm = None
-                for part in response.candidates[0].content.parts:
-                    if part.inline_data:
-                        raw_data = part.inline_data.data
-                        if isinstance(raw_data, str):
-                            import base64
-                            raw_data = base64.b64decode(raw_data)
-                        raw_pcm = raw_data
+                    for part in response.candidates[0].content.parts:
+                        if part.inline_data:
+                            raw_data = part.inline_data.data
+                            if isinstance(raw_data, str):
+                                import base64
+                                raw_data = base64.b64decode(raw_data)
+                            raw_pcm = raw_data
+                            break
+                    if raw_pcm:
                         break
+                except Exception as model_err:
+                    continue
 
+            try:
                 if raw_pcm:
                     encoder = lameenc.Encoder()
                     encoder.set_bit_rate(128)
@@ -228,7 +234,7 @@ class AudioGenerator:
                     turn_audio_buffers.append(mp3_buf)
                     time.sleep(1.0)
                 else:
-                    raise ValueError("Ses verisi döndürülemedi")
+                    raise ValueError("Gemini modellerinden ses verisi alınamadı")
             except Exception as e:
                 print(f"⚠️ Gemini TTS sıra {idx} uyarısı ({e}), Edge-TTS ile tamamlanıyor...")
                 import edge_tts
