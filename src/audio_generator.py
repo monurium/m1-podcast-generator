@@ -175,9 +175,10 @@ class AudioGenerator:
         from google.genai import types
         import lameenc
         
-        gemini_api_key = os.getenv("GEMINI_API_KEY")
+        import time
+        gemini_api_key = os.getenv("GEMINI_FREE_API_KEY") or os.getenv("GEMINI_API_KEY")
         if not gemini_api_key:
-            print("ℹ️ GEMINI_API_KEY bulunamadı, Edge-TTS motoruna geçiliyor...")
+            print("ℹ️ GEMINI_FREE_API_KEY veya GEMINI_API_KEY bulunamadı, Edge-TTS motoruna geçiliyor...")
             return asyncio.run(self.build_audio_dialogue_edge(dialogue_script, output_mp3))
 
         print("🎙️ Türkçe 2-Sunuculu Google Gemini TTS Sentezleniyor (Puck & Aoede)...")
@@ -225,6 +226,7 @@ class AudioGenerator:
                     encoder.set_quality(2)
                     mp3_buf = encoder.encode(raw_pcm) + encoder.flush()
                     turn_audio_buffers.append(mp3_buf)
+                    time.sleep(1.0)
                 else:
                     raise ValueError("Ses verisi döndürülemedi")
             except Exception as e:

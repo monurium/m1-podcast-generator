@@ -19,6 +19,16 @@ class ContentGenerator:
             )
         else:
             self.client = None
+
+        self.gemini_key = os.getenv("GEMINI_FREE_API_KEY") or os.getenv("GEMINI_API_KEY")
+        if self.gemini_key and not self.gemini_key.startswith("your_"):
+            try:
+                from google import genai
+                self.gemini_client = genai.Client(api_key=self.gemini_key)
+            except Exception:
+                self.gemini_client = None
+        else:
+            self.gemini_client = None
         
         # Curated, authoritative AI news feeds
         self.ai_feeds = [
@@ -154,6 +164,25 @@ class ContentGenerator:
             f"Günün Ham Nitelikli Yapay Zeka Haber Havuzu (Son 24 Saat):\n\n{raw_news_context or 'Günün öne çıkan yapay zeka, açık modeller, otonom ajanlar ve LLM gelişmeleri.'}\n\n"
             "Lütfen son 24 saatin en nitelikli 8-10 yapay zeka haberini derinlemesine tartışan, teknik terimleri doğal dille açıklayan, yapay onaylama kalıplarından uzak, karşılıklı soru-cevaplı ve 1050-1200 KELİMELİK (~10 dakika) Türkçe diyalog JSON çıktısını üret."
         )
+
+        if self.gemini_client and not self.client:
+            try:
+                from google.genai import types
+                response = self.gemini_client.models.generate_content(
+                    model="gemini-2.0-flash",
+                    contents=f"{system_prompt}\n\n{user_prompt}",
+                    config=types.GenerateContentConfig(
+                        response_mime_type="application/json",
+                        temperature=0.7
+                    )
+                )
+                data = json.loads(response.text.strip())
+                if "script" in data and "news_items" in data:
+                    print("✅ Gemini 2.0 Flash ile podcast metni başarıyla üretildi!")
+                    return data
+            except Exception as e:
+                print(f"⚠️ Gemini içerik üretim hatası ({e}). Fallback şablonuna geçiliyor...")
+                return self._get_fallback_turkish_script()
 
         if not self.client:
             print("ℹ️ LLM API anahtarı bulunamadı, son 24 saatin nitelikli AI gelişmelerini içeren örnek şablon kullanılıyor.")
