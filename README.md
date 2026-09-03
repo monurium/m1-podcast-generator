@@ -11,7 +11,7 @@ Günün en sıcak yapay zeka ve teknoloji gelişmelerini otomatik olarak toplaya
 * **🗣️ Türkçe 2-Sunuculu Doğal Seslendirme:** Microsoft Edge-TTS Neural sesleri ile **Ahmet** (`tr-TR-AhmetNeural`) ve **Emel** (`tr-TR-EmelNeural`) arasında akıcı, samimi radyo diyaloğu.
 * **📻 Apple Podcasts & Spotify Uyumlu RSS 2.0:** Podcast oynatıcılarının bölüm açıklamalarına haberlerin çarpıcı başlık ve özetlerini otomatik yerleştirir.
 * **🎧 Modern Web Oynatıcı:** GitHub Pages üzerinde çalışan, ses dalgası görselleştiricili, hız kontrollü ve haber kartlarını listeleyen modern koyu mod web arayüzü.
-* **⚙️ GitHub Actions Otomasyonu:** Hafta içi her sabah otomatik olarak yeni bölüm üretir ve RSS beslemesini günceller.
+* **⚙️ GitHub Actions Otomasyonu:** İsteğe bağlı olarak (`workflow_dispatch`) tek tıkla GitHub Actions üzerinden yeni bölüm üretir ve RSS beslemesini günceller.
 
 ---
 

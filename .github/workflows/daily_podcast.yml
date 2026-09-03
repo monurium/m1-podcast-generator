@@ -1,9 +1,6 @@
 name: M1 Daily Podcast Generator & RSS Publisher
 
 on:
-  schedule:
-    # Runs every weekday morning at 06:00 UTC (09:00 TRT)
-    - cron: '0 6 * * 1-5'
   workflow_dispatch:
 
 permissions:
