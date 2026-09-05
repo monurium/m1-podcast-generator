@@ -22,44 +22,5 @@
       <title>Migros OneCast AI - Günlük Yapay Zeka Bülteni</title>
       <link>https://monurium.github.io/m1-podcast-generator</link>
     </image>
-    <item>
-      <title>Migros OneCast AI - Nvidia'nın 13 Milyar Dolarlık Hugging Face Hamlesi ve Kontrolsüz Ajanlar Çağı</title>
-      <description>Nvidia'nın açık kaynak devini bünyesine katması, OpenAI'ın tartışmalı yeni akıl yürütme tekniği Astra, yapay zeka güvenlik duvarlarını kaldıran Abliteration yöntemi ve siber güvenlikten eğitime günün öne çıkan 9 kritik gelişmesini inceliyoruz.
-⚡ GÜNÜN ÇARPICI HABERLERİ:
-1. Nvidia, Hugging Face'i 12,9 Milyar Dolara Satın Aldığını Doğruladı
-Nvidia, 18 milyondan fazla geliştiricinin kullandığı Hugging Face'i 12,93 milyar dolara satın alarak yapay zeka yazılım ve model dağıtımındaki hakimiyetini pekiştirdi.
-Önemli Noktalar: Donanım devi, 3 milyondan fazla modele ev sahipliği yapan açık kaynak merkezini bünyesine katıyor. • Açık kaynak ekosisteminde tekelleşme ve tarafsızlık kaygıları tırmanışta.
-2. OpenAI'ın Yeni Astra Modeli 'Recurrent Depth' Tekniğiyle Güvenlik Tartışması Yarattı
-OpenAI'ın yeni bilgisayar kullanabilen modeli Astra, geleneksel adım adım düşünme zincirini kırıp kendi düşünce katmanlarını döngüsel olarak yeniden işleyen 'Recurrent Depth' tekniği sebebiyle güvenlik uzmanlarını alarma geçirdi.
-Önemli Noktalar: Doğrusal akıl yürütme yerine döngüsel katman yapısı kullanılıyor. • Siber güvenlik uzmanları modelin denetim dışı kararlar alabileceğinden endişeli.
-3. Meta Muse Spark 1.3'ü Duyurdu: Veri Paylaşana %95 İndirim
-Meta, otonom kodlama yetenekleri artırılmış Muse Spark 1.3 modelini tanıtırken, istem ve çıktı verilerini gelecekteki modellerin eğitimi için paylaşan kullanıcılara %95 maliyet avantajı sağlayacağını açıkladı.
-Önemli Noktalar: Ajan kodlama görevlerinde %20 daha az araç çağrısı ve %25 daha az jeton harcıyor. • Geliştirici girdilerini eğitime dahil etmeyi kabul edenlere dev indirim sunuluyor.
-4. Google'dan Çifte Hamle: Gemini 3.8 Flash ve Gemini 3.8 Flash Cyber
-Google, yüksek hızlı Gemini 3.8 Flash mimarisini ikiye ayırarak birini genel ajansal görevlere, diğerini ise doğrudan siber tehdit analizi ve savunmaya özel hale getirdi.
-Önemli Noktalar: Genel kullanım ile siber savunma odaklı iki ayrı uzman model. • Siber güvenlik süreçlerinde sıfır gün açıklarını tespit yeteneği.
-5. Abliteration.ai Güvenlik Duvarlarını (Guardrails) Kaldırmayı Ticaret Haline Getirdi
-Abliteration.ai, büyük dil modellerindeki güvenlik kurallarını ve sansür mekanizmalarını kalıcı olarak ortadan kaldıran teknikleri ticari bir hizmet olarak sunmaya başladı.
-Önemli Noktalar: Güvenlik nöronları 'cerrahi müdahale' ile modelden siliniyor. • Savunmacılara kötü niyetli aktörlerle aynı araçları sağlama iddiası.
-6. Perplexity, Yerel Çıkarım Motoru Lily'yi Açık Kaynak Yaptı
-Perplexity, karmaşık görevleri bulut ile kullanıcının kendi bilgisayarı arasında bölen 'Hybrid Compute' sisteminin arkasındaki Lily çıkarım motorunu açık kaynak olarak yayınladı.
-Önemli Noktalar: Ağır akıl yürütme bulutta, hassas işlemler Mac üzerinde çalışıyor. • Rust ve Metal mimarisiyle Apple Silicon üzerinde rekor hız.
-7. CrowdStrike Otonom Ajanlar İçin Falcon Guardian Sistemini Duyurdu
-CrowdStrike, kurumsal sistemlerde kendi kendine iş yapan yapay zeka ajanlarının hata yapıp kritik verilere erişmesini veya bozmasını engelleyen yeni güvenlik katmanını tanıttı.
-Önemli Noktalar: Ajanların sisteme verebileceği zararı kısıtlayan 'Patlama Yarıçapı' konsepti. • İnsan dışı kimlik yönetimi ile yapay zeka yetkilendirmesi.
-8. Google WeatherNext 3 ile Derin Öğrenmeli Hava Tahmini
-Google'ın yeni WeatherNext 3 modeli, kar ve yağmur tahminlerinde eşi görülmemiş bir çözünürlük sunarak geleneksel hava durumu modellerini geride bırakıyor.
-Önemli Noktalar: Fiziksel simülasyonlar yerine yapay zeka tabanlı meteoroloji. • Haritalar, Arama ve Gemini içerisine entegre yüksek çözünürlüklü tahminler.
-9. New York Kentinde İlköğretimde Yapay Zeka Yasağı Kararı
-New York Şehri Eğitim Dairesi, çocukların erken yaşta eleştirel düşünme yeteneklerinin gerilemesini önlemek amacıyla ilköğretim seviyesinde yapay zeka araçlarını yasaklama kararı aldı.
-Önemli Noktalar: 2026-2027 eğitim dönemi itibarıyla ilkokullarda yapay zeka kullanımı kısıtlanıyor. • Temel zihinsel becerilerin ve okuma-yazma süreçlerinin korunması hedefleniyor.</description>
-      <itunes:summary>Nvidia'nın açık kaynak devini bünyesine katması, OpenAI'ın tartışmalı yeni akıl yürütme tekniği Astra, yapay zeka güvenlik duvarlarını kaldıran Abliteration yöntemi ve siber güvenlikten eğitime günün öne çıkan 9 kritik gelişmesini inceliyoruz.</itunes:summary>
-      <pubDate>Thu, 03 Sep 2026 20:30:34 GMT</pubDate>
-      <guid isPermaLink="false">ep_20260903_onecast_01</guid>
-      <itunes:author>Migros One</itunes:author>
-      <itunes:duration>10m 39s</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
-      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260903_onecast_01.mp3" length="10228297" type="audio/mpeg"/>
-    </item>
   </channel>
 </rss>
