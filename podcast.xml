@@ -22,5 +22,44 @@
       <title>Migros OneCast AI - Günlük Yapay Zeka Bülteni</title>
       <link>https://monurium.github.io/m1-podcast-generator</link>
     </image>
+    <item>
+      <title>Migros OneCast AI - Gunluk Yapay Zeka Bulteni: Nvidia ve Hugging Face, Ajan Cagi (05.09.2026)</title>
+      <description>Nvidia'nin Hugging Face satin alimidan Meta Muse Spark kodlama modeline, OpenAI Astra'nin akil yurutme tartismalarina robotik gorme ve siber guvenlik yatirimlarindan yapay zekanin istihdam etkisine kadar bugunun dokuz kritik AI gelismesi.
+⚡ GÜNÜN ÇARPICI HABERLERİ:
+1. Nvidia, Acik Kaynak Merkezi Hugging Face'i Satin Aldigini Dogruladi
+Nvidia, acik kaynak yapay zeka toplulugunun kalbi sayilan Hugging Face platformunu satin aldigini dogrulayarak yapay zeka ekosisteminde tarihi bir konsolidasyona imza atti.
+Önemli Noktalar: Dunyanin en buyuk acik yapay zeka model havuzu donanim devinin bunyesine gecti • Bagimsiz arastirmacilar ve duzenleyici kurumlar olasi tekel risklerini tartisiyor
+2. Meta'dan Otonom Kodlama Ajani Modeli: Muse Spark 1.3
+Meta, yazilim projelerinin mimarisini anlayarak bagimsiz testler yazabilen ve hatalari otomatik duzeltebilen ajan tabanli yeni Muse Spark 1.3 modelini duyurdu.
+Önemli Noktalar: Model sadece kod tamamlamakla kalmiyor, tum depoyu tarayip bagimsiz testler yaziyor • Gelistirici ekiplerinin hata ayiklama surelerinde radikal hizlanma saglandi
+3. OpenAI Astra'nin Derin Akil Yurutme Teknigi Guvenlik Tartismasi Yaratti
+OpenAI'in yeni Astra modeli, karmask mantik yurutme yetenekleriyle one cikarken otonom karar alma sureclerindeki guvenlik bariyerleri tartisiliyor.
+Önemli Noktalar: Model yanit uretmeden once test ani hesaplamasiyla ic sesini kontrol ediyor • Derin mantik yurutme sureclerinin guvenligi asmada yeni riskler dogurdugu belirtiliyor
+4. Google'dan Cift Hamle: Gemini Flash ve Siber Guvenlik Odakli Flash Cyber
+Google, dusuk gecikmeli genel amacli Gemini Flash modelinin yani sira kurumsal siber savunma icin ozel optimize edilen Flash Cyber modelini tanitti.
+Önemli Noktalar: Flash Cyber modeli sifir gun aciklari ve oltalama saldirilarini milisaniyelerde tespit ediyor • Hafif mimari sayesinde uc cihazlarda yuksek hizda guvenlik taramasi yapabiliyor
+5. Yapay Zeka Modellerini Savunan HiddenLayer, 100 Milyon Dolar Yatirim Aldi
+Buyuk dil modellerini veri zehirleme ve jailbreak saldirilarindan koruyan siber guvenlik girisimi HiddenLayer, 100 milyon dolarlik Seri B yatirim turunu tamamladi.
+Önemli Noktalar: Model zehirleme ve agirlik manipulasyonu saldirilarindan korunmak icin kalkan gelistiriliyor • Kurumsal yapay zeka guvenligi sektorunun en buyuk yatirimlarindan biri gerceklesti
+6. Abliteration: Acik Modellerden Guvenlik Filtrelerinin Silinmesi Tartisiliyor
+Acik agirlikli modellerden guvenlik kurallarini kaldiran Abliteration yontemi, yapay zekanin kotüye kullanim riskleri ve acik kaynak regulasyonlari konusundaki tartismalari alevlendirdi.
+Önemli Noktalar: Agirlik matrislerindeki guvenlik vektorleri matematiksel cerrahiyle temizleniyor • Sansursuz arastirma vaadiyle sunulan hizmet siber guvenlik otoritelerinde alarm yaratti
+7. Robotik Gorme Girisimi Lyte, 165 Milyon Dolar Yatirimla Unicorn Oldu
+Insansi robotlarin cevrelerini insan hassasiyetinde algilamasini saglayan gorme yapay zekasi sirketi Lyte, 165 milyon dolar yeni fon toplayarak degerlemesini 1 milyar 600 milyon dolara tasidi.
+Önemli Noktalar: 1 milyar 600 milyon dolar degerlemeye ulasan girisim robotlara uc boyutlu algi kazandiriyor • Pahali lidar sensorleri yerine kameralarla calisan model donanim maliyetini yariya indiriyor
+8. Anthropic Claude Bilgisayar Kullanimi: Is Akislarinda Otonom Masaustu Donemi
+Anthropic'in Claude modeli, dogrudan bilgisayar ekranini okuyup imleg ve klavye hareketleriyle gorevleri tamamlayarak masaustu otomasyonunda yeni bir cigir acti.
+Önemli Noktalar: Model fare ve klavye kullanarak tarayici, form ve dosya islemlerini insan gibi yonetiyor • Finans ve lojistik sektorunde operasyonel veri girisleri yapay zekaya devrediliyor
+9. The Adecco Group Raporu: Yapay Zeka 1 Milyon 900 Bin Yeni Istihdam Alani Yaratti
+Kuresel insan kaynaklari devi Adecco'nun arastirmasi, yapay zekanin var olan meslekleri donustururken dunya capinda 1 milyon 900 bin yeni istihdam firsati yaratitigini acikladi.
+Önemli Noktalar: Is kayiplari endisesinin aksine veri mimarliginda ve ajan denetciliginde rekor talep olusту • Is gucunun teknolojik becerilere uyum saglamasi kuresel buyumenin anahtari olarak vurgulandi</description>
+      <itunes:summary>Nvidia'nin Hugging Face satin alimidan Meta Muse Spark kodlama modeline, OpenAI Astra'nin akil yurutme tartismalarina robotik gorme ve siber guvenlik yatirimlarindan yapay zekanin istihdam etkisine kadar bugunun dokuz kritik AI gelismesi.</itunes:summary>
+      <pubDate>Sat, 05 Sep 2026 14:33:27 GMT</pubDate>
+      <guid isPermaLink="false">ep_20260905_m1_d0e6ee</guid>
+      <itunes:author>Migros One</itunes:author>
+      <itunes:duration>6m 44s</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+      <enclosure url="https://monurium.github.io/m1-podcast-generator/episodes/ep_20260905_m1_d0e6ee.mp3" length="6469172" type="audio/mpeg"/>
+    </item>
   </channel>
 </rss>

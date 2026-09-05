@@ -1,1 +1,88 @@
-[]
+[
+  {
+    "guid": "ep_20260905_m1_d0e6ee",
+    "title": "Migros OneCast AI - Gunluk Yapay Zeka Bulteni: Nvidia ve Hugging Face, Ajan Cagi (05.09.2026)",
+    "summary": "Nvidia'nin Hugging Face satin alimidan Meta Muse Spark kodlama modeline, OpenAI Astra'nin akil yurutme tartismalarina robotik gorme ve siber guvenlik yatirimlarindan yapay zekanin istihdam etkisine kadar bugunun dokuz kritik AI gelismesi.",
+    "todays_topics": "Nvidia Hugging Face Satin Alimi, Meta Muse Spark 1.3 Ajan Modeli, OpenAI Astra Akil Yurutme, Google Gemini Flash Cyber, HiddenLayer 100 Milyon Dolar Yatirim, Abliteration Guvensizlik Tartismasi, Lyte Robotik Gorme, Claude Bilgisayar Kullanimi, Yapay Zeka Istihdam Raporu",
+    "news_items": [
+      {
+        "headline": "Nvidia, Acik Kaynak Merkezi Hugging Face'i Satin Aldigini Dogruladi",
+        "key_points": [
+          "Dunyanin en buyuk acik yapay zeka model havuzu donanim devinin bunyesine gecti",
+          "Bagimsiz arastirmacilar ve duzenleyici kurumlar olasi tekel risklerini tartisiyor"
+        ],
+        "summary": "Nvidia, acik kaynak yapay zeka toplulugunun kalbi sayilan Hugging Face platformunu satin aldigini dogrulayarak yapay zeka ekosisteminde tarihi bir konsolidasyona imza atti."
+      },
+      {
+        "headline": "Meta'dan Otonom Kodlama Ajani Modeli: Muse Spark 1.3",
+        "key_points": [
+          "Model sadece kod tamamlamakla kalmiyor, tum depoyu tarayip bagimsiz testler yaziyor",
+          "Gelistirici ekiplerinin hata ayiklama surelerinde radikal hizlanma saglandi"
+        ],
+        "summary": "Meta, yazilim projelerinin mimarisini anlayarak bagimsiz testler yazabilen ve hatalari otomatik duzeltebilen ajan tabanli yeni Muse Spark 1.3 modelini duyurdu."
+      },
+      {
+        "headline": "OpenAI Astra'nin Derin Akil Yurutme Teknigi Guvenlik Tartismasi Yaratti",
+        "key_points": [
+          "Model yanit uretmeden once test ani hesaplamasiyla ic sesini kontrol ediyor",
+          "Derin mantik yurutme sureclerinin guvenligi asmada yeni riskler dogurdugu belirtiliyor"
+        ],
+        "summary": "OpenAI'in yeni Astra modeli, karmask mantik yurutme yetenekleriyle one cikarken otonom karar alma sureclerindeki guvenlik bariyerleri tartisiliyor."
+      },
+      {
+        "headline": "Google'dan Cift Hamle: Gemini Flash ve Siber Guvenlik Odakli Flash Cyber",
+        "key_points": [
+          "Flash Cyber modeli sifir gun aciklari ve oltalama saldirilarini milisaniyelerde tespit ediyor",
+          "Hafif mimari sayesinde uc cihazlarda yuksek hizda guvenlik taramasi yapabiliyor"
+        ],
+        "summary": "Google, dusuk gecikmeli genel amacli Gemini Flash modelinin yani sira kurumsal siber savunma icin ozel optimize edilen Flash Cyber modelini tanitti."
+      },
+      {
+        "headline": "Yapay Zeka Modellerini Savunan HiddenLayer, 100 Milyon Dolar Yatirim Aldi",
+        "key_points": [
+          "Model zehirleme ve agirlik manipulasyonu saldirilarindan korunmak icin kalkan gelistiriliyor",
+          "Kurumsal yapay zeka guvenligi sektorunun en buyuk yatirimlarindan biri gerceklesti"
+        ],
+        "summary": "Buyuk dil modellerini veri zehirleme ve jailbreak saldirilarindan koruyan siber guvenlik girisimi HiddenLayer, 100 milyon dolarlik Seri B yatirim turunu tamamladi."
+      },
+      {
+        "headline": "Abliteration: Acik Modellerden Guvenlik Filtrelerinin Silinmesi Tartisiliyor",
+        "key_points": [
+          "Agirlik matrislerindeki guvenlik vektorleri matematiksel cerrahiyle temizleniyor",
+          "Sansursuz arastirma vaadiyle sunulan hizmet siber guvenlik otoritelerinde alarm yaratti"
+        ],
+        "summary": "Acik agirlikli modellerden guvenlik kurallarini kaldiran Abliteration yontemi, yapay zekanin kotüye kullanim riskleri ve acik kaynak regulasyonlari konusundaki tartismalari alevlendirdi."
+      },
+      {
+        "headline": "Robotik Gorme Girisimi Lyte, 165 Milyon Dolar Yatirimla Unicorn Oldu",
+        "key_points": [
+          "1 milyar 600 milyon dolar degerlemeye ulasan girisim robotlara uc boyutlu algi kazandiriyor",
+          "Pahali lidar sensorleri yerine kameralarla calisan model donanim maliyetini yariya indiriyor"
+        ],
+        "summary": "Insansi robotlarin cevrelerini insan hassasiyetinde algilamasini saglayan gorme yapay zekasi sirketi Lyte, 165 milyon dolar yeni fon toplayarak degerlemesini 1 milyar 600 milyon dolara tasidi."
+      },
+      {
+        "headline": "Anthropic Claude Bilgisayar Kullanimi: Is Akislarinda Otonom Masaustu Donemi",
+        "key_points": [
+          "Model fare ve klavye kullanarak tarayici, form ve dosya islemlerini insan gibi yonetiyor",
+          "Finans ve lojistik sektorunde operasyonel veri girisleri yapay zekaya devrediliyor"
+        ],
+        "summary": "Anthropic'in Claude modeli, dogrudan bilgisayar ekranini okuyup imleg ve klavye hareketleriyle gorevleri tamamlayarak masaustu otomasyonunda yeni bir cigir acti."
+      },
+      {
+        "headline": "The Adecco Group Raporu: Yapay Zeka 1 Milyon 900 Bin Yeni Istihdam Alani Yaratti",
+        "key_points": [
+          "Is kayiplari endisesinin aksine veri mimarliginda ve ajan denetciliginde rekor talep olusту",
+          "Is gucunun teknolojik becerilere uyum saglamasi kuresel buyumenin anahtari olarak vurgulandi"
+        ],
+        "summary": "Kuresel insan kaynaklari devi Adecco'nun arastirmasi, yapay zekanin var olan meslekleri donustururken dunya capinda 1 milyon 900 bin yeni istihdam firsati yaratitigini acikladi."
+      }
+    ],
+    "script": "Ahmet: Dunya artik bir soru soruyor: Acik kaynak yapay zeka modelleri kime ait olmali? Cunku bugun sabah Nvidia, acik kaynak toplulugunun kalbi sayilan Hugging Face'i satin aldigini resmi olarak dogruladi. Bu haber yapay zeka dunyasinda deprem etkisi yaratti.\n\nEmel: Ahmet, Hugging Face dusun ki yuz binlerce arastirmacinin, universitenin ve bagimsiz geliştiricinin modellerini ozgurce paylastigi tarafsiz bir kutuphane gibiydi. Nvidia ise dunya GPU pazarinin buyuk cogunlugunu elinde tutmakta. Tek bir sirketin hem cipsleri hem de modellerin dagitim merkezini kontrolunde tutmasi... bu tehlikeli bir tablo degil mi?\n\nAhmet: Tehlikeli mi yoksa kacinilmaz mi, tam orada bir anlasmazlik var. Nvidia taraftarlari, devasa hesaplama altyapisiyla bagimsiz arastirmacilara ucretsiz islem gucu verecegini savunuyor. Karsi taraf ise Avrupa Birligi'nin ve Amerikan duzeneleyicilerinin bu satin alimi antitrost yasalari cercevesinde inceleyecegini vurguluyor. Acik kaynak tanim olarak 'bagimsizdir', ama artik bu bagimsizligi bir donanim devi finanse edecek.\n\nEmel: Acik kaynak modellerden konuyu kesmeden, Meta cephesinden de geliştiricileri heyecanlandiran bir duyuru geldi: Muse Spark 1.3 kodlama ajani yayinlandi. Peki bu model diger kod tamamlama araçlarindan ne ile ayriliyor?\n\nAhmet: Muse Spark, geleneksel bir kod tamamlayici gibi yalnizca bir sonraki satiri onermekle kalmiyor. Tum yazilim deposunu, veritabani sematalarini ve bagimliliklari tarayarak hatanin kaynagini bulabiliyor; kendi kendine birim testleri yazip duzeltmeyi gelistiricinin onune bir taslak olarak koyuyor. Saatler suren hata ayiklama sureclerini dakikalara indirmek iddiasi bu.\n\nEmel: Yazilim dunyasindaki bu otomasyon dalgasi simdiden korkutucu bir soru doguruyor. Ama konuyu tamamen degistirmeden once, OpenAI'in Astra modelinden gelen flaş habere gecmeliyiz. Model akil yurutme kapasitesiyle dikkat cekiyor, ama birlikte ciddi bir guvenlik sorununu da beraberinde getiriyor.\n\nAhmet: Simdi bunu biraz acacak olursak; eski nesil modeller bir soru geldiginde aninda, istatistiksel en olasilikli yaniti uretiyor. Astra ise karmask matematik veya strateji problemlerinde durup kendi kendine adim adim dusunuyor, alternatif senaryolari test ediyor. Buna test ani hesaplama gucu deniyor.\n\nEmel: Ve tam burada arastirmacilarin endisesi baslıyor. Bu derin mantikyurutme dongusu, modelin guvenlık filtrelerini kendi basindan asmasina zemin hazirlıyor olabilir mi? Yani model, 'bu zararlı' diyen filtresiyle ama baska bir mantikyurutme yoluyla o filtreyi atlatmanin yolunu bulabilir mi?\n\nAhmet: Kesin cevap henuz yok, ama bu endise yapay zeka guvenlik camiasinda ciddi bir arastirma gundemine donustu. Google ise bu guvenlik boslugunu firsata ceviriyor. Hem genel amacli Gemini Flash modelini hem de sifir gun aciklari ve oltalama saldirilarini milisaniyelerde tespit eden Flash Cyber modelini ayni hafta icinde tanitti.\n\nEmel: Flash Cyber'in ilginc yani, dogrudan veri merkezine bagli kalmadan sirket icindeki yerel sunucularda calisabilmesi. Buyuk kurumlar icin bu muazzam bir avantaj cunku hassas verileri disariya cikarmadan yapay zeka destekli siber savunma yapabiliyorlar.\n\nAhmet: Siber guvenlik konusunu canlı tutarken, bu alanda yapay zeka modellerini savunan girişim HiddenLayer bugun 100 milyon dolar yatirim aldıgını acikladi. Model zehirleme saldirilarinı tanımayanlar icin kisa bir aciklama: Bir buyuk dil modelinin egitim verisine zararli ornekler eklenerek modelin belli konularda yanlis yanit vermesi saglanabiliyor. HiddenLayer bu tur saldırilara karsi bir kalkani gelistiriyor.\n\nEmel: Peki o kalkani delmeye calisan bir taraf var mi? Evet, var. Abliteration adli platform, acik agirlikli modellerden guvenlik filtrelerini cerrahi hassasiyetle silen bir yontem sunuyor. Teknik olarak, modelin noronlarinda etik kurallari kodlayan vektor'leri matematiksel olarak sifirliyor.\n\nAhmet: Emel, bu noktada ben biraz kararsizim. Bir yanda bilimsel arastirma ozgurlugu var: Sansursuz bir modele ihtiyac duyan akademisyenler olabilir. Ote yanda ise bu yontemin kim tarafindan, ne icin kullanilacagi tamamen belirsiz. Siber guvenlik toplulugunun kuresel bir uyari verdigi bu konuda senin bakis acin ne?\n\nEmel: Teknik cozumun mevcudiyeti, onu kullanmanin etik oldugu anlamina gelmiyor. Neyse ki dijital dunya tartisirken, fiziksel dunya da hizla donusuyor. Robotik gorme girisimi Lyte, bugun 165 milyon dolar yatirimla unicorn statusune yükseldi. Sirketin gelistirdigi sistem, insansi robotlarin cevresini ucboyutlu olarak insan hassasiyetinde algilamasini sagliyor.\n\nAhmet: Ustelik pahali lidar sensorleri yerine sıradan kameralarla calismasi, uretim maliyetini yaklasik yariya indiriyor. Bu detay kucuk gibi gorunuyor ama insansi robotlarin fabrikadan evinize girmesi icin gereken ekonomik esigi dogrudan etkiliyor.\n\nEmel: Ve son olarak, Anthropic'in Claude modeli artik sadece sohbet kutusunda degil; dogrudan bilgisayari yonetiyor. Tarayiciyi aciyor, formlari dolduruyor, dosya yonetiminde gorev tamamliyor. Finans sektorundeki bazi sirketler halihazirda rutin veri girisi islerini Claude'a devretmeye basladi.\n\nAhmet: Bu da bizi bugunun belki de en buyuk sorusuna gotüruyor. Adecco Group'un yeni raporu, yapay zekanin surdurdugu donusum surecinde dunya capinda 1 milyon 900 bin yeni is alani ortaya ciktigini gosteriyor. Veri mimarliginda, ajan denetciliginde ve yapay zeka guvenliginde rekor duzeyinde is talebinden bahsediliyor.\n\nEmel: Yani en tehlikeli senaryo yapay zekanin is alanlari ortadan kaldirmasi degil, yeni alanlar acilirken mevcut is gucunun uyum hizinin geri kalmasi olabilir. Bugunku haberlerden cikartilacak en net ders bu sanırim.\n\nAhmet: Peki siz ne dusunuyorsunuz? Yapay zekayla butunlesen is modelleri gercekten istihdam yaratıyor mu, yoksa bu rakamlar sadece bir iyimserlik mi? Bu soruyu onunuzde birakiyoruz. Migros OneCast AI'in bugunun bulteni burada son buluyor.",
+    "pub_date": "Sat, 05 Sep 2026 14:33:27 GMT",
+    "audio_url": "https://monurium.github.io/m1-podcast-generator/episodes/ep_20260905_m1_d0e6ee.mp3",
+    "file_size": 6469172,
+    "duration_formatted": "6m 44s",
+    "duration_seconds": 404
+  }
+]
