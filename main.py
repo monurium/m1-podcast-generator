@@ -22,12 +22,19 @@ load_dotenv()
 
 def run_daily_podcast_pipeline(test_mode: bool = False, tts_engine: str = None):
     if not tts_engine:
-        tts_engine = os.getenv("TTS_ENGINE", "gemini" if (os.getenv("GEMINI_FREE_API_KEY") or os.getenv("GEMINI_API_KEY")) else "edge")
+        has_gemini = bool(
+            os.getenv("GEMINI_API_KEY")
+            or os.getenv("GEMINI_FREE_API_KEY")
+            or os.getenv("GOOGLE_API_KEY")
+        )
+        tts_engine = os.getenv("TTS_ENGINE", "gemini" if has_gemini else "edge")
     print("=" * 65)
     if test_mode:
         print(f"🧪 TEST / DRY-RUN MODU [{tts_engine.upper()}]: Yerel test dosyaları üretiliyor (Prod RSS etkilenmez)")
     else:
         print(f"🎙️ MIGROS ONECAST AI [{tts_engine.upper()}] - GÜNLÜK TÜRKÇE YAPAY ZEKA PODCAST BORU HATTI")
+    if tts_engine.lower() == "gemini":
+        print("🛡️ Google Gemini 2.5 Flash TTS Aktif (Maks 10 istek/dakika hız koruması)")
     print("=" * 65)
 
     # 1. Load Configurations
@@ -60,7 +67,15 @@ def run_daily_podcast_pipeline(test_mode: bool = False, tts_engine: str = None):
     news_context = generator.fetch_fresh_news(hours_limit=24, exclude_keywords=recent_topics)
 
     dialogue_script_data = generator.generate_dialogue_script(news_context, recent_topics=recent_topics)
-    script_data = generator.generate_script(news_context)
+
+    # Derive monologue script from dialogue data without a second LLM call
+    import re as _re
+    _mono_lines = [
+        _re.sub(r'^(Kaan|Ece|Ahmet|Emel|Alex|Sarah|Sunucu):\s*', '', ln).strip()
+        for ln in dialogue_script_data.get("script", "").splitlines() if ln.strip()
+    ]
+    script_data = dict(dialogue_script_data)
+    script_data["script"] = "\n\n".join(_mono_lines)
 
     # Save scripts to output
     os.makedirs("output", exist_ok=True)
@@ -72,13 +87,13 @@ def run_daily_podcast_pipeline(test_mode: bool = False, tts_engine: str = None):
     print(f"💡 Bölüm Başlığı: {dialogue_script_data.get('title')}")
     print(f"⚡ Çarpıcı Haber Sayısı: {len(dialogue_script_data.get('news_items', []))}")
 
-    # 4. Audio Synthesis (Ahmet: Male, Emel: Female)
+    # 4. Audio Synthesis (Kaan: Male, Ece: Female)
     audio_gen = AudioGenerator()
     today_str = datetime.date.today().strftime('%Y%m%d')
     pub_date = datetime.datetime.now(datetime.timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
 
     if test_mode:
-        print(f"\n[Adım 2/3] 🧪 Türkçe 2-Sunuculu (Ahmet & Emel) Test Sesi Sentezleniyor [{tts_engine.upper()}]...")
+        print(f"\n[Adım 2/3] 🧪 Türkçe 2-Sunuculu (Kaan & Ece) Test Sesi Sentezleniyor [{tts_engine.upper()}]...")
         test_audio_path = os.path.join("output", "test_dialogue_podcast.mp3")
         dialogue_audio_meta = audio_gen.dialogue_to_audio(dialogue_script_data["script"], test_audio_path, engine=tts_engine)
 
@@ -114,7 +129,7 @@ def run_daily_podcast_pipeline(test_mode: bool = False, tts_engine: str = None):
 
     dialogue_episode_id = f"ep_{today_str}_m1_{uuid.uuid4().hex[:6]}"
     temp_dialogue_path = os.path.join("output", "temp", f"{dialogue_episode_id}.mp3")
-    print(f"\n[Adım 2/3] Türkçe 2-Sunuculu (Ahmet & Emel) MP3 Podcast Sentezleniyor [{tts_engine.upper()}]...")
+    print(f"\n[Adım 2/3] Türkçe 2-Sunuculu (Kaan & Ece) MP3 Podcast Sentezleniyor [{tts_engine.upper()}]...")
 
     try:
         dialogue_audio_meta = audio_gen.dialogue_to_audio(dialogue_script_data["script"], temp_dialogue_path, engine=tts_engine)
